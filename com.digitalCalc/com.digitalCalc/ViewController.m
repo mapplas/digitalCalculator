@@ -9,7 +9,8 @@
 #import "ViewController.h"
 
 @interface ViewController ()
-
+- (void)initNavBar;
+- (void)pushMenu;
 @end
 
 @implementation ViewController
@@ -18,9 +19,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
+    [self initNavBar];
 }
 
+#pragma mark - Touch methods
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     mouseSwiped = NO;
     UITouch *touch = [touches anyObject];
@@ -63,6 +66,19 @@
         self.board.image = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
     }
+}
+
+# pragma mark - Private methods
+- (void)initNavBar {
+    self.title = NSLocalizedString(@"nav_bar_title", @"Nav bar title");
+//    [self.navigationController.navigationBar setTitleTextAttributes:];
+    
+    UIImage *menuImage = [UIImage imageNamed:@"ic_menu_menu.png"];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:menuImage style:UIBarButtonItemStyleBordered target:self action:@selector(pushMenu)];
+}
+
+- (void)pushMenu {
+    
 }
 
 @end
