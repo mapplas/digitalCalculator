@@ -12,12 +12,14 @@
 - (void)initNavBar;
 - (void)pushMenu;
 - (void)initLayout;
+- (void)clearAll;
 @end
 
 @implementation ViewController
 
 @synthesize board;
 @synthesize segmentedControl;
+@synthesize eraseButton;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -101,10 +103,20 @@
     
     UIImage *menuImage = [UIImage imageNamed:@"ic_menu_menu.png"];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:menuImage style:UIBarButtonItemStyleBordered target:self action:@selector(pushMenu)];
+
+//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"nav_bar_right_button_title", @"Nav. bar right button title") style:UIBarButtonItemStyleBordered target:self action:@selector(erase)];
 }
 
 - (void)pushMenu {
     // TODO
+}
+
+- (IBAction)erase {
+   
+}
+
+- (IBAction)clearAll {
+    self.board.image = nil;
 }
 
 - (void)initLayout {
@@ -114,6 +126,9 @@
     
     NSString *segmentedControlDotText = NSLocalizedString(@"segm_control_dot", @"Segmented control dots text");
     [self.segmentedControl setTitle:segmentedControlDotText forSegmentAtIndex:1];
+    
+    // Erase button
+    [self.eraseButton setTitle:NSLocalizedString(@"nav_bar_right_button_title", @"Nav. bar right button title") forState:UIControlStateNormal];
     
     // Color and brush wide
     red = LINE_COLOR_RED;

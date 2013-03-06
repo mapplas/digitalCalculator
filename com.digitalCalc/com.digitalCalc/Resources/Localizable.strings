@@ -9,6 +9,9 @@
 /* Nav bar title */
 "nav_bar_title" = "Digital Calculator";
 
+/* Nav. bar right button title */
+"nav_bar_right_button_title" = "Erase";
+
 /* Segmented control line text */
 "segm_control_line" = "Lines";
 

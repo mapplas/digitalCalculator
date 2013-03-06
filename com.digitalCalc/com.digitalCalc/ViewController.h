@@ -32,7 +32,10 @@
 
 @property (nonatomic, strong) IBOutlet UIImageView *board;
 @property (nonatomic, strong) IBOutlet UISegmentedControl *segmentedControl;
+@property (nonatomic, strong) IBOutlet UIButton *eraseButton;
 
 - (IBAction)segmentedControlIndexChanged;
+- (IBAction)clearAll;
+- (IBAction)erase;
 
 @end
