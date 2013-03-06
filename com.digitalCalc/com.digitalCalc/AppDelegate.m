@@ -9,8 +9,11 @@
 #import "AppDelegate.h"
 
 #import "ViewController.h"
+#import "SCAppUtils.h"
 
 @implementation AppDelegate
+
+@synthesize navigationController = _navigationController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -21,7 +24,13 @@
     } else {
         self.viewController = [[ViewController alloc] initWithNibName:@"ViewController_iPad" bundle:nil];
     }
-    self.window.rootViewController = self.viewController;
+    
+    
+    // Set navigationController
+    self.navigationController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
+    [SCAppUtils customizeNavigationController:self.navigationController];
+    self.window.rootViewController = self.navigationController;
+    
     [self.window makeKeyAndVisible];
     return YES;
 }
