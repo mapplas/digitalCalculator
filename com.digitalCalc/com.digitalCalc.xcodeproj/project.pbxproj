@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F4401BE16E7473400886CBE /* SCAppUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4401BD16E7473400886CBE /* SCAppUtils.m */; };
 		7FD4AD7E16E734C700EB7CC1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FD4AD7D16E734C700EB7CC1 /* UIKit.framework */; };
 		7FD4AD8016E734C700EB7CC1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FD4AD7F16E734C700EB7CC1 /* Foundation.framework */; };
 		7FD4AD8216E734C700EB7CC1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FD4AD8116E734C700EB7CC1 /* CoreGraphics.framework */; };
@@ -22,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7F4401BC16E7473400886CBE /* SCAppUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCAppUtils.h; path = Classes/Utils/SCAppUtils.h; sourceTree = "<group>"; };
+		7F4401BD16E7473400886CBE /* SCAppUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCAppUtils.m; path = Classes/Utils/SCAppUtils.m; sourceTree = "<group>"; };
 		7FD4AD7A16E734C700EB7CC1 /* com.digitalCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = com.digitalCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FD4AD7D16E734C700EB7CC1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7FD4AD7F16E734C700EB7CC1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -55,6 +58,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7F4401BA16E7472100886CBE /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				7F4401BB16E7472800886CBE /* Utils */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		7F4401BB16E7472800886CBE /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				7F4401BC16E7473400886CBE /* SCAppUtils.h */,
+				7F4401BD16E7473400886CBE /* SCAppUtils.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 		7FD4AD7116E734C700EB7CC1 = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +108,7 @@
 				7FD4AD8C16E734C700EB7CC1 /* AppDelegate.h */,
 				7FD4AD8D16E734C700EB7CC1 /* AppDelegate.m */,
 				7FD4ADA316E7392600EB7CC1 /* DrawingBoard */,
+				7F4401BA16E7472100886CBE /* Classes */,
 				7FD4AD8416E734C700EB7CC1 /* Supporting Files */,
 			);
 			path = com.digitalCalc;
@@ -188,6 +209,7 @@
 				7FD4AD8A16E734C700EB7CC1 /* main.m in Sources */,
 				7FD4AD8E16E734C700EB7CC1 /* AppDelegate.m in Sources */,
 				7FD4AD9716E734C700EB7CC1 /* ViewController.m in Sources */,
+				7F4401BE16E7473400886CBE /* SCAppUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +342,7 @@
 				7FD4ADA216E734C700EB7CC1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
