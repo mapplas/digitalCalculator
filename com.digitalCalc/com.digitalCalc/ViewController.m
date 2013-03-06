@@ -27,6 +27,21 @@
 }
 
 - (IBAction)segmentedControlIndexChanged {
+    switch (self.segmentedControl.selectedSegmentIndex) {
+        case 0:
+            red = LINE_COLOR_RED;
+            green = LINE_COLOR_GREEN;
+            blue = LINE_COLOR_BLUE;
+            brushWidth = LINE_BRUSH_WIDE;
+            break;
+            
+        case 1:
+            red = DOT_COLOR_RED;
+            green = DOT_COLOR_GREEN;
+            blue = DOT_COLOR_BLUE;
+            brushWidth = DOT_BRUSH_WIDE;
+            break;
+    }
     
 }
 
@@ -47,8 +62,8 @@
     CGContextMoveToPoint(UIGraphicsGetCurrentContext(), lastPoint.x, lastPoint.y);
     CGContextAddLineToPoint(UIGraphicsGetCurrentContext(), currentPoint.x, currentPoint.y);
     CGContextSetLineCap(UIGraphicsGetCurrentContext(), kCGLineCapRound);
-    CGContextSetLineWidth(UIGraphicsGetCurrentContext(), 5);
-    CGContextSetRGBStrokeColor(UIGraphicsGetCurrentContext(), 0, 0, 0, 1.0);
+    CGContextSetLineWidth(UIGraphicsGetCurrentContext(), brushWidth);
+    CGContextSetRGBStrokeColor(UIGraphicsGetCurrentContext(), red, green, blue, 1.0);
     CGContextSetBlendMode(UIGraphicsGetCurrentContext(), kCGBlendModeNormal);
     
     CGContextStrokePath(UIGraphicsGetCurrentContext());
@@ -64,8 +79,8 @@
         UIGraphicsBeginImageContext(self.board.frame.size);
         [self.board.image drawInRect:CGRectMake(0, 0, self.board.frame.size.width, self.board.frame.size.height)];
         CGContextSetLineCap(UIGraphicsGetCurrentContext(), kCGLineCapRound);
-        CGContextSetLineWidth(UIGraphicsGetCurrentContext(), 5);
-        CGContextSetRGBStrokeColor(UIGraphicsGetCurrentContext(), 0, 0, 0, 1.0);
+        CGContextSetLineWidth(UIGraphicsGetCurrentContext(), brushWidth);
+        CGContextSetRGBStrokeColor(UIGraphicsGetCurrentContext(), red, green, blue, 1.0);
         CGContextMoveToPoint(UIGraphicsGetCurrentContext(), lastPoint.x, lastPoint.y);
         CGContextAddLineToPoint(UIGraphicsGetCurrentContext(), lastPoint.x, lastPoint.y);
         CGContextStrokePath(UIGraphicsGetCurrentContext());
@@ -95,6 +110,12 @@
     
     NSString *segmentedControlDotText = NSLocalizedString(@"segm_control_dot", @"Segmented control dots text");
     [self.segmentedControl setTitle:segmentedControlDotText forSegmentAtIndex:1];
+    
+    // Color and brush wide
+    red = LINE_COLOR_RED;
+    green = LINE_COLOR_GREEN;
+    blue = LINE_COLOR_BLUE;
+    brushWidth = LINE_BRUSH_WIDE;
 }
 
 @end
