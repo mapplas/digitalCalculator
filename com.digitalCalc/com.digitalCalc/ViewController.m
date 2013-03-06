@@ -11,16 +11,23 @@
 @interface ViewController ()
 - (void)initNavBar;
 - (void)pushMenu;
+- (void)initLayout;
 @end
 
 @implementation ViewController
 
 @synthesize board;
+@synthesize segmentedControl;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self initNavBar];
+    [self initLayout];
+}
+
+- (IBAction)segmentedControlIndexChanged {
+    
 }
 
 #pragma mark - Touch methods
@@ -78,7 +85,16 @@
 }
 
 - (void)pushMenu {
+    // TODO
+}
+
+- (void)initLayout {
+    // Segmented control button names
+    NSString *segmentedControlLineText = NSLocalizedString(@"segm_control_line", @"Segmented control line text");
+    [self.segmentedControl setTitle:segmentedControlLineText forSegmentAtIndex:0];
     
+    NSString *segmentedControlDotText = NSLocalizedString(@"segm_control_dot", @"Segmented control dots text");
+    [self.segmentedControl setTitle:segmentedControlDotText forSegmentAtIndex:1];
 }
 
 @end

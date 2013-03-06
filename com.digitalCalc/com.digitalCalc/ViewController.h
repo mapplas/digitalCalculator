@@ -14,5 +14,8 @@
 }
 
 @property (nonatomic, strong) IBOutlet UIImageView *board;
+@property (nonatomic, strong) IBOutlet UISegmentedControl *segmentedControl;
+
+- (IBAction)segmentedControlIndexChanged;
 
 @end
