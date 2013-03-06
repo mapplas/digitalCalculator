@@ -23,7 +23,7 @@
 #define ERASE_SEGMENT 2
 #define ERASE_BRUSH_WIDE 35.0
 
-@interface ViewController : UIViewController {
+@interface ViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>{
     CGPoint lastPoint;
     BOOL mouseSwiped;
     
@@ -31,10 +31,18 @@
     CGFloat green;
     CGFloat blue;
     CGFloat brushWidth;
+    
+    NSMutableArray *numbers;
 }
 
 @property (nonatomic, strong) IBOutlet UIImageView *board;
 @property (nonatomic, strong) IBOutlet UISegmentedControl *segmentedControl;
+
+@property (nonatomic, strong) IBOutlet UILabel *firstArgument;
+@property (nonatomic, strong) IBOutlet UILabel *secondArgument;
+@property (nonatomic, strong) IBOutlet UITextField *result;
+
+@property (nonatomic, strong) IBOutlet UIPickerView *resultPicker;
 
 - (IBAction)segmentedControlIndexChanged;
 - (IBAction)clearAll;
