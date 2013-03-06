@@ -20,6 +20,9 @@
 #define DOT_COLOR_BLUE 0.0/255.0
 #define DOT_BRUSH_WIDE 35.0
 
+#define ERASE_SEGMENT 2
+#define ERASE_BRUSH_WIDE 35.0
+
 @interface ViewController : UIViewController {
     CGPoint lastPoint;
     BOOL mouseSwiped;
@@ -32,10 +35,8 @@
 
 @property (nonatomic, strong) IBOutlet UIImageView *board;
 @property (nonatomic, strong) IBOutlet UISegmentedControl *segmentedControl;
-@property (nonatomic, strong) IBOutlet UIButton *eraseButton;
 
 - (IBAction)segmentedControlIndexChanged;
 - (IBAction)clearAll;
-- (IBAction)erase;
 
 @end
