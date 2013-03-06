@@ -12,6 +12,7 @@
 - (void)initNavBar;
 - (void)pushMenu;
 - (void)initLayout;
+- (void)clearAll;
 @end
 
 @implementation ViewController
@@ -27,6 +28,11 @@
 }
 
 - (IBAction)segmentedControlIndexChanged {
+    // If selected segment is erase...
+    UIColor *backcroundColor = self.board.backgroundColor;
+    CGColorRef color = [backcroundColor CGColor];
+    const CGFloat *components = CGColorGetComponents(color);
+
     switch (self.segmentedControl.selectedSegmentIndex) {
         case LINE_SEGMENT:
             red = LINE_COLOR_RED;
@@ -40,6 +46,13 @@
             green = DOT_COLOR_GREEN;
             blue = DOT_COLOR_BLUE;
             brushWidth = DOT_BRUSH_WIDE;
+            break;
+            
+        case ERASE_SEGMENT:
+            red = components[0];
+            green = components[1];
+            blue = components[2];
+            brushWidth = ERASE_BRUSH_WIDE;
             break;
     }
     
@@ -57,7 +70,7 @@
     UITouch *touch = [touches anyObject];
     CGPoint currentPoint = [touch locationInView:self.board];
     
-    if (self.segmentedControl.selectedSegmentIndex == LINE_SEGMENT) {
+    if (self.segmentedControl.selectedSegmentIndex != DOT_SEGMENT) {
         mouseSwiped = YES;
         
         UIGraphicsBeginImageContext(self.board.frame.size);
@@ -101,10 +114,16 @@
     
     UIImage *menuImage = [UIImage imageNamed:@"ic_menu_menu.png"];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:menuImage style:UIBarButtonItemStyleBordered target:self action:@selector(pushMenu)];
+
+//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"nav_bar_right_button_title", @"Nav. bar right button title") style:UIBarButtonItemStyleBordered target:self action:@selector(erase)];
 }
 
 - (void)pushMenu {
     // TODO
+}
+
+- (IBAction)clearAll {
+    self.board.image = nil;
 }
 
 - (void)initLayout {
@@ -114,6 +133,9 @@
     
     NSString *segmentedControlDotText = NSLocalizedString(@"segm_control_dot", @"Segmented control dots text");
     [self.segmentedControl setTitle:segmentedControlDotText forSegmentAtIndex:1];
+    
+    NSString *segmentedControlEraseText = NSLocalizedString(@"nav_bar_right_button_title", @"Nav. bar right button title");
+    [self.segmentedControl setTitle:segmentedControlEraseText forSegmentAtIndex:2];
     
     // Color and brush wide
     red = LINE_COLOR_RED;
