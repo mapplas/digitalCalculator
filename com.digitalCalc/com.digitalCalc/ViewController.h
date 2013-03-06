@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+#define LINE_SEGMENT 0
 #define LINE_COLOR_RED 0.0/255.0
 #define LINE_COLOR_GREEN 0.0/255.0
 #define LINE_COLOR_BLUE 0.0/255.0
 #define LINE_BRUSH_WIDE 5.0
 
+#define DOT_SEGMENT 1
 #define DOT_COLOR_RED 255.0/255.0
 #define DOT_COLOR_GREEN 0.0/255.0
 #define DOT_COLOR_BLUE 0.0/255.0
