@@ -11,43 +11,69 @@
 @interface ViewController ()
 - (void)initNavBar;
 - (void)pushMenu;
+- (void)initLayout;
 @end
 
 @implementation ViewController
 
 @synthesize board;
+@synthesize segmentedControl;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self initNavBar];
+    [self initLayout];
+}
+
+- (IBAction)segmentedControlIndexChanged {
+    switch (self.segmentedControl.selectedSegmentIndex) {
+        case LINE_SEGMENT:
+            red = LINE_COLOR_RED;
+            green = LINE_COLOR_GREEN;
+            blue = LINE_COLOR_BLUE;
+            brushWidth = LINE_BRUSH_WIDE;
+            break;
+            
+        case DOT_SEGMENT:
+            red = DOT_COLOR_RED;
+            green = DOT_COLOR_GREEN;
+            blue = DOT_COLOR_BLUE;
+            brushWidth = DOT_BRUSH_WIDE;
+            break;
+    }
+    
 }
 
 #pragma mark - Touch methods
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     mouseSwiped = NO;
+
     UITouch *touch = [touches anyObject];
     lastPoint = [touch locationInView:self.board];
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-    mouseSwiped = YES;
     UITouch *touch = [touches anyObject];
     CGPoint currentPoint = [touch locationInView:self.board];
     
-    UIGraphicsBeginImageContext(self.board.frame.size);
-    [self.board.image drawInRect:CGRectMake(0, 0, self.board.frame.size.width, self.board.frame.size.height)];
-    CGContextMoveToPoint(UIGraphicsGetCurrentContext(), lastPoint.x, lastPoint.y);
-    CGContextAddLineToPoint(UIGraphicsGetCurrentContext(), currentPoint.x, currentPoint.y);
-    CGContextSetLineCap(UIGraphicsGetCurrentContext(), kCGLineCapRound);
-    CGContextSetLineWidth(UIGraphicsGetCurrentContext(), 5);
-    CGContextSetRGBStrokeColor(UIGraphicsGetCurrentContext(), 0, 0, 0, 1.0);
-    CGContextSetBlendMode(UIGraphicsGetCurrentContext(), kCGBlendModeNormal);
-    
-    CGContextStrokePath(UIGraphicsGetCurrentContext());
-    self.board.image = UIGraphicsGetImageFromCurrentImageContext();
-    [self.board setAlpha:1.0];
-    UIGraphicsEndImageContext();
+    if (self.segmentedControl.selectedSegmentIndex == LINE_SEGMENT) {
+        mouseSwiped = YES;
+        
+        UIGraphicsBeginImageContext(self.board.frame.size);
+        [self.board.image drawInRect:CGRectMake(0, 0, self.board.frame.size.width, self.board.frame.size.height)];
+        CGContextMoveToPoint(UIGraphicsGetCurrentContext(), lastPoint.x, lastPoint.y);
+        CGContextAddLineToPoint(UIGraphicsGetCurrentContext(), currentPoint.x, currentPoint.y);
+        CGContextSetLineCap(UIGraphicsGetCurrentContext(), kCGLineCapRound);
+        CGContextSetLineWidth(UIGraphicsGetCurrentContext(), brushWidth);
+        CGContextSetRGBStrokeColor(UIGraphicsGetCurrentContext(), red, green, blue, 1.0);
+        CGContextSetBlendMode(UIGraphicsGetCurrentContext(), kCGBlendModeNormal);
+        
+        CGContextStrokePath(UIGraphicsGetCurrentContext());
+        self.board.image = UIGraphicsGetImageFromCurrentImageContext();
+        [self.board setAlpha:1.0];
+        UIGraphicsEndImageContext();
+    }
     
     lastPoint = currentPoint;
 }
@@ -57,8 +83,8 @@
         UIGraphicsBeginImageContext(self.board.frame.size);
         [self.board.image drawInRect:CGRectMake(0, 0, self.board.frame.size.width, self.board.frame.size.height)];
         CGContextSetLineCap(UIGraphicsGetCurrentContext(), kCGLineCapRound);
-        CGContextSetLineWidth(UIGraphicsGetCurrentContext(), 5);
-        CGContextSetRGBStrokeColor(UIGraphicsGetCurrentContext(), 0, 0, 0, 1.0);
+        CGContextSetLineWidth(UIGraphicsGetCurrentContext(), brushWidth);
+        CGContextSetRGBStrokeColor(UIGraphicsGetCurrentContext(), red, green, blue, 1.0);
         CGContextMoveToPoint(UIGraphicsGetCurrentContext(), lastPoint.x, lastPoint.y);
         CGContextAddLineToPoint(UIGraphicsGetCurrentContext(), lastPoint.x, lastPoint.y);
         CGContextStrokePath(UIGraphicsGetCurrentContext());
@@ -78,7 +104,22 @@
 }
 
 - (void)pushMenu {
+    // TODO
+}
+
+- (void)initLayout {
+    // Segmented control button names
+    NSString *segmentedControlLineText = NSLocalizedString(@"segm_control_line", @"Segmented control line text");
+    [self.segmentedControl setTitle:segmentedControlLineText forSegmentAtIndex:0];
     
+    NSString *segmentedControlDotText = NSLocalizedString(@"segm_control_dot", @"Segmented control dots text");
+    [self.segmentedControl setTitle:segmentedControlDotText forSegmentAtIndex:1];
+    
+    // Color and brush wide
+    red = LINE_COLOR_RED;
+    green = LINE_COLOR_GREEN;
+    blue = LINE_COLOR_BLUE;
+    brushWidth = LINE_BRUSH_WIDE;
 }
 
 @end

@@ -8,3 +8,9 @@
 
 /* Nav bar title */
 "nav_bar_title" = "Digital Calculator";
+
+/* Segmented control line text */
+"segm_control_line" = "Lines";
+
+/* Segmented control dots text */
+"segm_control_dot" = "Dots";
