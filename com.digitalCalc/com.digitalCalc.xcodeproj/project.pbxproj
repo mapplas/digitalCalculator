@@ -10,6 +10,9 @@
 		7F17E7B016E8836B009B742F /* ArgumentLabelAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F17E7AF16E8836B009B742F /* ArgumentLabelAnimator.m */; };
 		7F17E7B216E8877F009B742F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F17E7B116E8877F009B742F /* QuartzCore.framework */; };
 		7F17E7B616E8A335009B742F /* HelpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F17E7B516E8A335009B742F /* HelpManager.m */; };
+		7F17E7BE16E8B9CC009B742F /* PKRevealController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F17E7B916E8B9CC009B742F /* PKRevealController.m */; };
+		7F17E7BF16E8B9CC009B742F /* PKRevealControllerContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F17E7BB16E8B9CC009B742F /* PKRevealControllerContainerView.m */; };
+		7F17E7C016E8B9CC009B742F /* UIViewController+PKRevealController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F17E7BD16E8B9CC009B742F /* UIViewController+PKRevealController.m */; };
 		7F4401BE16E7473400886CBE /* SCAppUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4401BD16E7473400886CBE /* SCAppUtils.m */; };
 		7F4401C316E7491B00886CBE /* ic_menu_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F4401C116E7491B00886CBE /* ic_menu_menu.png */; };
 		7F4401C416E7491B00886CBE /* ic_menu_menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F4401C216E7491B00886CBE /* ic_menu_menu@2x.png */; };
@@ -34,6 +37,12 @@
 		7F17E7B116E8877F009B742F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		7F17E7B416E8A335009B742F /* HelpManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HelpManager.h; path = Classes/Helper/HelpManager.h; sourceTree = "<group>"; };
 		7F17E7B516E8A335009B742F /* HelpManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HelpManager.m; path = Classes/Helper/HelpManager.m; sourceTree = "<group>"; };
+		7F17E7B816E8B9CC009B742F /* PKRevealController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PKRevealController.h; path = "Classes/Third party/PKRevealController.h"; sourceTree = "<group>"; };
+		7F17E7B916E8B9CC009B742F /* PKRevealController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PKRevealController.m; path = "Classes/Third party/PKRevealController.m"; sourceTree = "<group>"; };
+		7F17E7BA16E8B9CC009B742F /* PKRevealControllerContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PKRevealControllerContainerView.h; path = "Classes/Third party/PKRevealControllerContainerView.h"; sourceTree = "<group>"; };
+		7F17E7BB16E8B9CC009B742F /* PKRevealControllerContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PKRevealControllerContainerView.m; path = "Classes/Third party/PKRevealControllerContainerView.m"; sourceTree = "<group>"; };
+		7F17E7BC16E8B9CC009B742F /* UIViewController+PKRevealController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+PKRevealController.h"; path = "Classes/Third party/UIViewController+PKRevealController.h"; sourceTree = "<group>"; };
+		7F17E7BD16E8B9CC009B742F /* UIViewController+PKRevealController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+PKRevealController.m"; path = "Classes/Third party/UIViewController+PKRevealController.m"; sourceTree = "<group>"; };
 		7F4401BC16E7473400886CBE /* SCAppUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCAppUtils.h; path = Classes/Utils/SCAppUtils.h; sourceTree = "<group>"; };
 		7F4401BD16E7473400886CBE /* SCAppUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCAppUtils.m; path = Classes/Utils/SCAppUtils.m; sourceTree = "<group>"; };
 		7F4401C116E7491B00886CBE /* ic_menu_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_menu_menu.png; path = Resources/ic_menu_menu.png; sourceTree = "<group>"; };
@@ -91,11 +100,25 @@
 			name = Helper;
 			sourceTree = "<group>";
 		};
+		7F17E7B716E8B8ED009B742F /* Third party */ = {
+			isa = PBXGroup;
+			children = (
+				7F17E7B816E8B9CC009B742F /* PKRevealController.h */,
+				7F17E7B916E8B9CC009B742F /* PKRevealController.m */,
+				7F17E7BA16E8B9CC009B742F /* PKRevealControllerContainerView.h */,
+				7F17E7BB16E8B9CC009B742F /* PKRevealControllerContainerView.m */,
+				7F17E7BC16E8B9CC009B742F /* UIViewController+PKRevealController.h */,
+				7F17E7BD16E8B9CC009B742F /* UIViewController+PKRevealController.m */,
+			);
+			name = "Third party";
+			sourceTree = "<group>";
+		};
 		7F4401BA16E7472100886CBE /* Classes */ = {
 			isa = PBXGroup;
 			children = (
 				7F17E7AD16E882C2009B742F /* Animations */,
 				7F17E7B316E8A310009B742F /* Helper */,
+				7F17E7B716E8B8ED009B742F /* Third party */,
 				7F4401BB16E7472800886CBE /* Utils */,
 			);
 			name = Classes;
@@ -270,6 +293,9 @@
 				7F4401BE16E7473400886CBE /* SCAppUtils.m in Sources */,
 				7F17E7B016E8836B009B742F /* ArgumentLabelAnimator.m in Sources */,
 				7F17E7B616E8A335009B742F /* HelpManager.m in Sources */,
+				7F17E7BE16E8B9CC009B742F /* PKRevealController.m in Sources */,
+				7F17E7BF16E8B9CC009B742F /* PKRevealControllerContainerView.m in Sources */,
+				7F17E7C016E8B9CC009B742F /* UIViewController+PKRevealController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
