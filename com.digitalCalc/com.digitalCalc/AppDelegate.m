@@ -26,61 +26,19 @@
     
     UINavigationController *frontViewController = [[UINavigationController alloc] initWithRootViewController:viewController];
     
-    
-//    // Set navigationController
-//    self.navigationController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
-//    [SCAppUtils customizeNavigationController:self.navigationController];
-//    self.window.rootViewController = self.navigationController;
-//    
-//    [self.window makeKeyAndVisible];
-//    return YES;
+    NSDictionary *options = @{
+                              PKRevealControllerRecognizesPanningOnFrontViewKey : [NSNumber numberWithBool:NO]
+                              };    
     
     UIViewController *leftViewController = [[LeftMenuViewController alloc] init];
     self.revealController = [PKRevealController revealControllerWithFrontViewController:frontViewController
                                                                      leftViewController:leftViewController
-                                                                                options:nil];
-//    
-//    self.navigationController = [[UINavigationController alloc] initWithRootViewController:self.revealController];
-//    [SCAppUtils customizeNavigationController:self.navigationController];
+                                                                                options:options];
+
     self.window.rootViewController = self.revealController;
     
     [self.window makeKeyAndVisible];
     return YES;
-    
-    
-    
-    
-    
-    
-    
-//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-//    
-//    // Step 1: Create your controllers.
-//    UINavigationController *frontViewController = [[UINavigationController alloc] initWithRootViewController:[[FrontViewController alloc] init]];
-//    UIViewController *rightViewController = [[RightDemoViewController alloc] init];
-//    UIViewController *leftViewController = [[LeftDemoViewController alloc] init];
-//    
-//    // Step 2: Configure an options dictionary for the PKRevealController if necessary - in most cases the default behaviour should suffice. See PKRevealController.h for more option keys.
-//    /*
-//     NSDictionary *options = @{
-//     PKRevealControllerAllowsOverdrawKey : [NSNumber numberWithBool:YES],
-//     PKRevealControllerDisablesFrontViewInteractionKey : [NSNumber numberWithBool:YES]
-//     };
-//     */
-//    
-//    // Step 3: Instantiate your PKRevealController.
-//    self.revealController = [PKRevealController revealControllerWithFrontViewController:frontViewController
-//                                                                     leftViewController:leftViewController
-//                                                                    rightViewController:rightViewController
-//                                                                                options:nil];
-//    
-//    // Step 4: Set it as your root view controller.
-//    self.window.rootViewController = self.revealController;
-//    
-//    [self.window makeKeyAndVisible];
-//    return YES;
-//    
-//    // Step 5: Take a look at the Left/RightDemoViewController files. They're self-sufficient as to the configuration of their reveal widths for instance.
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application{

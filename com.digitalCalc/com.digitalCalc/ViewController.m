@@ -11,7 +11,6 @@
 
 @interface ViewController ()
 - (void)initNavBar;
-- (void)pushMenu;
 - (void)initLayout;
 - (void)clearAll;
 - (void)initHelpActions;
@@ -156,7 +155,16 @@
     
     UIImage *menuImage = [UIImage imageNamed:@"ic_menu_menu.png"];
     if (self.navigationController.revealController.type & PKRevealControllerTypeLeft) {
-        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:menuImage landscapeImagePhone:menuImage style:UIBarButtonItemStylePlain target:self action:@selector(showLeftView:)];
+        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:menuImage landscapeImagePhone:menuImage style:UIBarButtonItemStylePlain target:self action:@selector(showLeftView)];
+    }
+}
+
+- (void)showLeftView {
+    if (self.navigationController.revealController.focusedController == self.navigationController.revealController.leftViewController) {
+        [self.navigationController.revealController showViewController:self.navigationController.revealController.frontViewController];
+    }
+    else {
+        [self.navigationController.revealController showViewController:self.navigationController.revealController.leftViewController];
     }
 }
 
