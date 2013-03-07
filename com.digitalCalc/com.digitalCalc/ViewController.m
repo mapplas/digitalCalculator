@@ -111,26 +111,26 @@
 
 # pragma mark - UIViewPicker adapter methods
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    return numbers.count;
+    return PICKER_VIEW_COMPONENTS;
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
-    return [[NSString stringWithFormat: @"%i", [self.firstArgument.text intValue] * [self.secondArgument.text intValue]] length];
+    return [self numberOfComponents];
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     NSString *toReturn = @"";
-    NSInteger components = [[NSString stringWithFormat: @"%i", [self.firstArgument.text intValue] * [self.secondArgument.text intValue]] length];
+    NSInteger components = [self numberOfComponents];
     
     for (int i = 0; i < components; i++) {
-        toReturn = [NSString stringWithFormat:@"%@%i", toReturn, [pickerView selectedRowInComponent:i]];
+        toReturn = [NSString stringWithFormat:@"%@%i", toReturn, ([pickerView selectedRowInComponent:i] % 10)];
     }
     
     self.result.text = toReturn;
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    return [numbers objectAtIndex:row];
+    return [numbers objectAtIndex:(row % 10)];
 }
 
 # pragma mark - Private methods
@@ -172,15 +172,23 @@
     [numbers addObject:@"7"];
     [numbers addObject:@"8"];
     [numbers addObject:@"9"];
-    
+        
     self.firstArgument.text = @"5";
     self.secondArgument.text = @"3";
+    
+    for (int i = 0; i < [self numberOfComponents]; i++) {
+        [self.resultPicker selectRow:PICKER_VIEW_COMPONENTS/2 inComponent:i animated:NO];
+    }
     
     // Color and brush wide
     red = LINE_COLOR_RED;
     green = LINE_COLOR_GREEN;
     blue = LINE_COLOR_BLUE;
     brushWidth = LINE_BRUSH_WIDE;
+}
+
+- (NSInteger)numberOfComponents {
+    return [[NSString stringWithFormat: @"%i", [self.firstArgument.text intValue] * [self.secondArgument.text intValue]] length];
 }
 
 @end

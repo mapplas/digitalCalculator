@@ -23,6 +23,8 @@
 #define ERASE_SEGMENT 2
 #define ERASE_BRUSH_WIDE 35.0
 
+#define PICKER_VIEW_COMPONENTS 16380
+
 @interface ViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>{
     CGPoint lastPoint;
     BOOL mouseSwiped;
