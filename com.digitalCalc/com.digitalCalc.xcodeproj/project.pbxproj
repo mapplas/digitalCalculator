@@ -150,7 +150,6 @@
 			isa = PBXGroup;
 			children = (
 				7F4401C016E7491000886CBE /* Icons */,
-				7F4401C516E74C8D00886CBE /* Localizable.strings */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -208,6 +207,7 @@
 		7FD4AD8416E734C700EB7CC1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7F4401C516E74C8D00886CBE /* Localizable.strings */,
 				7FD4AD8516E734C700EB7CC1 /* com.digitalCalc-Info.plist */,
 				7FD4AD8616E734C700EB7CC1 /* InfoPlist.strings */,
 				7FD4AD8916E734C700EB7CC1 /* main.m */,
