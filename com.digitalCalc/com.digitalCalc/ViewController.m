@@ -27,6 +27,7 @@
     
     [self initNavBar];
     [self initLayout];
+    [self initAnimations];
 }
 
 - (IBAction)segmentedControlIndexChanged {
@@ -133,6 +134,11 @@
     return [numbers objectAtIndex:(row % 10)];
 }
 
+#pragma mark - CATransition animation delegate
+- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
+    [labelAnimator animateLabel:self.secondArgument withResponse:NO];
+}
+
 # pragma mark - Private methods
 - (void)initNavBar {
     self.title = NSLocalizedString(@"nav_bar_title", @"Nav bar title");
@@ -189,6 +195,11 @@
 
 - (NSInteger)numberOfComponents {
     return [[NSString stringWithFormat: @"%i", [self.firstArgument.text intValue] * [self.secondArgument.text intValue]] length];
+}
+
+- (void)initAnimations {    
+    labelAnimator = [[ArgumentLabelAnimator alloc] initWithViewController:self];
+    [labelAnimator animateLabel:self.firstArgument withResponse:YES];
 }
 
 @end

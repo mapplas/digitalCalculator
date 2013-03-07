@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F17E7B016E8836B009B742F /* ArgumentLabelAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F17E7AF16E8836B009B742F /* ArgumentLabelAnimator.m */; };
+		7F17E7B216E8877F009B742F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F17E7B116E8877F009B742F /* QuartzCore.framework */; };
 		7F4401BE16E7473400886CBE /* SCAppUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4401BD16E7473400886CBE /* SCAppUtils.m */; };
 		7F4401C316E7491B00886CBE /* ic_menu_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F4401C116E7491B00886CBE /* ic_menu_menu.png */; };
 		7F4401C416E7491B00886CBE /* ic_menu_menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F4401C216E7491B00886CBE /* ic_menu_menu@2x.png */; };
@@ -26,6 +28,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7F17E7AE16E8836B009B742F /* ArgumentLabelAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ArgumentLabelAnimator.h; path = Classes/Animations/ArgumentLabelAnimator.h; sourceTree = "<group>"; };
+		7F17E7AF16E8836B009B742F /* ArgumentLabelAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ArgumentLabelAnimator.m; path = Classes/Animations/ArgumentLabelAnimator.m; sourceTree = "<group>"; };
+		7F17E7B116E8877F009B742F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		7F4401BC16E7473400886CBE /* SCAppUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCAppUtils.h; path = Classes/Utils/SCAppUtils.h; sourceTree = "<group>"; };
 		7F4401BD16E7473400886CBE /* SCAppUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCAppUtils.m; path = Classes/Utils/SCAppUtils.m; sourceTree = "<group>"; };
 		7F4401C116E7491B00886CBE /* ic_menu_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_menu_menu.png; path = Resources/ic_menu_menu.png; sourceTree = "<group>"; };
@@ -55,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F17E7B216E8877F009B742F /* QuartzCore.framework in Frameworks */,
 				7FD4AD7E16E734C700EB7CC1 /* UIKit.framework in Frameworks */,
 				7FD4AD8016E734C700EB7CC1 /* Foundation.framework in Frameworks */,
 				7FD4AD8216E734C700EB7CC1 /* CoreGraphics.framework in Frameworks */,
@@ -64,9 +70,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7F17E7AD16E882C2009B742F /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				7F17E7AE16E8836B009B742F /* ArgumentLabelAnimator.h */,
+				7F17E7AF16E8836B009B742F /* ArgumentLabelAnimator.m */,
+			);
+			name = Animations;
+			sourceTree = "<group>";
+		};
 		7F4401BA16E7472100886CBE /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				7F17E7AD16E882C2009B742F /* Animations */,
 				7F4401BB16E7472800886CBE /* Utils */,
 			);
 			name = Classes;
@@ -119,9 +135,10 @@
 		7FD4AD7C16E734C700EB7CC1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7FD4AD7D16E734C700EB7CC1 /* UIKit.framework */,
-				7FD4AD7F16E734C700EB7CC1 /* Foundation.framework */,
 				7FD4AD8116E734C700EB7CC1 /* CoreGraphics.framework */,
+				7FD4AD7F16E734C700EB7CC1 /* Foundation.framework */,
+				7F17E7B116E8877F009B742F /* QuartzCore.framework */,
+				7FD4AD7D16E734C700EB7CC1 /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -238,6 +255,7 @@
 				7FD4AD8E16E734C700EB7CC1 /* AppDelegate.m in Sources */,
 				7FD4AD9716E734C700EB7CC1 /* ViewController.m in Sources */,
 				7F4401BE16E7473400886CBE /* SCAppUtils.m in Sources */,
+				7F17E7B016E8836B009B742F /* ArgumentLabelAnimator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
