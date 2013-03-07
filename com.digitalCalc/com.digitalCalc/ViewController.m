@@ -13,18 +13,23 @@
 - (void)pushMenu;
 - (void)initLayout;
 - (void)clearAll;
+- (void)initHelpActions;
 @end
 
 @implementation ViewController
 
 @synthesize board;
 @synthesize segmentedControl;
+@synthesize firstArgument, secondArgument, result;
+@synthesize resultPicker;
+@synthesize helpSwitch, helpLabel, helpButton;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self initNavBar];
     [self initLayout];
+    [self initHelpActions];
 }
 
 - (IBAction)segmentedControlIndexChanged {
@@ -56,6 +61,18 @@
             break;
     }
     
+}
+
+- (IBAction)toggleEnabledForSwitch:(id)sender {
+    if (self.helpSwitch.isOn) {
+        self.helpLabel.text = @"Some help";
+        self.helpLabel.hidden = NO;
+        self.helpButton.hidden = NO;
+    }
+    else {
+        self.helpLabel.hidden = YES;
+        self.helpButton.hidden = YES;
+    }
 }
 
 #pragma mark - Touch methods
@@ -107,15 +124,36 @@
     }
 }
 
+# pragma mark - UIViewPicker adapter methods
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    return PICKER_VIEW_COMPONENTS;
+}
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return [self numberOfComponents];
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    NSString *toReturn = @"";
+    NSInteger components = [self numberOfComponents];
+    
+    for (int i = 0; i < components; i++) {
+        toReturn = [NSString stringWithFormat:@"%@%i", toReturn, ([pickerView selectedRowInComponent:i] % 10)];
+    }
+    
+    self.result.text = toReturn;
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    return [numbers objectAtIndex:(row % 10)];
+}
+
 # pragma mark - Private methods
 - (void)initNavBar {
     self.title = NSLocalizedString(@"nav_bar_title", @"Nav bar title");
-//    [self.navigationController.navigationBar setTitleTextAttributes:];
     
     UIImage *menuImage = [UIImage imageNamed:@"ic_menu_menu.png"];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:menuImage style:UIBarButtonItemStyleBordered target:self action:@selector(pushMenu)];
-
-//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"nav_bar_right_button_title", @"Nav. bar right button title") style:UIBarButtonItemStyleBordered target:self action:@selector(erase)];
 }
 
 - (void)pushMenu {
@@ -137,11 +175,40 @@
     NSString *segmentedControlEraseText = NSLocalizedString(@"nav_bar_right_button_title", @"Nav. bar right button title");
     [self.segmentedControl setTitle:segmentedControlEraseText forSegmentAtIndex:2];
     
+    // Number picker
+    numbers = [[NSMutableArray alloc] init];
+    [numbers addObject:@"0"];
+    [numbers addObject:@"1"];
+    [numbers addObject:@"2"];
+    [numbers addObject:@"3"];
+    [numbers addObject:@"4"];
+    [numbers addObject:@"5"];
+    [numbers addObject:@"6"];
+    [numbers addObject:@"7"];
+    [numbers addObject:@"8"];
+    [numbers addObject:@"9"];
+        
+    self.firstArgument.text = @"5";
+    self.secondArgument.text = @"3";
+    
+    for (int i = 0; i < [self numberOfComponents]; i++) {
+        [self.resultPicker selectRow:PICKER_VIEW_COMPONENTS/2 inComponent:i animated:NO];
+    }
+    
     // Color and brush wide
     red = LINE_COLOR_RED;
     green = LINE_COLOR_GREEN;
     blue = LINE_COLOR_BLUE;
     brushWidth = LINE_BRUSH_WIDE;
+}
+
+- (NSInteger)numberOfComponents {
+    return [[NSString stringWithFormat: @"%i", [self.firstArgument.text intValue] * [self.secondArgument.text intValue]] length];
+}
+
+- (void)initHelpActions {
+    helpManager = [[HelpManager alloc] initWithHelpLabel:self.helpLabel button:self.helpButton andSwitch:self.helpSwitch firstArgument:self.firstArgument secondArgument:self.secondArgument];
+    [helpManager start];
 }
 
 @end

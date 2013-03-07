@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HelpManager.h"
 
 #define LINE_SEGMENT 0
 #define LINE_COLOR_RED 0.0/255.0
@@ -23,7 +24,9 @@
 #define ERASE_SEGMENT 2
 #define ERASE_BRUSH_WIDE 35.0
 
-@interface ViewController : UIViewController {
+#define PICKER_VIEW_COMPONENTS 16380
+
+@interface ViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource> {
     CGPoint lastPoint;
     BOOL mouseSwiped;
     
@@ -31,12 +34,27 @@
     CGFloat green;
     CGFloat blue;
     CGFloat brushWidth;
+    NSMutableArray *numbers;
+    
+    HelpManager *helpManager;
 }
 
 @property (nonatomic, strong) IBOutlet UIImageView *board;
 @property (nonatomic, strong) IBOutlet UISegmentedControl *segmentedControl;
 
+@property (nonatomic, strong) IBOutlet UILabel *firstArgument;
+@property (nonatomic, strong) IBOutlet UILabel *secondArgument;
+@property (nonatomic, strong) IBOutlet UITextField *result;
+
+@property (nonatomic, strong) IBOutlet UIPickerView *resultPicker;
+
+@property (nonatomic, strong) IBOutlet UISwitch *helpSwitch;
+@property (nonatomic, strong) IBOutlet UILabel *helpLabel;
+@property (nonatomic, strong) IBOutlet UIButton *helpButton;
+
+
 - (IBAction)segmentedControlIndexChanged;
+- (IBAction)toggleEnabledForSwitch:(id)sender;
 - (IBAction)clearAll;
 
 @end

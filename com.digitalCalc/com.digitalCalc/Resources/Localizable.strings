@@ -17,3 +17,12 @@
 
 /* Segmented control dots text */
 "segm_control_dot" = "Dots";
+
+/* Help label text prefix */
+"help_text_prefix" = "Draw";
+
+/* Help label singular line suffix */
+"help_text_singular_suffix" = "line";
+
+/* Help label plural line suffix */
+"help_text_plural_suffix" = "lines";
