@@ -10,15 +10,7 @@
 
 @implementation ArgumentLabelAnimator
 
-- (id)initWithViewController:(ViewController *)main_controller {
-    self = [super init];
-    if (self) {
-        mainViewController = main_controller;
-    }
-    return self;
-}
-
-- (void)animateLabel:(UILabel *)to_animate withResponse:(BOOL)response {
+- (void)animateLabel:(UILabel *)to_animate {
     CATransition *animation = [CATransition animation];
     [animation setType:kCATransitionPush];
     [animation setSubtype:kCAAnimationDiscrete];
@@ -27,9 +19,9 @@
     [animation setDuration:1];
     [animation setRepeatCount:4];
     
-    if (response) {
-        [animation setDelegate:mainViewController];
-    }
+//    if (response) {
+//        [animation setDelegate:mainViewController];
+//    }
 
     [to_animate.layer addAnimation:animation forKey:@"UILabelAnimationKey"];
 }

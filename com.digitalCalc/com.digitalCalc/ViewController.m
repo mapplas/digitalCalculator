@@ -13,6 +13,7 @@
 - (void)pushMenu;
 - (void)initLayout;
 - (void)clearAll;
+- (void)initHelpActions;
 @end
 
 @implementation ViewController
@@ -28,7 +29,7 @@
     
     [self initNavBar];
     [self initLayout];
-    [self initAnimations];
+    [self initHelpActions];
 }
 
 - (IBAction)segmentedControlIndexChanged {
@@ -205,17 +206,9 @@
     return [[NSString stringWithFormat: @"%i", [self.firstArgument.text intValue] * [self.secondArgument.text intValue]] length];
 }
 
-- (void)initAnimations {    
-    labelAnimator = [[ArgumentLabelAnimator alloc] initWithViewController:self];
-    [labelAnimator animateLabel:self.firstArgument withResponse:YES];
-    
-    NSString *firstArgumentData = self.firstArgument.text;
-    if ([firstArgumentData isEqualToString:@"1"]) {
-        helpLabel.text = [NSString stringWithFormat:@"%@ %@ %@", NSLocalizedString(@"help_text_prefix", @"Help label text prefix"), firstArgumentData, NSLocalizedString(@"help_text_singular_suffix", @"Help label singular line suffix")];
-    }
-    else {
-        helpLabel.text = [NSString stringWithFormat:@"%@ %@ %@", NSLocalizedString(@"help_text_prefix", @"Help label text prefix"), firstArgumentData, NSLocalizedString(@"help_text_plural_suffix", @"Help label plural line suffix")];
-    }
+- (void)initHelpActions {
+    helpManager = [[HelpManager alloc] initWithHelpLabel:self.helpLabel button:self.helpButton andSwitch:self.helpSwitch firstArgument:self.firstArgument secondArgument:self.secondArgument];
+    [helpManager start];
 }
 
 @end

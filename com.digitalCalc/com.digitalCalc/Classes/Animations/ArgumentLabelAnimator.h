@@ -9,13 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <QuartzCore/QuartzCore.h>
 
-@class ViewController;
+@interface ArgumentLabelAnimator : NSObject
 
-@interface ArgumentLabelAnimator : NSObject {
-    ViewController *mainViewController;
-}
-
-- (id)initWithViewController:(ViewController *)main_controller;
-- (void)animateLabel:(UILabel *)to_animate withResponse:(BOOL)response;
+- (void)animateLabel:(UILabel *)to_animate;
 
 @end

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ArgumentLabelAnimator.h"
+#import "HelpManager.h"
 
 #define LINE_SEGMENT 0
 #define LINE_COLOR_RED 0.0/255.0
@@ -36,7 +36,7 @@
     CGFloat brushWidth;
     NSMutableArray *numbers;
     
-    ArgumentLabelAnimator *labelAnimator;
+    HelpManager *helpManager;
 }
 
 @property (nonatomic, strong) IBOutlet UIImageView *board;
