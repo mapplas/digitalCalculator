@@ -21,6 +21,7 @@
 @synthesize segmentedControl;
 @synthesize firstArgument, secondArgument, result;
 @synthesize resultPicker;
+@synthesize helpSwitch, helpLabel, helpButton;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -59,6 +60,18 @@
             break;
     }
     
+}
+
+- (IBAction)toggleEnabledForSwitch:(id)sender {
+    if (self.helpSwitch.isOn) {
+        self.helpLabel.text = @"Some help";
+        self.helpLabel.hidden = NO;
+        self.helpButton.hidden = NO;
+    }
+    else {
+        self.helpLabel.hidden = YES;
+        self.helpButton.hidden = YES;
+    }
 }
 
 #pragma mark - Touch methods
@@ -134,11 +147,6 @@
     return [numbers objectAtIndex:(row % 10)];
 }
 
-#pragma mark - CATransition animation delegate
-- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
-    [labelAnimator animateLabel:self.secondArgument withResponse:NO];
-}
-
 # pragma mark - Private methods
 - (void)initNavBar {
     self.title = NSLocalizedString(@"nav_bar_title", @"Nav bar title");
@@ -200,6 +208,14 @@
 - (void)initAnimations {    
     labelAnimator = [[ArgumentLabelAnimator alloc] initWithViewController:self];
     [labelAnimator animateLabel:self.firstArgument withResponse:YES];
+    
+    NSString *firstArgumentData = self.firstArgument.text;
+    if ([firstArgumentData isEqualToString:@"1"]) {
+        helpLabel.text = [NSString stringWithFormat:@"%@ %@ %@", NSLocalizedString(@"help_text_prefix", @"Help label text prefix"), firstArgumentData, NSLocalizedString(@"help_text_singular_suffix", @"Help label singular line suffix")];
+    }
+    else {
+        helpLabel.text = [NSString stringWithFormat:@"%@ %@ %@", NSLocalizedString(@"help_text_prefix", @"Help label text prefix"), firstArgumentData, NSLocalizedString(@"help_text_plural_suffix", @"Help label plural line suffix")];
+    }
 }
 
 @end

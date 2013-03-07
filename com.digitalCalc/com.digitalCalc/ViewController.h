@@ -26,7 +26,7 @@
 
 #define PICKER_VIEW_COMPONENTS 16380
 
-@interface ViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>{
+@interface ViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource> {
     CGPoint lastPoint;
     BOOL mouseSwiped;
     
@@ -48,7 +48,13 @@
 
 @property (nonatomic, strong) IBOutlet UIPickerView *resultPicker;
 
+@property (nonatomic, strong) IBOutlet UISwitch *helpSwitch;
+@property (nonatomic, strong) IBOutlet UILabel *helpLabel;
+@property (nonatomic, strong) IBOutlet UIButton *helpButton;
+
+
 - (IBAction)segmentedControlIndexChanged;
+- (IBAction)toggleEnabledForSwitch:(id)sender;
 - (IBAction)clearAll;
 
 @end
