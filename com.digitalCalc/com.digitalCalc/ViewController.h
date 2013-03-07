@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "HelpManager.h"
 
+#define digitalCalculatorNavBarColor [UIColor colorWithRed:0.66 green:0.33 blue:0.00 alpha:1.0]
+
 #define LINE_SEGMENT 0
 #define LINE_COLOR_RED 0.0/255.0
 #define LINE_COLOR_GREEN 0.0/255.0

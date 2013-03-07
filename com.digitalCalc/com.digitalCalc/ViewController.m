@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "PKRevealController.h"
 
 @interface ViewController ()
 - (void)initNavBar;
@@ -151,13 +152,12 @@
 # pragma mark - Private methods
 - (void)initNavBar {
     self.title = NSLocalizedString(@"nav_bar_title", @"Nav bar title");
+    self.navigationController.navigationBar.tintColor = digitalCalculatorNavBarColor;
     
     UIImage *menuImage = [UIImage imageNamed:@"ic_menu_menu.png"];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:menuImage style:UIBarButtonItemStyleBordered target:self action:@selector(pushMenu)];
-}
-
-- (void)pushMenu {
-    // TODO
+    if (self.navigationController.revealController.type & PKRevealControllerTypeLeft) {
+        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:menuImage landscapeImagePhone:menuImage style:UIBarButtonItemStylePlain target:self action:@selector(showLeftView:)];
+    }
 }
 
 - (IBAction)clearAll {
