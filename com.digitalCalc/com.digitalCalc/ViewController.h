@@ -56,6 +56,5 @@
 
 
 - (IBAction)segmentedControlIndexChanged;
-- (IBAction)clearAll;
 
 @end

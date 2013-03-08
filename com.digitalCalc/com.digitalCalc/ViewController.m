@@ -30,6 +30,10 @@
     [self initLayout];
 }
 
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+    return UIInterfaceOrientationLandscapeRight;
+}
+
 - (IBAction)segmentedControlIndexChanged {
     // If selected segment is erase...
     UIColor *backcroundColor = self.board.backgroundColor;
@@ -58,7 +62,6 @@
             brushWidth = ERASE_BRUSH_WIDE;
             break;
     }
-    
 }
 
 #pragma mark - Touch methods
@@ -138,11 +141,14 @@
 - (void)initNavBar {
     self.title = NSLocalizedString(@"nav_bar_title", @"Nav bar title");
     self.navigationController.navigationBar.tintColor = digitalCalculatorNavBarColor;
+    self.navigationItem.titleView = self.segmentedControl;
     
     UIImage *menuImage = [UIImage imageNamed:@"ic_menu_menu.png"];
     if (self.navigationController.revealController.type & PKRevealControllerTypeLeft) {
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:menuImage landscapeImagePhone:menuImage style:UIBarButtonItemStylePlain target:self action:@selector(showLeftView)];
     }
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Clear all" style:UIBarButtonItemStylePlain target:self action:@selector(clearAll)];
 }
 
 - (void)showLeftView {
@@ -160,7 +166,7 @@
     }
 }
 
-- (IBAction)clearAll {
+- (void)clearAll {
     self.board.image = nil;
 }
 
