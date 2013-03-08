@@ -28,23 +28,10 @@
     
     [self initNavBar];
     [self initLayout];
-    
-    NSArray *segmentTextContent = [NSArray arrayWithObjects:NSLocalizedString(@"Dashboard", @""),NSLocalizedString(@"Order", @""),
-                                   NSLocalizedString(@"Product", @""),NSLocalizedString(@"More", @""),
-                                   nil];
-    UISegmentedControl *segment = [[UISegmentedControl alloc] initWithItems:segmentTextContent];
-    segment.selectedSegmentIndex = 0;
-    segment.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-    segment.segmentedControlStyle = UISegmentedControlStyleBar;
-    segment.frame = CGRectMake(0, 0, 400, 40);
-    [segment addTarget:self action:@selector(segmentAction:) forControlEvents:UIControlEventValueChanged];
-    
-    //defaultTintColor = [segmentedControl.tintColor retain];   // keep track of this for later
-    
-    segment.tintColor = [UIColor colorWithHue:8.0 saturation:8.0 brightness:8.0 alpha:1.0];
-    segment.alpha = 0.8;
-    
-    self.navigationItem.titleView = self.segmentedControl;
+}
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+    return UIInterfaceOrientationLandscapeRight;
 }
 
 - (IBAction)segmentedControlIndexChanged {
@@ -75,7 +62,6 @@
             brushWidth = ERASE_BRUSH_WIDE;
             break;
     }
-    
 }
 
 #pragma mark - Touch methods
@@ -155,6 +141,7 @@
 - (void)initNavBar {
     self.title = NSLocalizedString(@"nav_bar_title", @"Nav bar title");
     self.navigationController.navigationBar.tintColor = digitalCalculatorNavBarColor;
+    self.navigationItem.titleView = self.segmentedControl;
     
     UIImage *menuImage = [UIImage imageNamed:@"ic_menu_menu.png"];
     if (self.navigationController.revealController.type & PKRevealControllerTypeLeft) {
