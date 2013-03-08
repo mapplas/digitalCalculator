@@ -51,6 +51,8 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSString *helpCellId = @"HelpOnOffText";
+    
     UITableViewCell *cell = [[UITableViewCell alloc] init];
     
     if (indexPath.section == 0) {
@@ -67,19 +69,40 @@
                 cell.textLabel.text = NSLocalizedString(@"menu_section_levels_high", @"Menu section levels high level");
                 break;
         }
+        return cell;
+        
     } else {
+        helpCell = [tableView dequeueReusableCellWithIdentifier:helpCellId];
+        if (helpCell == nil) {
+            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"SwitchedMenuCell" owner:self options:nil];
+            helpCell = [nib objectAtIndex:0];
+        }
+        
         switch (indexPath.row) {
             case 0:
-                cell.textLabel.text = NSLocalizedString(@"menu_section_settings_help_enabled", @"Menu section settings help enabled");
+                helpCell.textLabel.text = NSLocalizedString(@"menu_section_settings_help_enabled", @"Menu section settings help enabled");
                 break;
         }
+        return helpCell;
     }
-
-    return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    if (indexPath.section == 0) {
+        
+    }
+    else {
+        switch (indexPath.row) {
+            case 0:
+                [helpCell.cellSwitch setOn:!helpCell.cellSwitch.on animated:YES];
+                break;
+                
+            default:
+                break;
+        }
+    }
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -95,6 +118,7 @@
         case 1:
             return MENU_TABLE_CONFIG_SECTION_COUNT;
             break;
+            
         default:
             return 0;
             break;

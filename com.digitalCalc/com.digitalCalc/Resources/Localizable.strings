@@ -37,10 +37,10 @@
 "menu_section_levels_low" = "Low";
 
 /* Menu section levels medium level */
-"menu_section_levels_medium" = "Medium";
+"menu_section_levels_medium" = "Medium - Coming soon";
 
 /* Menu section levels high level */
-"menu_section_levels_high" = "High";
+"menu_section_levels_high" = "High - Coming soon";
 
 /* Menu section settings help enabled */
 "menu_section_settings_help_enabled" = "Help enabled";

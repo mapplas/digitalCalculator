@@ -6,7 +6,8 @@
 //  Copyright (c) 2013 Mapplas. All rights reserved.
 //
 
-#import "ViewController.h"
+#import <UIKit/UIKit.h>
+#import "SwitchedMenuCell.h"
 
 #define MENU_TABLE_ROW_HEIGHT 50
 
@@ -14,6 +15,8 @@
 #define MENU_TABLE_LEVELS_SECTION_COUNT 3
 #define MENU_TABLE_CONFIG_SECTION_COUNT 1
 
-@interface LeftMenuViewController : UITableViewController
+@interface LeftMenuViewController : UITableViewController {
+    SwitchedMenuCell *helpCell;
+}
 
 @end
