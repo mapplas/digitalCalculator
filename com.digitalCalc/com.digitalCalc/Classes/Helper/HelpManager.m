@@ -10,12 +10,11 @@
 
 @implementation HelpManager
 
-- (id)initWithHelpLabel:(UILabel *)help_label button:(UIButton *)help_button andSwitch:(UISwitch *)help_switch firstArgument:(UILabel *)first_arg_label secondArgument:(UILabel *)second_arg_label {
+- (id)initWithHelpLabel:(UILabel *)help_label button:(UIButton *)help_button firstArgument:(UILabel *)first_arg_label secondArgument:(UILabel *)second_arg_label {
     self = [super init];
     if (self) {
         helpLabel = help_label;
         helpButton = help_button;
-        helpSwitch = help_switch;
         firstArgLabel = first_arg_label;
         secondArgLabel = second_arg_label;
         

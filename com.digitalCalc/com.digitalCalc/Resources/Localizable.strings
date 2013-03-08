@@ -26,3 +26,21 @@
 
 /* Help label plural line suffix */
 "help_text_plural_suffix" = "lines";
+
+/* Menu section levels title */
+"menu_section_levels_title" = "Levels";
+
+/* Menu section configuration title */
+"menu_section_configuration_title" = "Settings";
+
+/* Menu section levels low level */
+"menu_section_levels_low" = "Low";
+
+/* Menu section levels medium level */
+"menu_section_levels_medium" = "Medium - Coming soon";
+
+/* Menu section levels high level */
+"menu_section_levels_high" = "High - Coming soon";
+
+/* Menu section settings help enabled */
+"menu_section_settings_help_enabled" = "Help enabled";

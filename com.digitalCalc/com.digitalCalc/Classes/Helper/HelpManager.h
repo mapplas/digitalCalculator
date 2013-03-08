@@ -17,7 +17,6 @@
 @interface HelpManager : NSObject {
     UILabel *helpLabel;
     UIButton *helpButton;
-    UISwitch *helpSwitch;
     UILabel *firstArgLabel;
     UILabel *secondArgLabel;
     
@@ -26,7 +25,7 @@
     NSInteger currentAction;
 }
 
-- (id)initWithHelpLabel:(UILabel *)help_label button:(UIButton *)help_button andSwitch:(UISwitch *)help_switch firstArgument:(UILabel *)first_arg_label secondArgument:(UILabel *)second_arg_label;
+- (id)initWithHelpLabel:(UILabel *)help_label button:(UIButton *)help_button firstArgument:(UILabel *)first_arg_label secondArgument:(UILabel *)second_arg_label;
 - (void)start;
 
 @end

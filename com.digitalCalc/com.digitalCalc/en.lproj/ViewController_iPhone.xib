@@ -101,6 +101,7 @@
 						<string key="NSFrame">{{522, 39}, {40, 41}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -1549,6 +1550,7 @@
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="clearAll">id</string>
 						<string key="segmentedControlIndexChanged">id</string>
+						<string key="toggleEnabledForSwitch:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
 						<object class="IBActionInfo" key="clearAll">
@@ -1559,11 +1561,17 @@
 							<string key="name">segmentedControlIndexChanged</string>
 							<string key="candidateClassName">id</string>
 						</object>
+						<object class="IBActionInfo" key="toggleEnabledForSwitch:">
+							<string key="name">toggleEnabledForSwitch:</string>
+							<string key="candidateClassName">id</string>
+						</object>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="board">UIImageView</string>
 						<string key="firstArgument">UILabel</string>
+						<string key="helpButton">UIButton</string>
 						<string key="helpLabel">UILabel</string>
+						<string key="helpSwitch">UISwitch</string>
 						<string key="result">UITextField</string>
 						<string key="resultPicker">UIPickerView</string>
 						<string key="secondArgument">UILabel</string>
@@ -1578,9 +1586,17 @@
 							<string key="name">firstArgument</string>
 							<string key="candidateClassName">UILabel</string>
 						</object>
+						<object class="IBToOneOutletInfo" key="helpButton">
+							<string key="name">helpButton</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
 						<object class="IBToOneOutletInfo" key="helpLabel">
 							<string key="name">helpLabel</string>
 							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="helpSwitch">
+							<string key="name">helpSwitch</string>
+							<string key="candidateClassName">UISwitch</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="result">
 							<string key="name">result</string>

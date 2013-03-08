@@ -7,13 +7,12 @@
 //
 
 #import "ViewController.h"
+#import "PKRevealController.h"
 
 @interface ViewController ()
 - (void)initNavBar;
-- (void)pushMenu;
 - (void)initLayout;
 - (void)clearAll;
-- (void)initHelpActions;
 @end
 
 @implementation ViewController
@@ -22,14 +21,13 @@
 @synthesize segmentedControl;
 @synthesize firstArgument, secondArgument, result;
 @synthesize resultPicker;
-@synthesize helpSwitch, helpLabel, helpButton;
+@synthesize helpLabel, helpButton;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self initNavBar];
     [self initLayout];
-    [self initHelpActions];
 }
 
 - (IBAction)segmentedControlIndexChanged {
@@ -61,18 +59,6 @@
             break;
     }
     
-}
-
-- (IBAction)toggleEnabledForSwitch:(id)sender {
-    if (self.helpSwitch.isOn) {
-        self.helpLabel.text = @"Some help";
-        self.helpLabel.hidden = NO;
-        self.helpButton.hidden = NO;
-    }
-    else {
-        self.helpLabel.hidden = YES;
-        self.helpButton.hidden = YES;
-    }
 }
 
 #pragma mark - Touch methods
@@ -151,13 +137,27 @@
 # pragma mark - Private methods
 - (void)initNavBar {
     self.title = NSLocalizedString(@"nav_bar_title", @"Nav bar title");
+    self.navigationController.navigationBar.tintColor = digitalCalculatorNavBarColor;
     
     UIImage *menuImage = [UIImage imageNamed:@"ic_menu_menu.png"];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:menuImage style:UIBarButtonItemStyleBordered target:self action:@selector(pushMenu)];
+    if (self.navigationController.revealController.type & PKRevealControllerTypeLeft) {
+        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:menuImage landscapeImagePhone:menuImage style:UIBarButtonItemStylePlain target:self action:@selector(showLeftView)];
+    }
 }
 
-- (void)pushMenu {
-    // TODO
+- (void)showLeftView {
+    if (self.navigationController.revealController.focusedController == self.navigationController.revealController.leftViewController) {
+        [self.navigationController.revealController showViewController:self.navigationController.revealController.frontViewController];
+    }
+    else {
+        LeftMenuViewController *leftVC = (LeftMenuViewController *)self.navigationController.revealController.leftViewController;
+        leftVC.helpLabel = self.helpLabel;
+        leftVC.helpButton = self.helpButton;
+        leftVC.firstArgument = self.firstArgument;
+        leftVC.secondArgument = self.secondArgument;
+        
+        [self.navigationController.revealController showViewController:self.navigationController.revealController.leftViewController];
+    }
 }
 
 - (IBAction)clearAll {
@@ -204,11 +204,6 @@
 
 - (NSInteger)numberOfComponents {
     return [[NSString stringWithFormat: @"%i", [self.firstArgument.text intValue] * [self.secondArgument.text intValue]] length];
-}
-
-- (void)initHelpActions {
-    helpManager = [[HelpManager alloc] initWithHelpLabel:self.helpLabel button:self.helpButton andSwitch:self.helpSwitch firstArgument:self.firstArgument secondArgument:self.secondArgument];
-    [helpManager start];
 }
 
 @end

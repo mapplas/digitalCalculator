@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "HelpManager.h"
+#import "LeftMenuViewController.h"
+
+#define digitalCalculatorNavBarColor [UIColor colorWithRed:0.66 green:0.33 blue:0.00 alpha:1.0]
 
 #define LINE_SEGMENT 0
 #define LINE_COLOR_RED 0.0/255.0
@@ -48,13 +51,11 @@
 
 @property (nonatomic, strong) IBOutlet UIPickerView *resultPicker;
 
-@property (nonatomic, strong) IBOutlet UISwitch *helpSwitch;
 @property (nonatomic, strong) IBOutlet UILabel *helpLabel;
 @property (nonatomic, strong) IBOutlet UIButton *helpButton;
 
 
 - (IBAction)segmentedControlIndexChanged;
-- (IBAction)toggleEnabledForSwitch:(id)sender;
 - (IBAction)clearAll;
 
 @end

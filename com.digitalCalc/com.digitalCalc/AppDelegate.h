@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@class ViewController;
+#import "PKRevealController.h"
+#import "LeftMenuViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate> {
     UINavigationController *_navigationController;
@@ -17,6 +17,6 @@
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) UINavigationController *navigationController;
 
-@property (strong, nonatomic) ViewController *viewController;
+@property (nonatomic, strong, readwrite) PKRevealController *revealController;
 
 @end
