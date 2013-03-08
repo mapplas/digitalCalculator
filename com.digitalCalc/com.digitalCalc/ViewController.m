@@ -28,6 +28,23 @@
     
     [self initNavBar];
     [self initLayout];
+    
+    NSArray *segmentTextContent = [NSArray arrayWithObjects:NSLocalizedString(@"Dashboard", @""),NSLocalizedString(@"Order", @""),
+                                   NSLocalizedString(@"Product", @""),NSLocalizedString(@"More", @""),
+                                   nil];
+    UISegmentedControl *segment = [[UISegmentedControl alloc] initWithItems:segmentTextContent];
+    segment.selectedSegmentIndex = 0;
+    segment.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    segment.segmentedControlStyle = UISegmentedControlStyleBar;
+    segment.frame = CGRectMake(0, 0, 400, 40);
+    [segment addTarget:self action:@selector(segmentAction:) forControlEvents:UIControlEventValueChanged];
+    
+    //defaultTintColor = [segmentedControl.tintColor retain];   // keep track of this for later
+    
+    segment.tintColor = [UIColor colorWithHue:8.0 saturation:8.0 brightness:8.0 alpha:1.0];
+    segment.alpha = 0.8;
+    
+    self.navigationItem.titleView = self.segmentedControl;
 }
 
 - (IBAction)segmentedControlIndexChanged {
@@ -143,6 +160,8 @@
     if (self.navigationController.revealController.type & PKRevealControllerTypeLeft) {
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:menuImage landscapeImagePhone:menuImage style:UIBarButtonItemStylePlain target:self action:@selector(showLeftView)];
     }
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Clear all" style:UIBarButtonItemStylePlain target:self action:@selector(clearAll)];
 }
 
 - (void)showLeftView {
@@ -160,7 +179,7 @@
     }
 }
 
-- (IBAction)clearAll {
+- (void)clearAll {
     self.board.image = nil;
 }
 
