@@ -14,6 +14,8 @@
 
 @implementation LeftMenuViewController
 
+@synthesize helpButton, helpLabel, firstArgument, secondArgument;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
@@ -72,6 +74,7 @@
         return cell;
         
     } else {
+        
         helpCell = [tableView dequeueReusableCellWithIdentifier:helpCellId];
         if (helpCell == nil) {
             NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"SwitchedMenuCell" owner:self options:nil];
@@ -97,12 +100,30 @@
         switch (indexPath.row) {
             case 0:
                 [helpCell.cellSwitch setOn:!helpCell.cellSwitch.on animated:YES];
+                [self checkHelpSwitch:helpCell.cellSwitch];
                 break;
                 
             default:
                 break;
         }
     }
+}
+
+- (void)checkHelpSwitch:(UISwitch *)help_switch {
+    if (help_switch.isOn) {
+        self.helpLabel.hidden = NO;
+        self.helpButton.hidden = NO;
+        [self initHelpActions];
+    }
+    else {
+        self.helpLabel.hidden = YES;
+        self.helpButton.hidden = YES;
+    }
+}
+
+- (void)initHelpActions {
+    helpManager = [[HelpManager alloc] initWithHelpLabel:self.helpLabel button:self.helpButton firstArgument:self.firstArgument secondArgument:self.secondArgument];
+    [helpManager start];
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

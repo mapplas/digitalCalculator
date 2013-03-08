@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SwitchedMenuCell.h"
+#import "HelpManager.h"
 
 #define MENU_TABLE_ROW_HEIGHT 50
 
@@ -17,6 +18,12 @@
 
 @interface LeftMenuViewController : UITableViewController {
     SwitchedMenuCell *helpCell;
+    HelpManager *helpManager;
 }
+
+@property (nonatomic, strong) UILabel *helpLabel;
+@property (nonatomic, strong) UIButton *helpButton;
+@property (nonatomic, strong) UILabel *firstArgument;
+@property (nonatomic, strong) UILabel *secondArgument;
 
 @end

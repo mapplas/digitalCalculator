@@ -13,7 +13,6 @@
 - (void)initNavBar;
 - (void)initLayout;
 - (void)clearAll;
-- (void)initHelpActions;
 @end
 
 @implementation ViewController
@@ -22,14 +21,13 @@
 @synthesize segmentedControl;
 @synthesize firstArgument, secondArgument, result;
 @synthesize resultPicker;
-@synthesize helpSwitch, helpLabel, helpButton;
+@synthesize helpLabel, helpButton;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self initNavBar];
     [self initLayout];
-    [self initHelpActions];
 }
 
 - (IBAction)segmentedControlIndexChanged {
@@ -61,18 +59,6 @@
             break;
     }
     
-}
-
-- (IBAction)toggleEnabledForSwitch:(id)sender {
-    if (self.helpSwitch.isOn) {
-        self.helpLabel.text = @"Some help";
-        self.helpLabel.hidden = NO;
-        self.helpButton.hidden = NO;
-    }
-    else {
-        self.helpLabel.hidden = YES;
-        self.helpButton.hidden = YES;
-    }
 }
 
 #pragma mark - Touch methods
@@ -164,6 +150,12 @@
         [self.navigationController.revealController showViewController:self.navigationController.revealController.frontViewController];
     }
     else {
+        LeftMenuViewController *leftVC = (LeftMenuViewController *)self.navigationController.revealController.leftViewController;
+        leftVC.helpLabel = self.helpLabel;
+        leftVC.helpButton = self.helpButton;
+        leftVC.firstArgument = self.firstArgument;
+        leftVC.secondArgument = self.secondArgument;
+        
         [self.navigationController.revealController showViewController:self.navigationController.revealController.leftViewController];
     }
 }
@@ -212,11 +204,6 @@
 
 - (NSInteger)numberOfComponents {
     return [[NSString stringWithFormat: @"%i", [self.firstArgument.text intValue] * [self.secondArgument.text intValue]] length];
-}
-
-- (void)initHelpActions {
-    helpManager = [[HelpManager alloc] initWithHelpLabel:self.helpLabel button:self.helpButton andSwitch:self.helpSwitch firstArgument:self.firstArgument secondArgument:self.secondArgument];
-    [helpManager start];
 }
 
 @end

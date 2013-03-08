@@ -91,7 +91,6 @@
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<int key="IBUIContentHorizontalAlignment">0</int>
 								<int key="IBUIContentVerticalAlignment">0</int>
-								<bool key="IBUIOn">YES</bool>
 								<object class="NSColor" key="IBUIOnTintColor">
 									<int key="NSColorSpace">1</int>
 									<bytes key="NSRGB">MSAwLjM4MzU4NDI0NDggMC4yOTI4NTQzMDEzAA</bytes>
@@ -165,7 +164,7 @@
 						<reference key="object" ref="248707766"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="642714431"/>
-							<object class="IBNSLayoutConstraint" id="1052960347">
+							<object class="IBNSLayoutConstraint" id="725411553">
 								<reference key="firstItem" ref="248707766"/>
 								<int key="firstAttribute">6</int>
 								<int key="relation">0</int>
@@ -237,7 +236,7 @@
 						<int key="objectID">4</int>
 						<reference key="object" ref="642714431"/>
 						<array class="NSMutableArray" key="children">
-							<object class="IBNSLayoutConstraint" id="129265551">
+							<object class="IBNSLayoutConstraint" id="381831132">
 								<reference key="firstItem" ref="642714431"/>
 								<int key="firstAttribute">7</int>
 								<int key="relation">0</int>
@@ -263,7 +262,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">18</int>
-						<reference key="object" ref="129265551"/>
+						<reference key="object" ref="381831132"/>
 						<reference key="parent" ref="642714431"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -273,7 +272,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">49</int>
-						<reference key="object" ref="1052960347"/>
+						<reference key="object" ref="725411553"/>
 						<reference key="parent" ref="248707766"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -302,11 +301,11 @@
 					<reference ref="401671234"/>
 					<reference ref="1068974722"/>
 					<reference ref="855474895"/>
-					<reference ref="1052960347"/>
+					<reference ref="725411553"/>
 				</array>
 				<string key="4.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<array key="4.IBViewMetadataConstraints">
-					<reference ref="129265551"/>
+					<reference ref="381831132"/>
 				</array>
 				<boolean value="NO" key="4.IBViewMetadataTranslatesAutoresizingMaskIntoConstraints"/>
 				<string key="49.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -318,7 +317,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">50</int>
+			<int key="maxID">53</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -333,6 +332,17 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">SwitchedMenuCell</string>
 					<string key="superclassName">UITableViewCell</string>
+					<object class="NSMutableDictionary" key="actions">
+						<string key="NS.key.0">toggleSwitch:</string>
+						<string key="NS.object.0">id</string>
+					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<string key="NS.key.0">toggleSwitch:</string>
+						<object class="IBActionInfo" key="NS.object.0">
+							<string key="name">toggleSwitch:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</object>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="cellSwitch">UISwitch</string>
 						<string key="textLabel">UILabel</string>
