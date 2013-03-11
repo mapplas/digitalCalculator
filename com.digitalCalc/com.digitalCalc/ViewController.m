@@ -34,6 +34,17 @@
     return UIInterfaceOrientationLandscapeRight;
 }
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
+    return UIInterfaceOrientationIsLandscape(toInterfaceOrientation);
+}
+
+-(BOOL)shouldAutorotate {
+    return YES;
+}
+- (NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskLandscapeLeft | UIInterfaceOrientationLandscapeRight;
+}
+
 - (IBAction)segmentedControlIndexChanged {
     DeviceChooser *deviceChooser = [[DeviceChooser alloc] init];
     BOOL isIpad = [deviceChooser isPad];

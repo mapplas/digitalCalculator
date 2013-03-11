@@ -1409,33 +1409,12 @@ NSString * const PKRevealControllerRecognizesResetTapOnFrontViewKey = @"PKReveal
 
 - (NSUInteger)supportedInterfaceOrientations
 {
-    if ([self hasLeftViewController] && [self hasRightViewController])
-    {
-        return self.frontViewController.supportedInterfaceOrientations
-             & self.leftViewController.supportedInterfaceOrientations
-             & self.rightViewController.supportedInterfaceOrientations;
-    }
-    else if ([self hasLeftViewController])
-    {
-        return self.frontViewController.supportedInterfaceOrientations
-             & self.leftViewController.supportedInterfaceOrientations;
-    }
-    else if ([self hasRightViewController])
-    {
-        return self.frontViewController.supportedInterfaceOrientations
-             & self.rightViewController.supportedInterfaceOrientations;
-    }
-    else
-    {
-        return self.frontViewController.supportedInterfaceOrientations;
-    }
+    return UIInterfaceOrientationLandscapeRight | UIInterfaceOrientationLandscapeLeft;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
 {
-    return [self.frontViewController shouldAutorotateToInterfaceOrientation:toInterfaceOrientation]
-        && [self.leftViewController shouldAutorotateToInterfaceOrientation:toInterfaceOrientation]
-        && [self.rightViewController shouldAutorotateToInterfaceOrientation:toInterfaceOrientation];
+    return UIInterfaceOrientationIsLandscape(toInterfaceOrientation);
 }
 
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation

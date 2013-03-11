@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "HelpManager.h"
 #import "LeftMenuViewController.h"
-#import "deviceChooser.h"
+#import "DeviceChooser.h"
 
 #define digitalCalculatorNavBarColor [UIColor colorWithRed:0.66 green:0.33 blue:0.00 alpha:1.0]
 
