@@ -35,11 +35,6 @@
 }
 
 - (IBAction)segmentedControlIndexChanged {
-    // If selected segment is erase...
-    UIColor *backcroundColor = self.board.backgroundColor;
-    CGColorRef color = [backcroundColor CGColor];
-    const CGFloat *components = CGColorGetComponents(color);
-
     switch (self.segmentedControl.selectedSegmentIndex) {
         case LINE_SEGMENT:
             red = LINE_COLOR_RED;
@@ -56,9 +51,9 @@
             break;
             
         case ERASE_SEGMENT:
-            red = components[0];
-            green = components[1];
-            blue = components[2];
+            red = LINE_COLOR_BLUE;
+            green = LINE_COLOR_BLUE;
+            blue = LINE_COLOR_BLUE;
             brushWidth = ERASE_BRUSH_WIDE;
             break;
     }
@@ -85,8 +80,13 @@
         CGContextAddLineToPoint(UIGraphicsGetCurrentContext(), currentPoint.x, currentPoint.y);
         CGContextSetLineCap(UIGraphicsGetCurrentContext(), kCGLineCapRound);
         CGContextSetLineWidth(UIGraphicsGetCurrentContext(), brushWidth);
-        CGContextSetRGBStrokeColor(UIGraphicsGetCurrentContext(), red, green, blue, 1.0);
+        CGContextSetRGBStrokeColor(UIGraphicsGetCurrentContext(), red, green, blue, COLOR_ALPHA_OPAQUE);
         CGContextSetBlendMode(UIGraphicsGetCurrentContext(), kCGBlendModeNormal);
+        
+        if (self.segmentedControl.selectedSegmentIndex == ERASE_SEGMENT) {
+            CGContextSetRGBStrokeColor(UIGraphicsGetCurrentContext(), 0, 0, 0, COLOR_ALPHA_CLEAR);
+            CGContextSetBlendMode(UIGraphicsGetCurrentContext(), kCGBlendModeCopy);
+        }
         
         CGContextStrokePath(UIGraphicsGetCurrentContext());
         self.board.image = UIGraphicsGetImageFromCurrentImageContext();
@@ -103,7 +103,13 @@
         [self.board.image drawInRect:CGRectMake(0, 0, self.board.frame.size.width, self.board.frame.size.height)];
         CGContextSetLineCap(UIGraphicsGetCurrentContext(), kCGLineCapRound);
         CGContextSetLineWidth(UIGraphicsGetCurrentContext(), brushWidth);
-        CGContextSetRGBStrokeColor(UIGraphicsGetCurrentContext(), red, green, blue, 1.0);
+        CGContextSetRGBStrokeColor(UIGraphicsGetCurrentContext(), red, green, blue, COLOR_ALPHA_OPAQUE);
+        
+        if (self.segmentedControl.selectedSegmentIndex == ERASE_SEGMENT) {
+            CGContextSetRGBStrokeColor(UIGraphicsGetCurrentContext(), 0, 0, 0, COLOR_ALPHA_CLEAR);
+            CGContextSetBlendMode(UIGraphicsGetCurrentContext(), kCGBlendModeCopy);
+        }
+        
         CGContextMoveToPoint(UIGraphicsGetCurrentContext(), lastPoint.x, lastPoint.y);
         CGContextAddLineToPoint(UIGraphicsGetCurrentContext(), lastPoint.x, lastPoint.y);
         CGContextStrokePath(UIGraphicsGetCurrentContext());

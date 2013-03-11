@@ -27,6 +27,9 @@
 #define ERASE_SEGMENT 2
 #define ERASE_BRUSH_WIDE 35.0
 
+#define COLOR_ALPHA_OPAQUE 1.0
+#define COLOR_ALPHA_CLEAR 0.0
+
 #define PICKER_VIEW_COMPONENTS 16380
 
 @interface ViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource> {
