@@ -10,6 +10,7 @@
 #import "HelpManager.h"
 #import "LeftMenuViewController.h"
 #import "DeviceChooser.h"
+#import "LowMultLevel.h"
 
 #define digitalCalculatorNavBarColor [UIColor colorWithRed:0.66 green:0.33 blue:0.00 alpha:1.0]
 
@@ -54,6 +55,9 @@
 @property (nonatomic, strong) IBOutlet UILabel *secondArgument;
 @property (nonatomic, strong) IBOutlet UITextField *result;
 
+@property (nonatomic, strong) IBOutlet UIButton *ckeckButton;
+@property (nonatomic, strong) IBOutlet UILabel *checkedLabel;
+
 @property (nonatomic, strong) IBOutlet UIPickerView *resultPicker;
 
 @property (nonatomic, strong) IBOutlet UILabel *helpLabel;
@@ -61,5 +65,6 @@
 
 
 - (IBAction)segmentedControlIndexChanged;
+- (IBAction)checkButtonPressed:(id)sender;
 
 @end

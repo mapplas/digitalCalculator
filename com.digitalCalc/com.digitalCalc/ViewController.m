@@ -20,6 +20,7 @@
 @synthesize board;
 @synthesize segmentedControl;
 @synthesize firstArgument, secondArgument, result;
+@synthesize ckeckButton, checkedLabel;
 @synthesize resultPicker;
 @synthesize helpLabel, helpButton;
 
@@ -30,6 +31,7 @@
     [self initLayout];
 }
 
+#pragma mark - Interface orientation
 - (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
     return UIInterfaceOrientationLandscapeRight;
 }
@@ -39,12 +41,14 @@
 }
 
 -(BOOL)shouldAutorotate {
+   
     return YES;
 }
 - (NSUInteger)supportedInterfaceOrientations {
     return UIInterfaceOrientationMaskLandscapeLeft | UIInterfaceOrientationLandscapeRight;
 }
 
+#pragma mark - Segmented Control
 - (IBAction)segmentedControlIndexChanged {
     DeviceChooser *deviceChooser = [[DeviceChooser alloc] init];
     BOOL isIpad = [deviceChooser isPad];
@@ -217,9 +221,12 @@
     [numbers addObject:@"7"];
     [numbers addObject:@"8"];
     [numbers addObject:@"9"];
-        
-    self.firstArgument.text = @"5";
-    self.secondArgument.text = @"3";
+    
+    LowMultLevel *lowMultLevel = [[LowMultLevel alloc] init];
+    
+    NSInteger firstArg = [lowMultLevel giveFirstArgument];
+    self.firstArgument.text = [NSString stringWithFormat:@"%d", firstArg];
+    self.secondArgument.text = [NSString stringWithFormat:@"%d", [lowMultLevel giveSecondArgument:firstArg]];
     
     for (int i = 0; i < [self numberOfComponents]; i++) {
         [self.resultPicker selectRow:PICKER_VIEW_COMPONENTS/2 inComponent:i animated:NO];
@@ -234,6 +241,20 @@
 
 - (NSInteger)numberOfComponents {
     return [[NSString stringWithFormat: @"%i", [self.firstArgument.text intValue] * [self.secondArgument.text intValue]] length];
+}
+
+- (IBAction)checkButtonPressed:(id)sender {
+    NSInteger firstArgumentIntValue = [self.firstArgument.text integerValue];
+    NSInteger secondArgumentIntValue = [self.secondArgument.text integerValue];
+    NSInteger resultIntValue = firstArgumentIntValue * secondArgumentIntValue;
+    
+    self.checkedLabel.hidden = NO;
+    if ([self.result.text isEqualToString:[NSString stringWithFormat:@"%d", resultIntValue]]) {
+        self.checkedLabel.text = NSLocalizedString(@"result_checked_ok", @"Result ckecked OK text");
+    }
+    else {
+        self.checkedLabel.text = NSLocalizedString(@"result_checked_nok", @"Result ckecked NOK text");
+    }
 }
 
 @end

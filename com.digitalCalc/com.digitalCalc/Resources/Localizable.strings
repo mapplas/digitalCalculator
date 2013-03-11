@@ -44,3 +44,9 @@
 
 /* Menu section settings help enabled */
 "menu_section_settings_help_enabled" = "Help enabled";
+
+/* Result ckecked OK text */
+"result_checked_ok" = "GREAT!!";
+
+/* Result ckecked NOK text */
+"result_checked_nok" = "Oops! Try again...";
