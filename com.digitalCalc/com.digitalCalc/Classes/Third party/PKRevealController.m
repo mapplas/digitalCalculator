@@ -1385,31 +1385,12 @@ NSString * const PKRevealControllerRecognizesResetTapOnFrontViewKey = @"PKReveal
  */
 - (BOOL)shouldAutorotate
 {
-    if ([self hasLeftViewController] && [self hasRightViewController])
-    {
-        return [self.frontViewController shouldAutorotate]
-            && [self.leftViewController shouldAutorotate]
-            && [self.rightViewController shouldAutorotate];
-    }
-    else if ([self hasLeftViewController])
-    {
-        return [self.frontViewController shouldAutorotate]
-            && [self.leftViewController shouldAutorotate];
-    }
-    else if ([self hasRightViewController])
-    {
-        return [self.frontViewController shouldAutorotate]
-            && [self.rightViewController shouldAutorotate];
-    }
-    else
-    {
-        return [self.frontViewController shouldAutorotate];
-    }
+    return YES;
 }
 
 - (NSUInteger)supportedInterfaceOrientations
 {
-    return UIInterfaceOrientationLandscapeRight | UIInterfaceOrientationLandscapeLeft;
+    return UIInterfaceOrientationMaskLandscape;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
@@ -1421,6 +1402,10 @@ NSString * const PKRevealControllerRecognizesResetTapOnFrontViewKey = @"PKReveal
                                          duration:(NSTimeInterval)duration
 {
     [self.frontViewContainer refreshShadowWithAnimationDuration:duration];
+}
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+    return UIInterfaceOrientationLandscapeRight;
 }
 
 #pragma mark - Memory Management

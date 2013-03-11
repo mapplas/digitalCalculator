@@ -31,23 +31,6 @@
     [self initLayout];
 }
 
-#pragma mark - Interface orientation
-- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
-    return UIInterfaceOrientationLandscapeRight;
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
-    return UIInterfaceOrientationIsLandscape(toInterfaceOrientation);
-}
-
--(BOOL)shouldAutorotate {
-   
-    return YES;
-}
-- (NSUInteger)supportedInterfaceOrientations {
-    return UIInterfaceOrientationMaskLandscapeLeft | UIInterfaceOrientationLandscapeRight;
-}
-
 #pragma mark - Segmented Control
 - (IBAction)segmentedControlIndexChanged {
     DeviceChooser *deviceChooser = [[DeviceChooser alloc] init];
