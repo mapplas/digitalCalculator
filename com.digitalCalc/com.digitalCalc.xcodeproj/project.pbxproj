@@ -33,6 +33,7 @@
 		7FD4AD9716E734C700EB7CC1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD4AD9616E734C700EB7CC1 /* ViewController.m */; };
 		7FD4AD9A16E734C700EB7CC1 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FD4AD9816E734C700EB7CC1 /* ViewController_iPhone.xib */; };
 		7FD4AD9D16E734C700EB7CC1 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FD4AD9B16E734C700EB7CC1 /* ViewController_iPad.xib */; };
+		7FE6329D16EDCF2A00B2C086 /* deviceChooser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE6329C16EDCF2A00B2C086 /* deviceChooser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,8 @@
 		7FD4AD9616E734C700EB7CC1 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		7FD4AD9916E734C700EB7CC1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
 		7FD4AD9C16E734C700EB7CC1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
+		7FE6329B16EDCF2A00B2C086 /* deviceChooser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = deviceChooser.h; path = Classes/Helper/deviceChooser.h; sourceTree = "<group>"; };
+		7FE6329C16EDCF2A00B2C086 /* deviceChooser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = deviceChooser.m; path = Classes/Helper/deviceChooser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,13 +113,13 @@
 			name = Animations;
 			sourceTree = "<group>";
 		};
-		7F17E7B316E8A310009B742F /* Helper */ = {
+		7F17E7B316E8A310009B742F /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				7F17E7B416E8A335009B742F /* HelpManager.h */,
-				7F17E7B516E8A335009B742F /* HelpManager.m */,
+				7FE6329916EDCEF600B2C086 /* Help */,
+				7FE6329A16EDCF0000B2C086 /* iPhone/iPad */,
 			);
-			name = Helper;
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 		7F17E7B716E8B8ED009B742F /* Third party */ = {
@@ -155,7 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				7F17E7AD16E882C2009B742F /* Animations */,
-				7F17E7B316E8A310009B742F /* Helper */,
+				7F17E7B316E8A310009B742F /* Helpers */,
 				7F17E7B716E8B8ED009B742F /* Third party */,
 			);
 			name = Classes;
@@ -255,6 +258,24 @@
 			name = DrawingBoard;
 			sourceTree = "<group>";
 		};
+		7FE6329916EDCEF600B2C086 /* Help */ = {
+			isa = PBXGroup;
+			children = (
+				7F17E7B416E8A335009B742F /* HelpManager.h */,
+				7F17E7B516E8A335009B742F /* HelpManager.m */,
+			);
+			name = Help;
+			sourceTree = "<group>";
+		};
+		7FE6329A16EDCF0000B2C086 /* iPhone/iPad */ = {
+			isa = PBXGroup;
+			children = (
+				7FE6329B16EDCF2A00B2C086 /* deviceChooser.h */,
+				7FE6329C16EDCF2A00B2C086 /* deviceChooser.m */,
+			);
+			name = iPhone/iPad;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -338,6 +359,7 @@
 				7F17E7C016E8B9CC009B742F /* UIViewController+PKRevealController.m in Sources */,
 				7F17E7C616E8BBB8009B742F /* LeftMenuViewController.m in Sources */,
 				7F17CD0A16E8F82A008584CA /* SwitchedMenuCell.m in Sources */,
+				7FE6329D16EDCF2A00B2C086 /* deviceChooser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
