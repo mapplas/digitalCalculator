@@ -33,6 +33,21 @@
     self.tableView.scrollEnabled = NO;
 }
 
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+    return UIInterfaceOrientationLandscapeRight;
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
+    return UIInterfaceOrientationIsLandscape(toInterfaceOrientation);
+}
+
+-(BOOL)shouldAutorotate {
+    return YES;
+}
+- (NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskLandscapeLeft | UIInterfaceOrientationLandscapeRight;
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return MENU_TABLE_SECTIONS_COUNT;
 }
