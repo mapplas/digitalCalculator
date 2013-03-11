@@ -35,6 +35,9 @@
 }
 
 - (IBAction)segmentedControlIndexChanged {
+    DeviceChooser *deviceChooser = [[DeviceChooser alloc] init];
+    BOOL isIpad = [deviceChooser isPad];
+    
     switch (self.segmentedControl.selectedSegmentIndex) {
         case LINE_SEGMENT:
             red = LINE_COLOR_RED;
@@ -47,7 +50,11 @@
             red = DOT_COLOR_RED;
             green = DOT_COLOR_GREEN;
             blue = DOT_COLOR_BLUE;
-            brushWidth = DOT_BRUSH_WIDE;
+            brushWidth = DOT_BRUSH_WIDE_IPHONE;
+            
+            if (isIpad) {
+                brushWidth = DOT_BRUSH_WIDE_IPAD;
+            }
             break;
             
         case ERASE_SEGMENT:

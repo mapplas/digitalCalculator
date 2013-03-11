@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "HelpManager.h"
 #import "LeftMenuViewController.h"
+#import "deviceChooser.h"
 
 #define digitalCalculatorNavBarColor [UIColor colorWithRed:0.66 green:0.33 blue:0.00 alpha:1.0]
 
@@ -22,7 +23,8 @@
 #define DOT_COLOR_RED 255.0/255.0
 #define DOT_COLOR_GREEN 0.0/255.0
 #define DOT_COLOR_BLUE 0.0/255.0
-#define DOT_BRUSH_WIDE 35.0
+#define DOT_BRUSH_WIDE_IPAD 35.0
+#define DOT_BRUSH_WIDE_IPHONE 25.0
 
 #define ERASE_SEGMENT 2
 #define ERASE_BRUSH_WIDE 35.0
