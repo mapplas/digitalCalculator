@@ -16,14 +16,17 @@
 #define MENU_TABLE_LEVELS_SECTION_COUNT 3
 #define MENU_TABLE_CONFIG_SECTION_COUNT 1
 
+@class ViewController;
+
 @interface LeftMenuViewController : UITableViewController {
+    ViewController *mainViewController;
+    
     SwitchedMenuCell *helpCell;
-    HelpManager *helpManager;
 }
+
+- (id)initWithMainViewController:(UINavigationController *)main_view_controller;
 
 @property (nonatomic, strong) UILabel *helpLabel;
 @property (nonatomic, strong) UIButton *helpButton;
-@property (nonatomic, strong) UILabel *firstArgument;
-@property (nonatomic, strong) UILabel *secondArgument;
 
 @end

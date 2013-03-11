@@ -21,11 +21,14 @@
 @synthesize segmentedControl;
 @synthesize firstArgument, secondArgument, result;
 @synthesize ckeckButton, checkedLabel;
-@synthesize resultPicker;
 @synthesize helpLabel, helpButton;
+
+@synthesize helpEnabled;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.helpEnabled = NO;
     
     [self initNavBar];
     [self initLayout];
@@ -170,8 +173,6 @@
         LeftMenuViewController *leftVC = (LeftMenuViewController *)self.navigationController.revealController.leftViewController;
         leftVC.helpLabel = self.helpLabel;
         leftVC.helpButton = self.helpButton;
-        leftVC.firstArgument = self.firstArgument;
-        leftVC.secondArgument = self.secondArgument;
         
         [self.navigationController.revealController showViewController:self.navigationController.revealController.leftViewController];
     }
@@ -211,9 +212,9 @@
     self.firstArgument.text = [NSString stringWithFormat:@"%d", firstArg];
     self.secondArgument.text = [NSString stringWithFormat:@"%d", [lowMultLevel giveSecondArgument:firstArg]];
     
-    for (int i = 0; i < [self numberOfComponents]; i++) {
-        [self.resultPicker selectRow:PICKER_VIEW_COMPONENTS/2 inComponent:i animated:NO];
-    }
+//    for (int i = 0; i < [self numberOfComponents]; i++) {
+//        [self.resultPicker selectRow:PICKER_VIEW_COMPONENTS/2 inComponent:i animated:NO];
+//    }
     
     // Color and brush wide
     red = LINE_COLOR_RED;
@@ -237,6 +238,13 @@
     }
     else {
         self.checkedLabel.text = NSLocalizedString(@"result_checked_nok", @"Result ckecked NOK text");
+    }
+}
+
+- (void)checkHelpEnabledAfterMenuHidden {
+    if (self.helpEnabled) {
+        helpManager = [[HelpManager alloc] initWithHelpLabel:self.helpLabel button:self.helpButton firstArgument:self.firstArgument secondArgument:self.secondArgument];
+        [helpManager start];
     }
 }
 
