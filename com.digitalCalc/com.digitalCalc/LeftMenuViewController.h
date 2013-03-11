@@ -20,6 +20,7 @@
 
 @interface LeftMenuViewController : UITableViewController {
     ViewController *mainViewController;
+    BOOL changedHelpSwitchValue;
     
     SwitchedMenuCell *helpCell;
 }

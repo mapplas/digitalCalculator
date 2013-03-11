@@ -20,6 +20,7 @@
     self = [super init];
     if (self) {
         mainViewController = [main_view_controller.viewControllers objectAtIndex:0];
+        changedHelpSwitchValue = NO;
     }
     return self;
 }
@@ -133,6 +134,7 @@
 
 #pragma mark - Help actions
 - (void)checkHelpSwitch:(UISwitch *)help_switch {
+    changedHelpSwitchValue = YES;
     if (help_switch.isOn) {
         mainViewController.helpEnabled = YES;
         self.helpLabel.hidden = NO;
@@ -147,7 +149,9 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    [mainViewController checkHelpEnabledAfterMenuHidden];
+    if (changedHelpSwitchValue) {
+        [mainViewController checkHelpEnabledAfterMenuHidden];
+    }
 }
 
 @end
