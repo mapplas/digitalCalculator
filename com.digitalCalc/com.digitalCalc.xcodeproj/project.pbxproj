@@ -34,6 +34,7 @@
 		7FD4AD9A16E734C700EB7CC1 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FD4AD9816E734C700EB7CC1 /* ViewController_iPhone.xib */; };
 		7FD4AD9D16E734C700EB7CC1 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FD4AD9B16E734C700EB7CC1 /* ViewController_iPad.xib */; };
 		7FE6329D16EDCF2A00B2C086 /* deviceChooser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE6329C16EDCF2A00B2C086 /* deviceChooser.m */; };
+		7FE632A116EDEA4B00B2C086 /* LowMultLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE632A016EDEA4B00B2C086 /* LowMultLevel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,8 @@
 		7FD4AD9C16E734C700EB7CC1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
 		7FE6329B16EDCF2A00B2C086 /* deviceChooser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = deviceChooser.h; path = Classes/Helper/deviceChooser.h; sourceTree = "<group>"; };
 		7FE6329C16EDCF2A00B2C086 /* deviceChooser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = deviceChooser.m; path = Classes/Helper/deviceChooser.m; sourceTree = "<group>"; };
+		7FE6329F16EDEA4B00B2C086 /* LowMultLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LowMultLevel.h; path = Classes/Levels/LowMultLevel.h; sourceTree = "<group>"; };
+		7FE632A016EDEA4B00B2C086 /* LowMultLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LowMultLevel.m; path = Classes/Levels/LowMultLevel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +162,7 @@
 			children = (
 				7F17E7AD16E882C2009B742F /* Animations */,
 				7F17E7B316E8A310009B742F /* Helpers */,
+				7FE6329E16EDEA2F00B2C086 /* Levels */,
 				7F17E7B716E8B8ED009B742F /* Third party */,
 			);
 			name = Classes;
@@ -276,6 +280,15 @@
 			name = iPhone/iPad;
 			sourceTree = "<group>";
 		};
+		7FE6329E16EDEA2F00B2C086 /* Levels */ = {
+			isa = PBXGroup;
+			children = (
+				7FE6329F16EDEA4B00B2C086 /* LowMultLevel.h */,
+				7FE632A016EDEA4B00B2C086 /* LowMultLevel.m */,
+			);
+			name = Levels;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -360,6 +373,7 @@
 				7F17E7C616E8BBB8009B742F /* LeftMenuViewController.m in Sources */,
 				7F17CD0A16E8F82A008584CA /* SwitchedMenuCell.m in Sources */,
 				7FE6329D16EDCF2A00B2C086 /* deviceChooser.m in Sources */,
+				7FE632A116EDEA4B00B2C086 /* LowMultLevel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

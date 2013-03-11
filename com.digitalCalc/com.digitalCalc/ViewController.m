@@ -30,6 +30,7 @@
     [self initLayout];
 }
 
+#pragma mark - Interface orientation
 - (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
     return UIInterfaceOrientationLandscapeRight;
 }
@@ -39,12 +40,14 @@
 }
 
 -(BOOL)shouldAutorotate {
+   
     return YES;
 }
 - (NSUInteger)supportedInterfaceOrientations {
     return UIInterfaceOrientationMaskLandscapeLeft | UIInterfaceOrientationLandscapeRight;
 }
 
+#pragma mark - Segmented Control
 - (IBAction)segmentedControlIndexChanged {
     DeviceChooser *deviceChooser = [[DeviceChooser alloc] init];
     BOOL isIpad = [deviceChooser isPad];
@@ -217,9 +220,12 @@
     [numbers addObject:@"7"];
     [numbers addObject:@"8"];
     [numbers addObject:@"9"];
-        
-    self.firstArgument.text = @"5";
-    self.secondArgument.text = @"3";
+    
+    LowMultLevel *lowMultLevel = [[LowMultLevel alloc] init];
+    
+    NSInteger firstArg = [lowMultLevel giveFirstArgument];
+    self.firstArgument.text = [NSString stringWithFormat:@"%d", firstArg];
+    self.secondArgument.text = [NSString stringWithFormat:@"%d", [lowMultLevel giveSecondArgument:firstArg]];
     
     for (int i = 0; i < [self numberOfComponents]; i++) {
         [self.resultPicker selectRow:PICKER_VIEW_COMPONENTS/2 inComponent:i animated:NO];
