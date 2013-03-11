@@ -35,6 +35,7 @@
 		7FD4AD9D16E734C700EB7CC1 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FD4AD9B16E734C700EB7CC1 /* ViewController_iPad.xib */; };
 		7FE6329D16EDCF2A00B2C086 /* deviceChooser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE6329C16EDCF2A00B2C086 /* deviceChooser.m */; };
 		7FE632A116EDEA4B00B2C086 /* LowMultLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE632A016EDEA4B00B2C086 /* LowMultLevel.m */; };
+		7FE632A316EDF0C700B2C086 /* ic_check.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FE632A216EDF0C700B2C086 /* ic_check.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		7FE6329C16EDCF2A00B2C086 /* deviceChooser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = deviceChooser.m; path = Classes/Helper/deviceChooser.m; sourceTree = "<group>"; };
 		7FE6329F16EDEA4B00B2C086 /* LowMultLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LowMultLevel.h; path = Classes/Levels/LowMultLevel.h; sourceTree = "<group>"; };
 		7FE632A016EDEA4B00B2C086 /* LowMultLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LowMultLevel.m; path = Classes/Levels/LowMultLevel.m; sourceTree = "<group>"; };
+		7FE632A216EDF0C700B2C086 /* ic_check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_check.png; path = Resources/ic_check.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 		7F4401C016E7491000886CBE /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				7FE632A216EDF0C700B2C086 /* ic_check.png */,
 				7F4401C116E7491B00886CBE /* ic_menu_menu.png */,
 				7F4401C216E7491B00886CBE /* ic_menu_menu@2x.png */,
 			);
@@ -352,6 +355,7 @@
 				7F17CD0D16E8F845008584CA /* SwitchedMenuCell.xib in Resources */,
 				7F9E39A716E9E3520038893A /* bkg.png in Resources */,
 				7F9E39A816E9E3520038893A /* bkg@2.png in Resources */,
+				7FE632A316EDF0C700B2C086 /* ic_check.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

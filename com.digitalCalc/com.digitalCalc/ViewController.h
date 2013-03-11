@@ -55,6 +55,9 @@
 @property (nonatomic, strong) IBOutlet UILabel *secondArgument;
 @property (nonatomic, strong) IBOutlet UITextField *result;
 
+@property (nonatomic, strong) IBOutlet UIButton *ckeckButton;
+@property (nonatomic, strong) IBOutlet UILabel *checkedLabel;
+
 @property (nonatomic, strong) IBOutlet UIPickerView *resultPicker;
 
 @property (nonatomic, strong) IBOutlet UILabel *helpLabel;
@@ -62,5 +65,6 @@
 
 
 - (IBAction)segmentedControlIndexChanged;
+- (IBAction)checkButtonPressed:(id)sender;
 
 @end

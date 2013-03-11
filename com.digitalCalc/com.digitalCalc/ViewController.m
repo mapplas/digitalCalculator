@@ -20,6 +20,7 @@
 @synthesize board;
 @synthesize segmentedControl;
 @synthesize firstArgument, secondArgument, result;
+@synthesize ckeckButton, checkedLabel;
 @synthesize resultPicker;
 @synthesize helpLabel, helpButton;
 
@@ -240,6 +241,20 @@
 
 - (NSInteger)numberOfComponents {
     return [[NSString stringWithFormat: @"%i", [self.firstArgument.text intValue] * [self.secondArgument.text intValue]] length];
+}
+
+- (IBAction)checkButtonPressed:(id)sender {
+    NSInteger firstArgumentIntValue = [self.firstArgument.text integerValue];
+    NSInteger secondArgumentIntValue = [self.secondArgument.text integerValue];
+    NSInteger resultIntValue = firstArgumentIntValue * secondArgumentIntValue;
+    
+    self.checkedLabel.hidden = NO;
+    if ([self.result.text isEqualToString:[NSString stringWithFormat:@"%d", resultIntValue]]) {
+        self.checkedLabel.text = NSLocalizedString(@"result_checked_ok", @"Result ckecked OK text");
+    }
+    else {
+        self.checkedLabel.text = NSLocalizedString(@"result_checked_nok", @"Result ckecked NOK text");
+    }
 }
 
 @end
