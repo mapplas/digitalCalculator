@@ -30,7 +30,7 @@
                               PKRevealControllerRecognizesPanningOnFrontViewKey : [NSNumber numberWithBool:NO]
                               };    
     
-    UIViewController *leftViewController = [[LeftMenuViewController alloc] init];
+    UIViewController *leftViewController = [[LeftMenuViewController alloc] initWithMainViewController:frontViewController];
     self.revealController = [PKRevealController revealControllerWithFrontViewController:frontViewController
                                                                      leftViewController:leftViewController
                                                                                 options:options];

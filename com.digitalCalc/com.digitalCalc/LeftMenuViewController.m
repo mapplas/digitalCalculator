@@ -7,19 +7,20 @@
 //
 
 #import "LeftMenuViewController.h"
+#import "ViewController.h"
 
 @interface LeftMenuViewController ()
-
 @end
 
 @implementation LeftMenuViewController
 
-@synthesize helpButton, helpLabel, firstArgument, secondArgument;
+@synthesize helpButton, helpLabel;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+- (id)initWithMainViewController:(UINavigationController *)main_view_controller {
+    self = [super init];
     if (self) {
-        // Custom initialization
+        mainViewController = [main_view_controller.viewControllers objectAtIndex:0];
+        changedHelpSwitchValue = NO;
     }
     return self;
 }
@@ -33,21 +34,7 @@
     self.tableView.scrollEnabled = NO;
 }
 
-- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
-    return UIInterfaceOrientationLandscapeRight;
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
-    return UIInterfaceOrientationIsLandscape(toInterfaceOrientation);
-}
-
--(BOOL)shouldAutorotate {
-    return YES;
-}
-- (NSUInteger)supportedInterfaceOrientations {
-    return UIInterfaceOrientationMaskLandscapeLeft | UIInterfaceOrientationLandscapeRight;
-}
-
+#pragma mark - UITableViewDataSource and Delate methods
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return MENU_TABLE_SECTIONS_COUNT;
 }
@@ -61,6 +48,7 @@
         case 1:
             return NSLocalizedString(@"menu_section_configuration_title", @"Menu section configuration title");            
             break;
+            
         default:
             return @"";
             break;
@@ -124,23 +112,6 @@
     }
 }
 
-- (void)checkHelpSwitch:(UISwitch *)help_switch {
-    if (help_switch.isOn) {
-        self.helpLabel.hidden = NO;
-        self.helpButton.hidden = NO;
-        [self initHelpActions];
-    }
-    else {
-        self.helpLabel.hidden = YES;
-        self.helpButton.hidden = YES;
-    }
-}
-
-- (void)initHelpActions {
-    helpManager = [[HelpManager alloc] initWithHelpLabel:self.helpLabel button:self.helpButton firstArgument:self.firstArgument secondArgument:self.secondArgument];
-    [helpManager start];
-}
-
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return MENU_TABLE_ROW_HEIGHT;
 }
@@ -158,6 +129,28 @@
         default:
             return 0;
             break;
+    }
+}
+
+#pragma mark - Help actions
+- (void)checkHelpSwitch:(UISwitch *)help_switch {
+    changedHelpSwitchValue = YES;
+    if (help_switch.isOn) {
+        mainViewController.helpEnabled = YES;
+        self.helpLabel.hidden = NO;
+        self.helpButton.hidden = NO;
+    }
+    else {
+        mainViewController.helpEnabled = NO;
+        self.helpLabel.hidden = YES;
+        self.helpButton.hidden = YES;
+    }
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    if (changedHelpSwitchValue) {
+        [mainViewController checkHelpEnabledAfterMenuHidden];
     }
 }
 

@@ -58,13 +58,15 @@
 @property (nonatomic, strong) IBOutlet UIButton *ckeckButton;
 @property (nonatomic, strong) IBOutlet UILabel *checkedLabel;
 
-@property (nonatomic, strong) IBOutlet UIPickerView *resultPicker;
-
 @property (nonatomic, strong) IBOutlet UILabel *helpLabel;
 @property (nonatomic, strong) IBOutlet UIButton *helpButton;
+
+@property (nonatomic) BOOL helpEnabled;
 
 
 - (IBAction)segmentedControlIndexChanged;
 - (IBAction)checkButtonPressed:(id)sender;
+
+- (void)checkHelpEnabledAfterMenuHidden;
 
 @end
