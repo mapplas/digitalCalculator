@@ -23,7 +23,7 @@
 @synthesize firstArgument, secondArgument, result;
 @synthesize resultSlider;
 @synthesize ckeckButton, checkedLabel;
-@synthesize helpLabel, helpButton;
+@synthesize helpView, helpLabel, helpButton;
 
 @synthesize helpEnabled;
 
@@ -75,9 +75,19 @@
 
     UITouch *touch = [touches anyObject];
     lastPoint = [touch locationInView:self.board];
+    
+    // If helpView is visible set as hidden
+    if (!self.helpView.hidden) {
+        self.helpView.hidden = YES;
+    }
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    // If helpView is visible set as hidden
+    if (!self.helpView.hidden) {
+        self.helpView.hidden = YES;
+    }
+    
     UITouch *touch = [touches anyObject];
     CGPoint currentPoint = [touch locationInView:self.board];
     
@@ -108,6 +118,11 @@
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    // If helpView is visible set as hidden
+    if (!self.helpView.hidden) {
+        self.helpView.hidden = YES;
+    }
+    
     if(!mouseSwiped) {
         UIGraphicsBeginImageContext(self.board.frame.size);
         [self.board.image drawInRect:CGRectMake(0, 0, self.board.frame.size.width, self.board.frame.size.height)];
@@ -156,6 +171,7 @@
         LeftMenuViewController *leftVC = (LeftMenuViewController *)self.navigationController.revealController.leftViewController;
         leftVC.helpLabel = self.helpLabel;
         leftVC.helpButton = self.helpButton;
+        leftVC.helpView = self.helpView;
         
         [self.navigationController.revealController showViewController:self.navigationController.revealController.leftViewController];
     }
@@ -191,6 +207,8 @@
     
     level = LEVEL_LOW;
     [self ckeckLevel];
+    
+    [self.helpButton setTitle:NSLocalizedString(@"help_next_clue_button", @"Help next clue button text") forState:UIControlStateNormal];
     
     // Color and brush wide
     red = LINE_COLOR_RED;
@@ -240,9 +258,10 @@
 
 - (void)checkHelpEnabledAfterMenuHidden {
     if (self.helpEnabled) {
-        helpManager = [[HelpManager alloc] initWithHelpLabel:self.helpLabel button:self.helpButton firstArgument:self.firstArgument secondArgument:self.secondArgument];
+        helpManager = [[HelpManager alloc] initWithHelpLabel:self.helpLabel button:self.helpButton firstArgument:self.firstArgument secondArgument:self.secondArgument helpView:self.helpView];
         [helpManager start];
     }
 }
+
 
 @end

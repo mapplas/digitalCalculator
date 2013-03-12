@@ -27,6 +27,9 @@
 /* Help label plural line suffix */
 "help_text_plural_suffix" = "lines";
 
+/* Help next clue button text */
+"help_next_clue_button" = "Next clue";
+
 /* Menu section levels title */
 "menu_section_levels_title" = "Levels";
 

@@ -10,13 +10,14 @@
 
 @implementation HelpManager
 
-- (id)initWithHelpLabel:(UILabel *)help_label button:(UIButton *)help_button firstArgument:(UILabel *)first_arg_label secondArgument:(UILabel *)second_arg_label {
+- (id)initWithHelpLabel:(UILabel *)help_label button:(UIButton *)help_button firstArgument:(UILabel *)first_arg_label secondArgument:(UILabel *)second_arg_label helpView:(UIView *)help_view {
     self = [super init];
     if (self) {
         helpLabel = help_label;
         helpButton = help_button;
         firstArgLabel = first_arg_label;
         secondArgLabel = second_arg_label;
+        helpView = help_view;
         
         currentAction = HELP_FIRST_ARG_ACTION_FINISHED;
         [helpButton addTarget:self action:@selector(nextCluePressed) forControlEvents:UIControlEventTouchUpInside];
@@ -25,8 +26,8 @@
 }
 
 - (void)start {
-    labelAnimator = [[ArgumentLabelAnimator alloc] init];
-    [self animateLabel:firstArgLabel];
+//    labelAnimator = [[ArgumentLabelAnimator alloc] init];
+//    [self animateLabel:firstArgLabel];
     [self setHelpText];
 }
 
@@ -34,7 +35,7 @@
     switch (currentAction) {
         case HELP_FIRST_ARG_ACTION_FINISHED:
             currentAction = HELP_SECOND_ARG_ACTION_FINISHED;
-            [self animateLabel:secondArgLabel];
+//            [self animateLabel:secondArgLabel];
             [self setHelpText];
             break;
             
@@ -55,11 +56,13 @@
     }
 }
 
-- (void)animateLabel:(UILabel *)_label {
-    [labelAnimator animateLabel:_label];    
-}
+//- (void)animateLabel:(UILabel *)_label {
+//    [labelAnimator animateLabel:_label];    
+//}
 
 - (void)setHelpText {
+    helpView.hidden = NO;
+    
     switch (currentAction) {
         case HELP_FIRST_ARG_ACTION_FINISHED:
             [self helpForLabel:firstArgLabel];
