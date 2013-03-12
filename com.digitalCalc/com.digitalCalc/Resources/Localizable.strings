@@ -49,7 +49,7 @@
 "menu_section_settings_help_enabled" = "Help enabled";
 
 /* Result ckecked OK text */
-"result_checked_ok" = "GREAT!!";
+"result_checked_ok" = "GREAT!! Tap to continue!";
 
 /* Result ckecked NOK text */
 "result_checked_nok" = "Oops! Try again...";

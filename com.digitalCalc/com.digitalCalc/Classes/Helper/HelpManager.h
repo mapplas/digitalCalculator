@@ -28,5 +28,6 @@
 
 - (id)initWithHelpLabel:(UILabel *)help_label button:(UIButton *)help_button firstArgument:(UILabel *)first_arg_label secondArgument:(UILabel *)second_arg_label helpView:(UIView *)help_view;
 - (void)start;
+- (void)hideElements;
 
 @end

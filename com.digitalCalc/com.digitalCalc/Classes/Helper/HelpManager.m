@@ -95,6 +95,11 @@
     }
 }
 
+- (void)hideElements {
+    helpView.hidden = YES;
+    helpLabel.hidden = YES;
+    helpButton.hidden = YES;
+}
 
 
 @end
