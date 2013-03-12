@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SwitchedMenuCell.h"
-#import "HelpManager.h"
+#import "LevelMenuCell.h"
 
 #define MENU_TABLE_ROW_HEIGHT 50
 
@@ -23,6 +23,7 @@
     BOOL changedHelpSwitchValue;
     
     SwitchedMenuCell *helpCell;
+    LevelMenuCell *levelMenuCell;
 }
 
 - (id)initWithMainViewController:(UINavigationController *)main_view_controller;
