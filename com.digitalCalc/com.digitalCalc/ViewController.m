@@ -225,6 +225,8 @@
     brushWidth = LINE_BRUSH_WIDE;
     
     [self checkHelpEnabledAfterMenuHidden];
+    
+    self.segmentedControl.selectedSegmentIndex = 0;
 }
 
 - (void)ckeckLevel {
