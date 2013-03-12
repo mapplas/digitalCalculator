@@ -33,6 +33,8 @@
 		7FD4AD9716E734C700EB7CC1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD4AD9616E734C700EB7CC1 /* ViewController.m */; };
 		7FD4AD9A16E734C700EB7CC1 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FD4AD9816E734C700EB7CC1 /* ViewController_iPhone.xib */; };
 		7FD4AD9D16E734C700EB7CC1 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FD4AD9B16E734C700EB7CC1 /* ViewController_iPad.xib */; };
+		7FD9D31E16EF23680009BB0E /* LevelMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD9D31D16EF23680009BB0E /* LevelMenuCell.m */; };
+		7FD9D32116EF23920009BB0E /* LevelMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FD9D31F16EF23920009BB0E /* LevelMenuCell.xib */; };
 		7FE6329D16EDCF2A00B2C086 /* deviceChooser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE6329C16EDCF2A00B2C086 /* deviceChooser.m */; };
 		7FE632A116EDEA4B00B2C086 /* LowMultLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE632A016EDEA4B00B2C086 /* LowMultLevel.m */; };
 		7FE632A316EDF0C700B2C086 /* ic_check.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FE632A216EDF0C700B2C086 /* ic_check.png */; };
@@ -77,6 +79,9 @@
 		7FD4AD9616E734C700EB7CC1 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		7FD4AD9916E734C700EB7CC1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
 		7FD4AD9C16E734C700EB7CC1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
+		7FD9D31C16EF23680009BB0E /* LevelMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LevelMenuCell.h; path = Classes/LevelMenuCell.h; sourceTree = "<group>"; };
+		7FD9D31D16EF23680009BB0E /* LevelMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LevelMenuCell.m; path = Classes/LevelMenuCell.m; sourceTree = "<group>"; };
+		7FD9D32016EF23920009BB0E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/LevelMenuCell.xib; sourceTree = "<group>"; };
 		7FE6329B16EDCF2A00B2C086 /* deviceChooser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = deviceChooser.h; path = Classes/Helper/deviceChooser.h; sourceTree = "<group>"; };
 		7FE6329C16EDCF2A00B2C086 /* deviceChooser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = deviceChooser.m; path = Classes/Helper/deviceChooser.m; sourceTree = "<group>"; };
 		7FE6329F16EDEA4B00B2C086 /* LowMultLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LowMultLevel.h; path = Classes/Levels/LowMultLevel.h; sourceTree = "<group>"; };
@@ -102,9 +107,8 @@
 		7F17CD0416E8F7DA008584CA /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				7F17CD0816E8F82A008584CA /* SwitchedMenuCell.h */,
-				7F17CD0916E8F82A008584CA /* SwitchedMenuCell.m */,
-				7F17CD0B16E8F845008584CA /* SwitchedMenuCell.xib */,
+				7FD9D31B16EF23480009BB0E /* Help */,
+				7FD9D31A16EF23420009BB0E /* Levels */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -266,6 +270,26 @@
 			name = DrawingBoard;
 			sourceTree = "<group>";
 		};
+		7FD9D31A16EF23420009BB0E /* Levels */ = {
+			isa = PBXGroup;
+			children = (
+				7FD9D31C16EF23680009BB0E /* LevelMenuCell.h */,
+				7FD9D31D16EF23680009BB0E /* LevelMenuCell.m */,
+				7FD9D31F16EF23920009BB0E /* LevelMenuCell.xib */,
+			);
+			name = Levels;
+			sourceTree = "<group>";
+		};
+		7FD9D31B16EF23480009BB0E /* Help */ = {
+			isa = PBXGroup;
+			children = (
+				7F17CD0816E8F82A008584CA /* SwitchedMenuCell.h */,
+				7F17CD0916E8F82A008584CA /* SwitchedMenuCell.m */,
+				7F17CD0B16E8F845008584CA /* SwitchedMenuCell.xib */,
+			);
+			name = Help;
+			sourceTree = "<group>";
+		};
 		7FE6329916EDCEF600B2C086 /* Help */ = {
 			isa = PBXGroup;
 			children = (
@@ -357,6 +381,7 @@
 				7F9E39A716E9E3520038893A /* bkg.png in Resources */,
 				7F9E39A816E9E3520038893A /* bkg@2.png in Resources */,
 				7FE632A316EDF0C700B2C086 /* ic_check.png in Resources */,
+				7FD9D32116EF23920009BB0E /* LevelMenuCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,6 +404,7 @@
 				7F17CD0A16E8F82A008584CA /* SwitchedMenuCell.m in Sources */,
 				7FE6329D16EDCF2A00B2C086 /* deviceChooser.m in Sources */,
 				7FE632A116EDEA4B00B2C086 /* LowMultLevel.m in Sources */,
+				7FD9D31E16EF23680009BB0E /* LevelMenuCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +441,14 @@
 				7FD4AD9C16E734C700EB7CC1 /* en */,
 			);
 			name = ViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+		7FD9D31F16EF23920009BB0E /* LevelMenuCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7FD9D32016EF23920009BB0E /* en */,
+			);
+			name = LevelMenuCell.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

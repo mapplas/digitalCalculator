@@ -57,24 +57,30 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *helpCellId = @"HelpOnOffText";
-    
-    UITableViewCell *cell = [[UITableViewCell alloc] init];
+    NSString *levelCellId = @"LevelMenuText";
     
     if (indexPath.section == 0) {
+        levelMenuCell = [tableView dequeueReusableCellWithIdentifier:levelCellId];
+        if (levelMenuCell == nil) {
+            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"LevelMenuCell" owner:self options:nil];
+            levelMenuCell = [nib objectAtIndex:0];
+        }
+        
         switch (indexPath.row) {
             case 0:
-                cell.textLabel.text = NSLocalizedString(@"menu_section_levels_low", @"Menu section levels low level");
+                levelMenuCell.textLabel.text = NSLocalizedString(@"menu_section_levels_low", @"Menu section levels low level");
+                [levelMenuCell.textLabel setFont:[UIFont boldSystemFontOfSize:17]];
                 break;
                 
             case 1:
-                cell.textLabel.text = NSLocalizedString(@"menu_section_levels_medium", @"Menu section levels medium level");
+                levelMenuCell.textLabel.text = NSLocalizedString(@"menu_section_levels_medium", @"Menu section levels medium level");
                 break;
                 
             case 2:
-                cell.textLabel.text = NSLocalizedString(@"menu_section_levels_high", @"Menu section levels high level");
+                levelMenuCell.textLabel.text = NSLocalizedString(@"menu_section_levels_high", @"Menu section levels high level");
                 break;
         }
-        return cell;
+        return levelMenuCell;
         
     } else {
         
