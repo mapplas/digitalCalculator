@@ -28,6 +28,7 @@
 //    labelAnimator = [[ArgumentLabelAnimator alloc] init];
 //    [self animateLabel:firstArgLabel];
     currentAction = HELP_FIRST_ARG_ACTION_FINISHED;
+    helpButton.enabled = YES;
     [self setHelpText];
 }
 
@@ -51,6 +52,7 @@
             
         case HELP_RESULT_ACTION_DONE:
             currentAction = HELP_RESULT_ACTION_CHECK_PRESSED;
+            helpButton.enabled = NO;
             [self setHelpText];
             break;
     }
@@ -82,6 +84,7 @@
         
         case HELP_RESULT_ACTION_CHECK_PRESSED:
             helpLabel.text = @"press check button!";
+            break;
     }
 }
 
