@@ -19,7 +19,6 @@
         secondArgLabel = second_arg_label;
         helpView = help_view;
         
-        currentAction = HELP_FIRST_ARG_ACTION_FINISHED;
         [helpButton addTarget:self action:@selector(nextCluePressed) forControlEvents:UIControlEventTouchUpInside];
     }
     return self;
@@ -28,6 +27,7 @@
 - (void)start {
 //    labelAnimator = [[ArgumentLabelAnimator alloc] init];
 //    [self animateLabel:firstArgLabel];
+    currentAction = HELP_FIRST_ARG_ACTION_FINISHED;
     [self setHelpText];
 }
 

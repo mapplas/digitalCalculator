@@ -32,7 +32,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.helpEnabled = NO;
+    self.helpEnabled = YES;
     
     [self initNavBar];
     [self initLayout];
@@ -73,12 +73,10 @@
 
 #pragma mark - Touch methods
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    if (![self checkVisibleLabels]) {
-        mouseSwiped = NO;
+    mouseSwiped = NO;
         
-        UITouch *touch = [touches anyObject];
-        lastPoint = [touch locationInView:self.board];
-    }
+    UITouch *touch = [touches anyObject];
+    lastPoint = [touch locationInView:self.board];
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -113,7 +111,7 @@
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-    
+    if (![self checkVisibleLabels]) {
         if(!mouseSwiped) {
             UIGraphicsBeginImageContext(self.board.frame.size);
             [self.board.image drawInRect:CGRectMake(0, 0, self.board.frame.size.width, self.board.frame.size.height)];
@@ -133,6 +131,7 @@
             self.board.image = UIGraphicsGetImageFromCurrentImageContext();
             UIGraphicsEndImageContext();
         }
+    }
 }
 
 #pragma mark - UISlider methods
@@ -206,7 +205,10 @@
     // Next help text button
     [self.helpButton setTitle:NSLocalizedString(@"help_next_clue_button", @"Help next clue button text") forState:UIControlStateNormal];
     
+    helpManager = [[HelpManager alloc] initWithHelpLabel:self.helpLabel button:self.helpButton firstArgument:self.firstArgument secondArgument:self.secondArgument helpView:self.helpView];
+
     [self reset];
+    [self checkHelpEnabledAfterMenuHidden];
 }
 
 - (void)reset {
@@ -221,6 +223,8 @@
     green = LINE_COLOR_GREEN;
     blue = LINE_COLOR_BLUE;
     brushWidth = LINE_BRUSH_WIDE;
+    
+    [self checkHelpEnabledAfterMenuHidden];
 }
 
 - (void)ckeckLevel {
@@ -249,13 +253,12 @@
 //}
 
 - (IBAction)checkButtonPressed:(id)sender {
-    // Hide help elements
-    [helpManager hideElements];
-    
     NSInteger firstArgumentIntValue = [self.firstArgument.text integerValue];
     NSInteger secondArgumentIntValue = [self.secondArgument.text integerValue];
     NSInteger resultIntValue = firstArgumentIntValue * secondArgumentIntValue;
     
+    self.helpLabel.text = @"";
+
     self.checkedLabel.hidden = NO;
     if ([self.result.text isEqualToString:[NSString stringWithFormat:@"%d", resultIntValue]]) {
         self.checkedLabel.text = NSLocalizedString(@"result_checked_ok", @"Result ckecked OK text");
@@ -267,7 +270,6 @@
 
 - (void)checkHelpEnabledAfterMenuHidden {
     if (self.helpEnabled) {
-        helpManager = [[HelpManager alloc] initWithHelpLabel:self.helpLabel button:self.helpButton firstArgument:self.firstArgument secondArgument:self.secondArgument helpView:self.helpView];
         [helpManager start];
     }
 }
