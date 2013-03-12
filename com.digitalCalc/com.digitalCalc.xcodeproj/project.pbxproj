@@ -114,6 +114,7 @@
 			children = (
 				7F17E7AE16E8836B009B742F /* ArgumentLabelAnimator.h */,
 				7F17E7AF16E8836B009B742F /* ArgumentLabelAnimator.m */,
+				7FD4AD7B16E734C700EB7CC1 /* Products */,
 			);
 			name = Animations;
 			sourceTree = "<group>";
@@ -204,7 +205,6 @@
 			children = (
 				7FD4AD8316E734C700EB7CC1 /* com.digitalCalc */,
 				7FD4AD7C16E734C700EB7CC1 /* Frameworks */,
-				7FD4AD7B16E734C700EB7CC1 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -214,6 +214,7 @@
 				7FD4AD7A16E734C700EB7CC1 /* com.digitalCalc.app */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		7FD4AD7C16E734C700EB7CC1 /* Frameworks */ = {
