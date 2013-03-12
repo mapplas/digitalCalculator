@@ -84,15 +84,25 @@
     
         if (self.segmentedControl.selectedSegmentIndex != DOT_SEGMENT) {
             mouseSwiped = YES;
+            
+//            UIColor *brushPattern = [[UIColor alloc]initWithPatternImage:[UIImage imageNamed:@"chalk.png"]];
+//            CGColorRef fillColor = [brushPattern CGColor];
+//            CGColorRef strokeColor = [brushPattern CGColor];
+            
+            // Probably in |draw| method call.
+
         
             UIGraphicsBeginImageContext(self.board.frame.size);
             [self.board.image drawInRect:CGRectMake(0, 0, self.board.frame.size.width, self.board.frame.size.height)];
             CGContextMoveToPoint(UIGraphicsGetCurrentContext(), lastPoint.x, lastPoint.y);
             CGContextAddLineToPoint(UIGraphicsGetCurrentContext(), currentPoint.x, currentPoint.y);
-            CGContextSetLineCap(UIGraphicsGetCurrentContext(), kCGLineCapRound);
+            CGContextSetLineCap(UIGraphicsGetCurrentContext(), kCGLineCapSquare);
             CGContextSetLineWidth(UIGraphicsGetCurrentContext(), brushWidth);
             CGContextSetRGBStrokeColor(UIGraphicsGetCurrentContext(), red, green, blue, COLOR_ALPHA_OPAQUE);
             CGContextSetBlendMode(UIGraphicsGetCurrentContext(), kCGBlendModeNormal);
+            
+//            CGContextSetStrokeColorWithColor(UIGraphicsGetCurrentContext(), strokeColor);
+//            CGContextSetFillColorWithColor(UIGraphicsGetCurrentContext(), fillColor);
         
             if (self.segmentedControl.selectedSegmentIndex == ERASE_SEGMENT) {
                 CGContextSetRGBStrokeColor(UIGraphicsGetCurrentContext(), 0, 0, 0, COLOR_ALPHA_CLEAR);
