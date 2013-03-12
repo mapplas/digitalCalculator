@@ -33,9 +33,11 @@
 #define COLOR_ALPHA_OPAQUE 1.0
 #define COLOR_ALPHA_CLEAR 0.0
 
-#define PICKER_VIEW_COMPONENTS 16380
+#define LEVEL_LOW 1
+#define LEVEL_MEDIUM 2
+#define LEVEL_HIGH 3
 
-@interface ViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource> {
+@interface ViewController : UIViewController {
     CGPoint lastPoint;
     BOOL mouseSwiped;
     
@@ -46,6 +48,8 @@
     NSMutableArray *numbers;
     
     HelpManager *helpManager;
+    
+    NSInteger level;
 }
 
 @property (nonatomic, strong) IBOutlet UIImageView *board;
@@ -53,7 +57,9 @@
 
 @property (nonatomic, strong) IBOutlet UILabel *firstArgument;
 @property (nonatomic, strong) IBOutlet UILabel *secondArgument;
-@property (nonatomic, strong) IBOutlet UITextField *result;
+@property (nonatomic, strong) IBOutlet UILabel *result;
+
+@property (nonatomic, strong) IBOutlet UISlider *resultSlider;
 
 @property (nonatomic, strong) IBOutlet UIButton *ckeckButton;
 @property (nonatomic, strong) IBOutlet UILabel *checkedLabel;
@@ -66,6 +72,7 @@
 
 - (IBAction)segmentedControlIndexChanged;
 - (IBAction)checkButtonPressed:(id)sender;
+- (IBAction)sliderValueChanged:(UISlider *)sender;
 
 - (void)checkHelpEnabledAfterMenuHidden;
 

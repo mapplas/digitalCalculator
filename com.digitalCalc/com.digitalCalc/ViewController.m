@@ -13,6 +13,7 @@
 - (void)initNavBar;
 - (void)initLayout;
 - (void)clearAll;
+- (void)ckeckLevel;
 @end
 
 @implementation ViewController
@@ -20,6 +21,7 @@
 @synthesize board;
 @synthesize segmentedControl;
 @synthesize firstArgument, secondArgument, result;
+@synthesize resultSlider;
 @synthesize ckeckButton, checkedLabel;
 @synthesize helpLabel, helpButton;
 
@@ -127,28 +129,9 @@
     }
 }
 
-# pragma mark - UIViewPicker adapter methods
-- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    return PICKER_VIEW_COMPONENTS;
-}
-
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
-    return [self numberOfComponents];
-}
-
-- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    NSString *toReturn = @"";
-    NSInteger components = [self numberOfComponents];
-    
-    for (int i = 0; i < components; i++) {
-        toReturn = [NSString stringWithFormat:@"%@%i", toReturn, ([pickerView selectedRowInComponent:i] % 10)];
-    }
-    
-    self.result.text = toReturn;
-}
-
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    return [numbers objectAtIndex:(row % 10)];
+#pragma mark - UISlider methods
+- (void)sliderValueChanged:(UISlider *)sender {
+    self.result.text = [NSString stringWithFormat:@"%.f", [sender value]];
 }
 
 # pragma mark - Private methods
@@ -206,21 +189,35 @@
     [numbers addObject:@"8"];
     [numbers addObject:@"9"];
     
-    LowMultLevel *lowMultLevel = [[LowMultLevel alloc] init];
-    
-    NSInteger firstArg = [lowMultLevel giveFirstArgument];
-    self.firstArgument.text = [NSString stringWithFormat:@"%d", firstArg];
-    self.secondArgument.text = [NSString stringWithFormat:@"%d", [lowMultLevel giveSecondArgument:firstArg]];
-    
-//    for (int i = 0; i < [self numberOfComponents]; i++) {
-//        [self.resultPicker selectRow:PICKER_VIEW_COMPONENTS/2 inComponent:i animated:NO];
-//    }
+    level = LEVEL_LOW;
+    [self ckeckLevel];
     
     // Color and brush wide
     red = LINE_COLOR_RED;
     green = LINE_COLOR_GREEN;
     blue = LINE_COLOR_BLUE;
     brushWidth = LINE_BRUSH_WIDE;
+}
+
+- (void)ckeckLevel {
+    LowMultLevel *lowMultLevel = [[LowMultLevel alloc] init];
+    NSInteger firstArg = [lowMultLevel giveFirstArgument];
+
+    switch (level) {
+        case LEVEL_LOW:
+            
+            self.firstArgument.text = [NSString stringWithFormat:@"%d", firstArg];
+            self.secondArgument.text = [NSString stringWithFormat:@"%d", [lowMultLevel giveSecondArgument:firstArg]];
+            
+            self.resultSlider.maximumValue = 30;
+            self.resultSlider.minimumValue = 0;
+            self.resultSlider.value = self.resultSlider.maximumValue / 2;
+            self.result.text = [NSString stringWithFormat:@"%.f", self.resultSlider.value];
+            break;
+            
+        default:
+            break;
+    }
 }
 
 - (NSInteger)numberOfComponents {
