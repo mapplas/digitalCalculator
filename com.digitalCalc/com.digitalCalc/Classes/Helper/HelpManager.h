@@ -19,13 +19,16 @@
     UIButton *helpButton;
     UILabel *firstArgLabel;
     UILabel *secondArgLabel;
+    UIView *helpView;
+    UIButton *checkButton;
     
     ArgumentLabelAnimator *labelAnimator;
     
     NSInteger currentAction;
 }
 
-- (id)initWithHelpLabel:(UILabel *)help_label button:(UIButton *)help_button firstArgument:(UILabel *)first_arg_label secondArgument:(UILabel *)second_arg_label;
+- (id)initWithHelpLabel:(UILabel *)help_label button:(UIButton *)help_button firstArgument:(UILabel *)first_arg_label secondArgument:(UILabel *)second_arg_label helpView:(UIView *)help_view andCheckButton:(UIButton *)check_button;
 - (void)start;
+- (void)emptyLabelText;
 
 @end

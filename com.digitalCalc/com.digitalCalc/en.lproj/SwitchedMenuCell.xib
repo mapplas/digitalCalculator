@@ -90,6 +90,7 @@
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<int key="IBUIContentHorizontalAlignment">0</int>
 								<int key="IBUIContentVerticalAlignment">0</int>
+								<bool key="IBUIOn">YES</bool>
 								<object class="NSColor" key="IBUIOnTintColor">
 									<int key="NSColorSpace">1</int>
 									<bytes key="NSRGB">MSAwLjM4MzU4NDI0NDggMC4yOTI4NTQzMDEzAA</bytes>
