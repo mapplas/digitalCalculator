@@ -42,6 +42,7 @@
 				<string key="NSFrameSize">{161, 29}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
+				<reference key="NSNextKeyView"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<bool key="IBUIOpaque">NO</bool>
 				<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -95,10 +96,10 @@
 					<object class="IBUIImageView" id="541355683">
 						<reference key="NSNextResponder" ref="766721923"/>
 						<int key="NSvFlags">274</int>
-						<string key="NSFrame">{{0, 68}, {1024, 636}}</string>
+						<string key="NSFrame">{{0, 68}, {1024, 586}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
+						<reference key="NSNextKeyView" ref="138354136"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">3</int>
@@ -379,15 +380,16 @@
 					<object class="IBUISlider" id="649042476">
 						<reference key="NSNextResponder" ref="766721923"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{29, 662}, {968, 23}}</string>
+						<string key="NSFrame">{{728, 350}, {542, 23}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
-						<float key="IBUIValue">1.5</float>
+						<float key="IBUIValue">1</float>
 						<float key="IBUIMaxValue">9</float>
 					</object>
 				</array>
@@ -495,6 +497,14 @@
 					<int key="connectionID">259</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">resultSlider</string>
+						<reference key="source" ref="841351856"/>
+						<reference key="destination" ref="649042476"/>
+					</object>
+					<int key="connectionID">263</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">segmentedControlIndexChanged</string>
 						<reference key="source" ref="965609176"/>
@@ -545,9 +555,9 @@
 							<reference ref="821058414"/>
 							<reference ref="866562062"/>
 							<reference ref="518574353"/>
-							<reference ref="649042476"/>
 							<reference ref="138354136"/>
 							<reference ref="385725899"/>
+							<reference ref="649042476"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -621,6 +631,7 @@
 						<int key="objectID">260</int>
 						<reference key="object" ref="649042476"/>
 						<reference key="parent" ref="766721923"/>
+						<string key="objectName">Result slider</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">210</int>
@@ -651,6 +662,20 @@
 				<string key="240.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="255.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="258.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<object class="NSMutableDictionary" key="260.IBAttributePlaceholdersKey">
+					<string key="NS.key.0">IBUserDefinedRuntimeAttributesPlaceholderName</string>
+					<object class="IBUIUserDefinedRuntimeAttributesPlaceholder" key="NS.object.0">
+						<string key="name">IBUserDefinedRuntimeAttributesPlaceholderName</string>
+						<reference key="object" ref="649042476"/>
+						<array key="userDefinedRuntimeAttributes">
+							<object class="IBUserDefinedRuntimeAttribute">
+								<string key="typeIdentifier">com.apple.InterfaceBuilder.userDefinedRuntimeAttributeType.string</string>
+								<string key="keyPath">layer.transform.rotation.z</string>
+								<string key="value">-1.570795</string>
+							</object>
+						</array>
+					</object>
+				</object>
 				<string key="260.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="47.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="6.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -661,7 +686,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">262</int>
+			<int key="maxID">263</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -690,6 +715,7 @@
 						<string key="helpButton">UIButton</string>
 						<string key="helpLabel">UILabel</string>
 						<string key="result">UITextField</string>
+						<string key="resultSlider">UISlider</string>
 						<string key="secondArgument">UILabel</string>
 						<string key="segmentedControl">UISegmentedControl</string>
 					</dictionary>
@@ -721,6 +747,10 @@
 						<object class="IBToOneOutletInfo" key="result">
 							<string key="name">result</string>
 							<string key="candidateClassName">UITextField</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="resultSlider">
+							<string key="name">resultSlider</string>
+							<string key="candidateClassName">UISlider</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="secondArgument">
 							<string key="name">secondArgument</string>

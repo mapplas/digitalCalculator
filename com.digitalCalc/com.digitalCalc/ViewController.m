@@ -20,6 +20,7 @@
 @synthesize board;
 @synthesize segmentedControl;
 @synthesize firstArgument, secondArgument, result;
+@synthesize resultSlider;
 @synthesize ckeckButton, checkedLabel;
 @synthesize helpLabel, helpButton;
 

@@ -55,6 +55,8 @@
 @property (nonatomic, strong) IBOutlet UILabel *secondArgument;
 @property (nonatomic, strong) IBOutlet UITextField *result;
 
+@property (nonatomic, strong) IBOutlet UISlider *resultSlider;
+
 @property (nonatomic, strong) IBOutlet UIButton *ckeckButton;
 @property (nonatomic, strong) IBOutlet UILabel *checkedLabel;
 
