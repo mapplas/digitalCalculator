@@ -27,6 +27,15 @@
 /* Help label plural line suffix */
 "help_text_plural_suffix" = "lines";
 
+/* Help label draw dots text  */
+"help_text_dots_text" = "Draw dots in line intersections";
+
+/* Help label count dots text  */
+"help_text_dots_count_text" = "Count dots and set result!";
+
+/* Help label press check text  */
+"help_text_press_check_button_text" = "Press check button!";
+
 /* Help next clue button text */
 "help_next_clue_button" = "Next clue";
 

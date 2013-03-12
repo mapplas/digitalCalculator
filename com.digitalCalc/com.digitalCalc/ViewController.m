@@ -32,8 +32,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.helpEnabled = YES;
-    
     [self initNavBar];
     [self initLayout];
 }
@@ -192,6 +190,9 @@
 }
 
 - (void)initLayout {
+    // Help is always enabled first time
+    self.helpEnabled = YES;
+
     // Segmented control button names
     NSString *segmentedControlLineText = NSLocalizedString(@"segm_control_line", @"Segmented control line text");
     [self.segmentedControl setTitle:segmentedControlLineText forSegmentAtIndex:0];
@@ -205,10 +206,9 @@
     // Next help text button
     [self.helpButton setTitle:NSLocalizedString(@"help_next_clue_button", @"Help next clue button text") forState:UIControlStateNormal];
     
-    helpManager = [[HelpManager alloc] initWithHelpLabel:self.helpLabel button:self.helpButton firstArgument:self.firstArgument secondArgument:self.secondArgument helpView:self.helpView];
+    helpManager = [[HelpManager alloc] initWithHelpLabel:self.helpLabel button:self.helpButton firstArgument:self.firstArgument secondArgument:self.secondArgument helpView:self.helpView andCheckButton:self.ckeckButton];
 
     [self reset];
-    [self checkHelpEnabledAfterMenuHidden];
 }
 
 - (void)reset {
@@ -224,9 +224,9 @@
     blue = LINE_COLOR_BLUE;
     brushWidth = LINE_BRUSH_WIDE;
     
-    [self checkHelpEnabledAfterMenuHidden];
-    
     self.segmentedControl.selectedSegmentIndex = 0;
+    
+    [self checkHelpEnabledAfterMenuHidden];
 }
 
 - (void)ckeckLevel {
@@ -259,7 +259,7 @@
     NSInteger secondArgumentIntValue = [self.secondArgument.text integerValue];
     NSInteger resultIntValue = firstArgumentIntValue * secondArgumentIntValue;
     
-    self.helpLabel.text = @"";
+    [helpManager emptyLabelText];
 
     self.checkedLabel.hidden = NO;
     if ([self.result.text isEqualToString:[NSString stringWithFormat:@"%d", resultIntValue]]) {
@@ -273,6 +273,8 @@
 - (void)checkHelpEnabledAfterMenuHidden {
     if (self.helpEnabled) {
         [helpManager start];
+    } else {
+        [self.ckeckButton setHidden:NO];
     }
 }
 

@@ -10,7 +10,7 @@
 
 @implementation HelpManager
 
-- (id)initWithHelpLabel:(UILabel *)help_label button:(UIButton *)help_button firstArgument:(UILabel *)first_arg_label secondArgument:(UILabel *)second_arg_label helpView:(UIView *)help_view {
+- (id)initWithHelpLabel:(UILabel *)help_label button:(UIButton *)help_button firstArgument:(UILabel *)first_arg_label secondArgument:(UILabel *)second_arg_label helpView:(UIView *)help_view andCheckButton:(UIButton *)check_button {
     self = [super init];
     if (self) {
         helpLabel = help_label;
@@ -18,6 +18,7 @@
         firstArgLabel = first_arg_label;
         secondArgLabel = second_arg_label;
         helpView = help_view;
+        checkButton = check_button;
         
         [helpButton addTarget:self action:@selector(nextCluePressed) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -25,10 +26,11 @@
 }
 
 - (void)start {
-//    labelAnimator = [[ArgumentLabelAnimator alloc] init];
-//    [self animateLabel:firstArgLabel];
     currentAction = HELP_FIRST_ARG_ACTION_FINISHED;
-    helpButton.enabled = YES;
+    
+    checkButton.hidden = YES;
+    helpButton.hidden = NO;
+    
     [self setHelpText];
 }
 
@@ -36,7 +38,6 @@
     switch (currentAction) {
         case HELP_FIRST_ARG_ACTION_FINISHED:
             currentAction = HELP_SECOND_ARG_ACTION_FINISHED;
-//            [self animateLabel:secondArgLabel];
             [self setHelpText];
             break;
             
@@ -52,7 +53,8 @@
             
         case HELP_RESULT_ACTION_DONE:
             currentAction = HELP_RESULT_ACTION_CHECK_PRESSED;
-            helpButton.enabled = NO;
+            checkButton.hidden = NO;
+            helpButton.hidden = YES;
             [self setHelpText];
             break;
     }
@@ -75,15 +77,15 @@
             break;
             
         case HELP_DOTS_ACTION:
-            helpLabel.text = @"draw dots in line intersections";
+            helpLabel.text = NSLocalizedString(@"help_text_dots_text", @"Help label draw dots text");
             break;
             
         case HELP_RESULT_ACTION_DONE:
-            helpLabel.text = @"count dots and set result!";
+            helpLabel.text = NSLocalizedString(@"help_text_dots_count_text", @"Help label count dots text");
             break;
         
         case HELP_RESULT_ACTION_CHECK_PRESSED:
-            helpLabel.text = @"press check button!";
+            helpLabel.text = NSLocalizedString(@"help_text_press_check_button_text", @"Help label press check text");
             break;
     }
 }
@@ -98,11 +100,8 @@
     }
 }
 
-- (void)hideElements {
-    helpView.hidden = YES;
-    helpLabel.hidden = YES;
-    helpButton.hidden = YES;
+- (void)emptyLabelText {
+    helpLabel.text = @"";
 }
-
 
 @end
