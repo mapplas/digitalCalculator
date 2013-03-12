@@ -36,6 +36,22 @@
     [self initLayout];
 }
 
+#pragma mark - Shake event
+-(BOOL)canBecomeFirstResponder {
+	return YES;
+}
+
+-(void)viewDidAppear:(BOOL)animated{ 
+	[super viewDidAppear:animated];
+	[self becomeFirstResponder];
+}
+
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+	if (event.subtype == UIEventSubtypeMotionShake){
+		[self reset];
+	}
+}
+
 #pragma mark - Segmented Control
 - (IBAction)segmentedControlIndexChanged {
     DeviceChooser *deviceChooser = [[DeviceChooser alloc] init];
