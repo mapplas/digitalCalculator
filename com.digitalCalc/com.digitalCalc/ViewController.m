@@ -35,6 +35,7 @@
     [super viewDidLoad];
     
     self.navigationController.navigationBar.tintColor = calculatorNavBarColor;
+    layoutPresenter = [[LayoutPresenter alloc] init];
     
     [self setSplashLayoutDetails];
 }
@@ -42,14 +43,7 @@
 - (void)setSplashLayoutDetails {
     [self.view addSubview:self.splashView];
     
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 400, 44)];
-    label.backgroundColor = [UIColor clearColor];
-    label.font = [UIFont fontWithName:@"5th Grade Cursive" size:12];
-    label.shadowColor = [UIColor colorWithWhite:0.0 alpha:0.5];
-    label.textAlignment = UITextAlignmentCenter;
-    label.textColor = [UIColor whiteColor];
-    label.text = NSLocalizedString(@"nav_bar_title", @"Nav bar title");
-    self.navigationItem.titleView = label;
+    [layoutPresenter setTitleToNavItem:self.navigationItem];
 }
 
 - (void)normalModePressed:(id)sender {
@@ -339,9 +333,15 @@
 
 - (void)mainMenuCellPressed {
     [self.navigationController.revealController showViewController:self.navigationController.revealController.frontViewController];
-    [UIView animateWithDuration:0.5f
-                     animations:^{self.splashView.alpha = 0.0;}
+    
+    [UIView animateWithDuration:.05f
+                     animations:^{self.splashView.alpha = 1.0;}
                      completion:^(BOOL finished){ [self.view bringSubviewToFront:self.splashView]; }];
+    
+    self.navigationItem.rightBarButtonItem = nil;
+    self.navigationItem.leftBarButtonItem = nil;
+    
+    [layoutPresenter setTitleToNavItem:self.navigationItem];
 }
 
 

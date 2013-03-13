@@ -12,6 +12,7 @@
 #import "DeviceChooser.h"
 #import "LowMultLevel.h"
 #import "SCAppUtils.h"
+#import "LayoutPresenter.h"
 
 #define LINE_SEGMENT 0
 #define LINE_COLOR_RED 255.0/255.0
@@ -47,6 +48,7 @@
     NSMutableArray *numbers;
     
     HelpManager *helpManager;
+    LayoutPresenter *layoutPresenter;
     
     NSInteger level;
 }

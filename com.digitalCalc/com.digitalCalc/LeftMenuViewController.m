@@ -85,16 +85,18 @@
         
     } else {
         
-        helpCell = [tableView dequeueReusableCellWithIdentifier:helpCellId];
-        if (helpCell == nil) {
-            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"SwitchedMenuCell" owner:self options:nil];
-            helpCell = [nib objectAtIndex:0];
-        }
-        
-        plainMenuCell = [tableView dequeueReusableCellWithIdentifier:plainCellId];
-        if (plainMenuCell == nil) {
-            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"PlainMenuCell" owner:self options:nil];
-            plainMenuCell = [nib objectAtIndex:0];
+        if (indexPath.row == 0) {
+            helpCell = [tableView dequeueReusableCellWithIdentifier:helpCellId];
+            if (helpCell == nil) {
+                NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"SwitchedMenuCell" owner:self options:nil];
+                helpCell = [nib objectAtIndex:0];
+            }
+        } else {
+            plainMenuCell = [tableView dequeueReusableCellWithIdentifier:plainCellId];
+            if (plainMenuCell == nil) {
+                NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"PlainMenuCell" owner:self options:nil];
+                plainMenuCell = [nib objectAtIndex:0];
+            }
         }
         
         switch (indexPath.row) {
