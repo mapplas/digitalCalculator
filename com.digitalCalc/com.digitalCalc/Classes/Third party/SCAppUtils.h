@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 Mapplas. All rights reserved.
 //
 
-#define mapplasNavBarImageTag 6183746
-//#define mapplasNavBarColor [UIColor colorWithRed:0.54 green:0.18 blue:0.03 alpha:1.0]
+#define calculatorNavBarImageTag 6183746
+#define calculatorNavBarColor [UIColor colorWithRed:193/255.0f green:143/255.0 blue:06/255.0 alpha:1.0]
 
 @interface SCAppUtils : NSObject
 

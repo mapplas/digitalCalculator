@@ -18,11 +18,11 @@
         [navBar setBackgroundImage:[UIImage imageNamed:@"bkg_nav_bar.png"] forBarMetrics:UIBarMetricsDefault];
     }
     else {
-        UIImageView *imageView = (UIImageView *)[navBar viewWithTag:mapplasNavBarImageTag];
+        UIImageView *imageView = (UIImageView *)[navBar viewWithTag:calculatorNavBarImageTag];
         if (imageView == nil) {
             imageView = [[UIImageView alloc] initWithImage:
                          [UIImage imageNamed:@"bkg_nav_bar.png"]];
-            [imageView setTag:mapplasNavBarImageTag];
+            [imageView setTag:calculatorNavBarImageTag];
             [navBar insertSubview:imageView atIndex:0];
         }
     }

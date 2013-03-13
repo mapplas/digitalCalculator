@@ -34,7 +34,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:193/255.0 green:143/255.0 blue:106/255.0 alpha:1.0];
+    self.navigationController.navigationBar.tintColor = calculatorNavBarColor;
     
     [self setSplashLayoutDetails];
 }

@@ -11,6 +11,7 @@
 #import "LeftMenuViewController.h"
 #import "DeviceChooser.h"
 #import "LowMultLevel.h"
+#import "SCAppUtils.h"
 
 #define LINE_SEGMENT 0
 #define LINE_COLOR_RED 255.0/255.0
