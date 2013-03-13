@@ -25,6 +25,7 @@
     }
     
     UINavigationController *frontViewController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    [SCAppUtils customizeNavigationController:frontViewController];
     
     NSDictionary *options = @{
                               PKRevealControllerRecognizesPanningOnFrontViewKey : [NSNumber numberWithBool:NO]

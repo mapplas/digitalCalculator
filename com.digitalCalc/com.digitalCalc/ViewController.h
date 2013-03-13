@@ -11,13 +11,13 @@
 #import "LeftMenuViewController.h"
 #import "DeviceChooser.h"
 #import "LowMultLevel.h"
-
-#define digitalCalculatorNavBarColor [UIColor colorWithRed:0.66 green:0.33 blue:0.00 alpha:1.0]
+#import "SCAppUtils.h"
+#import "LayoutPresenter.h"
 
 #define LINE_SEGMENT 0
-#define LINE_COLOR_RED 0.0/255.0
-#define LINE_COLOR_GREEN 0.0/255.0
-#define LINE_COLOR_BLUE 0.0/255.0
+#define LINE_COLOR_RED 255.0/255.0
+#define LINE_COLOR_GREEN 255.0/255.0
+#define LINE_COLOR_BLUE 255.0/255.0
 #define LINE_BRUSH_WIDE 5.0
 
 #define DOT_SEGMENT 1
@@ -48,6 +48,7 @@
     NSMutableArray *numbers;
     
     HelpManager *helpManager;
+    LayoutPresenter *layoutPresenter;
     
     NSInteger level;
 }
@@ -68,13 +69,18 @@
 @property (nonatomic, strong) IBOutlet UILabel *helpLabel;
 @property (nonatomic, strong) IBOutlet UIButton *helpButton;
 
+@property (nonatomic, strong) IBOutlet UIView *splashView;
+
 @property (nonatomic) BOOL helpEnabled;
 
+- (IBAction)normalModePressed:(id)sender;
+- (IBAction)gameModePressed:(id)sender;
 
 - (IBAction)segmentedControlIndexChanged;
 - (IBAction)checkButtonPressed:(id)sender;
 - (IBAction)sliderValueChanged:(UISlider *)sender;
 
 - (void)checkHelpEnabledAfterMenuHidden;
+- (void)mainMenuCellPressed;
 
 @end

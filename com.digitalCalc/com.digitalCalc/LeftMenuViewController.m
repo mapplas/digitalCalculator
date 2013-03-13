@@ -58,6 +58,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *helpCellId = @"HelpOnOffText";
     NSString *levelCellId = @"LevelMenuText";
+    NSString *plainCellId = @"PlainMenuText";
     
     if (indexPath.section == 0) {
         levelMenuCell = [tableView dequeueReusableCellWithIdentifier:levelCellId];
@@ -84,18 +85,35 @@
         
     } else {
         
-        helpCell = [tableView dequeueReusableCellWithIdentifier:helpCellId];
-        if (helpCell == nil) {
-            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"SwitchedMenuCell" owner:self options:nil];
-            helpCell = [nib objectAtIndex:0];
+        if (indexPath.row == 0) {
+            helpCell = [tableView dequeueReusableCellWithIdentifier:helpCellId];
+            if (helpCell == nil) {
+                NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"SwitchedMenuCell" owner:self options:nil];
+                helpCell = [nib objectAtIndex:0];
+            }
+        } else {
+            plainMenuCell = [tableView dequeueReusableCellWithIdentifier:plainCellId];
+            if (plainMenuCell == nil) {
+                NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"PlainMenuCell" owner:self options:nil];
+                plainMenuCell = [nib objectAtIndex:0];
+            }
         }
         
         switch (indexPath.row) {
             case 0:
                 helpCell.textLabel.text = NSLocalizedString(@"menu_section_settings_help_enabled", @"Menu section settings help enabled");
                 break;
+                
+            case 1:
+                plainMenuCell.textLabel.text = @"Change game mode";
+                break;
         }
-        return helpCell;
+        
+        if (indexPath.row == 0) {
+            return helpCell;
+        } else {
+            return plainMenuCell;
+        }
     }
 }
 
@@ -110,6 +128,10 @@
             case 0:
                 [helpCell.cellSwitch setOn:!helpCell.cellSwitch.on animated:YES];
                 [self checkHelpSwitch:helpCell.cellSwitch];
+                break;
+                
+            case 1:
+                [mainViewController mainMenuCellPressed];
                 break;
                 
             default:
@@ -137,6 +159,12 @@
             break;
     }
 }
+
+//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+//    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width, 30)];
+//    [headerView setBackgroundColor:[UIColor colorWithRed:193/255.0 green:143/255.0 blue:106/255.0 alpha:1.0]];
+//    return headerView;
+//}
 
 #pragma mark - Help actions
 - (void)checkHelpSwitch:(UISwitch *)help_switch {

@@ -27,10 +27,38 @@
 @synthesize ckeckButton, checkedLabel;
 @synthesize helpView, helpLabel, helpButton;
 
+@synthesize splashView;
+
 @synthesize helpEnabled;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.navigationController.navigationBar.tintColor = calculatorNavBarColor;
+    layoutPresenter = [[LayoutPresenter alloc] init];
+    
+    [self setSplashLayoutDetails];
+}
+
+- (void)setSplashLayoutDetails {
+    [self.view addSubview:self.splashView];
+    
+    [layoutPresenter setTitleToNavItem:self.navigationItem];
+}
+
+- (void)normalModePressed:(id)sender {
+    [UIView animateWithDuration:0.5f
+                     animations:^{self.splashView.alpha = 0.0;}
+                     completion:^(BOOL finished){ [self.view sendSubviewToBack:self.splashView]; }];
+    
+    [self initNavBar];
+    [self initLayout];
+}
+
+- (void)gameModePressed:(id)sender {
+    [UIView animateWithDuration:0.5f
+                     animations:^{self.splashView.alpha = 0.0;}
+                     completion:^(BOOL finished){ [self.view sendSubviewToBack:self.splashView]; }];
     
     [self initNavBar];
     [self initLayout];
@@ -166,7 +194,6 @@
 # pragma mark - Private methods
 - (void)initNavBar {
     self.title = NSLocalizedString(@"nav_bar_title", @"Nav bar title");
-    self.navigationController.navigationBar.tintColor = digitalCalculatorNavBarColor;
     self.navigationItem.titleView = self.segmentedControl;
     
     UIImage *menuImage = [UIImage imageNamed:@"ic_menu_menu.png"];
@@ -302,6 +329,19 @@
     } else {
         [self.ckeckButton setHidden:NO];
     }
+}
+
+- (void)mainMenuCellPressed {
+    [self.navigationController.revealController showViewController:self.navigationController.revealController.frontViewController];
+    
+    [UIView animateWithDuration:.05f
+                     animations:^{self.splashView.alpha = 1.0;}
+                     completion:^(BOOL finished){ [self.view bringSubviewToFront:self.splashView]; }];
+    
+    self.navigationItem.rightBarButtonItem = nil;
+    self.navigationItem.leftBarButtonItem = nil;
+    
+    [layoutPresenter setTitleToNavItem:self.navigationItem];
 }
 
 
