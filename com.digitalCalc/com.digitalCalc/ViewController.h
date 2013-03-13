@@ -68,8 +68,12 @@
 @property (nonatomic, strong) IBOutlet UILabel *helpLabel;
 @property (nonatomic, strong) IBOutlet UIButton *helpButton;
 
+@property (nonatomic, strong) IBOutlet UIView *splashView;
+
 @property (nonatomic) BOOL helpEnabled;
 
+- (IBAction)normalModePressed:(id)sender;
+- (IBAction)gameModePressed:(id)sender;
 
 - (IBAction)segmentedControlIndexChanged;
 - (IBAction)checkButtonPressed:(id)sender;

@@ -27,10 +27,44 @@
 @synthesize ckeckButton, checkedLabel;
 @synthesize helpView, helpLabel, helpButton;
 
+@synthesize splashView;
+
 @synthesize helpEnabled;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self setSplashLayoutDetails];
+}
+
+- (void)setSplashLayoutDetails {
+    [self.view addSubview:self.splashView];
+    
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 400, 44)];
+    label.backgroundColor = [UIColor clearColor];
+    label.font = [UIFont fontWithName:@"5th Grade Cursive" size:12];
+    label.shadowColor = [UIColor colorWithWhite:0.0 alpha:0.5];
+    label.textAlignment = UITextAlignmentCenter;
+    label.textColor = [UIColor whiteColor];
+    label.text = NSLocalizedString(@"nav_bar_title", @"Nav bar title");
+    self.navigationItem.titleView = label;
+    
+    self.navigationController.navigationBar.tintColor = digitalCalculatorNavBarColor;
+}
+
+- (void)normalModePressed:(id)sender {
+    [UIView animateWithDuration:0.5f
+                     animations:^{self.splashView.alpha = 0.0;}
+                     completion:^(BOOL finished){ [self.splashView removeFromSuperview]; }];
+    
+    [self initNavBar];
+    [self initLayout];
+}
+
+- (void)gameModePressed:(id)sender {
+    [UIView animateWithDuration:0.5f
+                     animations:^{self.splashView.alpha = 0.0;}
+                     completion:^(BOOL finished){ [self.splashView removeFromSuperview]; }];
     
     [self initNavBar];
     [self initLayout];
