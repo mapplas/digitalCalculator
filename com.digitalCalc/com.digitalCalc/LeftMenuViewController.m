@@ -58,6 +58,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *helpCellId = @"HelpOnOffText";
     NSString *levelCellId = @"LevelMenuText";
+    NSString *plainCellId = @"PlainMenuText";
     
     if (indexPath.section == 0) {
         levelMenuCell = [tableView dequeueReusableCellWithIdentifier:levelCellId];
@@ -90,12 +91,27 @@
             helpCell = [nib objectAtIndex:0];
         }
         
+        plainMenuCell = [tableView dequeueReusableCellWithIdentifier:plainCellId];
+        if (plainMenuCell == nil) {
+            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"PlainMenuCell" owner:self options:nil];
+            plainMenuCell = [nib objectAtIndex:0];
+        }
+        
         switch (indexPath.row) {
             case 0:
                 helpCell.textLabel.text = NSLocalizedString(@"menu_section_settings_help_enabled", @"Menu section settings help enabled");
                 break;
+                
+            case 1:
+                plainMenuCell.textLabel.text = @"Change game mode";
+                break;
         }
-        return helpCell;
+        
+        if (indexPath.row == 0) {
+            return helpCell;
+        } else {
+            return plainMenuCell;
+        }
     }
 }
 
@@ -110,6 +126,10 @@
             case 0:
                 [helpCell.cellSwitch setOn:!helpCell.cellSwitch.on animated:YES];
                 [self checkHelpSwitch:helpCell.cellSwitch];
+                break;
+                
+            case 1:
+                [mainViewController mainMenuCellPressed];
                 break;
                 
             default:

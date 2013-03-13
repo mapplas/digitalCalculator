@@ -80,5 +80,6 @@
 - (IBAction)sliderValueChanged:(UISlider *)sender;
 
 - (void)checkHelpEnabledAfterMenuHidden;
+- (void)mainMenuCellPressed;
 
 @end

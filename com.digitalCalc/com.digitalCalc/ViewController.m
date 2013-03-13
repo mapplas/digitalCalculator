@@ -55,7 +55,7 @@
 - (void)normalModePressed:(id)sender {
     [UIView animateWithDuration:0.5f
                      animations:^{self.splashView.alpha = 0.0;}
-                     completion:^(BOOL finished){ [self.splashView removeFromSuperview]; }];
+                     completion:^(BOOL finished){ [self.view sendSubviewToBack:self.splashView]; }];
     
     [self initNavBar];
     [self initLayout];
@@ -64,7 +64,7 @@
 - (void)gameModePressed:(id)sender {
     [UIView animateWithDuration:0.5f
                      animations:^{self.splashView.alpha = 0.0;}
-                     completion:^(BOOL finished){ [self.splashView removeFromSuperview]; }];
+                     completion:^(BOOL finished){ [self.view sendSubviewToBack:self.splashView]; }];
     
     [self initNavBar];
     [self initLayout];
@@ -336,6 +336,13 @@
     } else {
         [self.ckeckButton setHidden:NO];
     }
+}
+
+- (void)mainMenuCellPressed {
+    [self.navigationController.revealController showViewController:self.navigationController.revealController.frontViewController];
+    [UIView animateWithDuration:0.5f
+                     animations:^{self.splashView.alpha = 0.0;}
+                     completion:^(BOOL finished){ [self.view bringSubviewToFront:self.splashView]; }];
 }
 
 

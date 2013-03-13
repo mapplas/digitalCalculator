@@ -88,7 +88,7 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<object class="NSCustomResource" key="IBUIImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">bkg.png</string>
+							<string key="NSResourceName">bkg_board.png</string>
 						</object>
 					</object>
 					<object class="IBUIImageView" id="985748017">
@@ -368,7 +368,7 @@
 								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 							</object>
 						</array>
-						<string key="NSFrame">{{0, 30}, {568, 246}}</string>
+						<string key="NSFrame">{{0, 30}, {568, 269}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="747219054"/>
@@ -975,7 +975,7 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="bkg.png">{320, 480}</string>
+			<string key="bkg_board.png">{960, 552}</string>
 			<string key="ic_check.png">{64, 64}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">2083</string>
