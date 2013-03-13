@@ -158,6 +158,12 @@
     }
 }
 
+//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+//    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width, 30)];
+//    [headerView setBackgroundColor:[UIColor colorWithRed:193/255.0 green:143/255.0 blue:106/255.0 alpha:1.0]];
+//    return headerView;
+//}
+
 #pragma mark - Help actions
 - (void)checkHelpSwitch:(UISwitch *)help_switch {
     changedHelpSwitchValue = YES;

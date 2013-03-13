@@ -34,22 +34,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:193/255.0 green:143/255.0 blue:106/255.0 alpha:1.0];
+    
     [self setSplashLayoutDetails];
 }
 
 - (void)setSplashLayoutDetails {
     [self.view addSubview:self.splashView];
     
-//    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 400, 44)];
-//    label.backgroundColor = [UIColor clearColor];
-//    label.font = [UIFont fontWithName:@"5th Grade Cursive" size:12];
-//    label.shadowColor = [UIColor colorWithWhite:0.0 alpha:0.5];
-//    label.textAlignment = UITextAlignmentCenter;
-//    label.textColor = [UIColor whiteColor];
-//    label.text = NSLocalizedString(@"nav_bar_title", @"Nav bar title");
-//    self.navigationItem.titleView = label;
-    
-    self.navigationController.navigationBar.tintColor = digitalCalculatorNavBarColor;
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 400, 44)];
+    label.backgroundColor = [UIColor clearColor];
+    label.font = [UIFont fontWithName:@"5th Grade Cursive" size:12];
+    label.shadowColor = [UIColor colorWithWhite:0.0 alpha:0.5];
+    label.textAlignment = UITextAlignmentCenter;
+    label.textColor = [UIColor whiteColor];
+    label.text = NSLocalizedString(@"nav_bar_title", @"Nav bar title");
+    self.navigationItem.titleView = label;
 }
 
 - (void)normalModePressed:(id)sender {
@@ -200,7 +200,6 @@
 # pragma mark - Private methods
 - (void)initNavBar {
     self.title = NSLocalizedString(@"nav_bar_title", @"Nav bar title");
-    self.navigationController.navigationBar.tintColor = digitalCalculatorNavBarColor;
     self.navigationItem.titleView = self.segmentedControl;
     
     UIImage *menuImage = [UIImage imageNamed:@"ic_menu_menu.png"];

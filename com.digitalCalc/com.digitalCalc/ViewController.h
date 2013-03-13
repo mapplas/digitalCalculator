@@ -12,12 +12,10 @@
 #import "DeviceChooser.h"
 #import "LowMultLevel.h"
 
-#define digitalCalculatorNavBarColor [UIColor colorWithRed:0.66 green:0.33 blue:0.00 alpha:1.0]
-
 #define LINE_SEGMENT 0
-#define LINE_COLOR_RED 0.0/255.0
-#define LINE_COLOR_GREEN 0.0/255.0
-#define LINE_COLOR_BLUE 0.0/255.0
+#define LINE_COLOR_RED 255.0/255.0
+#define LINE_COLOR_GREEN 255.0/255.0
+#define LINE_COLOR_BLUE 255.0/255.0
 #define LINE_BRUSH_WIDE 5.0
 
 #define DOT_SEGMENT 1
