@@ -40,14 +40,14 @@
 - (void)setSplashLayoutDetails {
     [self.view addSubview:self.splashView];
     
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 400, 44)];
-    label.backgroundColor = [UIColor clearColor];
-    label.font = [UIFont fontWithName:@"5th Grade Cursive" size:12];
-    label.shadowColor = [UIColor colorWithWhite:0.0 alpha:0.5];
-    label.textAlignment = UITextAlignmentCenter;
-    label.textColor = [UIColor whiteColor];
-    label.text = NSLocalizedString(@"nav_bar_title", @"Nav bar title");
-    self.navigationItem.titleView = label;
+//    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 400, 44)];
+//    label.backgroundColor = [UIColor clearColor];
+//    label.font = [UIFont fontWithName:@"5th Grade Cursive" size:12];
+//    label.shadowColor = [UIColor colorWithWhite:0.0 alpha:0.5];
+//    label.textAlignment = UITextAlignmentCenter;
+//    label.textColor = [UIColor whiteColor];
+//    label.text = NSLocalizedString(@"nav_bar_title", @"Nav bar title");
+//    self.navigationItem.titleView = label;
     
     self.navigationController.navigationBar.tintColor = digitalCalculatorNavBarColor;
 }

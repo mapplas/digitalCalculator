@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "PKRevealController.h"
 #import "LeftMenuViewController.h"
+#import "SCAppUtils.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate> {
     UINavigationController *_navigationController;
