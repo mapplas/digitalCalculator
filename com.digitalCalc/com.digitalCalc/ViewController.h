@@ -19,10 +19,10 @@
     CGPoint lastPoint;
     BOOL mouseSwiped;
     
-    CGFloat red;
-    CGFloat green;
-    CGFloat blue;
-    CGFloat brushWidth;
+    CGFloat _red;
+    CGFloat _green;
+    CGFloat _blue;
+    CGFloat _brushWidth;
     NSMutableArray *numbers;
     
     HelpManager *helpManager;
@@ -52,6 +52,11 @@
 @property (nonatomic, strong) IBOutlet UILabel *timerLabel;
 
 @property (nonatomic, strong) IBOutlet UIView *splashView;
+
+@property (nonatomic, assign) CGFloat red;
+@property (nonatomic, assign) CGFloat green;
+@property (nonatomic, assign) CGFloat blue;
+@property (nonatomic, assign) CGFloat brushWidth;
 
 @property (nonatomic, assign) BOOL helpEnabled;
 @property (nonatomic, assign) NSInteger level;

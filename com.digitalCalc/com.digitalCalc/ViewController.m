@@ -32,6 +32,7 @@
 
 @synthesize helpEnabled;
 @synthesize mode = _mode, level = _level;
+@synthesize red = _red, green = _green, blue = _blue, brushWidth = _brushWidth;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -39,7 +40,7 @@
     self.helpEnabled = NO;
     
     self.navigationController.navigationBar.tintColor = calculatorNavBarColor;
-    layoutPresenter = [[LayoutPresenter alloc] initWithNavItem:self.navigationItem segmentedControl:self.segmentedControl helpButton:self.helpButton red:red green:green blue:blue brushWide:brushWidth timerLabel:self.timerLabel];
+    layoutPresenter = [[LayoutPresenter alloc] initWithNavItem:self.navigationItem segmentedControl:self.segmentedControl helpButton:self.helpButton timerLabel:self.timerLabel];
     
     [self setSplashLayoutDetails];
     
@@ -107,28 +108,28 @@
     
     switch (self.segmentedControl.selectedSegmentIndex) {
         case LINE_SEGMENT:
-            red = LINE_COLOR_RED;
-            green = LINE_COLOR_GREEN;
-            blue = LINE_COLOR_BLUE;
-            brushWidth = LINE_BRUSH_WIDE;
+            self.red = LINE_COLOR_RED;
+            self.green = LINE_COLOR_GREEN;
+            self.blue = LINE_COLOR_BLUE;
+            self.brushWidth = LINE_BRUSH_WIDE;
             break;
             
         case DOT_SEGMENT:
-            red = DOT_COLOR_RED;
-            green = DOT_COLOR_GREEN;
-            blue = DOT_COLOR_BLUE;
-            brushWidth = DOT_BRUSH_WIDE_IPHONE;
+            self.red = DOT_COLOR_RED;
+            self.green = DOT_COLOR_GREEN;
+            self.blue = DOT_COLOR_BLUE;
+            self.brushWidth = DOT_BRUSH_WIDE_IPHONE;
             
             if (isIpad) {
-                brushWidth = DOT_BRUSH_WIDE_IPAD;
+                self.brushWidth = DOT_BRUSH_WIDE_IPAD;
             }
             break;
             
         case ERASE_SEGMENT:
-            red = LINE_COLOR_BLUE;
-            green = LINE_COLOR_BLUE;
-            blue = LINE_COLOR_BLUE;
-            brushWidth = ERASE_BRUSH_WIDE;
+            self.red = LINE_COLOR_BLUE;
+            self.green = LINE_COLOR_BLUE;
+            self.blue = LINE_COLOR_BLUE;
+            self.brushWidth = ERASE_BRUSH_WIDE;
             break;
     }
 }
@@ -159,7 +160,7 @@
             CGContextMoveToPoint(UIGraphicsGetCurrentContext(), lastPoint.x, lastPoint.y);
             CGContextAddLineToPoint(UIGraphicsGetCurrentContext(), currentPoint.x, currentPoint.y);
             CGContextSetLineCap(UIGraphicsGetCurrentContext(), kCGLineCapSquare);
-            CGContextSetLineWidth(UIGraphicsGetCurrentContext(), brushWidth);
+            CGContextSetLineWidth(UIGraphicsGetCurrentContext(), self.brushWidth);
 //            CGContextSetRGBStrokeColor(UIGraphicsGetCurrentContext(), red, green, blue, COLOR_ALPHA_OPAQUE);
             CGContextSetBlendMode(UIGraphicsGetCurrentContext(), kCGBlendModeNormal);
             
@@ -186,8 +187,8 @@
             UIGraphicsBeginImageContext(self.board.frame.size);
             [self.board.image drawInRect:CGRectMake(0, 0, self.board.frame.size.width, self.board.frame.size.height)];
             CGContextSetLineCap(UIGraphicsGetCurrentContext(), kCGLineCapRound);
-            CGContextSetLineWidth(UIGraphicsGetCurrentContext(), brushWidth);
-            CGContextSetRGBStrokeColor(UIGraphicsGetCurrentContext(), red, green, blue, COLOR_ALPHA_OPAQUE);
+            CGContextSetLineWidth(UIGraphicsGetCurrentContext(), self.brushWidth);
+            CGContextSetRGBStrokeColor(UIGraphicsGetCurrentContext(), self.red, self.green, self.blue, COLOR_ALPHA_OPAQUE);
         
             if (self.segmentedControl.selectedSegmentIndex == ERASE_SEGMENT) {
                 CGContextSetRGBStrokeColor(UIGraphicsGetCurrentContext(), 0, 0, 0, COLOR_ALPHA_CLEAR);
@@ -275,6 +276,11 @@
     
     // Color and brush wide
     [layoutPresenter resetActionLoaded:self.mode];
+    
+    self.red = LINE_COLOR_RED;
+    self.green = LINE_COLOR_GREEN;
+    self.blue = LINE_COLOR_BLUE;
+    self.brushWidth = LINE_BRUSH_WIDE;
     
     [helpManager start];
 }

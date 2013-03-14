@@ -10,16 +10,12 @@
 
 @implementation LayoutPresenter
 
-- (id)initWithNavItem:(UINavigationItem *)nav_item segmentedControl:(UISegmentedControl *)segm_control helpButton:(UIButton *)help_button red:(CGFloat)_red green:(CGFloat)_green blue:(CGFloat)_blue brushWide:(CGFloat)brush_wide timerLabel:(UILabel *)timer_label {
+- (id)initWithNavItem:(UINavigationItem *)nav_item segmentedControl:(UISegmentedControl *)segm_control helpButton:(UIButton *)help_button timerLabel:(UILabel *)timer_label {
     self = [super init];
     if (self) {
         navItem = nav_item;
         segmControl = segm_control;
         helpButton = help_button;
-        red = _red;
-        green = _green;
-        blue = _blue;
-        brushWidth = brush_wide;
         timerLabel = timer_label;
     }
     return self;
@@ -56,11 +52,6 @@
 }
 
 - (void)resetActionLoaded:(NSInteger)_mode {
-    red = LINE_COLOR_RED;
-    green = LINE_COLOR_GREEN;
-    blue = LINE_COLOR_BLUE;
-    brushWidth = LINE_BRUSH_WIDE;
-    
     segmControl.selectedSegmentIndex = 0;
     
     if (_mode == CALCULATOR_MODE_LEARN) {
