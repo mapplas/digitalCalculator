@@ -101,6 +101,12 @@
         
         switch (indexPath.row) {
             case 0:
+                
+//              If calculator mode is game mode, disable help switch
+                if (mainViewController.mode == CALCULATOR_MODE_GAME) {
+                    [helpCell.cellSwitch setOn:NO];
+                }
+                
                 helpCell.textLabel.text = NSLocalizedString(@"menu_section_settings_help_enabled", @"Menu section settings help enabled");
                 break;
                 
@@ -126,8 +132,11 @@
     else {
         switch (indexPath.row) {
             case 0:
-                [helpCell.cellSwitch setOn:!helpCell.cellSwitch.on animated:YES];
-                [self checkHelpSwitch:helpCell.cellSwitch];
+//              If calculator mode is game mode, do nothing
+                if (!mainViewController.mode == CALCULATOR_MODE_GAME) {
+                    [helpCell.cellSwitch setOn:!helpCell.cellSwitch.on animated:YES];
+                    [self checkHelpSwitch:helpCell.cellSwitch];
+                }
                 break;
                 
             case 1:
@@ -186,6 +195,7 @@
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     if (changedHelpSwitchValue) {
+        changedHelpSwitchValue = NO;
         [mainViewController checkHelpEnabledAfterMenuHidden];
     }
 }

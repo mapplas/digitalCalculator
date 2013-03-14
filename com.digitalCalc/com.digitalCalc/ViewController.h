@@ -29,8 +29,8 @@
     LayoutPresenter *layoutPresenter;
     
     @private
-    NSInteger level;
-    NSInteger mode;
+    NSInteger _level;
+    NSInteger _mode;
 }
 
 @property (nonatomic, strong) IBOutlet UIImageView *board;
@@ -52,6 +52,8 @@
 @property (nonatomic, strong) IBOutlet UIView *splashView;
 
 @property (nonatomic, assign) BOOL helpEnabled;
+@property (nonatomic, assign) NSInteger level;
+@property (nonatomic, assign) NSInteger mode;
 
 - (IBAction)learnModePressed:(id)sender;
 - (IBAction)gameModePressed:(id)sender;

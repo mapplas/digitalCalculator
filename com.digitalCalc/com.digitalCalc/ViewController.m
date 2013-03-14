@@ -30,6 +30,7 @@
 @synthesize splashView;
 
 @synthesize helpEnabled;
+@synthesize mode = _mode, level = _level;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -52,7 +53,7 @@
 
 // Learn mode pressed
 - (IBAction)learnModePressed:(id)sender {
-    mode = CALCULATOR_MODE_LEARN;
+    self.mode = CALCULATOR_MODE_LEARN;
     
 //    Help is always enabled in learn mode
     self.helpEnabled = YES;
@@ -67,7 +68,7 @@
 
 // Game mode pressed
 - (IBAction)gameModePressed:(id)sender {
-    mode = CALCULATOR_MODE_GAME;
+    self.mode = CALCULATOR_MODE_GAME;
     
 //    Help is always disabled in learn mode
     self.helpEnabled = NO;
@@ -285,7 +286,7 @@
     [self clearAll];
     
     // Level
-    level = LEVEL_LOW;
+    self.level = LEVEL_LOW;
     [self ckeckLevel];
     
     // Color and brush wide
@@ -303,7 +304,7 @@
     LowMultLevel *lowMultLevel = [[LowMultLevel alloc] init];
     NSInteger firstArg = [lowMultLevel giveFirstArgument];
 
-    switch (level) {
+    switch (self.level) {
         case LEVEL_LOW:
             
             self.firstArgument.text = [NSString stringWithFormat:@"%d", firstArg];
