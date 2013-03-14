@@ -261,9 +261,6 @@
 }
 
 - (void)initLayout {
-    // Help is always enabled first time
-    self.helpEnabled = YES;
-    
     // Image between two unselected segments.
     UIImage *transparentSeparator = [UIImage imageNamed:@"transparente.png"];
     UIBarMetrics barMetrics = UIBarMetricsLandscapePhone;
