@@ -36,9 +36,6 @@
 /* Help label press check text  */
 "help_text_press_check_button_text" = "Press check button!";
 
-/* Help next clue button text */
-"help_next_clue_button" = "Next clue";
-
 /* Menu section levels title */
 "menu_section_levels_title" = "Levels";
 

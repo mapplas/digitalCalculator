@@ -48,8 +48,6 @@
     [segmControl setDividerImage:transparentSeparator forLeftSegmentState:UIControlStateNormal
                          rightSegmentState:UIControlStateSelected barMetrics:barMetrics];
     
-    // Help button
-    [helpButton setTitle:NSLocalizedString(@"help_next_clue_button", @"Help next clue button text") forState:UIControlStateNormal];
 }
 
 - (void)resetActionLoaded:(NSInteger)_mode {

@@ -59,6 +59,14 @@
 		7FFB8C4516F21E7A008298DD /* RankingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FFB8C4316F21E7A008298DD /* RankingViewController.m */; };
 		7FFB8C4916F21EB1008298DD /* RankingViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FFB8C4716F21EB1008298DD /* RankingViewController_iPhone.xib */; };
 		7FFB8C4C16F21EC6008298DD /* RankingViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FFB8C4A16F21EC6008298DD /* RankingViewController_iPad.xib */; };
+		7FFB8C4F16F22367008298DD /* btn_play_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FFB8C4D16F22367008298DD /* btn_play_down.png */; };
+		7FFB8C5016F22367008298DD /* btn_play_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FFB8C4E16F22367008298DD /* btn_play_down@2x.png */; };
+		7FFB8C5316F22408008298DD /* btn_learn_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FFB8C5116F22408008298DD /* btn_learn_down.png */; };
+		7FFB8C5416F22408008298DD /* btn_learn_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FFB8C5216F22408008298DD /* btn_learn_down@2x.png */; };
+		7FFB8C5916F224E7008298DD /* btn_next_clue_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FFB8C5516F224E7008298DD /* btn_next_clue_down.png */; };
+		7FFB8C5A16F224E7008298DD /* btn_next_clue_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FFB8C5616F224E7008298DD /* btn_next_clue_down@2x.png */; };
+		7FFB8C5B16F224E7008298DD /* btn_next_clue_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FFB8C5716F224E7008298DD /* btn_next_clue_up.png */; };
+		7FFB8C5C16F224E7008298DD /* btn_next_clue_up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FFB8C5816F224E7008298DD /* btn_next_clue_up@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -134,6 +142,14 @@
 		7FFB8C4316F21E7A008298DD /* RankingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RankingViewController.m; sourceTree = "<group>"; };
 		7FFB8C4816F21EB1008298DD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RankingViewController_iPhone.xib; sourceTree = "<group>"; };
 		7FFB8C4B16F21EC6008298DD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RankingViewController_iPad.xib; sourceTree = "<group>"; };
+		7FFB8C4D16F22367008298DD /* btn_play_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_play_down.png; path = Resources/btn_play_down.png; sourceTree = "<group>"; };
+		7FFB8C4E16F22367008298DD /* btn_play_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_play_down@2x.png"; path = "Resources/btn_play_down@2x.png"; sourceTree = "<group>"; };
+		7FFB8C5116F22408008298DD /* btn_learn_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_learn_down.png; path = Resources/btn_learn_down.png; sourceTree = "<group>"; };
+		7FFB8C5216F22408008298DD /* btn_learn_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_learn_down@2x.png"; path = "Resources/btn_learn_down@2x.png"; sourceTree = "<group>"; };
+		7FFB8C5516F224E7008298DD /* btn_next_clue_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_next_clue_down.png; path = Resources/btn_next_clue_down.png; sourceTree = "<group>"; };
+		7FFB8C5616F224E7008298DD /* btn_next_clue_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_next_clue_down@2x.png"; path = "Resources/btn_next_clue_down@2x.png"; sourceTree = "<group>"; };
+		7FFB8C5716F224E7008298DD /* btn_next_clue_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_next_clue_up.png; path = Resources/btn_next_clue_up.png; sourceTree = "<group>"; };
+		7FFB8C5816F224E7008298DD /* btn_next_clue_up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_next_clue_up@2x.png"; path = "Resources/btn_next_clue_up@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -418,9 +434,17 @@
 			children = (
 				7FFB8C3316F1E2CD008298DD /* btn_dot_up.png */,
 				7FFB8C3416F1E2CD008298DD /* btn_erase_up.png */,
+				7FFB8C5116F22408008298DD /* btn_learn_down.png */,
+				7FFB8C5216F22408008298DD /* btn_learn_down@2x.png */,
 				7FFB8C1916F1B594008298DD /* btn_learn_up.png */,
 				7FFB8C1A16F1B594008298DD /* btn_learn_up@2x.png */,
 				7FFB8C3516F1E2CE008298DD /* btn_line_up.png */,
+				7FFB8C5516F224E7008298DD /* btn_next_clue_down.png */,
+				7FFB8C5616F224E7008298DD /* btn_next_clue_down@2x.png */,
+				7FFB8C5716F224E7008298DD /* btn_next_clue_up.png */,
+				7FFB8C5816F224E7008298DD /* btn_next_clue_up@2x.png */,
+				7FFB8C4D16F22367008298DD /* btn_play_down.png */,
+				7FFB8C4E16F22367008298DD /* btn_play_down@2x.png */,
 				7FFB8C1B16F1B594008298DD /* btn_play_up.png */,
 				7FFB8C1C16F1B594008298DD /* btn_play_up@2x.png */,
 			);
@@ -520,6 +544,14 @@
 				7FFB8C4016F21257008298DD /* chalk.png in Resources */,
 				7FFB8C4916F21EB1008298DD /* RankingViewController_iPhone.xib in Resources */,
 				7FFB8C4C16F21EC6008298DD /* RankingViewController_iPad.xib in Resources */,
+				7FFB8C4F16F22367008298DD /* btn_play_down.png in Resources */,
+				7FFB8C5016F22367008298DD /* btn_play_down@2x.png in Resources */,
+				7FFB8C5316F22408008298DD /* btn_learn_down.png in Resources */,
+				7FFB8C5416F22408008298DD /* btn_learn_down@2x.png in Resources */,
+				7FFB8C5916F224E7008298DD /* btn_next_clue_down.png in Resources */,
+				7FFB8C5A16F224E7008298DD /* btn_next_clue_down@2x.png in Resources */,
+				7FFB8C5B16F224E7008298DD /* btn_next_clue_up.png in Resources */,
+				7FFB8C5C16F224E7008298DD /* btn_next_clue_up@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
