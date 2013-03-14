@@ -39,7 +39,7 @@
     self.helpEnabled = NO;
     
     self.navigationController.navigationBar.tintColor = calculatorNavBarColor;
-    layoutPresenter = [[LayoutPresenter alloc] init];
+    layoutPresenter = [[LayoutPresenter alloc] initWithNavItem:self.navigationItem segmentedControl:self.segmentedControl helpButton:self.helpButton red:red green:green blue:blue brushWide:brushWidth timerLabel:self.timerLabel];
     
     [self setSplashLayoutDetails];
     
@@ -49,7 +49,7 @@
 - (void)setSplashLayoutDetails {
     [self.view addSubview:self.splashView];
     
-    [layoutPresenter setTitleToNavItem:self.navigationItem];
+    [layoutPresenter setTitleToNavItem];
 }
 
 // Learn mode pressed
@@ -70,6 +70,7 @@
 // Game mode pressed
 - (IBAction)gameModePressed:(id)sender {
     self.mode = CALCULATOR_MODE_GAME;
+    self.timerLabel.text = [NSString stringWithFormat:@"%d", GAME_MODE_COUNTDOWN];
     
 //    Help is always disabled in learn mode
     self.helpEnabled = NO;
@@ -80,6 +81,7 @@
     
     [self initNavBar];
     [self initLayout];
+    [layoutPresenter initTimer];
 }
 
 #pragma mark - Shake event
@@ -261,22 +263,8 @@
 }
 
 - (void)initLayout {
-    // Image between two unselected segments.
-    UIImage *transparentSeparator = [UIImage imageNamed:@"transparente.png"];
-    UIBarMetrics barMetrics = UIBarMetricsLandscapePhone;
-    
-    [self.segmentedControl setDividerImage:transparentSeparator forLeftSegmentState:UIControlStateNormal
-                      rightSegmentState:UIControlStateNormal barMetrics:barMetrics];
-    // Image between segment selected on the left and unselected on the right.
-    [self.segmentedControl setDividerImage:transparentSeparator forLeftSegmentState:UIControlStateSelected
-                      rightSegmentState:UIControlStateNormal barMetrics:barMetrics];
-    // Image between segment selected on the right and unselected on the right.
-    [self.segmentedControl setDividerImage:transparentSeparator forLeftSegmentState:UIControlStateNormal
-                      rightSegmentState:UIControlStateSelected barMetrics:barMetrics];
-    
-    // Next help text button
-    [self.helpButton setTitle:NSLocalizedString(@"help_next_clue_button", @"Help next clue button text") forState:UIControlStateNormal];
-    
+    [layoutPresenter configureInitialLayout];
+        
     [self reset];
 }
 
@@ -288,12 +276,7 @@
     [self ckeckLevel];
     
     // Color and brush wide
-    red = LINE_COLOR_RED;
-    green = LINE_COLOR_GREEN;
-    blue = LINE_COLOR_BLUE;
-    brushWidth = LINE_BRUSH_WIDE;
-    
-    self.segmentedControl.selectedSegmentIndex = 0;
+    [layoutPresenter resetActionLoaded:self.mode];
     
     [helpManager start];
 }
@@ -357,7 +340,7 @@
     self.navigationItem.rightBarButtonItem = nil;
     self.navigationItem.leftBarButtonItem = nil;
     
-    [layoutPresenter setTitleToNavItem:self.navigationItem];
+    [layoutPresenter setTitleToNavItem];
 }
 
 
