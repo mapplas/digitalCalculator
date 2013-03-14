@@ -55,6 +55,7 @@
 		7FFB8C3616F1E2CE008298DD /* btn_dot_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FFB8C3316F1E2CD008298DD /* btn_dot_up.png */; };
 		7FFB8C3716F1E2CE008298DD /* btn_erase_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FFB8C3416F1E2CD008298DD /* btn_erase_up.png */; };
 		7FFB8C3816F1E2CE008298DD /* btn_line_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FFB8C3516F1E2CE008298DD /* btn_line_up.png */; };
+		7FFB8C4016F21257008298DD /* chalk.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FFB8C3F16F21257008298DD /* chalk.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -125,6 +126,7 @@
 		7FFB8C3416F1E2CD008298DD /* btn_erase_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_erase_up.png; path = Resources/btn_erase_up.png; sourceTree = "<group>"; };
 		7FFB8C3516F1E2CE008298DD /* btn_line_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_line_up.png; path = Resources/btn_line_up.png; sourceTree = "<group>"; };
 		7FFB8C3A16F1FBA4008298DD /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Classes/Helper/fdsa/Constants.h; sourceTree = "<group>"; };
+		7FFB8C3F16F21257008298DD /* chalk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = chalk.png; path = Resources/chalk.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -284,6 +286,7 @@
 				7F4F594516F0C73C00241DC3 /* bkg_board@2x.png */,
 				7F4F594616F0C73C00241DC3 /* bkg_nav_bar.png */,
 				7F4F594716F0C73C00241DC3 /* bkg_nav_bar@2x.png */,
+				7FFB8C3F16F21257008298DD /* chalk.png */,
 				7FFB8C3116F1DDD1008298DD /* transparente.png */,
 			);
 			name = Background;
@@ -495,6 +498,7 @@
 				7FFB8C3616F1E2CE008298DD /* btn_dot_up.png in Resources */,
 				7FFB8C3716F1E2CE008298DD /* btn_erase_up.png in Resources */,
 				7FFB8C3816F1E2CE008298DD /* btn_line_up.png in Resources */,
+				7FFB8C4016F21257008298DD /* chalk.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
