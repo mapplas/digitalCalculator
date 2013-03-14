@@ -37,7 +37,9 @@
 @property (nonatomic, strong) IBOutlet UISegmentedControl *segmentedControl;
 
 @property (nonatomic, strong) IBOutlet UILabel *firstArgument;
+@property (nonatomic, strong) IBOutlet UILabel *multSymbol;
 @property (nonatomic, strong) IBOutlet UILabel *secondArgument;
+@property (nonatomic, strong) IBOutlet UILabel *resutSymbol;
 @property (nonatomic, strong) IBOutlet UILabel *result;
 
 @property (nonatomic, strong) IBOutlet UISlider *resultSlider;

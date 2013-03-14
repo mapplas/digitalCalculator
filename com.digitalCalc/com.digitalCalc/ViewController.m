@@ -22,7 +22,7 @@
 
 @synthesize board;
 @synthesize segmentedControl;
-@synthesize firstArgument, secondArgument, result;
+@synthesize firstArgument, secondArgument, result, multSymbol, resutSymbol;
 @synthesize resultSlider;
 @synthesize ckeckButton, checkedLabel;
 @synthesize helpView, helpLabel, helpButton;
@@ -38,6 +38,12 @@
     [super viewDidLoad];
     
     self.helpEnabled = NO;
+    
+    [self.firstArgument setFont:[UIFont fontWithName:@"Blokletters Potlood" size:self.firstArgument.font.pointSize]];
+    [self.secondArgument setFont:[UIFont fontWithName:@"Blokletters Potlood" size:self.secondArgument.font.pointSize]];
+    [self.result setFont:[UIFont fontWithName:@"Blokletters Potlood" size:self.result.font.pointSize]];
+    [self.resutSymbol setFont:[UIFont fontWithName:@"Blokletters Potlood" size:self.resutSymbol.font.pointSize]];
+    [self.multSymbol setFont:[UIFont fontWithName:@"Blokletters Potlood" size:self.multSymbol.font.pointSize]];
     
     self.navigationController.navigationBar.tintColor = calculatorNavBarColor;
     layoutPresenter = [[LayoutPresenter alloc] initWithNavItem:self.navigationItem segmentedControl:self.segmentedControl helpButton:self.helpButton timerLabel:self.timerLabel navController:self.navigationController];
