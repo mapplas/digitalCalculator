@@ -49,6 +49,8 @@
 @property (nonatomic, strong) IBOutlet UILabel *helpLabel;
 @property (nonatomic, strong) IBOutlet UIButton *helpButton;
 
+@property (nonatomic, strong) IBOutlet UILabel *timerLabel;
+
 @property (nonatomic, strong) IBOutlet UIView *splashView;
 
 @property (nonatomic, assign) BOOL helpEnabled;

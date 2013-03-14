@@ -26,6 +26,7 @@
 @synthesize resultSlider;
 @synthesize ckeckButton, checkedLabel;
 @synthesize helpView, helpLabel, helpButton;
+@synthesize timerLabel;
 
 @synthesize splashView;
 
