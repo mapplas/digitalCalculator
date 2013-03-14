@@ -245,16 +245,6 @@
 - (void)initLayout {
     // Help is always enabled first time
     self.helpEnabled = YES;
-
-    // Segmented control button names
-    NSString *segmentedControlLineText = NSLocalizedString(@"segm_control_line", @"Segmented control line text");
-    [self.segmentedControl setTitle:segmentedControlLineText forSegmentAtIndex:0];
-    
-    NSString *segmentedControlDotText = NSLocalizedString(@"segm_control_dot", @"Segmented control dots text");
-    [self.segmentedControl setTitle:segmentedControlDotText forSegmentAtIndex:1];
-    
-    NSString *segmentedControlEraseText = NSLocalizedString(@"nav_bar_right_button_title", @"Nav. bar right button title");
-    [self.segmentedControl setTitle:segmentedControlEraseText forSegmentAtIndex:2];
     
     // Next help text button
     [self.helpButton setTitle:NSLocalizedString(@"help_next_clue_button", @"Help next clue button text") forState:UIControlStateNormal];

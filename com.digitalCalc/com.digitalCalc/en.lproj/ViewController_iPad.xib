@@ -38,7 +38,7 @@
 			<object class="IBUISegmentedControl" id="965609176">
 				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">292</int>
-				<string key="NSFrameSize">{161, 29}</string>
+				<string key="NSFrameSize">{180, 29}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView"/>

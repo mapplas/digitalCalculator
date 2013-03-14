@@ -38,7 +38,7 @@
 			<object class="IBUISegmentedControl" id="916078152">
 				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">292</int>
-				<string key="NSFrameSize">{161, 29}</string>
+				<string key="NSFrameSize">{161, 30}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView"/>
@@ -49,14 +49,14 @@
 				<int key="IBNumberOfSegments">3</int>
 				<int key="IBSelectedSegmentIndex">0</int>
 				<array key="IBSegmentTitles">
-					<string>First</string>
-					<string>Second</string>
+					<string/>
+					<string/>
 					<string/>
 				</array>
 				<array class="NSMutableArray" key="IBSegmentWidths">
-					<real value="0.0"/>
-					<real value="0.0"/>
-					<real value="0.0"/>
+					<real value="60"/>
+					<real value="60"/>
+					<real value="60"/>
 				</array>
 				<array class="NSMutableArray" key="IBSegmentEnabledStates">
 					<boolean value="YES"/>
@@ -69,9 +69,18 @@
 					<string>{0, 0}</string>
 				</array>
 				<array class="NSMutableArray" key="IBSegmentImages">
-					<object class="NSNull" id="4"/>
-					<reference ref="4"/>
-					<reference ref="4"/>
+					<object class="NSCustomResource">
+						<string key="NSClassName">NSImage</string>
+						<string key="NSResourceName">segment.png</string>
+					</object>
+					<object class="NSCustomResource">
+						<string key="NSClassName">NSImage</string>
+						<string key="NSResourceName">btn_dot_up.png</string>
+					</object>
+					<object class="NSCustomResource">
+						<string key="NSClassName">NSImage</string>
+						<string key="NSResourceName">btn_erase_up.png</string>
+					</object>
 				</array>
 			</object>
 			<object class="IBUIView" id="20962726">
@@ -857,7 +866,7 @@
 				<string key="268.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="269.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="27.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<integer value="1" key="27.IUISegmentedControlInspectorSelectedSegmentMetadataKey"/>
+				<integer value="2" key="27.IUISegmentedControlInspectorSelectedSegmentMetadataKey"/>
 				<string key="270.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="71.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="8.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -979,9 +988,12 @@
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
 			<string key="bkg_board.png">{480, 288}</string>
+			<string key="btn_dot_up.png">{59, 57}</string>
+			<string key="btn_erase_up.png">{59, 57}</string>
 			<string key="btn_learn_up.png">{251, 70}</string>
 			<string key="btn_play_up.png">{251, 70}</string>
 			<string key="ic_check.png">{64, 64}</string>
+			<string key="segment.png">{60, 26}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">2083</string>
 	</data>
