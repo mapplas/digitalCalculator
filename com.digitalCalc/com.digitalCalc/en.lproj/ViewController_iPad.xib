@@ -666,12 +666,12 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
-						<string key="label">normalModePressed:</string>
+						<string key="label">learnModePressed:</string>
 						<reference key="source" ref="977967519"/>
 						<reference key="destination" ref="841351856"/>
 						<int key="IBEventType">7</int>
 					</object>
-					<int key="connectionID">276</int>
+					<int key="connectionID">280</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -893,7 +893,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">278</int>
+			<int key="maxID">280</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -903,7 +903,7 @@
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="checkButtonPressed:">id</string>
 						<string key="gameModePressed:">id</string>
-						<string key="normalModePressed:">id</string>
+						<string key="learnModePressed:">id</string>
 						<string key="segmentedControlIndexChanged">id</string>
 						<string key="sliderValueChanged:">UISlider</string>
 					</dictionary>
@@ -916,8 +916,8 @@
 							<string key="name">gameModePressed:</string>
 							<string key="candidateClassName">id</string>
 						</object>
-						<object class="IBActionInfo" key="normalModePressed:">
-							<string key="name">normalModePressed:</string>
+						<object class="IBActionInfo" key="learnModePressed:">
+							<string key="name">learnModePressed:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="segmentedControlIndexChanged">

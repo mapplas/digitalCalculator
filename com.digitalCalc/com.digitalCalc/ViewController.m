@@ -34,10 +34,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.helpEnabled = NO;
+    
     self.navigationController.navigationBar.tintColor = calculatorNavBarColor;
     layoutPresenter = [[LayoutPresenter alloc] init];
     
     [self setSplashLayoutDetails];
+    
+    helpManager = [[HelpManager alloc] initWithHelpLabel:self.helpLabel button:self.helpButton firstArgument:self.firstArgument secondArgument:self.secondArgument helpView:self.helpView andCheckButton:self.ckeckButton mainViewController:self];
 }
 
 - (void)setSplashLayoutDetails {
@@ -46,7 +50,13 @@
     [layoutPresenter setTitleToNavItem:self.navigationItem];
 }
 
-- (void)normalModePressed:(id)sender {
+// Learn mode pressed
+- (IBAction)learnModePressed:(id)sender {
+    mode = CALCULATOR_MODE_LEARN;
+    
+//    Help is always enabled in learn mode
+    self.helpEnabled = YES;
+    
     [UIView animateWithDuration:0.5f
                      animations:^{self.splashView.alpha = 0.0;}
                      completion:^(BOOL finished){ [self.view sendSubviewToBack:self.splashView]; }];
@@ -55,7 +65,13 @@
     [self initLayout];
 }
 
-- (void)gameModePressed:(id)sender {
+// Game mode pressed
+- (IBAction)gameModePressed:(id)sender {
+    mode = CALCULATOR_MODE_GAME;
+    
+//    Help is always disabled in learn mode
+    self.helpEnabled = NO;
+    
     [UIView animateWithDuration:0.5f
                      animations:^{self.splashView.alpha = 0.0;}
                      completion:^(BOOL finished){ [self.view sendSubviewToBack:self.splashView]; }];
@@ -262,8 +278,6 @@
     // Next help text button
     [self.helpButton setTitle:NSLocalizedString(@"help_next_clue_button", @"Help next clue button text") forState:UIControlStateNormal];
     
-    helpManager = [[HelpManager alloc] initWithHelpLabel:self.helpLabel button:self.helpButton firstArgument:self.firstArgument secondArgument:self.secondArgument helpView:self.helpView andCheckButton:self.ckeckButton];
-
     [self reset];
 }
 
@@ -282,7 +296,7 @@
     
     self.segmentedControl.selectedSegmentIndex = 0;
     
-    [self checkHelpEnabledAfterMenuHidden];
+    [helpManager start];
 }
 
 - (void)ckeckLevel {

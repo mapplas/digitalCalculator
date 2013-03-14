@@ -14,6 +14,8 @@
 #define HELP_RESULT_ACTION_DONE 3
 #define HELP_RESULT_ACTION_CHECK_PRESSED 4
 
+@class ViewController;
+
 @interface HelpManager : NSObject {
     UILabel *helpLabel;
     UIButton *helpButton;
@@ -21,13 +23,15 @@
     UILabel *secondArgLabel;
     UIView *helpView;
     UIButton *checkButton;
+    ViewController *viewController;
     
     ArgumentLabelAnimator *labelAnimator;
     
     NSInteger currentAction;
 }
 
-- (id)initWithHelpLabel:(UILabel *)help_label button:(UIButton *)help_button firstArgument:(UILabel *)first_arg_label secondArgument:(UILabel *)second_arg_label helpView:(UIView *)help_view andCheckButton:(UIButton *)check_button;
+- (id)initWithHelpLabel:(UILabel *)help_label button:(UIButton *)help_button firstArgument:(UILabel *)first_arg_label secondArgument:(UILabel *)second_arg_label helpView:(UIView *)help_view andCheckButton:(UIButton *)check_button mainViewController:(ViewController *)view_controller;
+
 - (void)start;
 - (void)emptyLabelText;
 

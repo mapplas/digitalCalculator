@@ -124,6 +124,7 @@
 		7FFB8C3316F1E2CD008298DD /* btn_dot_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_dot_up.png; path = Resources/btn_dot_up.png; sourceTree = "<group>"; };
 		7FFB8C3416F1E2CD008298DD /* btn_erase_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_erase_up.png; path = Resources/btn_erase_up.png; sourceTree = "<group>"; };
 		7FFB8C3516F1E2CE008298DD /* btn_line_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_line_up.png; path = Resources/btn_line_up.png; sourceTree = "<group>"; };
+		7FFB8C3016F1C6C2008298DD /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Classes/Helper/Constants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +207,7 @@
 				7F17E7B316E8A310009B742F /* Helpers */,
 				7FE6329E16EDEA2F00B2C086 /* Levels */,
 				7F17E7B716E8B8ED009B742F /* Third party */,
+				7FFB8C3016F1C6C2008298DD /* Constants.h */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
