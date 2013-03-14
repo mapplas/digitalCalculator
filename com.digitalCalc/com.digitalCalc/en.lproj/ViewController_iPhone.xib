@@ -41,7 +41,6 @@
 				<string key="NSFrameSize">{161, 30}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
-				<reference key="NSNextKeyView"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<bool key="IBUIOpaque">NO</bool>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -82,6 +81,10 @@
 						<string key="NSResourceName">btn_erase_up.png</string>
 					</object>
 				</array>
+				<object class="NSColor" key="IBTintColor" id="828839398">
+					<int key="NSColorSpace">3</int>
+					<bytes key="NSWhite">MCAwAA</bytes>
+				</object>
 			</object>
 			<object class="IBUIView" id="20962726">
 				<reference key="NSNextResponder"/>
@@ -109,10 +112,7 @@
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="187186058"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
-						<object class="NSColor" key="IBUIBackgroundColor" id="828839398">
-							<int key="NSColorSpace">3</int>
-							<bytes key="NSWhite">MCAwAA</bytes>
-						</object>
+						<reference key="IBUIBackgroundColor" ref="828839398"/>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
@@ -334,7 +334,6 @@
 						<string key="NSFrame">{{424, 132}, {236, 23}}</string>
 						<reference key="NSSuperview" ref="20962726"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -483,7 +482,6 @@
 						<string key="NSFrame">{{200, 224}, {166, 44}}</string>
 						<reference key="NSSuperview" ref="1014458630"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
