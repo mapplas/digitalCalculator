@@ -37,11 +37,15 @@
 			</object>
 			<object class="IBUISegmentedControl" id="916078152">
 				<reference key="NSNextResponder"/>
-				<int key="NSvFlags">292</int>
-				<string key="NSFrameSize">{161, 30}</string>
+				<int key="NSvFlags">293</int>
+				<string key="NSFrameSize">{92, 30}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
+				<object class="NSColor" key="IBUIBackgroundColor" id="828839398">
+					<int key="NSColorSpace">3</int>
+					<bytes key="NSWhite">MCAwAA</bytes>
+				</object>
 				<bool key="IBUIOpaque">NO</bool>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 				<int key="IBSegmentControlStyle">2</int>
@@ -53,9 +57,9 @@
 					<string/>
 				</array>
 				<array class="NSMutableArray" key="IBSegmentWidths">
-					<real value="60"/>
-					<real value="60"/>
-					<real value="60"/>
+					<real value="28"/>
+					<real value="28"/>
+					<real value="28"/>
 				</array>
 				<array class="NSMutableArray" key="IBSegmentEnabledStates">
 					<boolean value="YES"/>
@@ -70,7 +74,7 @@
 				<array class="NSMutableArray" key="IBSegmentImages">
 					<object class="NSCustomResource">
 						<string key="NSClassName">NSImage</string>
-						<string key="NSResourceName">segment.png</string>
+						<string key="NSResourceName">btn_line_up.png</string>
 					</object>
 					<object class="NSCustomResource">
 						<string key="NSClassName">NSImage</string>
@@ -81,10 +85,6 @@
 						<string key="NSResourceName">btn_erase_up.png</string>
 					</object>
 				</array>
-				<object class="NSColor" key="IBTintColor" id="828839398">
-					<int key="NSColorSpace">3</int>
-					<bytes key="NSWhite">MCAwAA</bytes>
-				</object>
 			</object>
 			<object class="IBUIView" id="20962726">
 				<reference key="NSNextResponder"/>
@@ -864,7 +864,7 @@
 				<string key="268.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="269.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="27.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<integer value="2" key="27.IUISegmentedControlInspectorSelectedSegmentMetadataKey"/>
+				<integer value="0" key="27.IUISegmentedControlInspectorSelectedSegmentMetadataKey"/>
 				<string key="270.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="71.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="8.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -986,12 +986,12 @@
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
 			<string key="bkg_board.png">{480, 288}</string>
-			<string key="btn_dot_up.png">{59, 57}</string>
-			<string key="btn_erase_up.png">{59, 57}</string>
+			<string key="btn_dot_up.png">{30, 30}</string>
+			<string key="btn_erase_up.png">{30, 30}</string>
 			<string key="btn_learn_up.png">{251, 70}</string>
+			<string key="btn_line_up.png">{30, 30}</string>
 			<string key="btn_play_up.png">{251, 70}</string>
 			<string key="ic_check.png">{64, 64}</string>
-			<string key="segment.png">{60, 26}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">2083</string>
 	</data>

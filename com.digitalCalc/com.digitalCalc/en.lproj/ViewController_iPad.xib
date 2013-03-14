@@ -37,11 +37,10 @@
 			</object>
 			<object class="IBUISegmentedControl" id="965609176">
 				<reference key="NSNextResponder"/>
-				<int key="NSvFlags">292</int>
-				<string key="NSFrameSize">{180, 29}</string>
+				<int key="NSvFlags">293</int>
+				<string key="NSFrameSize">{92, 30}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
-				<reference key="NSNextKeyView"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<bool key="IBUIOpaque">NO</bool>
 				<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -49,14 +48,14 @@
 				<int key="IBNumberOfSegments">3</int>
 				<int key="IBSelectedSegmentIndex">0</int>
 				<array key="IBSegmentTitles">
-					<string>First</string>
-					<string>Second</string>
+					<string/>
+					<string/>
 					<string/>
 				</array>
 				<array class="NSMutableArray" key="IBSegmentWidths">
-					<real value="0.0"/>
-					<real value="0.0"/>
-					<real value="0.0"/>
+					<real value="28"/>
+					<real value="28"/>
+					<real value="28"/>
 				</array>
 				<array class="NSMutableArray" key="IBSegmentEnabledStates">
 					<boolean value="YES"/>
@@ -69,9 +68,18 @@
 					<string>{0, 0}</string>
 				</array>
 				<array class="NSMutableArray" key="IBSegmentImages">
-					<object class="NSNull" id="4"/>
-					<reference ref="4"/>
-					<reference ref="4"/>
+					<object class="NSCustomResource">
+						<string key="NSClassName">NSImage</string>
+						<string key="NSResourceName">btn_line_up.png</string>
+					</object>
+					<object class="NSCustomResource">
+						<string key="NSClassName">NSImage</string>
+						<string key="NSResourceName">btn_dot_up.png</string>
+					</object>
+					<object class="NSCustomResource">
+						<string key="NSClassName">NSImage</string>
+						<string key="NSResourceName">btn_erase_up.png</string>
+					</object>
 				</array>
 			</object>
 			<object class="IBUIView" id="766721923">
@@ -239,7 +247,6 @@
 						<string key="NSFrame">{{728, 350}, {542, 23}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -488,7 +495,6 @@
 						<string key="NSFrame">{{434, 571}, {160, 44}}</string>
 						<reference key="NSSuperview" ref="290507410"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -847,7 +853,7 @@
 				<string key="-2.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="109.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="13.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<integer value="1" key="13.IUISegmentedControlInspectorSelectedSegmentMetadataKey"/>
+				<integer value="0" key="13.IUISegmentedControlInspectorSelectedSegmentMetadataKey"/>
 				<string key="172.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="2.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<dictionary class="NSMutableDictionary" key="210.IBAttributePlaceholdersKey"/>
@@ -1000,7 +1006,10 @@
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
 			<string key="bkg_board.png">{480, 288}</string>
+			<string key="btn_dot_up.png">{30, 30}</string>
+			<string key="btn_erase_up.png">{30, 30}</string>
 			<string key="btn_learn_up.png">{251, 70}</string>
+			<string key="btn_line_up.png">{30, 30}</string>
 			<string key="btn_play_up.png">{251, 70}</string>
 			<string key="ic_check.png">{64, 64}</string>
 		</dictionary>

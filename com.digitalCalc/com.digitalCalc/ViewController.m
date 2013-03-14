@@ -246,22 +246,18 @@
     // Help is always enabled first time
     self.helpEnabled = YES;
     
-
-    
     // Image between two unselected segments.
-    UIImage *image1 = [UIImage imageNamed:@"transparente.png"];
+    UIImage *transparentSeparator = [UIImage imageNamed:@"transparente.png"];
     UIBarMetrics barMetrics = UIBarMetricsLandscapePhone;
     
-    [self.segmentedControl setDividerImage:image1 forLeftSegmentState:UIControlStateNormal
+    [self.segmentedControl setDividerImage:transparentSeparator forLeftSegmentState:UIControlStateNormal
                       rightSegmentState:UIControlStateNormal barMetrics:barMetrics];
     // Image between segment selected on the left and unselected on the right.
-    [self.segmentedControl setDividerImage:image1 forLeftSegmentState:UIControlStateSelected
+    [self.segmentedControl setDividerImage:transparentSeparator forLeftSegmentState:UIControlStateSelected
                       rightSegmentState:UIControlStateNormal barMetrics:barMetrics];
     // Image between segment selected on the right and unselected on the right.
-    [self.segmentedControl setDividerImage:image1 forLeftSegmentState:UIControlStateNormal
+    [self.segmentedControl setDividerImage:transparentSeparator forLeftSegmentState:UIControlStateNormal
                       rightSegmentState:UIControlStateSelected barMetrics:barMetrics];
-    
-    
     
     // Next help text button
     [self.helpButton setTitle:NSLocalizedString(@"help_next_clue_button", @"Help next clue button text") forState:UIControlStateNormal];
