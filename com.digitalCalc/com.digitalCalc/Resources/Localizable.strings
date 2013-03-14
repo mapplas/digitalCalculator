@@ -57,8 +57,14 @@
 /* Menu section settings help enabled */
 "menu_section_settings_help_enabled" = "Help enabled";
 
-/* Result ckecked OK text */
-"result_checked_ok" = "GREAT!! Tap to continue!";
+/* Result ckecked OK text in learn mode */
+"result_checked_ok_learn_mode" = "GREAT!! Tap to continue!";
 
-/* Result ckecked NOK text */
-"result_checked_nok" = "Oops! Try again...";
+/* Result ckecked NOK text in learn mode */
+"result_checked_nok_learn_mode" = "Oops! Try again...";
+
+/* Result ckecked OK text in game mode */
+"result_checked_ok_game_mode" = "+5 points! Tap to do next mult!";
+
+/* Result ckecked NOK text in game mode */
+"result_checked_nok_lgame_mode" = "Hurry! Try again!";

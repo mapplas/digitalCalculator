@@ -40,7 +40,7 @@
     self.helpEnabled = NO;
     
     self.navigationController.navigationBar.tintColor = calculatorNavBarColor;
-    layoutPresenter = [[LayoutPresenter alloc] initWithNavItem:self.navigationItem segmentedControl:self.segmentedControl helpButton:self.helpButton timerLabel:self.timerLabel];
+    layoutPresenter = [[LayoutPresenter alloc] initWithNavItem:self.navigationItem segmentedControl:self.segmentedControl helpButton:self.helpButton timerLabel:self.timerLabel navController:self.navigationController];
     
     [self setSplashLayoutDetails];
     
@@ -318,11 +318,20 @@
     [helpManager emptyLabelText];
 
     self.checkedLabel.hidden = NO;
-    if ([self.result.text isEqualToString:[NSString stringWithFormat:@"%d", resultIntValue]]) {
-        self.checkedLabel.text = NSLocalizedString(@"result_checked_ok", @"Result ckecked OK text");
-    }
-    else {
-        self.checkedLabel.text = NSLocalizedString(@"result_checked_nok", @"Result ckecked NOK text");
+    if (self.mode == CALCULATOR_MODE_LEARN) {
+        if ([self.result.text isEqualToString:[NSString stringWithFormat:@"%d", resultIntValue]]) {
+            self.checkedLabel.text = NSLocalizedString(@"result_checked_ok_learn_mode", @"Result ckecked OK text in learn mode");
+        }
+        else {
+            self.checkedLabel.text = NSLocalizedString(@"result_checked_nok_learn_mode", @"Result ckecked NOK text in learn mode");
+        }
+    } else { // GAME MODE
+        if ([self.result.text isEqualToString:[NSString stringWithFormat:@"%d", resultIntValue]]) {
+            self.checkedLabel.text = NSLocalizedString(@"result_checked_ok_game_mode", @"Result ckecked OK text in game mode");
+        }
+        else {
+            self.checkedLabel.text = NSLocalizedString(@"result_checked_nok_lgame_mode", @"Result ckecked NOK text in game mode");
+        }
     }
 }
 

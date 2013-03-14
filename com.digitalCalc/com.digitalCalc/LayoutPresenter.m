@@ -10,13 +10,14 @@
 
 @implementation LayoutPresenter
 
-- (id)initWithNavItem:(UINavigationItem *)nav_item segmentedControl:(UISegmentedControl *)segm_control helpButton:(UIButton *)help_button timerLabel:(UILabel *)timer_label {
+- (id)initWithNavItem:(UINavigationItem *)nav_item segmentedControl:(UISegmentedControl *)segm_control helpButton:(UIButton *)help_button timerLabel:(UILabel *)timer_label navController:(UINavigationController *)main_controller {
     self = [super init];
     if (self) {
         navItem = nav_item;
         segmControl = segm_control;
         helpButton = help_button;
         timerLabel = timer_label;
+        mainScreenController = main_controller;
     }
     return self;
 }
@@ -76,6 +77,9 @@
     } else {
         [countDownTimer invalidate];
         countDownTimer = nil;
+        
+        RankingViewController *rankingViewController = [[RankingViewController alloc] init];
+        [mainScreenController presentModalViewController:rankingViewController animated:YES];
     }
 }
 
