@@ -67,6 +67,11 @@
 		7FFB8C5B16F224E7008298DD /* btn_next_clue_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FFB8C5716F224E7008298DD /* btn_next_clue_up.png */; };
 		7FFB8C5C16F224E7008298DD /* btn_next_clue_up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FFB8C5816F224E7008298DD /* btn_next_clue_up@2x.png */; };
 		7FFB8C5E16F22857008298DD /* Blokletters-Potlood.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7FFB8C5D16F22857008298DD /* Blokletters-Potlood.ttf */; };
+		7FFB8C6016F22E1C008298DD /* TheGirlNextDoor.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7FFB8C5F16F22E1B008298DD /* TheGirlNextDoor.ttf */; };
+		7FFB8C6616F230B5008298DD /* btn_check_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FFB8C6216F230B5008298DD /* btn_check_down.png */; };
+		7FFB8C6716F230B5008298DD /* btn_check_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FFB8C6316F230B5008298DD /* btn_check_down@2x.png */; };
+		7FFB8C6816F230B5008298DD /* btn_check_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FFB8C6416F230B5008298DD /* btn_check_up.png */; };
+		7FFB8C6916F230B5008298DD /* btn_check_up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FFB8C6516F230B5008298DD /* btn_check_up@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -150,6 +155,11 @@
 		7FFB8C5716F224E7008298DD /* btn_next_clue_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_next_clue_up.png; path = Resources/btn_next_clue_up.png; sourceTree = "<group>"; };
 		7FFB8C5816F224E7008298DD /* btn_next_clue_up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_next_clue_up@2x.png"; path = "Resources/btn_next_clue_up@2x.png"; sourceTree = "<group>"; };
 		7FFB8C5D16F22857008298DD /* Blokletters-Potlood.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Blokletters-Potlood.ttf"; path = "Resources/Blokletters-Potlood.ttf"; sourceTree = "<group>"; };
+		7FFB8C5F16F22E1B008298DD /* TheGirlNextDoor.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = TheGirlNextDoor.ttf; path = Resources/TheGirlNextDoor.ttf; sourceTree = "<group>"; };
+		7FFB8C6216F230B5008298DD /* btn_check_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_check_down.png; path = Resources/btn_check_down.png; sourceTree = "<group>"; };
+		7FFB8C6316F230B5008298DD /* btn_check_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_check_down@2x.png"; path = "Resources/btn_check_down@2x.png"; sourceTree = "<group>"; };
+		7FFB8C6416F230B5008298DD /* btn_check_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_check_up.png; path = Resources/btn_check_up.png; sourceTree = "<group>"; };
+		7FFB8C6516F230B5008298DD /* btn_check_up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_check_up@2x.png"; path = "Resources/btn_check_up@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,12 +251,12 @@
 		7F4401BF16E7490700886CBE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				7FFB8C5D16F22857008298DD /* Blokletters-Potlood.ttf */,
 				7F4401C516E74C8D00886CBE /* Localizable.strings */,
 				7F65152B16F0A18900FA770C /* Icon.png */,
 				7F65152916F0A18200FA770C /* Icon@2x.png */,
 				7F9E39A416E9E3420038893A /* Background */,
 				7FFB8C1816F1B549008298DD /* Buttons */,
+				7FFB8C6116F22E1F008298DD /* Fonts */,
 				7F4401C016E7491000886CBE /* Icons */,
 			);
 			name = Resources;
@@ -432,6 +442,10 @@
 		7FFB8C1816F1B549008298DD /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				7FFB8C6216F230B5008298DD /* btn_check_down.png */,
+				7FFB8C6316F230B5008298DD /* btn_check_down@2x.png */,
+				7FFB8C6416F230B5008298DD /* btn_check_up.png */,
+				7FFB8C6516F230B5008298DD /* btn_check_up@2x.png */,
 				7FFB8C3316F1E2CD008298DD /* btn_dot_up.png */,
 				7FFB8C3416F1E2CD008298DD /* btn_erase_up.png */,
 				7FFB8C5116F22408008298DD /* btn_learn_down.png */,
@@ -460,6 +474,15 @@
 				7FFB8C4716F21EB1008298DD /* RankingViewController_iPhone.xib */,
 			);
 			name = Ranking;
+			sourceTree = "<group>";
+		};
+		7FFB8C6116F22E1F008298DD /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				7FFB8C5F16F22E1B008298DD /* TheGirlNextDoor.ttf */,
+				7FFB8C5D16F22857008298DD /* Blokletters-Potlood.ttf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -552,6 +575,11 @@
 				7FFB8C5B16F224E7008298DD /* btn_next_clue_up.png in Resources */,
 				7FFB8C5C16F224E7008298DD /* btn_next_clue_up@2x.png in Resources */,
 				7FFB8C5E16F22857008298DD /* Blokletters-Potlood.ttf in Resources */,
+				7FFB8C6016F22E1C008298DD /* TheGirlNextDoor.ttf in Resources */,
+				7FFB8C6616F230B5008298DD /* btn_check_down.png in Resources */,
+				7FFB8C6716F230B5008298DD /* btn_check_down@2x.png in Resources */,
+				7FFB8C6816F230B5008298DD /* btn_check_up.png in Resources */,
+				7FFB8C6916F230B5008298DD /* btn_check_up@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

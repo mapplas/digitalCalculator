@@ -41,8 +41,8 @@
     
     [self.firstArgument setFont:[UIFont fontWithName:@"Blokletters Potlood" size:self.firstArgument.font.pointSize]];
     [self.secondArgument setFont:[UIFont fontWithName:@"Blokletters Potlood" size:self.secondArgument.font.pointSize]];
-    [self.result setFont:[UIFont fontWithName:@"Blokletters Potlood" size:self.result.font.pointSize]];
-    [self.resutSymbol setFont:[UIFont fontWithName:@"Blokletters Potlood" size:self.resutSymbol.font.pointSize]];
+    [self.result setFont:[UIFont fontWithName:@"The Girl Next Door" size:self.result.font.pointSize]];
+    [self.resutSymbol setFont:[UIFont fontWithName:@"The Girl Next Door" size:self.resutSymbol.font.pointSize]];
     [self.multSymbol setFont:[UIFont fontWithName:@"Blokletters Potlood" size:self.multSymbol.font.pointSize]];
     
     self.navigationController.navigationBar.tintColor = calculatorNavBarColor;

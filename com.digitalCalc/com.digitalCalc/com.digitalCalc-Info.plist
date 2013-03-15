@@ -39,6 +39,7 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
+		<string>TheGirlNextDoor.ttf</string>
 		<string>Blokletters-Potlood.ttf</string>
 	</array>
 	<key>UIPrerenderedIcon</key>
