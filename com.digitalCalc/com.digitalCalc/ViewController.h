@@ -45,11 +45,16 @@
 @property (nonatomic, strong) IBOutlet UISlider *resultSlider;
 
 @property (nonatomic, strong) IBOutlet UIButton *ckeckButton;
+@property (nonatomic, strong) IBOutlet UIView *afterCheckedView;
+@property (nonatomic, strong) IBOutlet UIView *afterCheckedAlphaView;
 @property (nonatomic, strong) IBOutlet UILabel *checkedLabel;
+@property (nonatomic, strong) IBOutlet UILabel *tapToNextMultLabel;
 
 @property (nonatomic, strong) IBOutlet UIView *helpView;
+@property (nonatomic, strong) IBOutlet UIView *helpAlphaView;
 @property (nonatomic, strong) IBOutlet UILabel *helpLabel;
 @property (nonatomic, strong) IBOutlet UIButton *helpButton;
+@property (nonatomic, strong) IBOutlet UILabel *tapToContinueLabel;
 
 @property (nonatomic, strong) IBOutlet UILabel *timerLabel;
 

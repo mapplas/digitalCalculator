@@ -36,6 +36,9 @@
 /* Help label press check text  */
 "help_text_press_check_button_text" = "Press check button!";
 
+/* Help tap to continue label text */
+"help_text_tap_to_continue" = "Tap to continue";
+
 /* Menu section levels title */
 "menu_section_levels_title" = "Levels";
 
