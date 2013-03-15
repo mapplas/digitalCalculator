@@ -198,7 +198,7 @@
 						<string key="NSFrame">{{830, 612}, {70, 54}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="821058414"/>
+						<reference key="NSNextKeyView" ref="518574353"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -270,7 +270,7 @@
 						<string key="NSFrame">{{-5, 669}, {142, 59}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="866562062"/>
+						<reference key="NSNextKeyView" ref="821058414"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -378,7 +378,7 @@
 						<object class="NSColor" key="IBUITextColor">
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MSAxIDEAA</bytes>
-							<object class="NSColorSpace" key="NSCustomColorSpace" id="410601901">
+							<object class="NSColorSpace" key="NSCustomColorSpace" id="377195207">
 								<int key="NSID">1</int>
 							</object>
 						</object>
@@ -422,24 +422,24 @@
 								<string key="NSFrame">{{55, 70}, {914, 584}}</string>
 								<reference key="NSSuperview" ref="12275856"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="50711415"/>
+								<reference key="NSNextKeyView" ref="280697751"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
 								<int key="IBUIContentMode">7</int>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-								<string key="IBUIText">Help</string>
+								<string key="IBUIText"/>
 								<reference key="IBUITextColor" ref="559598442"/>
 								<nil key="IBUIHighlightedColor"/>
 								<int key="IBUIBaselineAdjustment">0</int>
 								<int key="IBUINumberOfLines">3</int>
 								<int key="IBUITextAlignment">1</int>
-								<object class="IBUIFontDescription" key="IBUIFontDescription">
+								<object class="IBUIFontDescription" key="IBUIFontDescription" id="925011915">
 									<int key="type">1</int>
 									<double key="pointSize">60</double>
 								</object>
-								<object class="NSFont" key="IBUIFont">
+								<object class="NSFont" key="IBUIFont" id="1055618403">
 									<string key="NSName">Helvetica</string>
 									<double key="NSSize">60</double>
 									<int key="NSfFlags">16</int>
@@ -447,13 +447,13 @@
 								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 								<double key="preferredMaxLayoutWidth">914</double>
 							</object>
-							<object class="IBUILabel" id="50711415">
+							<object class="IBUILabel" id="280697751">
 								<reference key="NSNextResponder" ref="12275856"/>
 								<int key="NSvFlags">289</int>
 								<string key="NSFrame">{{811, 60}, {164, 28}}</string>
 								<reference key="NSSuperview" ref="12275856"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="424684541"/>
+								<reference key="NSNextKeyView" ref="853507167"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -464,16 +464,16 @@
 								<object class="NSColor" key="IBUITextColor">
 									<int key="NSColorSpace">1</int>
 									<bytes key="NSRGB">MSAxIDEAA</bytes>
-									<reference key="NSCustomColorSpace" ref="410601901"/>
+									<reference key="NSCustomColorSpace" ref="377195207"/>
 								</object>
 								<nil key="IBUIHighlightedColor"/>
 								<int key="IBUIBaselineAdjustment">0</int>
 								<int key="IBUITextAlignment">2</int>
-								<object class="IBUIFontDescription" key="IBUIFontDescription">
+								<object class="IBUIFontDescription" key="IBUIFontDescription" id="390990569">
 									<int key="type">1</int>
 									<double key="pointSize">18</double>
 								</object>
-								<object class="NSFont" key="IBUIFont">
+								<object class="NSFont" key="IBUIFont" id="193984409">
 									<string key="NSName">Helvetica</string>
 									<double key="NSSize">18</double>
 									<int key="NSfFlags">16</int>
@@ -489,11 +489,87 @@
 						<reference key="IBUIBackgroundColor" ref="798575103"/>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 					</object>
+					<object class="IBUIView" id="853507167">
+						<reference key="NSNextResponder" ref="766721923"/>
+						<int key="NSvFlags">-2147483369</int>
+						<array class="NSMutableArray" key="NSSubviews">
+							<object class="IBUIView" id="487063874">
+								<reference key="NSNextResponder" ref="853507167"/>
+								<int key="NSvFlags">279</int>
+								<array class="NSMutableArray" key="NSSubviews"/>
+								<string key="NSFrame">{{35, 50}, {954, 624}}</string>
+								<reference key="NSSuperview" ref="853507167"/>
+								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="100273536"/>
+								<string key="NSReuseIdentifierKey">_NS:9</string>
+								<reference key="IBUIBackgroundColor" ref="499924241"/>
+								<float key="IBUIAlpha">0.40000000596046448</float>
+								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+							</object>
+							<object class="IBUILabel" id="100273536">
+								<reference key="NSNextResponder" ref="853507167"/>
+								<int key="NSvFlags">279</int>
+								<string key="NSFrame">{{55, 70}, {914, 584}}</string>
+								<reference key="NSSuperview" ref="853507167"/>
+								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="871755836"/>
+								<string key="NSReuseIdentifierKey">_NS:9</string>
+								<bool key="IBUIOpaque">NO</bool>
+								<bool key="IBUIClipsSubviews">YES</bool>
+								<int key="IBUIContentMode">7</int>
+								<bool key="IBUIUserInteractionEnabled">NO</bool>
+								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+								<string key="IBUIText"/>
+								<reference key="IBUITextColor" ref="559598442"/>
+								<nil key="IBUIHighlightedColor"/>
+								<int key="IBUIBaselineAdjustment">0</int>
+								<int key="IBUINumberOfLines">3</int>
+								<int key="IBUITextAlignment">1</int>
+								<reference key="IBUIFontDescription" ref="925011915"/>
+								<reference key="IBUIFont" ref="1055618403"/>
+								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
+								<double key="preferredMaxLayoutWidth">914</double>
+							</object>
+							<object class="IBUILabel" id="871755836">
+								<reference key="NSNextResponder" ref="853507167"/>
+								<int key="NSvFlags">289</int>
+								<string key="NSFrame">{{811, 60}, {164, 28}}</string>
+								<reference key="NSSuperview" ref="853507167"/>
+								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="424684541"/>
+								<string key="NSReuseIdentifierKey">_NS:9</string>
+								<bool key="IBUIOpaque">NO</bool>
+								<bool key="IBUIClipsSubviews">YES</bool>
+								<int key="IBUIContentMode">7</int>
+								<bool key="IBUIUserInteractionEnabled">NO</bool>
+								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+								<string key="IBUIText"/>
+								<object class="NSColor" key="IBUITextColor">
+									<int key="NSColorSpace">1</int>
+									<bytes key="NSRGB">MSAxIDEAA</bytes>
+									<reference key="NSCustomColorSpace" ref="377195207"/>
+								</object>
+								<nil key="IBUIHighlightedColor"/>
+								<int key="IBUIBaselineAdjustment">0</int>
+								<int key="IBUITextAlignment">2</int>
+								<reference key="IBUIFontDescription" ref="390990569"/>
+								<reference key="IBUIFont" ref="193984409"/>
+								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
+							</object>
+						</array>
+						<string key="NSFrameSize">{1024, 724}</string>
+						<reference key="NSSuperview" ref="766721923"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="487063874"/>
+						<string key="NSReuseIdentifierKey">_NS:9</string>
+						<reference key="IBUIBackgroundColor" ref="798575103"/>
+						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+					</object>
 				</array>
 				<string key="NSFrameSize">{1024, 724}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
-				<reference key="NSNextKeyView" ref="518574353"/>
+				<reference key="NSNextKeyView" ref="866562062"/>
 				<reference key="IBUIBackgroundColor" ref="499924241"/>
 				<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
 					<int key="IBUIInterfaceOrientation">3</int>
@@ -644,14 +720,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">checkedLabel</string>
-						<reference key="source" ref="841351856"/>
-						<reference key="destination" ref="385725899"/>
-					</object>
-					<int key="connectionID">259</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">resultSlider</string>
 						<reference key="source" ref="841351856"/>
 						<reference key="destination" ref="649042476"/>
@@ -726,9 +794,41 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">tapToContinueLabel</string>
 						<reference key="source" ref="841351856"/>
-						<reference key="destination" ref="50711415"/>
+						<reference key="destination" ref="280697751"/>
 					</object>
 					<int key="connectionID">287</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">afterCheckedAlphaView</string>
+						<reference key="source" ref="841351856"/>
+						<reference key="destination" ref="487063874"/>
+					</object>
+					<int key="connectionID">292</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">afterCheckedView</string>
+						<reference key="source" ref="841351856"/>
+						<reference key="destination" ref="853507167"/>
+					</object>
+					<int key="connectionID">293</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">tapToNextMultLabel</string>
+						<reference key="source" ref="841351856"/>
+						<reference key="destination" ref="871755836"/>
+					</object>
+					<int key="connectionID">294</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">checkedLabel</string>
+						<reference key="source" ref="841351856"/>
+						<reference key="destination" ref="100273536"/>
+					</object>
+					<int key="connectionID">295</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
@@ -812,6 +912,7 @@
 							<reference ref="821058414"/>
 							<reference ref="339309117"/>
 							<reference ref="12275856"/>
+							<reference ref="853507167"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -899,7 +1000,7 @@
 						<array class="NSMutableArray" key="children">
 							<reference ref="317973741"/>
 							<reference ref="138354136"/>
-							<reference ref="50711415"/>
+							<reference ref="280697751"/>
 						</array>
 						<reference key="parent" ref="766721923"/>
 						<string key="objectName">Help view</string>
@@ -953,9 +1054,38 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">286</int>
-						<reference key="object" ref="50711415"/>
+						<reference key="object" ref="280697751"/>
 						<reference key="parent" ref="12275856"/>
 						<string key="objectName">Tap to continue label</string>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">288</int>
+						<reference key="object" ref="853507167"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="871755836"/>
+							<reference ref="100273536"/>
+							<reference ref="487063874"/>
+						</array>
+						<reference key="parent" ref="766721923"/>
+						<string key="objectName">After check view</string>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">289</int>
+						<reference key="object" ref="871755836"/>
+						<reference key="parent" ref="853507167"/>
+						<string key="objectName">Tap to continue label</string>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">290</int>
+						<reference key="object" ref="100273536"/>
+						<reference key="parent" ref="853507167"/>
+						<string key="objectName">After checked label</string>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">291</int>
+						<reference key="object" ref="487063874"/>
+						<reference key="parent" ref="853507167"/>
+						<string key="objectName">Alpha help view</string>
 					</object>
 				</array>
 			</object>
@@ -989,6 +1119,10 @@
 				<string key="278.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="281.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="286.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="288.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="289.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="290.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="291.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="47.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="6.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="79.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -998,7 +1132,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">287</int>
+			<int key="maxID">295</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1035,6 +1169,8 @@
 						</object>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="afterCheckedAlphaView">UIView</string>
+						<string key="afterCheckedView">UIView</string>
 						<string key="board">UIImageView</string>
 						<string key="checkedLabel">UILabel</string>
 						<string key="ckeckButton">UIButton</string>
@@ -1051,9 +1187,18 @@
 						<string key="segmentedControl">UISegmentedControl</string>
 						<string key="splashView">UIView</string>
 						<string key="tapToContinueLabel">UILabel</string>
+						<string key="tapToNextMultLabel">UILabel</string>
 						<string key="timerLabel">UILabel</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="afterCheckedAlphaView">
+							<string key="name">afterCheckedAlphaView</string>
+							<string key="candidateClassName">UIView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="afterCheckedView">
+							<string key="name">afterCheckedView</string>
+							<string key="candidateClassName">UIView</string>
+						</object>
 						<object class="IBToOneOutletInfo" key="board">
 							<string key="name">board</string>
 							<string key="candidateClassName">UIImageView</string>
@@ -1116,6 +1261,10 @@
 						</object>
 						<object class="IBToOneOutletInfo" key="tapToContinueLabel">
 							<string key="name">tapToContinueLabel</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="tapToNextMultLabel">
+							<string key="name">tapToNextMultLabel</string>
 							<string key="candidateClassName">UILabel</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="timerLabel">

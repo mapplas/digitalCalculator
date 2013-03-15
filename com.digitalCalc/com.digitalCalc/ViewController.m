@@ -11,7 +11,6 @@
 
 @interface ViewController ()
 - (void)initNavBar;
-- (void)initLayout;
 - (void)clearAll;
 - (void)ckeckLevel;
 - (BOOL)checkVisibleLabels;
@@ -24,7 +23,7 @@
 @synthesize segmentedControl;
 @synthesize firstArgument, secondArgument, result, multSymbol, resutSymbol;
 @synthesize resultSlider;
-@synthesize ckeckButton, checkedLabel;
+@synthesize ckeckButton, afterCheckedView, afterCheckedAlphaView, checkedLabel, tapToNextMultLabel;
 @synthesize helpView, helpAlphaView, helpLabel, helpButton, tapToContinueLabel;
 @synthesize timerLabel;
 
@@ -40,7 +39,7 @@
     self.helpEnabled = NO;
     self.navigationController.navigationBar.tintColor = calculatorNavBarColor;
     
-    layoutPresenter = [[LayoutPresenter alloc] initWithNavItem:self.navigationItem segmentedControl:self.segmentedControl helpButton:self.helpButton timerLabel:self.timerLabel navController:self.navigationController multFirstArg:self.firstArgument multSecondArg:self.secondArgument result:self.result resultSymbol:self.resutSymbol multSymbol:self.multSymbol helpAlphaView:self.helpAlphaView helpLabel:self.helpLabel tapToContinue:self.tapToContinueLabel];
+    layoutPresenter = [[LayoutPresenter alloc] initWithNavItem:self.navigationItem segmentedControl:self.segmentedControl helpButton:self.helpButton timerLabel:self.timerLabel navController:self.navigationController multFirstArg:self.firstArgument multSecondArg:self.secondArgument result:self.result resultSymbol:self.resutSymbol multSymbol:self.multSymbol helpAlphaView:self.helpAlphaView helpLabel:self.helpLabel tapToContinue:self.tapToContinueLabel afterCheckAlphaView:self.afterCheckedAlphaView afterCheckLabel:self.checkedLabel nextMultLabel:self.tapToNextMultLabel];
     
     helpManager = [[HelpManager alloc] initWithHelpLabel:self.helpLabel button:self.helpButton firstArgument:self.firstArgument secondArgument:self.secondArgument helpView:self.helpView andCheckButton:self.ckeckButton mainViewController:self];
     
@@ -246,8 +245,8 @@
     }
     
     // If after checked label is visible set as hidden
-    if (!self.checkedLabel.hidden) {
-        self.checkedLabel.hidden = YES;
+    if (!self.afterCheckedView.hidden) {
+        self.afterCheckedView.hidden = YES;
         
         if ([self.result.text isEqualToString:[NSString stringWithFormat:@"%d", [self.firstArgument.text integerValue] * [self.secondArgument.text integerValue]]]) {
             [self reset];
@@ -312,7 +311,7 @@
     
     [helpManager emptyLabelText];
 
-    self.checkedLabel.hidden = NO;
+    self.afterCheckedView.hidden = NO;
     if (self.mode == CALCULATOR_MODE_LEARN) {
         if ([self.result.text isEqualToString:[NSString stringWithFormat:@"%d", resultIntValue]]) {
             self.checkedLabel.text = NSLocalizedString(@"result_checked_ok_learn_mode", @"Result ckecked OK text in learn mode");

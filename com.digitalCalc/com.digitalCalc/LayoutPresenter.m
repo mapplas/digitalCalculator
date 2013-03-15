@@ -10,7 +10,8 @@
 
 @implementation LayoutPresenter
 
-- (id)initWithNavItem:(UINavigationItem *)nav_item segmentedControl:(UISegmentedControl *)segm_control helpButton:(UIButton *)help_button timerLabel:(UILabel *)timer_label navController:(UINavigationController *)main_controller multFirstArg:(UILabel *)mult_first_arg multSecondArg:(UILabel *)mult_sec_arg result:(UILabel *)_result resultSymbol:(UILabel *)result_symbol multSymbol:(UILabel *)mult_symbol helpAlphaView:(UIView *)help_alpha_view helpLabel:(UILabel *)help_label tapToContinue:(UILabel *)tap_to_cont {
+- (id)initWithNavItem:(UINavigationItem *)nav_item segmentedControl:(UISegmentedControl *)segm_control helpButton:(UIButton *)help_button timerLabel:(UILabel *)timer_label navController:(UINavigationController *)main_controller multFirstArg:(UILabel *)mult_first_arg multSecondArg:(UILabel *)mult_sec_arg result:(UILabel *)_result resultSymbol:(UILabel *)result_symbol multSymbol:(UILabel *)mult_symbol helpAlphaView:(UIView *)help_alpha_view helpLabel:(UILabel *)help_label tapToContinue:(UILabel *)tap_to_cont afterCheckAlphaView:(UIView *)after_check_alpha_view afterCheckLabel:(UILabel *)after_check_label nextMultLabel:(UILabel *)tap_to_next_mult {
+    
     self = [super init];
     if (self) {
         navItem = nav_item;
@@ -28,6 +29,10 @@
         helpAlphaView = help_alpha_view;
         helpLabel = help_label;
         tapToContinueLabel = tap_to_cont;
+        
+        afterCheckAlphaView = after_check_alpha_view;
+        afterCheckLabel = after_check_label;
+        nextMultLabel = tap_to_next_mult;
     }
     return self;
 }
@@ -60,7 +65,7 @@
     
     [self initLabelFontTypes];
     
-    // Help alpha layout with round borders
+    // Help view
     helpAlphaView.layer.cornerRadius = 20;
     helpAlphaView.layer.masksToBounds = YES;
     
@@ -68,6 +73,15 @@
     
     [helpLabel setFont:[UIFont fontWithName:@"Blokletters Potlood" size:helpLabel.font.pointSize]];
     [tapToContinueLabel setFont:[UIFont fontWithName:@"Blokletters Potlood" size:tapToContinueLabel.font.pointSize]];
+    
+    // After check view
+    afterCheckAlphaView.layer.cornerRadius = 20;
+    afterCheckAlphaView.layer.masksToBounds = YES;
+    
+    nextMultLabel.text = NSLocalizedString(@"help_text_tap_to_continue", @"Help tap to continue label text");
+    
+    [afterCheckLabel setFont:[UIFont fontWithName:@"Blokletters Potlood" size:afterCheckLabel.font.pointSize]];
+    [nextMultLabel setFont:[UIFont fontWithName:@"Blokletters Potlood" size:nextMultLabel.font.pointSize]];
 }
 
 - (void)resetActionLoaded:(NSInteger)_mode {
