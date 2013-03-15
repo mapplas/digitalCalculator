@@ -10,7 +10,7 @@
 
 @implementation LayoutPresenter
 
-- (id)initWithNavItem:(UINavigationItem *)nav_item segmentedControl:(UISegmentedControl *)segm_control helpButton:(UIButton *)help_button timerLabel:(UILabel *)timer_label navController:(UINavigationController *)main_controller {
+- (id)initWithNavItem:(UINavigationItem *)nav_item segmentedControl:(UISegmentedControl *)segm_control helpButton:(UIButton *)help_button timerLabel:(UILabel *)timer_label navController:(UINavigationController *)main_controller multFirstArg:(UILabel *)mult_first_arg multSecondArg:(UILabel *)mult_sec_arg result:(UILabel *)_result resultSymbol:(UILabel *)result_symbol multSymbol:(UILabel *)mult_symbol helpAlphaView:(UIView *)help_alpha_view helpLabel:(UILabel *)help_label {
     self = [super init];
     if (self) {
         navItem = nav_item;
@@ -18,6 +18,15 @@
         helpButton = help_button;
         timerLabel = timer_label;
         mainScreenController = main_controller;
+        
+        firstArgument = mult_first_arg;
+        secondArgument = mult_sec_arg;
+        result = _result;
+        resutSymbol = result_symbol;
+        multSymbol = mult_symbol;
+        
+        helpAlphaView = help_alpha_view;
+        helpLabel = help_label;
     }
     return self;
 }
@@ -48,6 +57,13 @@
     [segmControl setDividerImage:transparentSeparator forLeftSegmentState:UIControlStateNormal
                          rightSegmentState:UIControlStateSelected barMetrics:barMetrics];
     
+    [self initLabelFontTypes];
+    
+    // Help alpha layout with round borders
+    helpAlphaView.layer.cornerRadius = 20;
+    helpAlphaView.layer.masksToBounds = YES;
+    
+    [helpLabel setFont:[UIFont fontWithName:@"Blokletters Potlood" size:helpLabel.font.pointSize]];
 }
 
 - (void)resetActionLoaded:(NSInteger)_mode {
@@ -79,6 +95,14 @@
         RankingViewController *rankingViewController = [[RankingViewController alloc] init];
         [mainScreenController presentModalViewController:rankingViewController animated:YES];
     }
+}
+
+- (void)initLabelFontTypes {
+    [firstArgument setFont:[UIFont fontWithName:@"Blokletters Potlood" size:firstArgument.font.pointSize]];
+    [secondArgument setFont:[UIFont fontWithName:@"Blokletters Potlood" size:secondArgument.font.pointSize]];
+    [result setFont:[UIFont fontWithName:@"The Girl Next Door" size:result.font.pointSize]];
+    [resutSymbol setFont:[UIFont fontWithName:@"The Girl Next Door" size:resutSymbol.font.pointSize]];
+    [multSymbol setFont:[UIFont fontWithName:@"Blokletters Potlood" size:multSymbol.font.pointSize]];
 }
 
 @end

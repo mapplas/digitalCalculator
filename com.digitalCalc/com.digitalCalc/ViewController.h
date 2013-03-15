@@ -48,6 +48,7 @@
 @property (nonatomic, strong) IBOutlet UILabel *checkedLabel;
 
 @property (nonatomic, strong) IBOutlet UIView *helpView;
+@property (nonatomic, strong) IBOutlet UIView *helpAlphaView;
 @property (nonatomic, strong) IBOutlet UILabel *helpLabel;
 @property (nonatomic, strong) IBOutlet UIButton *helpButton;
 

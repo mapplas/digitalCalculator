@@ -25,7 +25,7 @@
 @synthesize firstArgument, secondArgument, result, multSymbol, resutSymbol;
 @synthesize resultSlider;
 @synthesize ckeckButton, checkedLabel;
-@synthesize helpView, helpLabel, helpButton;
+@synthesize helpView, helpAlphaView, helpLabel, helpButton;
 @synthesize timerLabel;
 
 @synthesize splashView;
@@ -38,19 +38,15 @@
     [super viewDidLoad];
     
     self.helpEnabled = NO;
-    
-    [self.firstArgument setFont:[UIFont fontWithName:@"Blokletters Potlood" size:self.firstArgument.font.pointSize]];
-    [self.secondArgument setFont:[UIFont fontWithName:@"Blokletters Potlood" size:self.secondArgument.font.pointSize]];
-    [self.result setFont:[UIFont fontWithName:@"The Girl Next Door" size:self.result.font.pointSize]];
-    [self.resutSymbol setFont:[UIFont fontWithName:@"The Girl Next Door" size:self.resutSymbol.font.pointSize]];
-    [self.multSymbol setFont:[UIFont fontWithName:@"Blokletters Potlood" size:self.multSymbol.font.pointSize]];
-    
     self.navigationController.navigationBar.tintColor = calculatorNavBarColor;
-    layoutPresenter = [[LayoutPresenter alloc] initWithNavItem:self.navigationItem segmentedControl:self.segmentedControl helpButton:self.helpButton timerLabel:self.timerLabel navController:self.navigationController];
+    
+    layoutPresenter = [[LayoutPresenter alloc] initWithNavItem:self.navigationItem segmentedControl:self.segmentedControl helpButton:self.helpButton timerLabel:self.timerLabel navController:self.navigationController multFirstArg:self.firstArgument multSecondArg:self.secondArgument result:self.result resultSymbol:self.resutSymbol multSymbol:self.multSymbol helpAlphaView:self.helpAlphaView helpLabel:self.helpLabel];
+    
+    helpManager = [[HelpManager alloc] initWithHelpLabel:self.helpLabel button:self.helpButton firstArgument:self.firstArgument secondArgument:self.secondArgument helpView:self.helpView andCheckButton:self.ckeckButton mainViewController:self];
     
     [self setSplashLayoutDetails];
     
-    helpManager = [[HelpManager alloc] initWithHelpLabel:self.helpLabel button:self.helpButton firstArgument:self.firstArgument secondArgument:self.secondArgument helpView:self.helpView andCheckButton:self.ckeckButton mainViewController:self];
+    [self initNavBar];
 }
 
 - (void)setSplashLayoutDetails {
@@ -69,8 +65,6 @@
     [UIView animateWithDuration:0.5f
                      animations:^{self.splashView.alpha = 0.0;}
                      completion:^(BOOL finished){ [self.view sendSubviewToBack:self.splashView]; }];
-    
-    [self initNavBar];
     [self initLayout];
 }
 
@@ -86,7 +80,6 @@
                      animations:^{self.splashView.alpha = 0.0;}
                      completion:^(BOOL finished){ [self.view sendSubviewToBack:self.splashView]; }];
     
-    [self initNavBar];
     [self initLayout];
     [layoutPresenter initTimer];
 }
