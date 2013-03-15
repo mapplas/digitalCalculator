@@ -29,11 +29,12 @@
     
     UIView *helpAlphaView;
     UILabel *helpLabel;
+    UILabel *tapToContinueLabel;
     
     NSTimer *countDownTimer;
 }
 
-- (id)initWithNavItem:(UINavigationItem *)nav_item segmentedControl:(UISegmentedControl *)segm_control helpButton:(UIButton *)help_button timerLabel:(UILabel *)timer_label navController:(UINavigationController *)main_controller multFirstArg:(UILabel *)mult_first_arg multSecondArg:(UILabel *)mult_sec_arg result:(UILabel *)_result resultSymbol:(UILabel *)result_symbol multSymbol:(UILabel *)mult_symbol helpAlphaView:(UIView *)help_alpha_view helpLabel:(UILabel *)help_label;
+- (id)initWithNavItem:(UINavigationItem *)nav_item segmentedControl:(UISegmentedControl *)segm_control helpButton:(UIButton *)help_button timerLabel:(UILabel *)timer_label navController:(UINavigationController *)main_controller multFirstArg:(UILabel *)mult_first_arg multSecondArg:(UILabel *)mult_sec_arg result:(UILabel *)_result resultSymbol:(UILabel *)result_symbol multSymbol:(UILabel *)mult_symbol helpAlphaView:(UIView *)help_alpha_view helpLabel:(UILabel *)help_label tapToContinue:(UILabel *)tap_to_cont;
 
 - (void)setTitleToNavItem;
 - (void)configureInitialLayout;

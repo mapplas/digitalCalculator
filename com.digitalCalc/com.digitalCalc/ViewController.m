@@ -25,7 +25,7 @@
 @synthesize firstArgument, secondArgument, result, multSymbol, resutSymbol;
 @synthesize resultSlider;
 @synthesize ckeckButton, checkedLabel;
-@synthesize helpView, helpAlphaView, helpLabel, helpButton;
+@synthesize helpView, helpAlphaView, helpLabel, helpButton, tapToContinueLabel;
 @synthesize timerLabel;
 
 @synthesize splashView;
@@ -40,13 +40,14 @@
     self.helpEnabled = NO;
     self.navigationController.navigationBar.tintColor = calculatorNavBarColor;
     
-    layoutPresenter = [[LayoutPresenter alloc] initWithNavItem:self.navigationItem segmentedControl:self.segmentedControl helpButton:self.helpButton timerLabel:self.timerLabel navController:self.navigationController multFirstArg:self.firstArgument multSecondArg:self.secondArgument result:self.result resultSymbol:self.resutSymbol multSymbol:self.multSymbol helpAlphaView:self.helpAlphaView helpLabel:self.helpLabel];
+    layoutPresenter = [[LayoutPresenter alloc] initWithNavItem:self.navigationItem segmentedControl:self.segmentedControl helpButton:self.helpButton timerLabel:self.timerLabel navController:self.navigationController multFirstArg:self.firstArgument multSecondArg:self.secondArgument result:self.result resultSymbol:self.resutSymbol multSymbol:self.multSymbol helpAlphaView:self.helpAlphaView helpLabel:self.helpLabel tapToContinue:self.tapToContinueLabel];
     
     helpManager = [[HelpManager alloc] initWithHelpLabel:self.helpLabel button:self.helpButton firstArgument:self.firstArgument secondArgument:self.secondArgument helpView:self.helpView andCheckButton:self.ckeckButton mainViewController:self];
     
     [self setSplashLayoutDetails];
     
     [self initNavBar];
+    [layoutPresenter configureInitialLayout];
 }
 
 - (void)setSplashLayoutDetails {
@@ -65,7 +66,8 @@
     [UIView animateWithDuration:0.5f
                      animations:^{self.splashView.alpha = 0.0;}
                      completion:^(BOOL finished){ [self.view sendSubviewToBack:self.splashView]; }];
-    [self initLayout];
+    
+    [self reset];
 }
 
 // Game mode pressed
@@ -80,7 +82,7 @@
                      animations:^{self.splashView.alpha = 0.0;}
                      completion:^(BOOL finished){ [self.view sendSubviewToBack:self.splashView]; }];
     
-    [self initLayout];
+    [self reset];
     [layoutPresenter initTimer];
 }
 
@@ -258,12 +260,6 @@
 
 - (void)clearAll {
     self.board.image = nil;
-}
-
-- (void)initLayout {
-    [layoutPresenter configureInitialLayout];
-        
-    [self reset];
 }
 
 - (void)reset {
