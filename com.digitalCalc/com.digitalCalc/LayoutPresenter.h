@@ -7,9 +7,24 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Constants.h"
+#import "RankingViewController.h"
 
-@interface LayoutPresenter : NSObject
+@interface LayoutPresenter : NSObject {
+    UINavigationItem *navItem;
+    UISegmentedControl *segmControl;
+    UIButton *helpButton;
+    UILabel *timerLabel;
+    UINavigationController *mainScreenController;
+    
+    NSTimer *countDownTimer;
+}
 
-- (void)setTitleToNavItem:(UINavigationItem *)navigation_item;
+- (id)initWithNavItem:(UINavigationItem *)nav_item segmentedControl:(UISegmentedControl *)segm_control helpButton:(UIButton *)help_button timerLabel:(UILabel *)timer_label navController:(UINavigationController *)main_controller;
+
+- (void)setTitleToNavItem;
+- (void)configureInitialLayout;
+- (void)resetActionLoaded:(NSInteger)_mode;
+- (void)initTimer;
 
 @end

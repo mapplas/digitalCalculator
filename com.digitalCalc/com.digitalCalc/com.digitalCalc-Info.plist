@@ -39,7 +39,8 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>5thgradecursive-2-italic.ttf</string>
+		<string>TheGirlNextDoor.ttf</string>
+		<string>Blokletters-Potlood.ttf</string>
 	</array>
 	<key>UIPrerenderedIcon</key>
 	<true/>

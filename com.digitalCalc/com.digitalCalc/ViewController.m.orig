@@ -22,31 +22,22 @@
 
 @synthesize board;
 @synthesize segmentedControl;
-@synthesize firstArgument, secondArgument, result, multSymbol, resutSymbol;
+@synthesize firstArgument, secondArgument, result;
 @synthesize resultSlider;
 @synthesize ckeckButton, checkedLabel;
 @synthesize helpView, helpLabel, helpButton;
-@synthesize timerLabel;
 
 @synthesize splashView;
 
 @synthesize helpEnabled;
-@synthesize mode = _mode, level = _level;
-@synthesize red = _red, green = _green, blue = _blue, brushWidth = _brushWidth;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.helpEnabled = NO;
     
-    [self.firstArgument setFont:[UIFont fontWithName:@"Blokletters Potlood" size:self.firstArgument.font.pointSize]];
-    [self.secondArgument setFont:[UIFont fontWithName:@"Blokletters Potlood" size:self.secondArgument.font.pointSize]];
-    [self.result setFont:[UIFont fontWithName:@"The Girl Next Door" size:self.result.font.pointSize]];
-    [self.resutSymbol setFont:[UIFont fontWithName:@"The Girl Next Door" size:self.resutSymbol.font.pointSize]];
-    [self.multSymbol setFont:[UIFont fontWithName:@"Blokletters Potlood" size:self.multSymbol.font.pointSize]];
-    
     self.navigationController.navigationBar.tintColor = calculatorNavBarColor;
-    layoutPresenter = [[LayoutPresenter alloc] initWithNavItem:self.navigationItem segmentedControl:self.segmentedControl helpButton:self.helpButton timerLabel:self.timerLabel navController:self.navigationController];
+    layoutPresenter = [[LayoutPresenter alloc] init];
     
     [self setSplashLayoutDetails];
     
@@ -56,12 +47,12 @@
 - (void)setSplashLayoutDetails {
     [self.view addSubview:self.splashView];
     
-    [layoutPresenter setTitleToNavItem];
+    [layoutPresenter setTitleToNavItem:self.navigationItem];
 }
 
 // Learn mode pressed
 - (IBAction)learnModePressed:(id)sender {
-    self.mode = CALCULATOR_MODE_LEARN;
+    mode = CALCULATOR_MODE_LEARN;
     
 //    Help is always enabled in learn mode
     self.helpEnabled = YES;
@@ -76,8 +67,7 @@
 
 // Game mode pressed
 - (IBAction)gameModePressed:(id)sender {
-    self.mode = CALCULATOR_MODE_GAME;
-    self.timerLabel.text = [NSString stringWithFormat:@"%d", GAME_MODE_COUNTDOWN];
+    mode = CALCULATOR_MODE_GAME;
     
 //    Help is always disabled in learn mode
     self.helpEnabled = NO;
@@ -88,7 +78,6 @@
     
     [self initNavBar];
     [self initLayout];
-    [layoutPresenter initTimer];
 }
 
 #pragma mark - Shake event
@@ -114,28 +103,28 @@
     
     switch (self.segmentedControl.selectedSegmentIndex) {
         case LINE_SEGMENT:
-            self.red = LINE_COLOR_RED;
-            self.green = LINE_COLOR_GREEN;
-            self.blue = LINE_COLOR_BLUE;
-            self.brushWidth = LINE_BRUSH_WIDE;
+            red = LINE_COLOR_RED;
+            green = LINE_COLOR_GREEN;
+            blue = LINE_COLOR_BLUE;
+            brushWidth = LINE_BRUSH_WIDE;
             break;
             
         case DOT_SEGMENT:
-            self.red = DOT_COLOR_RED;
-            self.green = DOT_COLOR_GREEN;
-            self.blue = DOT_COLOR_BLUE;
-            self.brushWidth = DOT_BRUSH_WIDE_IPHONE;
+            red = DOT_COLOR_RED;
+            green = DOT_COLOR_GREEN;
+            blue = DOT_COLOR_BLUE;
+            brushWidth = DOT_BRUSH_WIDE_IPHONE;
             
             if (isIpad) {
-                self.brushWidth = DOT_BRUSH_WIDE_IPAD;
+                brushWidth = DOT_BRUSH_WIDE_IPAD;
             }
             break;
             
         case ERASE_SEGMENT:
-            self.red = LINE_COLOR_BLUE;
-            self.green = LINE_COLOR_BLUE;
-            self.blue = LINE_COLOR_BLUE;
-            self.brushWidth = ERASE_BRUSH_WIDE;
+            red = LINE_COLOR_BLUE;
+            green = LINE_COLOR_BLUE;
+            blue = LINE_COLOR_BLUE;
+            brushWidth = ERASE_BRUSH_WIDE;
             break;
     }
 }
@@ -156,22 +145,24 @@
         if (self.segmentedControl.selectedSegmentIndex != DOT_SEGMENT) {
             mouseSwiped = YES;
             
-            UIColor *brushPattern = [[UIColor alloc]initWithPatternImage:[UIImage imageNamed:@"chalk.png"]];
-            CGColorRef fillColor = [brushPattern CGColor];
-            CGColorRef strokeColor = [brushPattern CGColor];
+//            UIColor *brushPattern = [[UIColor alloc]initWithPatternImage:[UIImage imageNamed:@"chalk.png"]];
+//            CGColorRef fillColor = [brushPattern CGColor];
+//            CGColorRef strokeColor = [brushPattern CGColor];
             
+            // Probably in |draw| method call.
+
         
             UIGraphicsBeginImageContext(self.board.frame.size);
             [self.board.image drawInRect:CGRectMake(0, 0, self.board.frame.size.width, self.board.frame.size.height)];
             CGContextMoveToPoint(UIGraphicsGetCurrentContext(), lastPoint.x, lastPoint.y);
             CGContextAddLineToPoint(UIGraphicsGetCurrentContext(), currentPoint.x, currentPoint.y);
             CGContextSetLineCap(UIGraphicsGetCurrentContext(), kCGLineCapSquare);
-            CGContextSetLineWidth(UIGraphicsGetCurrentContext(), self.brushWidth);
-//            CGContextSetRGBStrokeColor(UIGraphicsGetCurrentContext(), red, green, blue, COLOR_ALPHA_OPAQUE);
+            CGContextSetLineWidth(UIGraphicsGetCurrentContext(), brushWidth);
+            CGContextSetRGBStrokeColor(UIGraphicsGetCurrentContext(), red, green, blue, COLOR_ALPHA_OPAQUE);
             CGContextSetBlendMode(UIGraphicsGetCurrentContext(), kCGBlendModeNormal);
             
-            CGContextSetStrokeColorWithColor(UIGraphicsGetCurrentContext(), strokeColor);
-            CGContextSetFillColorWithColor(UIGraphicsGetCurrentContext(), fillColor);
+//            CGContextSetStrokeColorWithColor(UIGraphicsGetCurrentContext(), strokeColor);
+//            CGContextSetFillColorWithColor(UIGraphicsGetCurrentContext(), fillColor);
         
             if (self.segmentedControl.selectedSegmentIndex == ERASE_SEGMENT) {
                 CGContextSetRGBStrokeColor(UIGraphicsGetCurrentContext(), 0, 0, 0, COLOR_ALPHA_CLEAR);
@@ -193,8 +184,8 @@
             UIGraphicsBeginImageContext(self.board.frame.size);
             [self.board.image drawInRect:CGRectMake(0, 0, self.board.frame.size.width, self.board.frame.size.height)];
             CGContextSetLineCap(UIGraphicsGetCurrentContext(), kCGLineCapRound);
-            CGContextSetLineWidth(UIGraphicsGetCurrentContext(), self.brushWidth);
-            CGContextSetRGBStrokeColor(UIGraphicsGetCurrentContext(), self.red, self.green, self.blue, COLOR_ALPHA_OPAQUE);
+            CGContextSetLineWidth(UIGraphicsGetCurrentContext(), brushWidth);
+            CGContextSetRGBStrokeColor(UIGraphicsGetCurrentContext(), red, green, blue, COLOR_ALPHA_OPAQUE);
         
             if (self.segmentedControl.selectedSegmentIndex == ERASE_SEGMENT) {
                 CGContextSetRGBStrokeColor(UIGraphicsGetCurrentContext(), 0, 0, 0, COLOR_ALPHA_CLEAR);
@@ -268,8 +259,31 @@
 }
 
 - (void)initLayout {
-    [layoutPresenter configureInitialLayout];
-        
+<<<<<<< HEAD
+    // Help is always enabled first time
+    self.helpEnabled = YES;
+=======
+    // Segmented control button names
+    NSString *segmentedControlLineText = NSLocalizedString(@"segm_control_line", @"Segmented control line text");
+    [self.segmentedControl setTitle:segmentedControlLineText forSegmentAtIndex:0];
+>>>>>>> 444870f... Created game and learn mode.
+    
+    // Image between two unselected segments.
+    UIImage *transparentSeparator = [UIImage imageNamed:@"transparente.png"];
+    UIBarMetrics barMetrics = UIBarMetricsLandscapePhone;
+    
+    [self.segmentedControl setDividerImage:transparentSeparator forLeftSegmentState:UIControlStateNormal
+                      rightSegmentState:UIControlStateNormal barMetrics:barMetrics];
+    // Image between segment selected on the left and unselected on the right.
+    [self.segmentedControl setDividerImage:transparentSeparator forLeftSegmentState:UIControlStateSelected
+                      rightSegmentState:UIControlStateNormal barMetrics:barMetrics];
+    // Image between segment selected on the right and unselected on the right.
+    [self.segmentedControl setDividerImage:transparentSeparator forLeftSegmentState:UIControlStateNormal
+                      rightSegmentState:UIControlStateSelected barMetrics:barMetrics];
+    
+    // Next help text button
+    [self.helpButton setTitle:NSLocalizedString(@"help_next_clue_button", @"Help next clue button text") forState:UIControlStateNormal];
+    
     [self reset];
 }
 
@@ -277,16 +291,16 @@
     [self clearAll];
     
     // Level
-    self.level = LEVEL_LOW;
+    level = LEVEL_LOW;
     [self ckeckLevel];
     
     // Color and brush wide
-    [layoutPresenter resetActionLoaded:self.mode];
+    red = LINE_COLOR_RED;
+    green = LINE_COLOR_GREEN;
+    blue = LINE_COLOR_BLUE;
+    brushWidth = LINE_BRUSH_WIDE;
     
-    self.red = LINE_COLOR_RED;
-    self.green = LINE_COLOR_GREEN;
-    self.blue = LINE_COLOR_BLUE;
-    self.brushWidth = LINE_BRUSH_WIDE;
+    self.segmentedControl.selectedSegmentIndex = 0;
     
     [helpManager start];
 }
@@ -295,7 +309,7 @@
     LowMultLevel *lowMultLevel = [[LowMultLevel alloc] init];
     NSInteger firstArg = [lowMultLevel giveFirstArgument];
 
-    switch (self.level) {
+    switch (level) {
         case LEVEL_LOW:
             
             self.firstArgument.text = [NSString stringWithFormat:@"%d", firstArg];
@@ -324,20 +338,11 @@
     [helpManager emptyLabelText];
 
     self.checkedLabel.hidden = NO;
-    if (self.mode == CALCULATOR_MODE_LEARN) {
-        if ([self.result.text isEqualToString:[NSString stringWithFormat:@"%d", resultIntValue]]) {
-            self.checkedLabel.text = NSLocalizedString(@"result_checked_ok_learn_mode", @"Result ckecked OK text in learn mode");
-        }
-        else {
-            self.checkedLabel.text = NSLocalizedString(@"result_checked_nok_learn_mode", @"Result ckecked NOK text in learn mode");
-        }
-    } else { // GAME MODE
-        if ([self.result.text isEqualToString:[NSString stringWithFormat:@"%d", resultIntValue]]) {
-            self.checkedLabel.text = NSLocalizedString(@"result_checked_ok_game_mode", @"Result ckecked OK text in game mode");
-        }
-        else {
-            self.checkedLabel.text = NSLocalizedString(@"result_checked_nok_lgame_mode", @"Result ckecked NOK text in game mode");
-        }
+    if ([self.result.text isEqualToString:[NSString stringWithFormat:@"%d", resultIntValue]]) {
+        self.checkedLabel.text = NSLocalizedString(@"result_checked_ok", @"Result ckecked OK text");
+    }
+    else {
+        self.checkedLabel.text = NSLocalizedString(@"result_checked_nok", @"Result ckecked NOK text");
     }
 }
 
@@ -359,7 +364,7 @@
     self.navigationItem.rightBarButtonItem = nil;
     self.navigationItem.leftBarButtonItem = nil;
     
-    [layoutPresenter setTitleToNavItem];
+    [layoutPresenter setTitleToNavItem:self.navigationItem];
 }
 
 

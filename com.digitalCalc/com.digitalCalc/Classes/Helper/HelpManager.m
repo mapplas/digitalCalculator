@@ -7,10 +7,11 @@
 //
 
 #import "HelpManager.h"
+#import "ViewController.h"
 
 @implementation HelpManager
 
-- (id)initWithHelpLabel:(UILabel *)help_label button:(UIButton *)help_button firstArgument:(UILabel *)first_arg_label secondArgument:(UILabel *)second_arg_label helpView:(UIView *)help_view andCheckButton:(UIButton *)check_button {
+- (id)initWithHelpLabel:(UILabel *)help_label button:(UIButton *)help_button firstArgument:(UILabel *)first_arg_label secondArgument:(UILabel *)second_arg_label helpView:(UIView *)help_view andCheckButton:(UIButton *)check_button mainViewController:(ViewController *)view_controller {
     self = [super init];
     if (self) {
         helpLabel = help_label;
@@ -19,6 +20,7 @@
         secondArgLabel = second_arg_label;
         helpView = help_view;
         checkButton = check_button;
+        viewController = view_controller;
         
         [helpButton addTarget:self action:@selector(nextCluePressed) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -26,12 +28,27 @@
 }
 
 - (void)start {
-    currentAction = HELP_FIRST_ARG_ACTION_FINISHED;
-    
-    checkButton.hidden = YES;
-    helpButton.hidden = NO;
-    
-    [self setHelpText];
+    switch (viewController.helpEnabled) {
+        case NO:
+            checkButton.hidden = NO;
+            helpButton.hidden = YES;
+            helpView.hidden = YES;
+            
+            break;
+            
+        case YES:
+            currentAction = HELP_FIRST_ARG_ACTION_FINISHED;
+            
+            checkButton.hidden = YES;
+            helpButton.hidden = NO;
+            helpView.hidden = NO;
+            
+            [self setHelpText];
+            break;
+            
+        default:
+            break;
+    }
 }
 
 - (void)nextCluePressed {
