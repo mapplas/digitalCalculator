@@ -108,6 +108,10 @@
     
     switch (self.segmentedControl.selectedSegmentIndex) {
         case LINE_SEGMENT:
+            [self.segmentedControl setImage:[UIImage imageNamed:@"btn_line_down.png"] forSegmentAtIndex:0];
+            [self.segmentedControl setImage:[UIImage imageNamed:@"btn_dot_up.png"] forSegmentAtIndex:1];
+            [self.segmentedControl setImage:[UIImage imageNamed:@"btn_erase_up.png"] forSegmentAtIndex:2];
+            
             self.red = LINE_COLOR_RED;
             self.green = LINE_COLOR_GREEN;
             self.blue = LINE_COLOR_BLUE;
@@ -115,6 +119,10 @@
             break;
             
         case DOT_SEGMENT:
+            [self.segmentedControl setImage:[UIImage imageNamed:@"btn_line_up.png"] forSegmentAtIndex:0];
+            [self.segmentedControl setImage:[UIImage imageNamed:@"btn_dot_down.png"] forSegmentAtIndex:1];
+            [self.segmentedControl setImage:[UIImage imageNamed:@"btn_erase_up.png"] forSegmentAtIndex:2];
+            
             self.red = DOT_COLOR_RED;
             self.green = DOT_COLOR_GREEN;
             self.blue = DOT_COLOR_BLUE;
@@ -126,6 +134,10 @@
             break;
             
         case ERASE_SEGMENT:
+            [self.segmentedControl setImage:[UIImage imageNamed:@"btn_line_up.png"] forSegmentAtIndex:0];
+            [self.segmentedControl setImage:[UIImage imageNamed:@"btn_dot_up.png"] forSegmentAtIndex:1];
+            [self.segmentedControl setImage:[UIImage imageNamed:@"btn_erase_down.png"] forSegmentAtIndex:2];
+            
             self.red = LINE_COLOR_BLUE;
             self.green = LINE_COLOR_BLUE;
             self.blue = LINE_COLOR_BLUE;
