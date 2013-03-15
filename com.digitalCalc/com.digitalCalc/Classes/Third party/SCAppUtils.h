@@ -7,7 +7,7 @@
 //
 
 #define calculatorNavBarImageTag 6183746
-#define calculatorNavBarColor [UIColor colorWithRed:193/255.0f green:143/255.0 blue:06/255.0 alpha:1.0]
+#define calculatorNavBarColor [UIColor colorWithRed:170/255.0f green:119/255.0 blue:80/255.0 alpha:1.0]
 
 @interface SCAppUtils : NSObject
 
