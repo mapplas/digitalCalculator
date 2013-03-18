@@ -28,7 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.tableView.backgroundColor = [UIColor orangeColor];
+    self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bkg_board.png"]];
     self.tableView.separatorColor = [UIColor brownColor];
     
     self.tableView.scrollEnabled = NO;

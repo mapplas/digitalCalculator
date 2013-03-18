@@ -25,7 +25,7 @@
     }
     
     UINavigationController *frontViewController = [[UINavigationController alloc] initWithRootViewController:viewController];
-    [SCAppUtils customizeNavigationController:frontViewController];
+//    [SCAppUtils customizeNavigationController:frontViewController];
     
     NSDictionary *options = @{
                               PKRevealControllerRecognizesPanningOnFrontViewKey : [NSNumber numberWithBool:NO]
@@ -35,10 +35,13 @@
     self.revealController = [PKRevealController revealControllerWithFrontViewController:frontViewController
                                                                      leftViewController:leftViewController
                                                                                 options:options];
-
+    
+    [self configureAppearance];
+    
     self.window.rootViewController = self.revealController;
     
     [self.window makeKeyAndVisible];
+        
     return YES;
 }
 
@@ -66,6 +69,13 @@
 
 - (NSUInteger)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
     return UIInterfaceOrientationMaskLandscape;
+}
+
+- (void)configureAppearance {
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"bkg_nav_bar.png"] forBarMetrics:UIBarMetricsDefault];
+    
+    UIImage *button = [UIImage imageNamed:@"btn_glow.png"];
+    [[UIBarButtonItem appearance] setBackgroundImage:button forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
 }
 
 @end
