@@ -37,7 +37,7 @@
     [super viewDidLoad];
     
     self.helpEnabled = NO;
-    self.navigationController.navigationBar.tintColor = calculatorNavBarColor;
+//    self.navigationController.navigationBar.tintColor = calculatorNavBarColor;
     
     layoutPresenter = [[LayoutPresenter alloc] initWithNavItem:self.navigationItem segmentedControl:self.segmentedControl helpButton:self.helpButton timerLabel:self.timerLabel navController:self.navigationController multFirstArg:self.firstArgument multSecondArg:self.secondArgument result:self.result resultSymbol:self.resutSymbol multSymbol:self.multSymbol helpAlphaView:self.helpAlphaView helpLabel:self.helpLabel tapToContinue:self.tapToContinueLabel afterCheckAlphaView:self.afterCheckedAlphaView afterCheckLabel:self.checkedLabel nextMultLabel:self.tapToNextMultLabel];
     
@@ -108,6 +108,10 @@
     
     switch (self.segmentedControl.selectedSegmentIndex) {
         case LINE_SEGMENT:
+            [self.segmentedControl setImage:[UIImage imageNamed:@"btn_line_down.png"] forSegmentAtIndex:0];
+            [self.segmentedControl setImage:[UIImage imageNamed:@"btn_dot_up.png"] forSegmentAtIndex:1];
+            [self.segmentedControl setImage:[UIImage imageNamed:@"btn_erase_up.png"] forSegmentAtIndex:2];
+            
             self.red = LINE_COLOR_RED;
             self.green = LINE_COLOR_GREEN;
             self.blue = LINE_COLOR_BLUE;
@@ -115,6 +119,10 @@
             break;
             
         case DOT_SEGMENT:
+            [self.segmentedControl setImage:[UIImage imageNamed:@"btn_line_up.png"] forSegmentAtIndex:0];
+            [self.segmentedControl setImage:[UIImage imageNamed:@"btn_dot_down.png"] forSegmentAtIndex:1];
+            [self.segmentedControl setImage:[UIImage imageNamed:@"btn_erase_up.png"] forSegmentAtIndex:2];
+            
             self.red = DOT_COLOR_RED;
             self.green = DOT_COLOR_GREEN;
             self.blue = DOT_COLOR_BLUE;
@@ -126,6 +134,10 @@
             break;
             
         case ERASE_SEGMENT:
+            [self.segmentedControl setImage:[UIImage imageNamed:@"btn_line_up.png"] forSegmentAtIndex:0];
+            [self.segmentedControl setImage:[UIImage imageNamed:@"btn_dot_up.png"] forSegmentAtIndex:1];
+            [self.segmentedControl setImage:[UIImage imageNamed:@"btn_erase_down.png"] forSegmentAtIndex:2];
+            
             self.red = LINE_COLOR_BLUE;
             self.green = LINE_COLOR_BLUE;
             self.blue = LINE_COLOR_BLUE;
@@ -219,6 +231,7 @@
     if (self.navigationController.revealController.type & PKRevealControllerTypeLeft) {
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:menuImage landscapeImagePhone:menuImage style:UIBarButtonItemStylePlain target:self action:@selector(showLeftView)];
     }
+    
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Clear all" style:UIBarButtonItemStylePlain target:self action:@selector(clearAll)];
 }
