@@ -293,6 +293,8 @@
     self.brushWidth = LINE_BRUSH_WIDE;
     
     [helpManager start];
+    
+    afterCheckedView.hidden = YES;
 }
 
 - (void)ckeckLevel {

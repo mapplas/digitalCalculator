@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RankingViewController : UIViewController
+@class LayoutPresenter;
+
+@interface RankingViewController : UIViewController {
+    LayoutPresenter *_layoutPresenter;
+}
+
+@property (nonatomic, strong) LayoutPresenter *layoutPresenter;
 
 @end

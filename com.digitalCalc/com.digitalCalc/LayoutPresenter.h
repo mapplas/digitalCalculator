@@ -50,4 +50,6 @@
 - (void)initTimer;
 - (void)stopTimer;
 
+- (void)rankingControllerPopped;
+
 @end

@@ -98,6 +98,7 @@
     } else {
         [timerLabel setHidden:NO];
     }
+
 }
 
 - (void)initTimer {
@@ -113,14 +114,16 @@
     countDownTimer = nil;
 }
 
+- (void)rankingControllerPopped {
+    [viewController gameModePressed:nil];
+}
+
 - (void)secondDown {
     NSInteger currentValue = [timerLabel.text integerValue];
     if (currentValue > 0) {
         timerLabel.text = [NSString stringWithFormat:@"%d", currentValue - 1];
     } else {
         [self stopTimer];
-        NSLog(@"%d", viewController.points);
-        
         
         RankingViewController *rankingViewController = nil;
         if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
@@ -128,8 +131,12 @@
         } else {
             rankingViewController = [[RankingViewController alloc] initWithNibName:@"RankingViewController_iPad" bundle:nil];
         }
+        
+        
+        UINavigationController *cntrol = [[UINavigationController alloc] initWithRootViewController:rankingViewController];
         rankingViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-        [mainScreenController presentModalViewController:rankingViewController animated:YES];
+        rankingViewController.layoutPresenter = self;
+        [mainScreenController presentModalViewController:cntrol animated:YES];
     }
 }
 
