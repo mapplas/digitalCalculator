@@ -28,6 +28,8 @@
     HelpManager *helpManager;
     LayoutPresenter *layoutPresenter;
     
+    NSInteger _points;
+    
     @private
     NSInteger _level;
     NSInteger _mode;
@@ -68,6 +70,7 @@
 @property (nonatomic, assign) BOOL helpEnabled;
 @property (nonatomic, assign) NSInteger level;
 @property (nonatomic, assign) NSInteger mode;
+@property (nonatomic, assign) NSInteger points;
 
 - (IBAction)learnModePressed:(id)sender;
 - (IBAction)gameModePressed:(id)sender;

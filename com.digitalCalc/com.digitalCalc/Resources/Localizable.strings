@@ -9,6 +9,9 @@
 /* Nav bar title */
 "nav_bar_title" = "Digital Calculator";
 
+/* Ranking controller left button title */
+"nav_bar_ranking_left_button_title" = "Play again";
+
 /* Nav. bar right button title */
 "nav_bar_right_button_title" = "Erase";
 

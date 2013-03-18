@@ -73,9 +73,6 @@
 
 - (void)configureAppearance {
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"bkg_nav_bar.png"] forBarMetrics:UIBarMetricsDefault];
-    
-    UIImage *button = [UIImage imageNamed:@"btn_glow.png"];
-    [[UIBarButtonItem appearance] setBackgroundImage:button forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
 }
 
 @end

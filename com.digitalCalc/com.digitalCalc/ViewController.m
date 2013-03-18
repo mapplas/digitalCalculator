@@ -30,22 +30,20 @@
 @synthesize splashView;
 
 @synthesize helpEnabled;
-@synthesize mode = _mode, level = _level;
+@synthesize mode = _mode, level = _level, points = _points;
 @synthesize red = _red, green = _green, blue = _blue, brushWidth = _brushWidth;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.helpEnabled = NO;
-//    self.navigationController.navigationBar.tintColor = calculatorNavBarColor;
     
-    layoutPresenter = [[LayoutPresenter alloc] initWithNavItem:self.navigationItem segmentedControl:self.segmentedControl helpButton:self.helpButton timerLabel:self.timerLabel navController:self.navigationController multFirstArg:self.firstArgument multSecondArg:self.secondArgument result:self.result resultSymbol:self.resutSymbol multSymbol:self.multSymbol helpAlphaView:self.helpAlphaView helpLabel:self.helpLabel tapToContinue:self.tapToContinueLabel afterCheckAlphaView:self.afterCheckedAlphaView afterCheckLabel:self.checkedLabel nextMultLabel:self.tapToNextMultLabel];
+    layoutPresenter = [[LayoutPresenter alloc] initWithNavItem:self.navigationItem segmentedControl:self.segmentedControl helpButton:self.helpButton timerLabel:self.timerLabel navController:self.navigationController multFirstArg:self.firstArgument multSecondArg:self.secondArgument result:self.result resultSymbol:self.resutSymbol multSymbol:self.multSymbol helpAlphaView:self.helpAlphaView helpLabel:self.helpLabel tapToContinue:self.tapToContinueLabel afterCheckAlphaView:self.afterCheckedAlphaView afterCheckLabel:self.checkedLabel nextMultLabel:self.tapToNextMultLabel viewController:self];
     
     helpManager = [[HelpManager alloc] initWithHelpLabel:self.helpLabel button:self.helpButton firstArgument:self.firstArgument secondArgument:self.secondArgument helpView:self.helpView andCheckButton:self.ckeckButton mainViewController:self];
     
     [self setSplashLayoutDetails];
     
-    [self initNavBar];
     [layoutPresenter configureInitialLayout];
 }
 
@@ -58,6 +56,7 @@
 // Learn mode pressed
 - (IBAction)learnModePressed:(id)sender {
     self.mode = CALCULATOR_MODE_LEARN;
+    [self initNavBar];
     
 //    Help is always enabled in learn mode
     self.helpEnabled = YES;
@@ -73,9 +72,11 @@
 - (IBAction)gameModePressed:(id)sender {
     self.mode = CALCULATOR_MODE_GAME;
     self.timerLabel.text = [NSString stringWithFormat:@"%d", GAME_MODE_COUNTDOWN];
+    [self initNavBar];
     
 //    Help is always disabled in learn mode
     self.helpEnabled = NO;
+    self.points = 0;
     
     [UIView animateWithDuration:0.5f
                      animations:^{self.splashView.alpha = 0.0;}
@@ -224,16 +225,18 @@
 
 # pragma mark - Private methods
 - (void)initNavBar {
-    self.title = NSLocalizedString(@"nav_bar_title", @"Nav bar title");
     self.navigationItem.titleView = self.segmentedControl;
+    
+    UIImage *button = [UIImage imageNamed:@"btn_glow.png"];
     
     UIImage *menuImage = [UIImage imageNamed:@"ic_menu_menu.png"];
     if (self.navigationController.revealController.type & PKRevealControllerTypeLeft) {
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:menuImage landscapeImagePhone:menuImage style:UIBarButtonItemStylePlain target:self action:@selector(showLeftView)];
+        [self.navigationItem.leftBarButtonItem setBackgroundImage:button forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     }
     
-    
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Clear all" style:UIBarButtonItemStylePlain target:self action:@selector(clearAll)];
+    [self.navigationItem.rightBarButtonItem setBackgroundImage:button forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
 }
 
 - (void)showLeftView {
@@ -290,6 +293,8 @@
     self.brushWidth = LINE_BRUSH_WIDE;
     
     [helpManager start];
+    
+    afterCheckedView.hidden = YES;
 }
 
 - (void)ckeckLevel {
@@ -335,6 +340,8 @@
     } else { // GAME MODE
         if ([self.result.text isEqualToString:[NSString stringWithFormat:@"%d", resultIntValue]]) {
             self.checkedLabel.text = NSLocalizedString(@"result_checked_ok_game_mode", @"Result ckecked OK text in game mode");
+            
+            self.points += GAME_MODE_CORRECT_ANSWER;
         }
         else {
             self.checkedLabel.text = NSLocalizedString(@"result_checked_nok_lgame_mode", @"Result ckecked NOK text in game mode");
@@ -351,6 +358,8 @@
 }
 
 - (void)mainMenuCellPressed {
+    [layoutPresenter stopTimer];
+
     [self.navigationController.revealController showViewController:self.navigationController.revealController.frontViewController];
     
     [UIView animateWithDuration:.05f
