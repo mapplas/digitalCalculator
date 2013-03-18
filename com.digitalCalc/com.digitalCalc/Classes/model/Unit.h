@@ -6,8 +6,12 @@
 //  Copyright (c) 2013 Mapplas. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@interface Unit : NSObject {
+    NSString *_identifier;
+}
 
-@interface Unit : NSObject
+@property (nonatomic, strong) NSString *identifier;
+
+- (id)initWithId:(NSString *)key;
 
 @end

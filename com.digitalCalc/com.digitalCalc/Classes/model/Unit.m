@@ -10,4 +10,14 @@
 
 @implementation Unit
 
+@synthesize identifier = _identifier;
+
+- (id)initWithId:(NSString *)key {
+    self = [super init];
+    if (self) {
+        self.identifier = key;
+    }
+    return self;
+}
+
 @end

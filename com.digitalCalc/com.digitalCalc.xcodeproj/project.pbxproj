@@ -18,12 +18,14 @@
 		7F097CF016F71BD200BCD31B /* SQLiteTableBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F097CE716F71BD200BCD31B /* SQLiteTableBaseObject.m */; };
 		7F097CF416F71C9A00BCD31B /* Unit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F097CF316F71C9A00BCD31B /* Unit.m */; };
 		7F097CF816F71CEF00BCD31B /* FileManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F097CF716F71CEF00BCD31B /* FileManagement.m */; };
-		7F097CFC16F71D2600BCD31B /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F097CFB16F71D2600BCD31B /* RegexKitLite.m */; };
+		7F097CFC16F71D2600BCD31B /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F097CFB16F71D2600BCD31B /* RegexKitLite.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		7F097D0516F71D9900BCD31B /* CacheFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F097CFE16F71D9900BCD31B /* CacheFolder.m */; };
 		7F097D0616F71D9900BCD31B /* DocumentsFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F097D0016F71D9900BCD31B /* DocumentsFolder.m */; };
 		7F097D0716F71D9900BCD31B /* IFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F097D0216F71D9900BCD31B /* IFolder.m */; };
 		7F097D0816F71D9900BCD31B /* ImageFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F097D0416F71D9900BCD31B /* ImageFileManager.m */; };
 		7F097D0C16F71DF100BCD31B /* NSStringCamelcase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F097D0B16F71DF100BCD31B /* NSStringCamelcase.m */; };
+		7F097D0E16F720DF00BCD31B /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F097D0D16F720DE00BCD31B /* libsqlite3.0.dylib */; };
+		7F097D1A16F7219600BCD31B /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F097D1916F7219600BCD31B /* libicucore.dylib */; };
 		7F17CD0A16E8F82A008584CA /* SwitchedMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F17CD0916E8F82A008584CA /* SwitchedMenuCell.m */; };
 		7F17CD0D16E8F845008584CA /* SwitchedMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F17CD0B16E8F845008584CA /* SwitchedMenuCell.xib */; };
 		7F17E7B016E8836B009B742F /* ArgumentLabelAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F17E7AF16E8836B009B742F /* ArgumentLabelAnimator.m */; };
@@ -132,6 +134,13 @@
 		7F097D0416F71D9900BCD31B /* ImageFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageFileManager.m; path = "Classes/File system/ImageFileManager.m"; sourceTree = "<group>"; };
 		7F097D0A16F71DF100BCD31B /* NSStringCamelcase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSStringCamelcase.h; path = Classes/Cathegories/NSStringCamelcase.h; sourceTree = "<group>"; };
 		7F097D0B16F71DF100BCD31B /* NSStringCamelcase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSStringCamelcase.m; path = Classes/Cathegories/NSStringCamelcase.m; sourceTree = "<group>"; };
+		7F097D0D16F720DE00BCD31B /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		7F097D0F16F720F700BCD31B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		7F097D1116F7211600BCD31B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		7F097D1316F7213900BCD31B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		7F097D1516F7214B00BCD31B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		7F097D1716F7216000BCD31B /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		7F097D1916F7219600BCD31B /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		7F17CD0816E8F82A008584CA /* SwitchedMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchedMenuCell.h; sourceTree = "<group>"; };
 		7F17CD0916E8F82A008584CA /* SwitchedMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchedMenuCell.m; sourceTree = "<group>"; };
 		7F17CD0C16E8F845008584CA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SwitchedMenuCell.xib; sourceTree = "<group>"; };
@@ -229,6 +238,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F097D1A16F7219600BCD31B /* libicucore.dylib in Frameworks */,
+				7F097D0E16F720DF00BCD31B /* libsqlite3.0.dylib in Frameworks */,
 				7F17E7B216E8877F009B742F /* QuartzCore.framework in Frameworks */,
 				7FD4AD7E16E734C700EB7CC1 /* UIKit.framework in Frameworks */,
 				7FD4AD8016E734C700EB7CC1 /* Foundation.framework in Frameworks */,
@@ -484,6 +495,13 @@
 		7FD4AD7C16E734C700EB7CC1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7F097D1916F7219600BCD31B /* libicucore.dylib */,
+				7F097D1716F7216000BCD31B /* MessageUI.framework */,
+				7F097D1516F7214B00BCD31B /* CFNetwork.framework */,
+				7F097D1316F7213900BCD31B /* MobileCoreServices.framework */,
+				7F097D1116F7211600BCD31B /* SystemConfiguration.framework */,
+				7F097D0F16F720F700BCD31B /* libz.dylib */,
+				7F097D0D16F720DE00BCD31B /* libsqlite3.0.dylib */,
 				7FD4AD8116E734C700EB7CC1 /* CoreGraphics.framework */,
 				7FD4AD7F16E734C700EB7CC1 /* Foundation.framework */,
 				7F17E7B116E8877F009B742F /* QuartzCore.framework */,
@@ -907,11 +925,13 @@
 		7FD4ADA116E734C700EB7CC1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "com.digitalCalc/com.digitalCalc-Prefix.pch";
 				INFOPLIST_FILE = "com.digitalCalc/com.digitalCalc-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "armv7 armv7s armv6";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -919,11 +939,13 @@
 		7FD4ADA216E734C700EB7CC1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "com.digitalCalc/com.digitalCalc-Prefix.pch";
 				INFOPLIST_FILE = "com.digitalCalc/com.digitalCalc-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "armv7 armv7s armv6";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
