@@ -26,6 +26,8 @@
 		7F097D0C16F71DF100BCD31B /* NSStringCamelcase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F097D0B16F71DF100BCD31B /* NSStringCamelcase.m */; };
 		7F097D0E16F720DF00BCD31B /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F097D0D16F720DE00BCD31B /* libsqlite3.0.dylib */; };
 		7F097D1A16F7219600BCD31B /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F097D1916F7219600BCD31B /* libicucore.dylib */; };
+		7F097D1D16F7228100BCD31B /* RankingRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F097D1C16F7228100BCD31B /* RankingRow.m */; };
+		7F097D2016F723DF00BCD31B /* RankingRowTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F097D1F16F723DE00BCD31B /* RankingRowTable.m */; };
 		7F17CD0A16E8F82A008584CA /* SwitchedMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F17CD0916E8F82A008584CA /* SwitchedMenuCell.m */; };
 		7F17CD0D16E8F845008584CA /* SwitchedMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F17CD0B16E8F845008584CA /* SwitchedMenuCell.xib */; };
 		7F17E7B016E8836B009B742F /* ArgumentLabelAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F17E7AF16E8836B009B742F /* ArgumentLabelAnimator.m */; };
@@ -141,6 +143,10 @@
 		7F097D1516F7214B00BCD31B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		7F097D1716F7216000BCD31B /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		7F097D1916F7219600BCD31B /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		7F097D1B16F7228100BCD31B /* RankingRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RankingRow.h; path = Classes/model/RankingRow.h; sourceTree = "<group>"; };
+		7F097D1C16F7228100BCD31B /* RankingRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RankingRow.m; path = Classes/model/RankingRow.m; sourceTree = "<group>"; };
+		7F097D1E16F723DE00BCD31B /* RankingRowTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RankingRowTable.h; path = Classes/model/RankingRowTable.h; sourceTree = "<group>"; };
+		7F097D1F16F723DE00BCD31B /* RankingRowTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RankingRowTable.m; path = Classes/model/RankingRowTable.m; sourceTree = "<group>"; };
 		7F17CD0816E8F82A008584CA /* SwitchedMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchedMenuCell.h; sourceTree = "<group>"; };
 		7F17CD0916E8F82A008584CA /* SwitchedMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchedMenuCell.m; sourceTree = "<group>"; };
 		7F17CD0C16E8F845008584CA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SwitchedMenuCell.xib; sourceTree = "<group>"; };
@@ -287,6 +293,10 @@
 		7F097CF116F71C7E00BCD31B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7F097D1B16F7228100BCD31B /* RankingRow.h */,
+				7F097D1C16F7228100BCD31B /* RankingRow.m */,
+				7F097D1E16F723DE00BCD31B /* RankingRowTable.h */,
+				7F097D1F16F723DE00BCD31B /* RankingRowTable.m */,
 				7F097CF216F71C9A00BCD31B /* Unit.h */,
 				7F097CF316F71C9A00BCD31B /* Unit.m */,
 			);
@@ -791,6 +801,8 @@
 				7F097D0716F71D9900BCD31B /* IFolder.m in Sources */,
 				7F097D0816F71D9900BCD31B /* ImageFileManager.m in Sources */,
 				7F097D0C16F71DF100BCD31B /* NSStringCamelcase.m in Sources */,
+				7F097D1D16F7228100BCD31B /* RankingRow.m in Sources */,
+				7F097D2016F723DF00BCD31B /* RankingRowTable.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
