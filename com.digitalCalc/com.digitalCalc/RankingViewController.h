@@ -7,12 +7,26 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RankingRowTable.h"
 
 @class LayoutPresenter;
 
 @interface RankingViewController : UIViewController {
     LayoutPresenter *_layoutPresenter;
 }
+
+@property (nonatomic, strong) IBOutlet UILabel *rankingLabel;
+
+@property (nonatomic, strong) IBOutlet UILabel *firstClasifName;
+@property (nonatomic, strong) IBOutlet UILabel *firstClasifPoints;
+@property (nonatomic, strong) IBOutlet UILabel *secondClasifName;
+@property (nonatomic, strong) IBOutlet UILabel *secondClasifPoints;
+@property (nonatomic, strong) IBOutlet UILabel *thirdClasifName;
+@property (nonatomic, strong) IBOutlet UILabel *thirdClasifPoints;
+@property (nonatomic, strong) IBOutlet UILabel *fourthClasifName;
+@property (nonatomic, strong) IBOutlet UILabel *fourthClasifPoints;
+@property (nonatomic, strong) IBOutlet UILabel *fifthClasifName;
+@property (nonatomic, strong) IBOutlet UILabel *fifthClasifPoints;
 
 @property (nonatomic, strong) LayoutPresenter *layoutPresenter;
 

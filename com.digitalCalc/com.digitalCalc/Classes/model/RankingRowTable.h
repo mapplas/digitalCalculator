@@ -8,6 +8,10 @@
 
 #import "SQLiteTableBaseObject.h"
 
-@interface RankingRowTable : SQLiteTableBaseObject
+@interface RankingRowTable : SQLiteTableBaseObject {
+    sqlite3_stmt *firstBestPuntuations;
+}
+
+- (NSMutableDictionary *)getFirstBestPuntuations:(NSInteger)number;
 
 @end

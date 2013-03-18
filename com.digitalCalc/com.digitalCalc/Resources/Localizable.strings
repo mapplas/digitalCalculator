@@ -71,3 +71,30 @@
 
 /* Result ckecked NOK text in game mode */
 "result_checked_nok_lgame_mode" = "Hurry! Try again!";
+
+/* Ranking screen title */
+"ranking_screen_title" = "Ranking";
+
+/* Ranking screen 1st position prefix */
+"ranking_screen_first_position_prefix" = "1.";
+
+/* Ranking screen 2nd position prefix */
+"ranking_screen_second_position_prefix" = "2.";
+
+/* Ranking screen 3rd position prefix */
+"ranking_screen_third_position_prefix" = "3.";
+
+/* Ranking screen 4th position prefix */
+"ranking_screen_fourth_position_prefix" = "4.";
+
+/* Ranking screen 5th position prefix */
+"ranking_screen_fifth_position_prefix" = "5.";
+
+/* Ranking screen no user text */
+"ranking_screen_no_user_text" = "user";
+
+/* Ranking screen no points text */
+"ranking_screen_no_points_text" = "0";
+
+/* Ranking screen points suffix text */
+"ranking_screen_points_suffix" = "points";
