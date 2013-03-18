@@ -28,8 +28,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bkg_board.png"]];
-    self.tableView.separatorColor = [UIColor brownColor];
+//    self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bkg_menu_cell.png"]];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     self.tableView.scrollEnabled = NO;
 }
@@ -37,22 +37,6 @@
 #pragma mark - UITableViewDataSource and Delate methods
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return MENU_TABLE_SECTIONS_COUNT;
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    switch (section) {
-        case 0:
-            return NSLocalizedString(@"menu_section_levels_title", @"Menu section levels title");
-            break;
-            
-        case 1:
-            return NSLocalizedString(@"menu_section_configuration_title", @"Menu section configuration title");            
-            break;
-            
-        default:
-            return @"";
-            break;
-    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -169,11 +153,47 @@
     }
 }
 
-//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-//    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width, 30)];
-//    [headerView setBackgroundColor:[UIColor colorWithRed:193/255.0 green:143/255.0 blue:106/255.0 alpha:1.0]];
-//    return headerView;
-//}
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    NSInteger height = MENU_TABLE_HEADER_HEIGHT_IPHONE;
+    DeviceChooser *deviceChooser = [[DeviceChooser alloc] init];
+    if ([deviceChooser isPad]) {
+        height = MENU_TABLE_HEADER_HEIGHT_IPAD;
+    }
+    
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width, height)];
+    [headerView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bkg_menu_header.png"]]];
+    
+    UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+    headerLabel.backgroundColor = [UIColor clearColor];
+    headerLabel.font = [UIFont boldSystemFontOfSize:18];
+    NSInteger headerLabelHeight = 20;
+    headerLabel.frame = CGRectMake(10, (height / 2) - (headerLabelHeight / 2), 200, headerLabelHeight);
+    headerLabel.textColor = [UIColor blackColor];
+    
+    
+    switch (section) {
+        case 0:
+            headerLabel.text = NSLocalizedString(@"menu_section_levels_title", @"Menu section levels title");
+            break;
+                
+        case 1:
+            headerLabel.text = NSLocalizedString(@"menu_section_configuration_title", @"Menu section configuration title");
+            break;
+    }
+    
+    [headerView addSubview:headerLabel];
+    
+    return headerView;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    DeviceChooser *deviceChooser = [[DeviceChooser alloc] init];
+    if ([deviceChooser isPad]) {
+        return  MENU_TABLE_HEADER_HEIGHT_IPAD;
+    } else {
+        return MENU_TABLE_HEADER_HEIGHT_IPHONE;
+    }
+}
 
 #pragma mark - Help actions
 - (void)checkHelpSwitch:(UISwitch *)help_switch {

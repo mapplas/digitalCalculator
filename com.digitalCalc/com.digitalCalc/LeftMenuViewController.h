@@ -10,8 +10,11 @@
 #import "SwitchedMenuCell.h"
 #import "LevelMenuCell.h"
 #import "PlainMenuCell.h"
+#import "deviceChooser.h"
 
 #define MENU_TABLE_ROW_HEIGHT 50
+#define MENU_TABLE_HEADER_HEIGHT_IPHONE 32
+#define MENU_TABLE_HEADER_HEIGHT_IPAD 44
 
 #define MENU_TABLE_SECTIONS_COUNT 2
 #define MENU_TABLE_LEVELS_SECTION_COUNT 3
