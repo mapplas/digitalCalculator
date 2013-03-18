@@ -12,7 +12,6 @@
 #import "LeftMenuViewController.h"
 #import "DeviceChooser.h"
 #import "LowMultLevel.h"
-#import "SCAppUtils.h"
 #import "LayoutPresenter.h"
 
 @interface ViewController : UIViewController {
