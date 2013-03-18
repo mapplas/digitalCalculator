@@ -121,8 +121,15 @@
         [self stopTimer];
         NSLog(@"%d", viewController.points);
         
-//        RankingViewController *rankingViewController = [[RankingViewController alloc] init];
-//        [mainScreenController presentModalViewController:rankingViewController animated:YES];
+        
+        RankingViewController *rankingViewController = nil;
+        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+            rankingViewController = [[RankingViewController alloc] initWithNibName:@"RankingViewController_iPhone" bundle:nil];
+        } else {
+            rankingViewController = [[RankingViewController alloc] initWithNibName:@"RankingViewController_iPad" bundle:nil];
+        }
+        rankingViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+        [mainScreenController presentModalViewController:rankingViewController animated:YES];
     }
 }
 
