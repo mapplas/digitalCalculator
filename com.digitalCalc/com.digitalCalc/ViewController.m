@@ -45,7 +45,6 @@
     
     [self setSplashLayoutDetails];
     
-    [self initNavBar];
     [layoutPresenter configureInitialLayout];
 }
 
@@ -58,6 +57,7 @@
 // Learn mode pressed
 - (IBAction)learnModePressed:(id)sender {
     self.mode = CALCULATOR_MODE_LEARN;
+    [self initNavBar];
     
 //    Help is always enabled in learn mode
     self.helpEnabled = YES;
@@ -73,6 +73,7 @@
 - (IBAction)gameModePressed:(id)sender {
     self.mode = CALCULATOR_MODE_GAME;
     self.timerLabel.text = [NSString stringWithFormat:@"%d", GAME_MODE_COUNTDOWN];
+    [self initNavBar];
     
 //    Help is always disabled in learn mode
     self.helpEnabled = NO;
@@ -224,16 +225,18 @@
 
 # pragma mark - Private methods
 - (void)initNavBar {
-    self.title = NSLocalizedString(@"nav_bar_title", @"Nav bar title");
     self.navigationItem.titleView = self.segmentedControl;
+    
+    UIImage *button = [UIImage imageNamed:@"btn_glow.png"];
     
     UIImage *menuImage = [UIImage imageNamed:@"ic_menu_menu.png"];
     if (self.navigationController.revealController.type & PKRevealControllerTypeLeft) {
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:menuImage landscapeImagePhone:menuImage style:UIBarButtonItemStylePlain target:self action:@selector(showLeftView)];
+        [self.navigationItem.leftBarButtonItem setBackgroundImage:button forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     }
     
-    
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Clear all" style:UIBarButtonItemStylePlain target:self action:@selector(clearAll)];
+    [self.navigationItem.rightBarButtonItem setBackgroundImage:button forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
 }
 
 - (void)showLeftView {
@@ -351,6 +354,8 @@
 }
 
 - (void)mainMenuCellPressed {
+    [layoutPresenter stopTimer];
+
     [self.navigationController.revealController showViewController:self.navigationController.revealController.frontViewController];
     
     [UIView animateWithDuration:.05f

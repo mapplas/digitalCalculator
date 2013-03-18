@@ -104,16 +104,21 @@
                                     repeats:YES];
 }
 
+- (void)stopTimer {
+    NSLog(@"stopped");
+    [countDownTimer invalidate];
+    countDownTimer = nil;
+}
+
 - (void)secondDown {
     NSInteger currentValue = [timerLabel.text integerValue];
     if (currentValue > 0) {
         timerLabel.text = [NSString stringWithFormat:@"%d", currentValue - 1];
     } else {
-        [countDownTimer invalidate];
-        countDownTimer = nil;
+        [self stopTimer];
         
-        RankingViewController *rankingViewController = [[RankingViewController alloc] init];
-        [mainScreenController presentModalViewController:rankingViewController animated:YES];
+//        RankingViewController *rankingViewController = [[RankingViewController alloc] init];
+//        [mainScreenController presentModalViewController:rankingViewController animated:YES];
     }
 }
 

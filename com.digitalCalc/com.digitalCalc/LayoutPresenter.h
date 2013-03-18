@@ -43,6 +43,8 @@
 - (void)setTitleToNavItem;
 - (void)configureInitialLayout;
 - (void)resetActionLoaded:(NSInteger)_mode;
+
 - (void)initTimer;
+- (void)stopTimer;
 
 @end
