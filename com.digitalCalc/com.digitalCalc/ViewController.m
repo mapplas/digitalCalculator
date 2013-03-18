@@ -38,7 +38,7 @@
     
     self.helpEnabled = NO;
     
-    layoutPresenter = [[LayoutPresenter alloc] initWithNavItem:self.navigationItem segmentedControl:self.segmentedControl helpButton:self.helpButton timerLabel:self.timerLabel navController:self.navigationController multFirstArg:self.firstArgument multSecondArg:self.secondArgument result:self.result resultSymbol:self.resutSymbol multSymbol:self.multSymbol helpAlphaView:self.helpAlphaView helpLabel:self.helpLabel tapToContinue:self.tapToContinueLabel afterCheckAlphaView:self.afterCheckedAlphaView afterCheckLabel:self.checkedLabel nextMultLabel:self.tapToNextMultLabel viewController:self];
+    layoutPresenter = [[LayoutPresenter alloc] initWithNavItem:self.navigationItem segmentedControl:self.segmentedControl helpButton:self.helpButton timerLabel:self.timerLabel navController:self.navigationController multFirstArg:self.firstArgument multSecondArg:self.secondArgument result:self.result resultSymbol:self.resutSymbol multSymbol:self.multSymbol helpAlphaView:self.helpAlphaView helpLabel:self.helpLabel tapToContinue:self.tapToContinueLabel afterCheckAlphaView:self.afterCheckedAlphaView afterCheckLabel:self.checkedLabel nextMultLabel:self.tapToNextMultLabel viewController:self resultSlider:self.resultSlider];
     
     helpManager = [[HelpManager alloc] initWithHelpLabel:self.helpLabel button:self.helpButton firstArgument:self.firstArgument secondArgument:self.secondArgument helpView:self.helpView andCheckButton:self.ckeckButton mainViewController:self];
     
@@ -163,7 +163,7 @@
         if (self.segmentedControl.selectedSegmentIndex != DOT_SEGMENT) {
             mouseSwiped = YES;
             
-            UIColor *brushPattern = [[UIColor alloc]initWithPatternImage:[UIImage imageNamed:@"chalk.png"]];
+            UIColor *brushPattern = [[UIColor alloc]initWithPatternImage:[UIImage imageNamed:@"bkg_chalk.png"]];
             CGColorRef fillColor = [brushPattern CGColor];
             CGColorRef strokeColor = [brushPattern CGColor];
             
@@ -227,16 +227,19 @@
 - (void)initNavBar {
     self.navigationItem.titleView = self.segmentedControl;
     
-    UIImage *button = [UIImage imageNamed:@"btn_glow.png"];
+    UIImage *navBarButtonUp = [UIImage imageNamed:@"btn_menu_up.png"];
+    UIImage *navBarButtonHover = [UIImage imageNamed:@"btn_menu_hover.png"];
     
     UIImage *menuImage = [UIImage imageNamed:@"ic_menu_menu.png"];
     if (self.navigationController.revealController.type & PKRevealControllerTypeLeft) {
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:menuImage landscapeImagePhone:menuImage style:UIBarButtonItemStylePlain target:self action:@selector(showLeftView)];
-        [self.navigationItem.leftBarButtonItem setBackgroundImage:button forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+        [self.navigationItem.leftBarButtonItem setBackgroundImage:navBarButtonUp forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+        [self.navigationItem.leftBarButtonItem setBackgroundImage:navBarButtonHover forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
     }
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Clear all" style:UIBarButtonItemStylePlain target:self action:@selector(clearAll)];
-    [self.navigationItem.rightBarButtonItem setBackgroundImage:button forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    [self.navigationItem.rightBarButtonItem setBackgroundImage:navBarButtonUp forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    [self.navigationItem.rightBarButtonItem setBackgroundImage:navBarButtonHover forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
 }
 
 - (void)showLeftView {
