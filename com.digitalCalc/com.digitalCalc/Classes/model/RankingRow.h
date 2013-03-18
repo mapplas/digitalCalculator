@@ -9,11 +9,13 @@
 #import "Unit.h"
 
 @interface RankingRow : Unit {
+    NSString *_uniqueIdentifier;
     NSString *_username;
     NSNumber *_points;
     NSString *_date;
 }
 
+@property (nonatomic, strong) NSString *uniqueIdentifier;
 @property (nonatomic, strong) NSString *username;
 @property (nonatomic, strong) NSNumber *points;
 @property (nonatomic, strong) NSString *date;

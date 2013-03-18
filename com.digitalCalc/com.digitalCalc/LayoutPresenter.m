@@ -132,6 +132,13 @@
             rankingViewController = [[RankingViewController alloc] initWithNibName:@"RankingViewController_iPad" bundle:nil];
         }
         
+        RankingRowTable *rankingTable = [[RankingRowTable alloc] init];
+        
+        RankingRow *ranking = [[RankingRow alloc] init];
+        ranking.points = [NSNumber numberWithInt:viewController.points];
+        ranking.username = @"belen";
+        [rankingTable saveBatch:ranking];
+        [rankingTable flush];
         
         UINavigationController *cntrol = [[UINavigationController alloc] initWithRootViewController:rankingViewController];
         rankingViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;

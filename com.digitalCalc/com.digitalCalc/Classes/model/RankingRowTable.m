@@ -16,7 +16,6 @@
 					   [[SQLiteColumn alloc] initWithName:@"username" type:@"text"],
 					   [[SQLiteColumn alloc] initWithName:@"points" type:@"int-as-string"],
                        [[SQLiteColumn alloc] initWithName:@"date" type:@"text"],
-                       
 					   nil];
 	
 	self = [super initWithDatabase:@"Ranking.db" table:@"ranking" columns:fields];

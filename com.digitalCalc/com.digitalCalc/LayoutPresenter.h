@@ -6,10 +6,11 @@
 //  Copyright (c) 2013 Mapplas. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import <QuartzCore/QuartzCore.h>
 #import "Constants.h"
 #import "RankingViewController.h"
+#import "RankingRowTable.h"
+#import "RankingRow.h"
 
 @class ViewController;
 

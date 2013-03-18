@@ -42,7 +42,7 @@ static sqlite3 *notifications;
 }
 
 - (sqlite3 *)connect:(NSString *)database_name {
-	if ([database_name isEqualToString:@"Notifications.db"]) {
+	if ([database_name isEqualToString:@"Ranking.db"]) {
 		notifications = [self putDB:database_name into:notifications];
 		return notifications;
 	}

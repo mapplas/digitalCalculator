@@ -10,6 +10,7 @@
 
 @implementation RankingRow
 
+@synthesize uniqueIdentifier = _uniqueIdentifier;
 @synthesize username = _username;
 @synthesize points = _points;
 @synthesize date = _date;
@@ -17,6 +18,7 @@
 - (id)init {
     self = [super init];
     if (self) {
+        self.uniqueIdentifier = @"";
         self.username = @"";
         self.points = [NSNumber numberWithInt:0];
         self.date = @"";
