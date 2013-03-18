@@ -11,6 +11,8 @@
 #import "Constants.h"
 #import "RankingViewController.h"
 
+@class ViewController;
+
 @interface LayoutPresenter : NSObject {
     UINavigationItem *navItem;
     UISegmentedControl *segmControl;
@@ -20,6 +22,7 @@
     UILabel *timerLabel;
     
     UINavigationController *mainScreenController;
+    ViewController *viewController;
     
     UILabel *firstArgument;
     UILabel *secondArgument;
@@ -34,11 +37,11 @@
     UIView *afterCheckAlphaView;
     UILabel *afterCheckLabel;
     UILabel *nextMultLabel;
-    
+        
     NSTimer *countDownTimer;
 }
 
-- (id)initWithNavItem:(UINavigationItem *)nav_item segmentedControl:(UISegmentedControl *)segm_control helpButton:(UIButton *)help_button timerLabel:(UILabel *)timer_label navController:(UINavigationController *)main_controller multFirstArg:(UILabel *)mult_first_arg multSecondArg:(UILabel *)mult_sec_arg result:(UILabel *)_result resultSymbol:(UILabel *)result_symbol multSymbol:(UILabel *)mult_symbol helpAlphaView:(UIView *)help_alpha_view helpLabel:(UILabel *)help_label tapToContinue:(UILabel *)tap_to_cont afterCheckAlphaView:(UIView *)after_check_alpha_view afterCheckLabel:(UILabel *)after_check_label nextMultLabel:(UILabel *)tap_to_next_mult;
+- (id)initWithNavItem:(UINavigationItem *)nav_item segmentedControl:(UISegmentedControl *)segm_control helpButton:(UIButton *)help_button timerLabel:(UILabel *)timer_label navController:(UINavigationController *)main_controller multFirstArg:(UILabel *)mult_first_arg multSecondArg:(UILabel *)mult_sec_arg result:(UILabel *)_result resultSymbol:(UILabel *)result_symbol multSymbol:(UILabel *)mult_symbol helpAlphaView:(UIView *)help_alpha_view helpLabel:(UILabel *)help_label tapToContinue:(UILabel *)tap_to_cont afterCheckAlphaView:(UIView *)after_check_alpha_view afterCheckLabel:(UILabel *)after_check_label nextMultLabel:(UILabel *)tap_to_next_mult viewController:(ViewController *)view_controller;
 
 - (void)setTitleToNavItem;
 - (void)configureInitialLayout;

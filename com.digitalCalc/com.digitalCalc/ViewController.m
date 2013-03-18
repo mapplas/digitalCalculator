@@ -30,7 +30,7 @@
 @synthesize splashView;
 
 @synthesize helpEnabled;
-@synthesize mode = _mode, level = _level;
+@synthesize mode = _mode, level = _level, points = _points;
 @synthesize red = _red, green = _green, blue = _blue, brushWidth = _brushWidth;
 
 - (void)viewDidLoad {
@@ -39,7 +39,7 @@
     self.helpEnabled = NO;
 //    self.navigationController.navigationBar.tintColor = calculatorNavBarColor;
     
-    layoutPresenter = [[LayoutPresenter alloc] initWithNavItem:self.navigationItem segmentedControl:self.segmentedControl helpButton:self.helpButton timerLabel:self.timerLabel navController:self.navigationController multFirstArg:self.firstArgument multSecondArg:self.secondArgument result:self.result resultSymbol:self.resutSymbol multSymbol:self.multSymbol helpAlphaView:self.helpAlphaView helpLabel:self.helpLabel tapToContinue:self.tapToContinueLabel afterCheckAlphaView:self.afterCheckedAlphaView afterCheckLabel:self.checkedLabel nextMultLabel:self.tapToNextMultLabel];
+    layoutPresenter = [[LayoutPresenter alloc] initWithNavItem:self.navigationItem segmentedControl:self.segmentedControl helpButton:self.helpButton timerLabel:self.timerLabel navController:self.navigationController multFirstArg:self.firstArgument multSecondArg:self.secondArgument result:self.result resultSymbol:self.resutSymbol multSymbol:self.multSymbol helpAlphaView:self.helpAlphaView helpLabel:self.helpLabel tapToContinue:self.tapToContinueLabel afterCheckAlphaView:self.afterCheckedAlphaView afterCheckLabel:self.checkedLabel nextMultLabel:self.tapToNextMultLabel viewController:self];
     
     helpManager = [[HelpManager alloc] initWithHelpLabel:self.helpLabel button:self.helpButton firstArgument:self.firstArgument secondArgument:self.secondArgument helpView:self.helpView andCheckButton:self.ckeckButton mainViewController:self];
     
@@ -77,6 +77,7 @@
     
 //    Help is always disabled in learn mode
     self.helpEnabled = NO;
+    self.points = 0;
     
     [UIView animateWithDuration:0.5f
                      animations:^{self.splashView.alpha = 0.0;}
@@ -338,6 +339,8 @@
     } else { // GAME MODE
         if ([self.result.text isEqualToString:[NSString stringWithFormat:@"%d", resultIntValue]]) {
             self.checkedLabel.text = NSLocalizedString(@"result_checked_ok_game_mode", @"Result ckecked OK text in game mode");
+            
+            self.points += GAME_MODE_CORRECT_ANSWER;
         }
         else {
             self.checkedLabel.text = NSLocalizedString(@"result_checked_nok_lgame_mode", @"Result ckecked NOK text in game mode");

@@ -7,10 +7,11 @@
 //
 
 #import "LayoutPresenter.h"
+#import "ViewController.h"
 
 @implementation LayoutPresenter
 
-- (id)initWithNavItem:(UINavigationItem *)nav_item segmentedControl:(UISegmentedControl *)segm_control helpButton:(UIButton *)help_button timerLabel:(UILabel *)timer_label navController:(UINavigationController *)main_controller multFirstArg:(UILabel *)mult_first_arg multSecondArg:(UILabel *)mult_sec_arg result:(UILabel *)_result resultSymbol:(UILabel *)result_symbol multSymbol:(UILabel *)mult_symbol helpAlphaView:(UIView *)help_alpha_view helpLabel:(UILabel *)help_label tapToContinue:(UILabel *)tap_to_cont afterCheckAlphaView:(UIView *)after_check_alpha_view afterCheckLabel:(UILabel *)after_check_label nextMultLabel:(UILabel *)tap_to_next_mult {
+- (id)initWithNavItem:(UINavigationItem *)nav_item segmentedControl:(UISegmentedControl *)segm_control helpButton:(UIButton *)help_button timerLabel:(UILabel *)timer_label navController:(UINavigationController *)main_controller multFirstArg:(UILabel *)mult_first_arg multSecondArg:(UILabel *)mult_sec_arg result:(UILabel *)_result resultSymbol:(UILabel *)result_symbol multSymbol:(UILabel *)mult_symbol helpAlphaView:(UIView *)help_alpha_view helpLabel:(UILabel *)help_label tapToContinue:(UILabel *)tap_to_cont afterCheckAlphaView:(UIView *)after_check_alpha_view afterCheckLabel:(UILabel *)after_check_label nextMultLabel:(UILabel *)tap_to_next_mult viewController:(ViewController *)view_controller {
     
     self = [super init];
     if (self) {
@@ -33,7 +34,10 @@
         afterCheckAlphaView = after_check_alpha_view;
         afterCheckLabel = after_check_label;
         nextMultLabel = tap_to_next_mult;
+        
+        viewController = view_controller;
     }
+    
     return self;
 }
 
@@ -105,7 +109,6 @@
 }
 
 - (void)stopTimer {
-    NSLog(@"stopped");
     [countDownTimer invalidate];
     countDownTimer = nil;
 }
@@ -116,6 +119,7 @@
         timerLabel.text = [NSString stringWithFormat:@"%d", currentValue - 1];
     } else {
         [self stopTimer];
+        NSLog(@"%d", viewController.points);
         
 //        RankingViewController *rankingViewController = [[RankingViewController alloc] init];
 //        [mainScreenController presentModalViewController:rankingViewController animated:YES];
