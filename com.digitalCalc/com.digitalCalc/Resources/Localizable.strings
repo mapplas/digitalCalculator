@@ -92,3 +92,6 @@
 
 /* Username alert view ok message */
 "username_alert_view_ok_message" = "OK";
+
+/* Username alert view negative message */
+"username_alert_view_negative_message" = "NOK";
