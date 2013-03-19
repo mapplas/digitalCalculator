@@ -43,9 +43,9 @@
 }
 
 - (void)setTitleToNavItem {
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 400, 44)];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 400, 27)];
     label.backgroundColor = [UIColor clearColor];
-    label.font = [UIFont fontWithName:@"5th Grade Cursive" size:12];
+    label.font = [UIFont fontWithName:@"The Girl Next Door" size:25];
     label.shadowColor = [UIColor colorWithWhite:0.0 alpha:0.5];
     label.textAlignment = UITextAlignmentCenter;
     label.textColor = [UIColor whiteColor];
@@ -167,7 +167,7 @@
     rankingViewController.layoutPresenter = self;
     [mainScreenController presentModalViewController:controller animated:YES];
 }
-0
+
 #pragma mark - UIAlertView
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     switch (buttonIndex) {
