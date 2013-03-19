@@ -131,8 +131,9 @@
     } else {
         [self stopTimer];
         
-        UIAlertView *usernameAlert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"username_alert_view_title", @"Username alert view title") message:NSLocalizedString(@"username_alert_view_message", @"Username alert view message") delegate:self cancelButtonTitle:NSLocalizedString(@"username_alert_view_negative_message", @"Username alert view negative message") otherButtonTitles:NSLocalizedString(@"username_alert_view_ok_message", @"Username alert view ok message"), nil];
+        usernameAlert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"username_alert_view_title", @"Username alert view title") message:NSLocalizedString(@"username_alert_view_message", @"Username alert view message") delegate:self cancelButtonTitle:NSLocalizedString(@"username_alert_view_negative_message", @"Username alert view negative message") otherButtonTitles:NSLocalizedString(@"username_alert_view_ok_message", @"Username alert view ok message"), nil];
         usernameAlert.alertViewStyle = UIAlertViewStylePlainTextInput;
+        [[usernameAlert textFieldAtIndex:0] setDelegate:self];
         [usernameAlert show];
     }
 }
@@ -166,7 +167,8 @@
     rankingViewController.layoutPresenter = self;
     [mainScreenController presentModalViewController:controller animated:YES];
 }
-
+0
+#pragma mark - UIAlertView
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     switch (buttonIndex) {
         case 0:
@@ -179,6 +181,13 @@
         default:
             break;
     }
+}
+
+#pragma mark - UITextFieldDelegate
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [self goToRankingScreenWithName:textField.text];
+    [usernameAlert dismissWithClickedButtonIndex:1 animated:NO];
+    return YES;
 }
 
 @end
