@@ -15,7 +15,7 @@
 
 @implementation LeftMenuViewController
 
-@synthesize helpButton, helpLabel, helpView;
+@synthesize helpButton, helpLabel, helpView, checkButton;
 
 - (id)initWithMainViewController:(UINavigationController *)main_view_controller {
     self = [super init];
@@ -219,12 +219,14 @@
         self.helpLabel.hidden = NO;
         self.helpButton.hidden = NO;
         self.helpView.hidden = NO;
+        self.checkButton.hidden = YES;
     }
     else {
         mainViewController.helpEnabled = NO;
         self.helpLabel.hidden = YES;
         self.helpButton.hidden = YES;
         self.helpView.hidden = YES;
+        self.checkButton.hidden = NO;
     }
 }
 

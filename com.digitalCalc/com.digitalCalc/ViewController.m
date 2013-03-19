@@ -251,6 +251,7 @@
         leftVC.helpLabel = self.helpLabel;
         leftVC.helpButton = self.helpButton;
         leftVC.helpView = self.helpView;
+        leftVC.checkButton = self.ckeckButton;
         
         [self.navigationController.revealController showViewController:self.navigationController.revealController.leftViewController];
     }
@@ -355,8 +356,6 @@
 - (void)checkHelpEnabledAfterMenuHidden {
     if (self.helpEnabled) {
         [helpManager start];
-    } else {
-        [self.ckeckButton setHidden:NO];
     }
 }
 

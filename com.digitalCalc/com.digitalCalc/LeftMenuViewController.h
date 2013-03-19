@@ -33,5 +33,6 @@
 @property (nonatomic, strong) UILabel *helpLabel;
 @property (nonatomic, strong) UIButton *helpButton;
 @property (nonatomic, strong) UIView *helpView;
+@property (nonatomic, strong) UIButton *checkButton;
 
 @end
