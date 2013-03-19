@@ -83,3 +83,12 @@
 
 /* Ranking screen points suffix text */
 "ranking_screen_points_suffix" = "points";
+
+/* Username alert view title */
+"username_alert_view_title" = "Alert View title";
+
+/* Username alert view message */
+"username_alert_view_message" = "Insert your name to show it in ranking!";
+
+/* Username alert view ok message */
+"username_alert_view_ok_message" = "OK";
