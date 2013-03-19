@@ -42,7 +42,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *helpCellId = @"HelpOnOffText";
     NSString *levelCellId = @"LevelMenuText";
-    NSString *plainCellId = @"PlainMenuText";
     
     if (indexPath.section == 0) {
         levelMenuCell = [tableView dequeueReusableCellWithIdentifier:levelCellId];
