@@ -28,8 +28,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bkg_board.png"]];
-    self.tableView.separatorColor = [UIColor brownColor];
+    self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bkg_menu_cell_up.png"]];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     self.tableView.scrollEnabled = NO;
 }
@@ -37,22 +37,6 @@
 #pragma mark - UITableViewDataSource and Delate methods
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return MENU_TABLE_SECTIONS_COUNT;
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    switch (section) {
-        case 0:
-            return NSLocalizedString(@"menu_section_levels_title", @"Menu section levels title");
-            break;
-            
-        case 1:
-            return NSLocalizedString(@"menu_section_configuration_title", @"Menu section configuration title");            
-            break;
-            
-        default:
-            return @"";
-            break;
-    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -92,10 +76,10 @@
                 helpCell = [nib objectAtIndex:0];
             }
         } else {
-            plainMenuCell = [tableView dequeueReusableCellWithIdentifier:plainCellId];
-            if (plainMenuCell == nil) {
-                NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"PlainMenuCell" owner:self options:nil];
-                plainMenuCell = [nib objectAtIndex:0];
+            levelMenuCell = [tableView dequeueReusableCellWithIdentifier:levelCellId];
+            if (levelMenuCell == nil) {
+                NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"LevelMenuCell" owner:self options:nil];
+                levelMenuCell = [nib objectAtIndex:0];
             }
         }
         
@@ -111,14 +95,14 @@
                 break;
                 
             case 1:
-                plainMenuCell.textLabel.text = @"Change game mode";
+                levelMenuCell.textLabel.text = @"Change game mode";
                 break;
         }
         
         if (indexPath.row == 0) {
             return helpCell;
         } else {
-            return plainMenuCell;
+            return levelMenuCell;
         }
     }
 }
@@ -169,11 +153,38 @@
     }
 }
 
-//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-//    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width, 30)];
-//    [headerView setBackgroundColor:[UIColor colorWithRed:193/255.0 green:143/255.0 blue:106/255.0 alpha:1.0]];
-//    return headerView;
-//}
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    NSInteger height = MENU_TABLE_HEADER_HEIGHT;
+    
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width, height)];
+    [headerView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bkg_menu_header.png"]]];
+    
+    UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+    headerLabel.backgroundColor = [UIColor clearColor];
+    headerLabel.font = [UIFont boldSystemFontOfSize:18];
+    NSInteger headerLabelHeight = 20;
+    headerLabel.frame = CGRectMake(10, (height / 2) - (headerLabelHeight / 2), 200, headerLabelHeight);
+    headerLabel.textColor = [UIColor colorWithRed:236/255.f green:236/255.f blue:236/255.f alpha:1.f];
+    
+    
+    switch (section) {
+        case 0:
+            headerLabel.text = NSLocalizedString(@"menu_section_levels_title", @"Menu section levels title");
+            break;
+                
+        case 1:
+            headerLabel.text = NSLocalizedString(@"menu_section_configuration_title", @"Menu section configuration title");
+            break;
+    }
+    
+    [headerView addSubview:headerLabel];
+    
+    return headerView;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return MENU_TABLE_HEADER_HEIGHT;
+}
 
 #pragma mark - Help actions
 - (void)checkHelpSwitch:(UISwitch *)help_switch {

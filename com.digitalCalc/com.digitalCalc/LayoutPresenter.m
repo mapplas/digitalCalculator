@@ -11,7 +11,7 @@
 
 @implementation LayoutPresenter
 
-- (id)initWithNavItem:(UINavigationItem *)nav_item segmentedControl:(UISegmentedControl *)segm_control helpButton:(UIButton *)help_button timerLabel:(UILabel *)timer_label navController:(UINavigationController *)main_controller multFirstArg:(UILabel *)mult_first_arg multSecondArg:(UILabel *)mult_sec_arg result:(UILabel *)_result resultSymbol:(UILabel *)result_symbol multSymbol:(UILabel *)mult_symbol helpAlphaView:(UIView *)help_alpha_view helpLabel:(UILabel *)help_label tapToContinue:(UILabel *)tap_to_cont afterCheckAlphaView:(UIView *)after_check_alpha_view afterCheckLabel:(UILabel *)after_check_label nextMultLabel:(UILabel *)tap_to_next_mult viewController:(ViewController *)view_controller {
+- (id)initWithNavItem:(UINavigationItem *)nav_item segmentedControl:(UISegmentedControl *)segm_control helpButton:(UIButton *)help_button timerLabel:(UILabel *)timer_label navController:(UINavigationController *)main_controller multFirstArg:(UILabel *)mult_first_arg multSecondArg:(UILabel *)mult_sec_arg result:(UILabel *)_result resultSymbol:(UILabel *)result_symbol multSymbol:(UILabel *)mult_symbol helpAlphaView:(UIView *)help_alpha_view helpLabel:(UILabel *)help_label tapToContinue:(UILabel *)tap_to_cont afterCheckAlphaView:(UIView *)after_check_alpha_view afterCheckLabel:(UILabel *)after_check_label nextMultLabel:(UILabel *)tap_to_next_mult viewController:(ViewController *)view_controller resultSlider:(UISlider *)result_slider {
     
     self = [super init];
     if (self) {
@@ -36,6 +36,7 @@
         nextMultLabel = tap_to_next_mult;
         
         viewController = view_controller;
+        resultSlider = result_slider;
     }
     
     return self;
@@ -55,7 +56,7 @@
 - (void)configureInitialLayout {
     // Segmented control
     // Image between two unselected segments.
-    UIImage *transparentSeparator = [UIImage imageNamed:@"transparente.png"];
+    UIImage *transparentSeparator = [UIImage imageNamed:@"bkg_segment_separator.png"];
     UIBarMetrics barMetrics = UIBarMetricsLandscapePhone;
     
     [segmControl setDividerImage:transparentSeparator forLeftSegmentState:UIControlStateNormal
@@ -70,6 +71,11 @@
     [segmControl setImage:[UIImage imageNamed:@"btn_line_down.png"] forSegmentAtIndex:0];
     
     [self initLabelFontTypes];
+    
+    // Result slider
+    UIImage *sliderRightTrackImage = [[UIImage imageNamed: @"bkg_slider_highlight.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 8, 0, 0) resizingMode:UIImageResizingModeTile];
+    [resultSlider setMinimumTrackImage:sliderRightTrackImage forState:UIControlStateNormal];
+    [resultSlider setThumbImage:[UIImage imageNamed:@"bkg_slider_handle.png"] forState:UIControlStateNormal];
     
     // Help view
     helpAlphaView.layer.cornerRadius = 20;
