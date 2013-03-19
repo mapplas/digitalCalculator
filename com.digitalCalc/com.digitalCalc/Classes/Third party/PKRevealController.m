@@ -1404,9 +1404,9 @@ NSString * const PKRevealControllerRecognizesResetTapOnFrontViewKey = @"PKReveal
     [self.frontViewContainer refreshShadowWithAnimationDuration:duration];
 }
 
-- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
-    return UIInterfaceOrientationLandscapeRight;
-}
+//- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+//    return UIInterfaceOrientationLandscapeRight;
+//}
 
 #pragma mark - Memory Management
 
