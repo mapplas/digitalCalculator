@@ -28,7 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-//    self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bkg_menu_cell.png"]];
+    self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bkg_menu_cell_up.png"]];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     self.tableView.scrollEnabled = NO;
@@ -154,11 +154,7 @@
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    NSInteger height = MENU_TABLE_HEADER_HEIGHT_IPHONE;
-    DeviceChooser *deviceChooser = [[DeviceChooser alloc] init];
-    if ([deviceChooser isPad]) {
-        height = MENU_TABLE_HEADER_HEIGHT_IPAD;
-    }
+    NSInteger height = MENU_TABLE_HEADER_HEIGHT;
     
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width, height)];
     [headerView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bkg_menu_header.png"]]];
@@ -168,7 +164,7 @@
     headerLabel.font = [UIFont boldSystemFontOfSize:18];
     NSInteger headerLabelHeight = 20;
     headerLabel.frame = CGRectMake(10, (height / 2) - (headerLabelHeight / 2), 200, headerLabelHeight);
-    headerLabel.textColor = [UIColor blackColor];
+    headerLabel.textColor = [UIColor colorWithRed:236/255.f green:236/255.f blue:236/255.f alpha:1.f];
     
     
     switch (section) {
@@ -187,12 +183,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    DeviceChooser *deviceChooser = [[DeviceChooser alloc] init];
-    if ([deviceChooser isPad]) {
-        return  MENU_TABLE_HEADER_HEIGHT_IPAD;
-    } else {
-        return MENU_TABLE_HEADER_HEIGHT_IPHONE;
-    }
+    return MENU_TABLE_HEADER_HEIGHT;
 }
 
 #pragma mark - Help actions

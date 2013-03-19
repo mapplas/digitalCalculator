@@ -312,7 +312,7 @@
             
             self.resultSlider.maximumValue = 30;
             self.resultSlider.minimumValue = 0;
-            self.resultSlider.value = self.resultSlider.minimumValue;
+            self.resultSlider.value = self.resultSlider.minimumValue + arc4random() % ((int)self.resultSlider.maximumValue - (int)self.resultSlider.minimumValue);
             self.result.text = [NSString stringWithFormat:@"%.f", self.resultSlider.value];
             break;
             

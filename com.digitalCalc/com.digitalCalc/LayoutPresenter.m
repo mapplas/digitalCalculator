@@ -73,8 +73,9 @@
     [self initLabelFontTypes];
     
     // Result slider
-    UIImage *sliderRightTrackImage = [[UIImage imageNamed: @"bkg_slider_highlight.png"] stretchableImageWithLeftCapWidth:9 topCapHeight:0];
+    UIImage *sliderRightTrackImage = [[UIImage imageNamed: @"bkg_slider_highlight.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 8, 0, 0) resizingMode:UIImageResizingModeTile];
     [resultSlider setMinimumTrackImage:sliderRightTrackImage forState:UIControlStateNormal];
+    [resultSlider setThumbImage:[UIImage imageNamed:@"bkg_slider_handle.png"] forState:UIControlStateNormal];
     
     // Help view
     helpAlphaView.layer.cornerRadius = 20;
