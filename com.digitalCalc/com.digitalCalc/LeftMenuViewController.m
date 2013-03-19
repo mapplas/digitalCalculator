@@ -33,6 +33,11 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
+}
+
 #pragma mark - UITableViewDataSource and Delate methods
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return MENU_TABLE_SECTIONS_COUNT;
@@ -89,10 +94,7 @@
         
         switch (indexPath.row) {
             case 0:
-//              If calculator mode is game mode, disable help switch
-                if (mainViewController.mode == CALCULATOR_MODE_GAME) {
-                    [helpCell.cellSwitch setOn:NO];
-                }
+                [helpCell.cellSwitch setOn:mainViewController.helpEnabled];
                 
                 helpCell.textLabel.text = NSLocalizedString(@"menu_section_settings_help_enabled", @"Menu section settings help enabled");
                 break;
