@@ -131,7 +131,7 @@
     } else {
         [self stopTimer];
         
-        UIAlertView *usernameAlert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"username_alert_view_title", @"Username alert view title") message:NSLocalizedString(@"username_alert_view_message", @"Username alert view message") delegate:self cancelButtonTitle:NSLocalizedString(@"username_alert_view_ok_message", @"Username alert view ok message") otherButtonTitles:nil, nil];
+        UIAlertView *usernameAlert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"username_alert_view_title", @"Username alert view title") message:NSLocalizedString(@"username_alert_view_message", @"Username alert view message") delegate:self cancelButtonTitle:NSLocalizedString(@"username_alert_view_negative_message", @"Username alert view negative message") otherButtonTitles:NSLocalizedString(@"username_alert_view_ok_message", @"Username alert view ok message"), nil];
         usernameAlert.alertViewStyle = UIAlertViewStylePlainTextInput;
         [usernameAlert show];
     }
@@ -170,9 +170,12 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     switch (buttonIndex) {
         case 0:
-            [self goToRankingScreenWithName:[alertView textFieldAtIndex:0].text];
+            [viewController gameModePressed:nil];
             break;
             
+        case 1:
+            [self goToRankingScreenWithName:[alertView textFieldAtIndex:0].text];
+            break;
         default:
             break;
     }
