@@ -76,10 +76,10 @@
                 helpCell = [nib objectAtIndex:0];
             }
         } else {
-            plainMenuCell = [tableView dequeueReusableCellWithIdentifier:plainCellId];
-            if (plainMenuCell == nil) {
-                NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"PlainMenuCell" owner:self options:nil];
-                plainMenuCell = [nib objectAtIndex:0];
+            levelMenuCell = [tableView dequeueReusableCellWithIdentifier:levelCellId];
+            if (levelMenuCell == nil) {
+                NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"LevelMenuCell" owner:self options:nil];
+                levelMenuCell = [nib objectAtIndex:0];
             }
         }
         
@@ -95,14 +95,14 @@
                 break;
                 
             case 1:
-                plainMenuCell.textLabel.text = @"Change game mode";
+                levelMenuCell.textLabel.text = @"Change game mode";
                 break;
         }
         
         if (indexPath.row == 0) {
             return helpCell;
         } else {
-            return plainMenuCell;
+            return levelMenuCell;
         }
     }
 }

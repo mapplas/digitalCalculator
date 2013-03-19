@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "SwitchedMenuCell.h"
 #import "LevelMenuCell.h"
-#import "PlainMenuCell.h"
 #import "deviceChooser.h"
 
 #define MENU_TABLE_ROW_HEIGHT 50
@@ -27,7 +26,6 @@
     
     SwitchedMenuCell *helpCell;
     LevelMenuCell *levelMenuCell;
-    PlainMenuCell *plainMenuCell;
 }
 
 - (id)initWithMainViewController:(UINavigationController *)main_view_controller;
