@@ -10,7 +10,7 @@
 "nav_bar_title" = "Digital Calculator";
 
 /* Ranking controller left button title */
-"nav_bar_ranking_left_button_title" = "Play again";
+"nav_bar_ranking_left_button_title" = "Done";
 
 /* Nav. bar right button title */
 "nav_bar_right_button_title" = "Erase";
@@ -71,3 +71,24 @@
 
 /* Result ckecked NOK text in game mode */
 "result_checked_nok_lgame_mode" = "Hurry! Try again!";
+
+/* Ranking screen title */
+"ranking_screen_title" = "Ranking";
+
+/* Ranking screen no user text */
+"ranking_screen_no_user_text" = "user";
+
+/* Ranking screen no points text */
+"ranking_screen_no_points_text" = "0";
+
+/* Ranking screen points suffix text */
+"ranking_screen_points_suffix" = "points";
+
+/* Username alert view title */
+"username_alert_view_title" = "Alert View title";
+
+/* Username alert view message */
+"username_alert_view_message" = "Insert your name to show it in ranking!";
+
+/* Username alert view ok message */
+"username_alert_view_ok_message" = "OK";

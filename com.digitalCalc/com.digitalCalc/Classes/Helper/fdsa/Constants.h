@@ -38,4 +38,6 @@
 #define GAME_MODE_COUNTDOWN 10
 #define GAME_MODE_CORRECT_ANSWER 5
 
+#define RANKING_ELEMENTS 5
+
 #endif

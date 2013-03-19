@@ -131,25 +131,9 @@
     } else {
         [self stopTimer];
         
-        RankingViewController *rankingViewController = nil;
-        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-            rankingViewController = [[RankingViewController alloc] initWithNibName:@"RankingViewController_iPhone" bundle:nil];
-        } else {
-            rankingViewController = [[RankingViewController alloc] initWithNibName:@"RankingViewController_iPad" bundle:nil];
-        }
-        
-        RankingRowTable *rankingTable = [[RankingRowTable alloc] init];
-        
-        RankingRow *ranking = [[RankingRow alloc] init];
-        ranking.points = [NSNumber numberWithInt:viewController.points];
-        ranking.username = @"belen";
-        [rankingTable saveBatch:ranking];
-        [rankingTable flush];
-        
-        UINavigationController *cntrol = [[UINavigationController alloc] initWithRootViewController:rankingViewController];
-        rankingViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-        rankingViewController.layoutPresenter = self;
-        [mainScreenController presentModalViewController:cntrol animated:YES];
+        UIAlertView *usernameAlert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"username_alert_view_title", @"Username alert view title") message:NSLocalizedString(@"username_alert_view_message", @"Username alert view message") delegate:self cancelButtonTitle:NSLocalizedString(@"username_alert_view_ok_message", @"Username alert view ok message") otherButtonTitles:nil, nil];
+        usernameAlert.alertViewStyle = UIAlertViewStylePlainTextInput;
+        [usernameAlert show];
     }
 }
 
@@ -159,6 +143,39 @@
     [result setFont:[UIFont fontWithName:@"The Girl Next Door" size:result.font.pointSize]];
     [resutSymbol setFont:[UIFont fontWithName:@"The Girl Next Door" size:resutSymbol.font.pointSize]];
     [multSymbol setFont:[UIFont fontWithName:@"Blokletters Potlood" size:multSymbol.font.pointSize]];
+}
+
+- (void)goToRankingScreenWithName:(NSString *)str_username {
+    RankingRowTable *rankingTable = [[RankingRowTable alloc] init];
+    
+    RankingRow *ranking = [[RankingRow alloc] init];
+    ranking.points = [NSNumber numberWithInt:viewController.points];
+    ranking.username = str_username;
+    [rankingTable saveBatch:ranking];
+    [rankingTable flush];
+    
+    RankingViewController *rankingViewController = nil;
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        rankingViewController = [[RankingViewController alloc] initWithNibName:@"RankingViewController_iPhone" bundle:nil];
+    } else {
+        rankingViewController = [[RankingViewController alloc] initWithNibName:@"RankingViewController_iPad" bundle:nil];
+    }
+    
+    UINavigationController *controller = [[UINavigationController alloc] initWithRootViewController:rankingViewController];
+    rankingViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    rankingViewController.layoutPresenter = self;
+    [mainScreenController presentModalViewController:controller animated:YES];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    switch (buttonIndex) {
+        case 0:
+            [self goToRankingScreenWithName:[alertView textFieldAtIndex:0].text];
+            break;
+            
+        default:
+            break;
+    }
 }
 
 @end

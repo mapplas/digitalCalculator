@@ -16,7 +16,7 @@
 
 #define MENU_TABLE_SECTIONS_COUNT 2
 #define MENU_TABLE_LEVELS_SECTION_COUNT 3
-#define MENU_TABLE_CONFIG_SECTION_COUNT 2
+#define MENU_TABLE_CONFIG_SECTION_COUNT 3
 
 @class ViewController;
 
@@ -25,7 +25,7 @@
     BOOL changedHelpSwitchValue;
     
     SwitchedMenuCell *helpCell;
-    LevelMenuCell *levelMenuCell;
+    LevelMenuCell *plainTextMenuCell;
 }
 
 - (id)initWithMainViewController:(UINavigationController *)main_view_controller;

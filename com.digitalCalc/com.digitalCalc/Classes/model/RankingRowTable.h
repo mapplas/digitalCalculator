@@ -7,7 +7,16 @@
 //
 
 #import "SQLiteTableBaseObject.h"
+#import "Constants.h"
+#import "RankingRow.h"
 
-@interface RankingRowTable : SQLiteTableBaseObject
+@interface RankingRowTable : SQLiteTableBaseObject {
+    sqlite3_stmt *firstBestPuntuations;
+    sqlite3_stmt *selectOldPuntuations;
+    sqlite3_stmt *removeOldPuntuations;
+}
+
+- (NSMutableDictionary *)getFirstBestPuntuations:(NSInteger)number;
+- (BOOL)removeRankingElements:(NSInteger)number;
 
 @end

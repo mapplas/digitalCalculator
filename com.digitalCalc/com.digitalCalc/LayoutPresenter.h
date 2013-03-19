@@ -14,7 +14,7 @@
 
 @class ViewController;
 
-@interface LayoutPresenter : NSObject {
+@interface LayoutPresenter : NSObject <UIAlertViewDelegate> {
     UINavigationItem *navItem;
     UISegmentedControl *segmControl;
     
