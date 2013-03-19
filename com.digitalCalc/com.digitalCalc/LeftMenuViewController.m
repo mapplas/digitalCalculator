@@ -8,6 +8,7 @@
 
 #import "LeftMenuViewController.h"
 #import "ViewController.h"
+#import "RankingViewController.h"
 
 @interface LeftMenuViewController ()
 @end
@@ -30,8 +31,6 @@
 
     self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bkg_menu_cell_up.png"]];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    
-    self.tableView.scrollEnabled = NO;
 }
 
 #pragma mark - UITableViewDataSource and Delate methods
@@ -44,27 +43,27 @@
     NSString *levelCellId = @"LevelMenuText";
     
     if (indexPath.section == 0) {
-        levelMenuCell = [tableView dequeueReusableCellWithIdentifier:levelCellId];
-        if (levelMenuCell == nil) {
+        plainTextMenuCell = [tableView dequeueReusableCellWithIdentifier:levelCellId];
+        if (plainTextMenuCell == nil) {
             NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"LevelMenuCell" owner:self options:nil];
-            levelMenuCell = [nib objectAtIndex:0];
+            plainTextMenuCell = [nib objectAtIndex:0];
         }
         
         switch (indexPath.row) {
             case 0:
-                levelMenuCell.textLabel.text = NSLocalizedString(@"menu_section_levels_low", @"Menu section levels low level");
-                [levelMenuCell.textLabel setFont:[UIFont boldSystemFontOfSize:17]];
+                plainTextMenuCell.textLabel.text = NSLocalizedString(@"menu_section_levels_low", @"Menu section levels low level");
+                [plainTextMenuCell.textLabel setFont:[UIFont boldSystemFontOfSize:17]];
                 break;
                 
             case 1:
-                levelMenuCell.textLabel.text = NSLocalizedString(@"menu_section_levels_medium", @"Menu section levels medium level");
+                plainTextMenuCell.textLabel.text = NSLocalizedString(@"menu_section_levels_medium", @"Menu section levels medium level");
                 break;
                 
             case 2:
-                levelMenuCell.textLabel.text = NSLocalizedString(@"menu_section_levels_high", @"Menu section levels high level");
+                plainTextMenuCell.textLabel.text = NSLocalizedString(@"menu_section_levels_high", @"Menu section levels high level");
                 break;
         }
-        return levelMenuCell;
+        return plainTextMenuCell;
         
     } else {
         
@@ -74,17 +73,22 @@
                 NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"SwitchedMenuCell" owner:self options:nil];
                 helpCell = [nib objectAtIndex:0];
             }
-        } else {
-            levelMenuCell = [tableView dequeueReusableCellWithIdentifier:levelCellId];
-            if (levelMenuCell == nil) {
+        } else if(indexPath.row == 1) {
+            plainTextMenuCell = [tableView dequeueReusableCellWithIdentifier:levelCellId];
+            if (plainTextMenuCell == nil) {
                 NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"LevelMenuCell" owner:self options:nil];
-                levelMenuCell = [nib objectAtIndex:0];
+                plainTextMenuCell = [nib objectAtIndex:0];
+            }
+        } else {
+            plainTextMenuCell = [tableView dequeueReusableCellWithIdentifier:levelCellId];
+            if (plainTextMenuCell == nil) {
+                NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"LevelMenuCell" owner:self options:nil];
+                plainTextMenuCell = [nib objectAtIndex:0];
             }
         }
         
         switch (indexPath.row) {
             case 0:
-                
 //              If calculator mode is game mode, disable help switch
                 if (mainViewController.mode == CALCULATOR_MODE_GAME) {
                     [helpCell.cellSwitch setOn:NO];
@@ -94,14 +98,18 @@
                 break;
                 
             case 1:
-                levelMenuCell.textLabel.text = @"Change game mode";
+                plainTextMenuCell.textLabel.text = @"Change game mode";
+                break;
+            
+            case 2:
+                plainTextMenuCell.textLabel.text = @"Ranking";
                 break;
         }
         
         if (indexPath.row == 0) {
             return helpCell;
         } else {
-            return levelMenuCell;
+            return plainTextMenuCell;
         }
     }
 }
@@ -124,6 +132,10 @@
                 
             case 1:
                 [mainViewController mainMenuCellPressed];
+                break;
+                
+            case 2:
+                [self pushRankingController];
                 break;
                 
             default:
@@ -183,6 +195,20 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return MENU_TABLE_HEADER_HEIGHT;
+}
+
+- (void)pushRankingController {
+    RankingViewController *rankingViewController = nil;
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        rankingViewController = [[RankingViewController alloc] initWithNibName:@"RankingViewController_iPhone" bundle:nil];
+    } else {
+        rankingViewController = [[RankingViewController alloc] initWithNibName:@"RankingViewController_iPad" bundle:nil];
+    }
+    
+    UINavigationController *controller = [[UINavigationController alloc] initWithRootViewController:rankingViewController];
+    rankingViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    rankingViewController.layoutPresenter = nil;
+    [mainViewController presentModalViewController:controller animated:YES];
 }
 
 #pragma mark - Help actions
