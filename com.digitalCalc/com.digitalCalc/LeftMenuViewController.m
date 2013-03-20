@@ -119,6 +119,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     if (indexPath.section == 0) {
         switch (indexPath.row) {
             case 0:
@@ -130,7 +131,7 @@
                 break;
                 
             case 2:
-                [tableView deselectRowAtIndexPath:indexPath animated:YES];
+                [self deselectRowandSelectCorrectOne:indexPath];
                 
             default:
                 break;
@@ -144,19 +145,20 @@
                     [helpCell.cellSwitch setOn:!helpCell.cellSwitch.on animated:YES];
                     [self checkHelpSwitch:helpCell.cellSwitch];
                 }
-                [tableView deselectRowAtIndexPath:indexPath animated:YES];
+                
+                [self deselectRowandSelectCorrectOne:indexPath];
 
                 break;
                 
             case 1:
                 [mainViewController mainMenuCellPressed];
-                [tableView deselectRowAtIndexPath:indexPath animated:YES];
+                [self deselectRowandSelectCorrectOne:indexPath];
 
                 break;
                 
             case 2:
                 [self pushRankingController];
-                [tableView deselectRowAtIndexPath:indexPath animated:YES];
+                [self deselectRowandSelectCorrectOne:indexPath];
 
                 break;
                 
@@ -164,6 +166,11 @@
                 break;
         }
     }
+}
+
+- (void)deselectRowandSelectCorrectOne:(NSIndexPath *)index_path {
+    [self.tableView deselectRowAtIndexPath:index_path animated:YES];
+    [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:[mainViewController level] inSection:0] animated:YES scrollPosition:UITableViewScrollPositionNone];
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
