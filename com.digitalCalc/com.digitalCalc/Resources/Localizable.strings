@@ -7,7 +7,7 @@
 */
 
 /* Nav bar title */
-"nav_bar_title" = "Digital Calculator";
+"nav_bar_title" = "Genius Multiplication";
 
 /* Ranking controller left button title */
 "nav_bar_ranking_left_button_title" = "Done";
@@ -49,13 +49,13 @@
 "menu_section_configuration_title" = "Settings";
 
 /* Menu section levels low level */
-"menu_section_levels_low" = "Low";
+"menu_section_levels_low" = "Beginner";
 
 /* Menu section levels medium level */
-"menu_section_levels_medium" = "Medium";
+"menu_section_levels_medium" = "Genius";
 
 /* Menu section levels high level */
-"menu_section_levels_high" = "High - Coming soon";
+"menu_section_levels_high" = "Prodigy - Coming soon";
 
 /* Menu section settings help enabled */
 "menu_section_settings_help_enabled" = "Help enabled";
