@@ -98,3 +98,6 @@
 
 /* In app purchase - Genius level product identifier */
 "in_app_purchase_genius_level_identifier" = "com.digitalCalc.inappgeniuslevel";
+
+/* In app purchase - Nav controller left button title */
+"in_app_purchase_nav_left_button_title" = "Cancel";

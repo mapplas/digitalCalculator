@@ -40,7 +40,8 @@
     [super viewDidLoad];
     
     // If user has same accout on different devices, in-app purchases are shown on both devices
-    [[GeniusLevelIAPHelper sharedInstance] restoreCompletedTransactions];
+//    SHOWS POPUP!!
+//    [[GeniusLevelIAPHelper sharedInstance] restoreCompletedTransactions];
     
     self.helpEnabled = NO;
     level = LEVEL_LOW;
@@ -72,12 +73,11 @@
     _products = nil;
     [[GeniusLevelIAPHelper sharedInstance] requestProductsWithCompletionHandler:^(BOOL success, NSArray *products) {
         if (success) {
-            _products = products;
+//            _products = products;
+    NSArray *array = [NSArray arrayWithObject:NSLocalizedString(@"in_app_purchase_genius_level_identifier", @"In app purchase - Genius level product identifier")];
+    _products = array;
         }
     }];
-    
-//    NSArray *array = [NSArray arrayWithObject:NSLocalizedString(@"in_app_purchase_genius_level_identifier", @"In app purchase - Genius level product identifier")];
-//    _products = array;
 }
 
 // Learn mode pressed
@@ -115,9 +115,18 @@
         [self reset];
         [layoutPresenter initTimer];
     } else {
-        NSLog(@"Buying... %@", NSLocalizedString(@"in_app_purchase_genius_level_identifier", @"In app purchase - Genius level product identifier"));
-        SKProduct *product = _products[0];
-        [[GeniusLevelIAPHelper sharedInstance] buyProduct:product];
+        // Present purchase viewcontroller
+        InAppPurchaseViewController *inAppPurchaseViewController = nil;
+        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+            inAppPurchaseViewController = [[InAppPurchaseViewController alloc] initWithNibName:@"InAppPurchaseViewController_iPhone" bundle:nil];
+        } else {
+            inAppPurchaseViewController = [[InAppPurchaseViewController alloc] initWithNibName:@"InAppPurchaseViewController_iPad" bundle:nil];
+        }
+        
+        UINavigationController *controller = [[UINavigationController alloc] initWithRootViewController:inAppPurchaseViewController];
+        inAppPurchaseViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+        inAppPurchaseViewController.products = _products;
+        [self.navigationController presentModalViewController:controller animated:YES];
     }
 }
 

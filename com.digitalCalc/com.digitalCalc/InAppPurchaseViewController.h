@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface InAppPurchaseViewController : UIViewController
+@interface InAppPurchaseViewController : UIViewController {
+    NSArray *_products;
+}
+
+@property (nonatomic, strong) IBOutlet UIButton *buyButton;
+
+@property (nonatomic, strong) NSArray *products;
+
+- (IBAction)buyButtonPressed:(id)sender;
 
 @end
