@@ -39,6 +39,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // If user has same accout on different devices, in-app purchases are shown on both devices
+    [[GeniusLevelIAPHelper sharedInstance] restoreCompletedTransactions];
+    
     self.helpEnabled = NO;
     level = LEVEL_LOW;
     slider = (CustomSlider *)self.resultSlider;

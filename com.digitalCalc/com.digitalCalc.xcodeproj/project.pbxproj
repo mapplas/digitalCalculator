@@ -83,6 +83,9 @@
 		7FA9B15216F9E01100BB4991 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FA9B15016F9DFEE00BB4991 /* StoreKit.framework */; };
 		7FA9B15616F9E12700BB4991 /* IAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9B15516F9E12700BB4991 /* IAPHelper.m */; };
 		7FA9B15916F9E3FA00BB4991 /* GeniusLevelIAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9B15816F9E3FA00BB4991 /* GeniusLevelIAPHelper.m */; };
+		7FAEB35E16FA0514001CBDC7 /* InAppPurchaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAEB35C16FA0514001CBDC7 /* InAppPurchaseViewController.m */; };
+		7FAEB36616FA0576001CBDC7 /* InAppPurchaseViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FAEB36216FA0576001CBDC7 /* InAppPurchaseViewController_iPad.xib */; };
+		7FAEB36716FA0576001CBDC7 /* InAppPurchaseViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FAEB36416FA0576001CBDC7 /* InAppPurchaseViewController_iPhone.xib */; };
 		7FD4AD7E16E734C700EB7CC1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FD4AD7D16E734C700EB7CC1 /* UIKit.framework */; };
 		7FD4AD8016E734C700EB7CC1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FD4AD7F16E734C700EB7CC1 /* Foundation.framework */; };
 		7FD4AD8216E734C700EB7CC1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FD4AD8116E734C700EB7CC1 /* CoreGraphics.framework */; };
@@ -244,6 +247,10 @@
 		7FA9B15516F9E12700BB4991 /* IAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IAPHelper.m; path = "Classes/Inapp purchase/IAPHelper.m"; sourceTree = "<group>"; };
 		7FA9B15716F9E3FA00BB4991 /* GeniusLevelIAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GeniusLevelIAPHelper.h; path = "Classes/Inapp purchase/GeniusLevelIAPHelper.h"; sourceTree = "<group>"; };
 		7FA9B15816F9E3FA00BB4991 /* GeniusLevelIAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GeniusLevelIAPHelper.m; path = "Classes/Inapp purchase/GeniusLevelIAPHelper.m"; sourceTree = "<group>"; };
+		7FAEB35B16FA0514001CBDC7 /* InAppPurchaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InAppPurchaseViewController.h; sourceTree = "<group>"; };
+		7FAEB35C16FA0514001CBDC7 /* InAppPurchaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InAppPurchaseViewController.m; sourceTree = "<group>"; };
+		7FAEB36316FA0576001CBDC7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/InAppPurchaseViewController_iPad.xib; sourceTree = "<group>"; };
+		7FAEB36516FA0576001CBDC7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/InAppPurchaseViewController_iPhone.xib; sourceTree = "<group>"; };
 		7FD4AD7A16E734C700EB7CC1 /* com.digitalCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = com.digitalCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FD4AD7D16E734C700EB7CC1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7FD4AD7F16E734C700EB7CC1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -443,6 +450,7 @@
 		7F17E7C116E8BB65009B742F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				7FAEB35816FA04C9001CBDC7 /* Inapp purchase */,
 				7FD4ADA316E7392600EB7CC1 /* DrawingBoard */,
 				7F17E7C216E8BB74009B742F /* Menu */,
 				7FFB8C4116F21E59008298DD /* Ranking */,
@@ -582,6 +590,17 @@
 				7FA9B15516F9E12700BB4991 /* IAPHelper.m */,
 			);
 			name = "In-app purchase";
+			sourceTree = "<group>";
+		};
+		7FAEB35816FA04C9001CBDC7 /* Inapp purchase */ = {
+			isa = PBXGroup;
+			children = (
+				7FAEB35B16FA0514001CBDC7 /* InAppPurchaseViewController.h */,
+				7FAEB35C16FA0514001CBDC7 /* InAppPurchaseViewController.m */,
+				7FAEB36216FA0576001CBDC7 /* InAppPurchaseViewController_iPad.xib */,
+				7FAEB36416FA0576001CBDC7 /* InAppPurchaseViewController_iPhone.xib */,
+			);
+			name = "Inapp purchase";
 			sourceTree = "<group>";
 		};
 		7FD4AD7116E734C700EB7CC1 = {
@@ -900,6 +919,8 @@
 				7F0500CA16FB138D00E0812A /* btn_comprobar_down@2x.png in Resources */,
 				7F0500CB16FB138D00E0812A /* btn_comprobar_up.png in Resources */,
 				7F0500CC16FB138D00E0812A /* btn_comprobar_up@2x.png in Resources */,
+				7FAEB36616FA0576001CBDC7 /* InAppPurchaseViewController_iPad.xib in Resources */,
+				7FAEB36716FA0576001CBDC7 /* InAppPurchaseViewController_iPhone.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -949,6 +970,7 @@
 				7FAEB36B16FA0CEE001CBDC7 /* CustomSlider.m in Sources */,
 				7FA9B15616F9E12700BB4991 /* IAPHelper.m in Sources */,
 				7FA9B15916F9E3FA00BB4991 /* GeniusLevelIAPHelper.m in Sources */,
+				7FAEB35E16FA0514001CBDC7 /* InAppPurchaseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -961,6 +983,22 @@
 				7F17CD0C16E8F845008584CA /* en */,
 			);
 			name = SwitchedMenuCell.xib;
+			sourceTree = "<group>";
+		};
+		7FAEB36216FA0576001CBDC7 /* InAppPurchaseViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7FAEB36316FA0576001CBDC7 /* en */,
+			);
+			name = InAppPurchaseViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+		7FAEB36416FA0576001CBDC7 /* InAppPurchaseViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7FAEB36516FA0576001CBDC7 /* en */,
+			);
+			name = InAppPurchaseViewController_iPhone.xib;
 			sourceTree = "<group>";
 		};
 		7FD4AD8616E734C700EB7CC1 /* InfoPlist.strings */ = {
