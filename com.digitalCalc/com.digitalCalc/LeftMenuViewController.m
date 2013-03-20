@@ -36,6 +36,9 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.tableView reloadData];
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[mainViewController level] inSection:0];
+    [self.tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
 }
 
 #pragma mark - UITableViewDataSource and Delate methods
@@ -57,7 +60,6 @@
         switch (indexPath.row) {
             case 0:
                 plainTextMenuCell.textLabel.text = NSLocalizedString(@"menu_section_levels_low", @"Menu section levels low level");
-                [plainTextMenuCell.textLabel setFont:[UIFont boldSystemFontOfSize:17]];
                 break;
                 
             case 1:
@@ -117,10 +119,22 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
     if (indexPath.section == 0) {
-        
+        switch (indexPath.row) {
+            case 0:
+                [mainViewController setLevel:LEVEL_LOW];
+                break;
+                
+            case 1:
+                [mainViewController setLevel:LEVEL_MEDIUM];
+                break;
+                
+            case 2:
+                [tableView deselectRowAtIndexPath:indexPath animated:YES];
+                
+            default:
+                break;
+        }
     }
     else {
         switch (indexPath.row) {
@@ -130,14 +144,20 @@
                     [helpCell.cellSwitch setOn:!helpCell.cellSwitch.on animated:YES];
                     [self checkHelpSwitch:helpCell.cellSwitch];
                 }
+                [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
                 break;
                 
             case 1:
                 [mainViewController mainMenuCellPressed];
+                [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
                 break;
                 
             case 2:
                 [self pushRankingController];
+                [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
                 break;
                 
             default:

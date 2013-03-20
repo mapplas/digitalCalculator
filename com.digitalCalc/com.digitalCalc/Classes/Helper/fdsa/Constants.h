@@ -28,9 +28,9 @@
 #define COLOR_ALPHA_OPAQUE 1.0
 #define COLOR_ALPHA_CLEAR 0.0
 
-#define LEVEL_LOW 1
-#define LEVEL_MEDIUM 2
-#define LEVEL_HIGH 3
+#define LEVEL_LOW 0
+#define LEVEL_MEDIUM 1
+#define LEVEL_HIGH 2
 
 #define CALCULATOR_MODE_LEARN 0
 #define CALCULATOR_MODE_GAME 1

@@ -35,7 +35,7 @@
     NSInteger _points;
     
     @private
-    NSInteger _level;
+    NSInteger level;
     NSInteger _mode;
 }
 
@@ -72,7 +72,7 @@
 @property (nonatomic, assign) CGFloat brushWidth;
 
 @property (nonatomic, assign) BOOL helpEnabled;
-@property (nonatomic, assign) NSInteger level;
+//@property (nonatomic, assign) NSInteger level;
 @property (nonatomic, assign) NSInteger mode;
 @property (nonatomic, assign) NSInteger points;
 
@@ -86,6 +86,7 @@
 - (void)checkHelpEnabledAfterMenuHidden;
 - (void)mainMenuCellPressed;
 
-- (void)setLevel:(NSInteger)level;
+- (void)setLevel:(NSInteger)_level;
+- (NSInteger)level;
 
 @end
