@@ -81,6 +81,7 @@
 		7FA917B916F77D6F001A1C4A /* bkg_menu_header@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FA917B516F77D6E001A1C4A /* bkg_menu_header@2x.png */; };
 		7FAEB36B16FA0CEE001CBDC7 /* CustomSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAEB36A16FA0CEE001CBDC7 /* CustomSlider.m */; };
 		7FA9B15216F9E01100BB4991 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FA9B15016F9DFEE00BB4991 /* StoreKit.framework */; };
+		7FA9B15616F9E12700BB4991 /* IAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9B15516F9E12700BB4991 /* IAPHelper.m */; };
 		7FD4AD7E16E734C700EB7CC1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FD4AD7D16E734C700EB7CC1 /* UIKit.framework */; };
 		7FD4AD8016E734C700EB7CC1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FD4AD7F16E734C700EB7CC1 /* Foundation.framework */; };
 		7FD4AD8216E734C700EB7CC1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FD4AD8116E734C700EB7CC1 /* CoreGraphics.framework */; };
@@ -238,6 +239,8 @@
 		7FAEB36916FA0CEE001CBDC7 /* CustomSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomSlider.h; path = Classes/CustomSlider.h; sourceTree = "<group>"; };
 		7FAEB36A16FA0CEE001CBDC7 /* CustomSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomSlider.m; path = Classes/CustomSlider.m; sourceTree = "<group>"; };
 		7FA9B15016F9DFEE00BB4991 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		7FA9B15416F9E12700BB4991 /* IAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IAPHelper.h; path = "Classes/Inapp purchase/IAPHelper.h"; sourceTree = "<group>"; };
+		7FA9B15516F9E12700BB4991 /* IAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IAPHelper.m; path = "Classes/Inapp purchase/IAPHelper.m"; sourceTree = "<group>"; };
 		7FD4AD7A16E734C700EB7CC1 /* com.digitalCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = com.digitalCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FD4AD7D16E734C700EB7CC1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7FD4AD7F16E734C700EB7CC1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -463,6 +466,7 @@
 				7F097CD416F71B9400BCD31B /* Database */,
 				7F097CF516F71CDB00BCD31B /* File system */,
 				7F17E7B316E8A310009B742F /* Helpers */,
+				7FA9B15316F9E10A00BB4991 /* In-app purchase */,
 				7FE6329E16EDEA2F00B2C086 /* Levels */,
 				7F097CF116F71C7E00BCD31B /* Model */,
 				7F17E7B716E8B8ED009B742F /* Third party */,
@@ -564,6 +568,15 @@
 				7FAEB36A16FA0CEE001CBDC7 /* CustomSlider.m */,
 			);
 			name = Visual;
+			sourceTree = "<group>";
+		};
+		7FA9B15316F9E10A00BB4991 /* In-app purchase */ = {
+			isa = PBXGroup;
+			children = (
+				7FA9B15416F9E12700BB4991 /* IAPHelper.h */,
+				7FA9B15516F9E12700BB4991 /* IAPHelper.m */,
+			);
+			name = "In-app purchase";
 			sourceTree = "<group>";
 		};
 		7FD4AD7116E734C700EB7CC1 = {
@@ -929,6 +942,7 @@
 				7F5429AA16F9AF080043052E /* MediumMultLevel.m in Sources */,
 				7F5429B216F9B4B70043052E /* LevelHelper.m in Sources */,
 				7FAEB36B16FA0CEE001CBDC7 /* CustomSlider.m in Sources */,
+				7FA9B15616F9E12700BB4991 /* IAPHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
