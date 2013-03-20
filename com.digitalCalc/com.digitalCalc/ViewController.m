@@ -345,7 +345,8 @@
         if ([self.result.text isEqualToString:[NSString stringWithFormat:@"%d", resultIntValue]]) {
             self.checkedLabel.text = NSLocalizedString(@"result_checked_ok_game_mode", @"Result ckecked OK text in game mode");
             
-            self.points += GAME_MODE_CORRECT_ANSWER;
+            self.points += GAME_MODE_CORRECT_ANSWER_POINTS;
+            self.timerLabel.text = [NSString stringWithFormat:@"%d", [self.timerLabel.text integerValue] + GAME_MODE_CORRECT_ANSWER_SECONDS];
         }
         else {
             self.checkedLabel.text = NSLocalizedString(@"result_checked_nok_lgame_mode", @"Result ckecked NOK text in game mode");
