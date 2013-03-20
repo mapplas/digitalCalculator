@@ -15,7 +15,7 @@
 
 @implementation LeftMenuViewController
 
-@synthesize helpButton, helpLabel, helpView;
+@synthesize helpButton, helpLabel, helpView, checkButton;
 
 - (id)initWithMainViewController:(UINavigationController *)main_view_controller {
     self = [super init];
@@ -31,6 +31,11 @@
 
     self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bkg_menu_cell_up.png"]];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
 }
 
 #pragma mark - UITableViewDataSource and Delate methods
@@ -89,10 +94,7 @@
         
         switch (indexPath.row) {
             case 0:
-//              If calculator mode is game mode, disable help switch
-                if (mainViewController.mode == CALCULATOR_MODE_GAME) {
-                    [helpCell.cellSwitch setOn:NO];
-                }
+                [helpCell.cellSwitch setOn:mainViewController.helpEnabled];
                 
                 helpCell.textLabel.text = NSLocalizedString(@"menu_section_settings_help_enabled", @"Menu section settings help enabled");
                 break;
@@ -219,12 +221,14 @@
         self.helpLabel.hidden = NO;
         self.helpButton.hidden = NO;
         self.helpView.hidden = NO;
+        self.checkButton.hidden = YES;
     }
     else {
         mainViewController.helpEnabled = NO;
         self.helpLabel.hidden = YES;
         self.helpButton.hidden = YES;
         self.helpView.hidden = YES;
+        self.checkButton.hidden = NO;
     }
 }
 

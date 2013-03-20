@@ -43,9 +43,9 @@
 }
 
 - (void)setTitleToNavItem {
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 400, 44)];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 400, 27)];
     label.backgroundColor = [UIColor clearColor];
-    label.font = [UIFont fontWithName:@"5th Grade Cursive" size:12];
+    label.font = [UIFont fontWithName:@"The Girl Next Door" size:25];
     label.shadowColor = [UIColor colorWithWhite:0.0 alpha:0.5];
     label.textAlignment = UITextAlignmentCenter;
     label.textColor = [UIColor whiteColor];
@@ -68,7 +68,7 @@
     [segmControl setDividerImage:transparentSeparator forLeftSegmentState:UIControlStateNormal
                          rightSegmentState:UIControlStateSelected barMetrics:barMetrics];
     
-    [segmControl setImage:[UIImage imageNamed:@"btn_line_down.png"] forSegmentAtIndex:0];
+    [segmControl setImage:[UIImage imageNamed:@"btn_line_down.png"] forSegmentAtIndex:LINE_SEGMENT];
     
     [self initLabelFontTypes];
     
@@ -131,8 +131,9 @@
     } else {
         [self stopTimer];
         
-        UIAlertView *usernameAlert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"username_alert_view_title", @"Username alert view title") message:NSLocalizedString(@"username_alert_view_message", @"Username alert view message") delegate:self cancelButtonTitle:NSLocalizedString(@"username_alert_view_negative_message", @"Username alert view negative message") otherButtonTitles:NSLocalizedString(@"username_alert_view_ok_message", @"Username alert view ok message"), nil];
+        usernameAlert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"username_alert_view_title", @"Username alert view title") message:NSLocalizedString(@"username_alert_view_message", @"Username alert view message") delegate:self cancelButtonTitle:NSLocalizedString(@"username_alert_view_negative_message", @"Username alert view negative message") otherButtonTitles:NSLocalizedString(@"username_alert_view_ok_message", @"Username alert view ok message"), nil];
         usernameAlert.alertViewStyle = UIAlertViewStylePlainTextInput;
+        [[usernameAlert textFieldAtIndex:0] setDelegate:self];
         [usernameAlert show];
     }
 }
@@ -167,6 +168,7 @@
     [mainScreenController presentModalViewController:controller animated:YES];
 }
 
+#pragma mark - UIAlertView
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     switch (buttonIndex) {
         case 0:
@@ -179,6 +181,13 @@
         default:
             break;
     }
+}
+
+#pragma mark - UITextFieldDelegate
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [self goToRankingScreenWithName:textField.text];
+    [usernameAlert dismissWithClickedButtonIndex:1 animated:NO];
+    return YES;
 }
 
 @end

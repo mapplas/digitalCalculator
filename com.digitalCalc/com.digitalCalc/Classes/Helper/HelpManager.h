@@ -24,13 +24,14 @@
     UIView *helpView;
     UIButton *checkButton;
     ViewController *viewController;
+    UISegmentedControl *segmentedControl;
     
     ArgumentLabelAnimator *labelAnimator;
     
     NSInteger currentAction;
 }
 
-- (id)initWithHelpLabel:(UILabel *)help_label button:(UIButton *)help_button firstArgument:(UILabel *)first_arg_label secondArgument:(UILabel *)second_arg_label helpView:(UIView *)help_view andCheckButton:(UIButton *)check_button mainViewController:(ViewController *)view_controller;
+- (id)initWithHelpLabel:(UILabel *)help_label button:(UIButton *)help_button firstArgument:(UILabel *)first_arg_label secondArgument:(UILabel *)second_arg_label helpView:(UIView *)help_view andCheckButton:(UIButton *)check_button mainViewController:(ViewController *)view_controller segmentedControl:(UISegmentedControl *)segmented_control;
 
 - (void)start;
 - (void)emptyLabelText;
