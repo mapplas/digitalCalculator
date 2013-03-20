@@ -10,6 +10,8 @@
 #import "PKRevealController.h"
 #import "LeftMenuViewController.h"
 
+#import "GeniusLevelIAPHelper.h"
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate> {
     UINavigationController *_navigationController;
 }
