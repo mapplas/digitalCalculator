@@ -311,8 +311,8 @@
             self.firstArgument.text = [NSString stringWithFormat:@"%d", firstArg];
             self.secondArgument.text = [NSString stringWithFormat:@"%d", [lowMultLevel giveSecondArgument:firstArg]];
             
-            self.resultSlider.maximumValue = 30;
-            self.resultSlider.minimumValue = 0;
+            self.resultSlider.maximumValue = LOWER_LEVEL_SLIDER_MAX_NUMBER;
+            self.resultSlider.minimumValue = LOWER_LEVEL_SLIDER_MIN_NUMBER;
             self.resultSlider.value = self.resultSlider.minimumValue + arc4random() % ((int)self.resultSlider.maximumValue - (int)self.resultSlider.minimumValue);
             self.result.text = [NSString stringWithFormat:@"%.f", self.resultSlider.value];
             break;

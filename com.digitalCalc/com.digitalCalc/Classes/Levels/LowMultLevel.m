@@ -11,17 +11,17 @@
 @implementation LowMultLevel
 
 - (NSInteger)giveFirstArgument {
-    int lowerBound = 1;
-    int upperBound = 9;
+    int lowerBound = LOWER_LEVEL_MIN_ARGUMENT;
+    int upperBound = LOWER_LEVEL_MAX_ARGUMENT;
     return [self randomBetweenLowerBound:lowerBound andUpperOne:upperBound];
 }
 
 - (NSInteger)giveSecondArgument:(NSInteger)first_arg {
-    int lowerBound = 1;
-    int upperBound = 9;
+    int lowerBound = LOWER_LEVEL_MIN_ARGUMENT;
+    int upperBound = LOWER_LEVEL_MAX_ARGUMENT;
     int random = [self randomBetweenLowerBound:lowerBound andUpperOne:upperBound];
     
-    while (random + first_arg > 10) {
+    while (random + first_arg > LOWER_LEVEL_MIN_ARGUMENT + LOWER_LEVEL_MAX_ARGUMENT) {
         random = [self randomBetweenLowerBound:lowerBound andUpperOne:upperBound];
     }
     

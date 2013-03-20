@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Mapplas. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "Constants.h"
 
 @interface LowMultLevel : NSObject
 
