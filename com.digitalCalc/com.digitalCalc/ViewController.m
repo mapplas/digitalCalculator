@@ -30,13 +30,14 @@
 @synthesize splashView;
 
 @synthesize helpEnabled;
-@synthesize mode = _mode, level = _level, points = _points;
+@synthesize mode = _mode, points = _points;
 @synthesize red = _red, green = _green, blue = _blue, brushWidth = _brushWidth;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.helpEnabled = NO;
+    level = LEVEL_LOW;
     
     layoutPresenter = [[LayoutPresenter alloc] initWithNavItem:self.navigationItem segmentedControl:self.segmentedControl helpButton:self.helpButton timerLabel:self.timerLabel navController:self.navigationController multFirstArg:self.firstArgument multSecondArg:self.secondArgument result:self.result resultSymbol:self.resutSymbol multSymbol:self.multSymbol helpAlphaView:self.helpAlphaView helpLabel:self.helpLabel tapToContinue:self.tapToContinueLabel afterCheckAlphaView:self.afterCheckedAlphaView afterCheckLabel:self.checkedLabel nextMultLabel:self.tapToNextMultLabel viewController:self resultSlider:self.resultSlider];
     
@@ -285,7 +286,6 @@
     [self clearAll];
     
     // Level
-    self.level = LEVEL_LOW;
     [self ckeckLevel];
     
     // Color and brush wide
@@ -305,25 +305,41 @@
     [self segmentedControlIndexChanged];
 }
 
-- (void)ckeckLevel {
-    LowMultLevel *lowMultLevel = [[LowMultLevel alloc] init];
-    NSInteger firstArg = [lowMultLevel giveFirstArgument];
+- (void)setLevel:(NSInteger)_level {
+    level = _level;
+    
+    [self reset];
+}
 
-    switch (self.level) {
+- (NSInteger)level {
+    return level;
+}
+
+- (void)ckeckLevel {
+    LevelHelper *levelHelper = [[LevelHelper alloc] initWithSelectedLevel:level];
+    id<Level> selectedLevel = [levelHelper getLevelClass];
+    NSInteger firstArg = [levelHelper getFirstArgForLevel];
+    
+    self.firstArgument.text = [NSString stringWithFormat:@"%d", firstArg];
+    self.secondArgument.text = [NSString stringWithFormat:@"%d", [selectedLevel giveSecondArgument:firstArg]];
+
+    switch (level) {
         case LEVEL_LOW:
-            
-            self.firstArgument.text = [NSString stringWithFormat:@"%d", firstArg];
-            self.secondArgument.text = [NSString stringWithFormat:@"%d", [lowMultLevel giveSecondArgument:firstArg]];
-            
             self.resultSlider.maximumValue = LOWER_LEVEL_SLIDER_MAX_NUMBER;
             self.resultSlider.minimumValue = LOWER_LEVEL_SLIDER_MIN_NUMBER;
-            self.resultSlider.value = self.resultSlider.minimumValue + arc4random() % ((int)self.resultSlider.maximumValue - (int)self.resultSlider.minimumValue);
-            self.result.text = [NSString stringWithFormat:@"%.f", self.resultSlider.value];
+            break;
+            
+        case LEVEL_MEDIUM:
+            self.resultSlider.maximumValue = MEDIUM_LEVEL_SLIDER_MAX_NUMBER;
+            self.resultSlider.minimumValue = MEDIUM_LEVEL_SLIDER_MIN_NUMBER;
             break;
             
         default:
             break;
     }
+    
+    self.resultSlider.value = self.resultSlider.minimumValue + arc4random() % ((int)self.resultSlider.maximumValue - (int)self.resultSlider.minimumValue);
+    self.result.text = [NSString stringWithFormat:@"%.f", self.resultSlider.value];
 }
 
 //- (NSInteger)numberOfComponents {

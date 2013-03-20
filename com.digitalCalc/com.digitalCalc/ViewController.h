@@ -11,7 +11,12 @@
 #import "HelpManager.h"
 #import "LeftMenuViewController.h"
 #import "DeviceChooser.h"
+
+#import "Level.h"
 #import "LowMultLevel.h"
+#import "MediumMultLevel.h"
+#import "LevelHelper.h"
+
 #import "LayoutPresenter.h"
 
 @interface ViewController : UIViewController {
@@ -30,7 +35,7 @@
     NSInteger _points;
     
     @private
-    NSInteger _level;
+    NSInteger level;
     NSInteger _mode;
 }
 
@@ -67,7 +72,7 @@
 @property (nonatomic, assign) CGFloat brushWidth;
 
 @property (nonatomic, assign) BOOL helpEnabled;
-@property (nonatomic, assign) NSInteger level;
+//@property (nonatomic, assign) NSInteger level;
 @property (nonatomic, assign) NSInteger mode;
 @property (nonatomic, assign) NSInteger points;
 
@@ -80,5 +85,8 @@
 
 - (void)checkHelpEnabledAfterMenuHidden;
 - (void)mainMenuCellPressed;
+
+- (void)setLevel:(NSInteger)_level;
+- (NSInteger)level;
 
 @end
