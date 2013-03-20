@@ -6,11 +6,9 @@
 //  Copyright (c) 2013 Mapplas. All rights reserved.
 //
 
+#import "Level.h"
 #import "Constants.h"
 
-@interface LowMultLevel : NSObject
-
-- (NSInteger)giveFirstArgument;
-- (NSInteger)giveSecondArgument:(NSInteger)first_arg;
+@interface LowMultLevel : NSObject <Level>
 
 @end

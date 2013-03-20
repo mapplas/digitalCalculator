@@ -305,25 +305,35 @@
     [self segmentedControlIndexChanged];
 }
 
+- (void)setLevel:(NSInteger)level {
+    self.level = level;
+}
+
 - (void)ckeckLevel {
-    LowMultLevel *lowMultLevel = [[LowMultLevel alloc] init];
-    NSInteger firstArg = [lowMultLevel giveFirstArgument];
+    LevelHelper *levelHelper = [[LevelHelper alloc] initWithSelectedLevel:self.level];
+    id<Level> selectedLevel = [levelHelper getLevelClass];
+    NSInteger firstArg = [levelHelper getFirstArgForLevel];
+    
+    self.firstArgument.text = [NSString stringWithFormat:@"%d", firstArg];
+    self.secondArgument.text = [NSString stringWithFormat:@"%d", [selectedLevel giveSecondArgument:firstArg]];
 
     switch (self.level) {
         case LEVEL_LOW:
-            
-            self.firstArgument.text = [NSString stringWithFormat:@"%d", firstArg];
-            self.secondArgument.text = [NSString stringWithFormat:@"%d", [lowMultLevel giveSecondArgument:firstArg]];
-            
             self.resultSlider.maximumValue = LOWER_LEVEL_SLIDER_MAX_NUMBER;
             self.resultSlider.minimumValue = LOWER_LEVEL_SLIDER_MIN_NUMBER;
-            self.resultSlider.value = self.resultSlider.minimumValue + arc4random() % ((int)self.resultSlider.maximumValue - (int)self.resultSlider.minimumValue);
-            self.result.text = [NSString stringWithFormat:@"%.f", self.resultSlider.value];
+            break;
+            
+        case LEVEL_MEDIUM:
+            self.resultSlider.maximumValue = MEDIUM_LEVEL_SLIDER_MAX_NUMBER;
+            self.resultSlider.minimumValue = MEDIUM_LEVEL_SLIDER_MIN_NUMBER;
             break;
             
         default:
             break;
     }
+    
+    self.resultSlider.value = self.resultSlider.minimumValue + arc4random() % ((int)self.resultSlider.maximumValue - (int)self.resultSlider.minimumValue);
+    self.result.text = [NSString stringWithFormat:@"%.f", self.resultSlider.value];
 }
 
 //- (NSInteger)numberOfComponents {

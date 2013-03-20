@@ -11,7 +11,12 @@
 #import "HelpManager.h"
 #import "LeftMenuViewController.h"
 #import "DeviceChooser.h"
+
+#import "Level.h"
 #import "LowMultLevel.h"
+#import "MediumMultLevel.h"
+#import "LevelHelper.h"
+
 #import "LayoutPresenter.h"
 
 @interface ViewController : UIViewController {
@@ -80,5 +85,7 @@
 
 - (void)checkHelpEnabledAfterMenuHidden;
 - (void)mainMenuCellPressed;
+
+- (void)setLevel:(NSInteger)level;
 
 @end
