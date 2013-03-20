@@ -40,7 +40,7 @@
     
     layoutPresenter = [[LayoutPresenter alloc] initWithNavItem:self.navigationItem segmentedControl:self.segmentedControl helpButton:self.helpButton timerLabel:self.timerLabel navController:self.navigationController multFirstArg:self.firstArgument multSecondArg:self.secondArgument result:self.result resultSymbol:self.resutSymbol multSymbol:self.multSymbol helpAlphaView:self.helpAlphaView helpLabel:self.helpLabel tapToContinue:self.tapToContinueLabel afterCheckAlphaView:self.afterCheckedAlphaView afterCheckLabel:self.checkedLabel nextMultLabel:self.tapToNextMultLabel viewController:self resultSlider:self.resultSlider];
     
-    helpManager = [[HelpManager alloc] initWithHelpLabel:self.helpLabel button:self.helpButton firstArgument:self.firstArgument secondArgument:self.secondArgument helpView:self.helpView andCheckButton:self.ckeckButton mainViewController:self];
+    helpManager = [[HelpManager alloc] initWithHelpLabel:self.helpLabel button:self.helpButton firstArgument:self.firstArgument secondArgument:self.secondArgument helpView:self.helpView andCheckButton:self.ckeckButton mainViewController:self segmentedControl:self.segmentedControl];
     
     [self setSplashLayoutDetails];
     
@@ -109,9 +109,9 @@
     
     switch (self.segmentedControl.selectedSegmentIndex) {
         case LINE_SEGMENT:
-            [self.segmentedControl setImage:[UIImage imageNamed:@"btn_line_down.png"] forSegmentAtIndex:0];
-            [self.segmentedControl setImage:[UIImage imageNamed:@"btn_dot_up.png"] forSegmentAtIndex:1];
-            [self.segmentedControl setImage:[UIImage imageNamed:@"btn_erase_up.png"] forSegmentAtIndex:2];
+            [self.segmentedControl setImage:[UIImage imageNamed:@"btn_line_down.png"] forSegmentAtIndex:LINE_SEGMENT];
+            [self.segmentedControl setImage:[UIImage imageNamed:@"btn_dot_up.png"] forSegmentAtIndex:DOT_SEGMENT];
+            [self.segmentedControl setImage:[UIImage imageNamed:@"btn_erase_up.png"] forSegmentAtIndex:ERASE_SEGMENT];
             
             self.red = LINE_COLOR_RED;
             self.green = LINE_COLOR_GREEN;
@@ -120,9 +120,9 @@
             break;
             
         case DOT_SEGMENT:
-            [self.segmentedControl setImage:[UIImage imageNamed:@"btn_line_up.png"] forSegmentAtIndex:0];
-            [self.segmentedControl setImage:[UIImage imageNamed:@"btn_dot_down.png"] forSegmentAtIndex:1];
-            [self.segmentedControl setImage:[UIImage imageNamed:@"btn_erase_up.png"] forSegmentAtIndex:2];
+            [self.segmentedControl setImage:[UIImage imageNamed:@"btn_line_up.png"] forSegmentAtIndex:LINE_SEGMENT];
+            [self.segmentedControl setImage:[UIImage imageNamed:@"btn_dot_down.png"] forSegmentAtIndex:DOT_SEGMENT];
+            [self.segmentedControl setImage:[UIImage imageNamed:@"btn_erase_up.png"] forSegmentAtIndex:ERASE_SEGMENT];
             
             self.red = DOT_COLOR_RED;
             self.green = DOT_COLOR_GREEN;
@@ -135,9 +135,9 @@
             break;
             
         case ERASE_SEGMENT:
-            [self.segmentedControl setImage:[UIImage imageNamed:@"btn_line_up.png"] forSegmentAtIndex:0];
-            [self.segmentedControl setImage:[UIImage imageNamed:@"btn_dot_up.png"] forSegmentAtIndex:1];
-            [self.segmentedControl setImage:[UIImage imageNamed:@"btn_erase_down.png"] forSegmentAtIndex:2];
+            [self.segmentedControl setImage:[UIImage imageNamed:@"btn_line_up.png"] forSegmentAtIndex:LINE_SEGMENT];
+            [self.segmentedControl setImage:[UIImage imageNamed:@"btn_dot_up.png"] forSegmentAtIndex:DOT_SEGMENT];
+            [self.segmentedControl setImage:[UIImage imageNamed:@"btn_erase_down.png"] forSegmentAtIndex:ERASE_SEGMENT];
             
             self.red = LINE_COLOR_BLUE;
             self.green = LINE_COLOR_BLUE;
@@ -299,6 +299,10 @@
     [helpManager start];
     
     afterCheckedView.hidden = YES;
+    
+    // Segmented control reset
+    self.segmentedControl.selectedSegmentIndex = LINE_SEGMENT;
+    [self segmentedControlIndexChanged];
 }
 
 - (void)ckeckLevel {

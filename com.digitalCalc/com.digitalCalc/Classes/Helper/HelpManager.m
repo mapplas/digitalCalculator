@@ -11,7 +11,7 @@
 
 @implementation HelpManager
 
-- (id)initWithHelpLabel:(UILabel *)help_label button:(UIButton *)help_button firstArgument:(UILabel *)first_arg_label secondArgument:(UILabel *)second_arg_label helpView:(UIView *)help_view andCheckButton:(UIButton *)check_button mainViewController:(ViewController *)view_controller {
+- (id)initWithHelpLabel:(UILabel *)help_label button:(UIButton *)help_button firstArgument:(UILabel *)first_arg_label secondArgument:(UILabel *)second_arg_label helpView:(UIView *)help_view andCheckButton:(UIButton *)check_button mainViewController:(ViewController *)view_controller segmentedControl:(UISegmentedControl *)segmented_control {
     self = [super init];
     if (self) {
         helpLabel = help_label;
@@ -21,6 +21,7 @@
         helpView = help_view;
         checkButton = check_button;
         viewController = view_controller;
+        segmentedControl = segmented_control;
         
         [helpButton addTarget:self action:@selector(nextCluePressed) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -60,6 +61,7 @@
             
         case HELP_SECOND_ARG_ACTION_FINISHED:
             currentAction = HELP_DOTS_ACTION;
+            [self chooseDotsSegment];
             [self setHelpText];
             break;
             
@@ -80,6 +82,11 @@
 //- (void)animateLabel:(UILabel *)_label {
 //    [labelAnimator animateLabel:_label];    
 //}
+
+- (void)chooseDotsSegment {
+    segmentedControl.selectedSegmentIndex = DOT_SEGMENT;
+    [viewController segmentedControlIndexChanged];
+}
 
 - (void)setHelpText {
     helpView.hidden = NO;

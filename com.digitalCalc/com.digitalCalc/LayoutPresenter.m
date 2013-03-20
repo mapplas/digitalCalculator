@@ -68,7 +68,7 @@
     [segmControl setDividerImage:transparentSeparator forLeftSegmentState:UIControlStateNormal
                          rightSegmentState:UIControlStateSelected barMetrics:barMetrics];
     
-    [segmControl setImage:[UIImage imageNamed:@"btn_line_down.png"] forSegmentAtIndex:0];
+    [segmControl setImage:[UIImage imageNamed:@"btn_line_down.png"] forSegmentAtIndex:LINE_SEGMENT];
     
     [self initLabelFontTypes];
     
