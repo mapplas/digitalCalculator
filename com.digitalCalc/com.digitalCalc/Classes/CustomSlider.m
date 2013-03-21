@@ -25,7 +25,7 @@
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        self.font = [UIFont boldSystemFontOfSize:18];
+        self.font = [UIFont fontWithName:@"The Girl Next Door" size:52];
     }
     return self;
 }
@@ -62,7 +62,7 @@
     if (self.text) {
         [[UIColor colorWithWhite:1 alpha:0.8] set];
         CGSize s = [_text sizeWithFont:self.font];
-        CGFloat yOffset = (roundedRect.size.height - s.height) / 2;
+        CGFloat yOffset = ((roundedRect.size.height - s.height) / 2) + 4;
         CGRect textRect = CGRectMake(roundedRect.origin.x, yOffset, roundedRect.size.width, s.height);
         
         [_text drawInRect:textRect
