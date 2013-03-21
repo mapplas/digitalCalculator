@@ -1,0 +1,103 @@
+/* 
+  Localized.strings
+  com.digitalCalc
+
+  Created by Belén  on 06/03/13.
+  Copyright (c) 2013 Mapplas. All rights reserved.
+*/
+
+/* Nav bar title */
+"nav_bar_title" = "Multiplicación Genius";
+
+/* Ranking controller left button title */
+"nav_bar_ranking_left_button_title" = "Done";
+
+/* Nav. bar right button title */
+"nav_bar_right_button_title" = "Erase";
+
+/* Segmented control line text */
+"segm_control_line" = "Lines";
+
+/* Segmented control dots text */
+"segm_control_dot" = "Dots";
+
+/* Help label text prefix */
+"help_text_prefix" = "Draw";
+
+/* Help label singular line suffix */
+"help_text_singular_suffix" = "line";
+
+/* Help label plural line suffix */
+"help_text_plural_suffix" = "lines";
+
+/* Help label draw dots text  */
+"help_text_dots_text" = "Draw dots in line intersections";
+
+/* Help label count dots text  */
+"help_text_dots_count_text" = "Count dots and set result!";
+
+/* Help label press check text  */
+"help_text_press_check_button_text" = "Press check button!";
+
+/* Help tap to continue label text */
+"help_text_tap_to_continue" = "Tap to continue";
+
+/* Menu section levels title */
+"menu_section_levels_title" = "Levels";
+
+/* Menu section configuration title */
+"menu_section_configuration_title" = "Settings";
+
+/* Menu section levels low level */
+"menu_section_levels_low" = "Beginner";
+
+/* Menu section levels medium level */
+"menu_section_levels_medium" = "Genius";
+
+/* Menu section levels high level */
+"menu_section_levels_high" = "Prodigy - Coming soon";
+
+/* Menu section settings help enabled */
+"menu_section_settings_help_enabled" = "Help enabled";
+
+/* Result ckecked OK text in learn mode */
+"result_checked_ok_learn_mode" = "GREAT!! Tap to continue!";
+
+/* Result ckecked NOK text in learn mode */
+"result_checked_nok_learn_mode" = "Oops! Try again...";
+
+/* Result ckecked OK text in game mode */
+"result_checked_ok_game_mode" = "+5 points! Tap to do next mult!";
+
+/* Result ckecked NOK text in game mode */
+"result_checked_nok_lgame_mode" = "Hurry! Try again!";
+
+/* Ranking screen title */
+"ranking_screen_title" = "Ranking";
+
+/* Ranking screen no user text */
+"ranking_screen_no_user_text" = "Genius";
+
+/* Ranking screen no points text */
+"ranking_screen_no_points_text" = "0";
+
+/* Ranking screen points suffix text */
+"ranking_screen_points_suffix" = "points";
+
+/* Username alert view title */
+"username_alert_view_title" = "Alert View title";
+
+/* Username alert view message */
+"username_alert_view_message" = "Insert your name to show it in ranking!";
+
+/* Username alert view ok message */
+"username_alert_view_ok_message" = "OK";
+
+/* Username alert view negative message */
+"username_alert_view_negative_message" = "NOK";
+
+/* In app purchase - Genius level product identifier */
+"in_app_purchase_genius_level_identifier" = "com.digitalCalc.inAppGeniusLevel";
+
+/* In app purchase - Nav controller left button title */
+"in_app_purchase_nav_left_button_title" = "Cancel";

@@ -15,6 +15,7 @@
 		7F0500CA16FB138D00E0812A /* btn_comprobar_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F0500C216FB138D00E0812A /* btn_comprobar_down@2x.png */; };
 		7F0500CB16FB138D00E0812A /* btn_comprobar_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F0500C316FB138D00E0812A /* btn_comprobar_up.png */; };
 		7F0500CC16FB138D00E0812A /* btn_comprobar_up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F0500C416FB138D00E0812A /* btn_comprobar_up@2x.png */; };
+		7F0500DF16FB6B6D00E0812A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7F0500DD16FB6B6D00E0812A /* Localizable.strings */; };
 		7F097CE816F71BD200BCD31B /* BatchSaver.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F097CD616F71BD200BCD31B /* BatchSaver.m */; };
 		7F097CE916F71BD200BCD31B /* SQLiteDatabaseConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F097CD916F71BD200BCD31B /* SQLiteDatabaseConnector.m */; };
 		7F097CEA16F71BD200BCD31B /* SQLitePrepareStatment.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F097CDB16F71BD200BCD31B /* SQLitePrepareStatment.m */; };
@@ -46,7 +47,6 @@
 		7F17E7BF16E8B9CC009B742F /* PKRevealControllerContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F17E7BB16E8B9CC009B742F /* PKRevealControllerContainerView.m */; };
 		7F17E7C016E8B9CC009B742F /* UIViewController+PKRevealController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F17E7BD16E8B9CC009B742F /* UIViewController+PKRevealController.m */; };
 		7F17E7C616E8BBB8009B742F /* LeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F17E7C416E8BBB8009B742F /* LeftMenuViewController.m */; };
-		7F17E7CE16E8EAF1009B742F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7F4401C516E74C8D00886CBE /* Localizable.strings */; };
 		7F1988A516F3322D00B32C31 /* btn_dot_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F1988A216F3322D00B32C31 /* btn_dot_down.png */; };
 		7F1988A616F3322D00B32C31 /* btn_erase_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F1988A316F3322D00B32C31 /* btn_erase_down.png */; };
 		7F4401C316E7491B00886CBE /* ic_menu_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F4401C116E7491B00886CBE /* ic_menu_menu.png */; };
@@ -141,6 +141,15 @@
 		7F0500C216FB138D00E0812A /* btn_comprobar_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_comprobar_down@2x.png"; path = "Resources/btn_comprobar_down@2x.png"; sourceTree = "<group>"; };
 		7F0500C316FB138D00E0812A /* btn_comprobar_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_comprobar_up.png; path = Resources/btn_comprobar_up.png; sourceTree = "<group>"; };
 		7F0500C416FB138D00E0812A /* btn_comprobar_up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_comprobar_up@2x.png"; path = "Resources/btn_comprobar_up@2x.png"; sourceTree = "<group>"; };
+		7F0500D616FB6B1600E0812A /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7F0500D716FB6B1B00E0812A /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/InAppPurchaseViewController_iPad.xib; sourceTree = "<group>"; };
+		7F0500D816FB6B2000E0812A /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/InAppPurchaseViewController_iPhone.xib; sourceTree = "<group>"; };
+		7F0500D916FB6B2500E0812A /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
+		7F0500DA16FB6B2800E0812A /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
+		7F0500DB16FB6B2B00E0812A /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/RankingViewController_iPad.xib; sourceTree = "<group>"; };
+		7F0500DC16FB6B2E00E0812A /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/RankingViewController_iPhone.xib; sourceTree = "<group>"; };
+		7F0500DE16FB6B6D00E0812A /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7F0500E016FB6B7C00E0812A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7F097CD516F71BD200BCD31B /* BatchSaver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BatchSaver.h; path = Classes/database/BatchSaver.h; sourceTree = "<group>"; };
 		7F097CD616F71BD200BCD31B /* BatchSaver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BatchSaver.m; path = Classes/database/BatchSaver.m; sourceTree = "<group>"; };
 		7F097CD816F71BD200BCD31B /* SQLiteDatabaseConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLiteDatabaseConnector.h; sourceTree = "<group>"; };
@@ -207,7 +216,6 @@
 		7F1988A316F3322D00B32C31 /* btn_erase_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_erase_down.png; path = Resources/btn_erase_down.png; sourceTree = "<group>"; };
 		7F4401C116E7491B00886CBE /* ic_menu_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_menu_menu.png; path = Resources/ic_menu_menu.png; sourceTree = "<group>"; };
 		7F4401C216E7491B00886CBE /* ic_menu_menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic_menu_menu@2x.png"; path = "Resources/ic_menu_menu@2x.png"; sourceTree = "<group>"; };
-		7F4401C516E74C8D00886CBE /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = Resources/Localizable.strings; sourceTree = "<group>"; };
 		7F4F594416F0C73C00241DC3 /* bkg_board.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bkg_board.png; path = Resources/bkg_board.png; sourceTree = "<group>"; };
 		7F4F594516F0C73C00241DC3 /* bkg_board@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bkg_board@2x.png"; path = "Resources/bkg_board@2x.png"; sourceTree = "<group>"; };
 		7F4F594616F0C73C00241DC3 /* bkg_nav_bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bkg_nav_bar.png; path = Resources/bkg_nav_bar.png; sourceTree = "<group>"; };
@@ -489,7 +497,7 @@
 		7F4401BF16E7490700886CBE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				7F4401C516E74C8D00886CBE /* Localizable.strings */,
+				7F0500DD16FB6B6D00E0812A /* Localizable.strings */,
 				7F65152B16F0A18900FA770C /* Icon.png */,
 				7F65152916F0A18200FA770C /* Icon@2x.png */,
 				7F9E39A416E9E3420038893A /* Background */,
@@ -829,6 +837,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				es,
 			);
 			mainGroup = 7FD4AD7116E734C700EB7CC1;
 			productRefGroup = 7FD4AD7B16E734C700EB7CC1 /* Products */;
@@ -853,7 +862,6 @@
 				7FD4AD9D16E734C700EB7CC1 /* ViewController_iPad.xib in Resources */,
 				7F4401C316E7491B00886CBE /* ic_menu_menu.png in Resources */,
 				7F4401C416E7491B00886CBE /* ic_menu_menu@2x.png in Resources */,
-				7F17E7CE16E8EAF1009B742F /* Localizable.strings in Resources */,
 				7F17CD0D16E8F845008584CA /* SwitchedMenuCell.xib in Resources */,
 				7FD9D32116EF23920009BB0E /* LevelMenuCell.xib in Resources */,
 				7F65152A16F0A18200FA770C /* Icon@2x.png in Resources */,
@@ -921,6 +929,7 @@
 				7F0500CC16FB138D00E0812A /* btn_comprobar_up@2x.png in Resources */,
 				7FAEB36616FA0576001CBDC7 /* InAppPurchaseViewController_iPad.xib in Resources */,
 				7FAEB36716FA0576001CBDC7 /* InAppPurchaseViewController_iPhone.xib in Resources */,
+				7F0500DF16FB6B6D00E0812A /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -977,6 +986,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		7F0500DD16FB6B6D00E0812A /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7F0500DE16FB6B6D00E0812A /* es */,
+				7F0500E016FB6B7C00E0812A /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		7F17CD0B16E8F845008584CA /* SwitchedMenuCell.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -989,6 +1007,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				7FAEB36316FA0576001CBDC7 /* en */,
+				7F0500D716FB6B1B00E0812A /* es */,
 			);
 			name = InAppPurchaseViewController_iPad.xib;
 			sourceTree = "<group>";
@@ -997,6 +1016,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				7FAEB36516FA0576001CBDC7 /* en */,
+				7F0500D816FB6B2000E0812A /* es */,
 			);
 			name = InAppPurchaseViewController_iPhone.xib;
 			sourceTree = "<group>";
@@ -1005,6 +1025,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				7FD4AD8716E734C700EB7CC1 /* en */,
+				7F0500D616FB6B1600E0812A /* es */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -1013,6 +1034,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				7FD4AD9916E734C700EB7CC1 /* en */,
+				7F0500DA16FB6B2800E0812A /* es */,
 			);
 			name = ViewController_iPhone.xib;
 			sourceTree = "<group>";
@@ -1021,6 +1043,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				7FD4AD9C16E734C700EB7CC1 /* en */,
+				7F0500D916FB6B2500E0812A /* es */,
 			);
 			name = ViewController_iPad.xib;
 			sourceTree = "<group>";
@@ -1037,6 +1060,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				7FFB8C4816F21EB1008298DD /* en */,
+				7F0500DC16FB6B2E00E0812A /* es */,
 			);
 			name = RankingViewController_iPhone.xib;
 			sourceTree = "<group>";
@@ -1045,6 +1069,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				7FFB8C4B16F21EC6008298DD /* en */,
+				7F0500DB16FB6B2B00E0812A /* es */,
 			);
 			name = RankingViewController_iPad.xib;
 			sourceTree = "<group>";
