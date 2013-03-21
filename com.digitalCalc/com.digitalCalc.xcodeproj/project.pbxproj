@@ -71,6 +71,7 @@
 		7FA917B716F77D6F001A1C4A /* bkg_menu_cell_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FA917B316F77D6D001A1C4A /* bkg_menu_cell_up.png */; };
 		7FA917B816F77D6F001A1C4A /* bkg_menu_header.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FA917B416F77D6E001A1C4A /* bkg_menu_header.png */; };
 		7FA917B916F77D6F001A1C4A /* bkg_menu_header@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FA917B516F77D6E001A1C4A /* bkg_menu_header@2x.png */; };
+		7FAEB36B16FA0CEE001CBDC7 /* CustomSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAEB36A16FA0CEE001CBDC7 /* CustomSlider.m */; };
 		7FD4AD7E16E734C700EB7CC1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FD4AD7D16E734C700EB7CC1 /* UIKit.framework */; };
 		7FD4AD8016E734C700EB7CC1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FD4AD7F16E734C700EB7CC1 /* Foundation.framework */; };
 		7FD4AD8216E734C700EB7CC1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FD4AD8116E734C700EB7CC1 /* CoreGraphics.framework */; };
@@ -217,6 +218,8 @@
 		7FA917B316F77D6D001A1C4A /* bkg_menu_cell_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bkg_menu_cell_up.png; path = Resources/bkg_menu_cell_up.png; sourceTree = "<group>"; };
 		7FA917B416F77D6E001A1C4A /* bkg_menu_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bkg_menu_header.png; path = Resources/bkg_menu_header.png; sourceTree = "<group>"; };
 		7FA917B516F77D6E001A1C4A /* bkg_menu_header@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bkg_menu_header@2x.png"; path = "Resources/bkg_menu_header@2x.png"; sourceTree = "<group>"; };
+		7FAEB36916FA0CEE001CBDC7 /* CustomSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomSlider.h; path = Classes/CustomSlider.h; sourceTree = "<group>"; };
+		7FAEB36A16FA0CEE001CBDC7 /* CustomSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomSlider.m; path = Classes/CustomSlider.m; sourceTree = "<group>"; };
 		7FD4AD7A16E734C700EB7CC1 /* com.digitalCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = com.digitalCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FD4AD7D16E734C700EB7CC1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7FD4AD7F16E734C700EB7CC1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -444,6 +447,7 @@
 				7FE6329E16EDEA2F00B2C086 /* Levels */,
 				7F097CF116F71C7E00BCD31B /* Model */,
 				7F17E7B716E8B8ED009B742F /* Third party */,
+				7FAEB36816FA0CD4001CBDC7 /* Visual */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -532,6 +536,15 @@
 				7F097D2116F729E100BCD31B /* Ranking.db */,
 			);
 			name = Databases;
+			sourceTree = "<group>";
+		};
+		7FAEB36816FA0CD4001CBDC7 /* Visual */ = {
+			isa = PBXGroup;
+			children = (
+				7FAEB36916FA0CEE001CBDC7 /* CustomSlider.h */,
+				7FAEB36A16FA0CEE001CBDC7 /* CustomSlider.m */,
+			);
+			name = Visual;
 			sourceTree = "<group>";
 		};
 		7FD4AD7116E734C700EB7CC1 = {
@@ -879,6 +892,7 @@
 				7F097D2016F723DF00BCD31B /* RankingRowTable.m in Sources */,
 				7F5429AA16F9AF080043052E /* MediumMultLevel.m in Sources */,
 				7F5429B216F9B4B70043052E /* LevelHelper.m in Sources */,
+				7FAEB36B16FA0CEE001CBDC7 /* CustomSlider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

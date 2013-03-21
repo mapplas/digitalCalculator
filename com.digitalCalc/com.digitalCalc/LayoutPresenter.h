@@ -11,6 +11,7 @@
 #import "RankingViewController.h"
 #import "RankingRowTable.h"
 #import "RankingRow.h"
+#import "CustomSlider.h"
 
 @class ViewController;
 
@@ -27,8 +28,6 @@
     
     UILabel *firstArgument;
     UILabel *secondArgument;
-    UILabel *result;
-    UILabel *resutSymbol;
     UILabel *multSymbol;
     
     UIView *helpAlphaView;
@@ -45,7 +44,7 @@
     UIAlertView *usernameAlert;
 }
 
-- (id)initWithNavItem:(UINavigationItem *)nav_item segmentedControl:(UISegmentedControl *)segm_control helpButton:(UIButton *)help_button timerLabel:(UILabel *)timer_label navController:(UINavigationController *)main_controller multFirstArg:(UILabel *)mult_first_arg multSecondArg:(UILabel *)mult_sec_arg result:(UILabel *)_result resultSymbol:(UILabel *)result_symbol multSymbol:(UILabel *)mult_symbol helpAlphaView:(UIView *)help_alpha_view helpLabel:(UILabel *)help_label tapToContinue:(UILabel *)tap_to_cont afterCheckAlphaView:(UIView *)after_check_alpha_view afterCheckLabel:(UILabel *)after_check_label nextMultLabel:(UILabel *)tap_to_next_mult viewController:(ViewController *)view_controller resultSlider:(UISlider *)result_slider;
+- (id)initWithNavItem:(UINavigationItem *)nav_item segmentedControl:(UISegmentedControl *)segm_control helpButton:(UIButton *)help_button timerLabel:(UILabel *)timer_label navController:(UINavigationController *)main_controller multFirstArg:(UILabel *)mult_first_arg multSecondArg:(UILabel *)mult_sec_arg multSymbol:(UILabel *)mult_symbol helpAlphaView:(UIView *)help_alpha_view helpLabel:(UILabel *)help_label tapToContinue:(UILabel *)tap_to_cont afterCheckAlphaView:(UIView *)after_check_alpha_view afterCheckLabel:(UILabel *)after_check_label nextMultLabel:(UILabel *)tap_to_next_mult viewController:(ViewController *)view_controller resultSlider:(UISlider *)result_slider;
 
 - (void)setTitleToNavItem;
 - (void)configureInitialLayout;

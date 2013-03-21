@@ -21,7 +21,7 @@
 
 @synthesize board;
 @synthesize segmentedControl;
-@synthesize firstArgument, secondArgument, result, multSymbol, resutSymbol;
+@synthesize firstArgument, secondArgument, multSymbol;
 @synthesize resultSlider;
 @synthesize ckeckButton, afterCheckedView, afterCheckedAlphaView, checkedLabel, tapToNextMultLabel;
 @synthesize helpView, helpAlphaView, helpLabel, helpButton, tapToContinueLabel;
@@ -38,8 +38,9 @@
     
     self.helpEnabled = NO;
     level = LEVEL_LOW;
+    slider = (CustomSlider *)self.resultSlider;
     
-    layoutPresenter = [[LayoutPresenter alloc] initWithNavItem:self.navigationItem segmentedControl:self.segmentedControl helpButton:self.helpButton timerLabel:self.timerLabel navController:self.navigationController multFirstArg:self.firstArgument multSecondArg:self.secondArgument result:self.result resultSymbol:self.resutSymbol multSymbol:self.multSymbol helpAlphaView:self.helpAlphaView helpLabel:self.helpLabel tapToContinue:self.tapToContinueLabel afterCheckAlphaView:self.afterCheckedAlphaView afterCheckLabel:self.checkedLabel nextMultLabel:self.tapToNextMultLabel viewController:self resultSlider:self.resultSlider];
+    layoutPresenter = [[LayoutPresenter alloc] initWithNavItem:self.navigationItem segmentedControl:self.segmentedControl helpButton:self.helpButton timerLabel:self.timerLabel navController:self.navigationController multFirstArg:self.firstArgument multSecondArg:self.secondArgument multSymbol:self.multSymbol helpAlphaView:self.helpAlphaView helpLabel:self.helpLabel tapToContinue:self.tapToContinueLabel afterCheckAlphaView:self.afterCheckedAlphaView afterCheckLabel:self.checkedLabel nextMultLabel:self.tapToNextMultLabel viewController:self resultSlider:self.resultSlider];
     
     helpManager = [[HelpManager alloc] initWithHelpLabel:self.helpLabel button:self.helpButton firstArgument:self.firstArgument secondArgument:self.secondArgument helpView:self.helpView andCheckButton:self.ckeckButton mainViewController:self segmentedControl:self.segmentedControl];
     
@@ -219,11 +220,6 @@
     }
 }
 
-#pragma mark - UISlider methods
-- (void)sliderValueChanged:(UISlider *)sender {
-    self.result.text = [NSString stringWithFormat:@"%.f", [sender value]];
-}
-
 # pragma mark - Private methods
 - (void)initNavBar {
     self.navigationItem.titleView = self.segmentedControl;
@@ -269,7 +265,7 @@
     if (!self.afterCheckedView.hidden) {
         self.afterCheckedView.hidden = YES;
         
-        if ([self.result.text isEqualToString:[NSString stringWithFormat:@"%d", [self.firstArgument.text integerValue] * [self.secondArgument.text integerValue]]]) {
+        if ([slider getSliderValue] == ([self.firstArgument.text integerValue] * [self.secondArgument.text integerValue])) {
             [self reset];
         }
         
@@ -338,8 +334,8 @@
             break;
     }
     
-    self.resultSlider.value = self.resultSlider.minimumValue + arc4random() % ((int)self.resultSlider.maximumValue - (int)self.resultSlider.minimumValue);
-    self.result.text = [NSString stringWithFormat:@"%.f", self.resultSlider.value];
+    [slider initSliderWithValue:self.resultSlider.minimumValue + arc4random() % ((int)self.resultSlider.maximumValue - (int)self.resultSlider.minimumValue)];
+//    self.result.text = [NSString stringWithFormat:@"%.f", self.resultSlider.value];
 }
 
 //- (NSInteger)numberOfComponents {
@@ -355,14 +351,14 @@
 
     self.afterCheckedView.hidden = NO;
     if (self.mode == CALCULATOR_MODE_LEARN) {
-        if ([self.result.text isEqualToString:[NSString stringWithFormat:@"%d", resultIntValue]]) {
+        if ([slider getSliderValue] == resultIntValue) {
             self.checkedLabel.text = NSLocalizedString(@"result_checked_ok_learn_mode", @"Result ckecked OK text in learn mode");
         }
         else {
             self.checkedLabel.text = NSLocalizedString(@"result_checked_nok_learn_mode", @"Result ckecked NOK text in learn mode");
         }
     } else { // GAME MODE
-        if ([self.result.text isEqualToString:[NSString stringWithFormat:@"%d", resultIntValue]]) {
+        if ([slider getSliderValue] == resultIntValue) {
             self.checkedLabel.text = NSLocalizedString(@"result_checked_ok_game_mode", @"Result ckecked OK text in game mode");
             
             self.points += GAME_MODE_CORRECT_ANSWER_POINTS;

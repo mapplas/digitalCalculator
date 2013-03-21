@@ -11,7 +11,7 @@
 
 @implementation LayoutPresenter
 
-- (id)initWithNavItem:(UINavigationItem *)nav_item segmentedControl:(UISegmentedControl *)segm_control helpButton:(UIButton *)help_button timerLabel:(UILabel *)timer_label navController:(UINavigationController *)main_controller multFirstArg:(UILabel *)mult_first_arg multSecondArg:(UILabel *)mult_sec_arg result:(UILabel *)_result resultSymbol:(UILabel *)result_symbol multSymbol:(UILabel *)mult_symbol helpAlphaView:(UIView *)help_alpha_view helpLabel:(UILabel *)help_label tapToContinue:(UILabel *)tap_to_cont afterCheckAlphaView:(UIView *)after_check_alpha_view afterCheckLabel:(UILabel *)after_check_label nextMultLabel:(UILabel *)tap_to_next_mult viewController:(ViewController *)view_controller resultSlider:(UISlider *)result_slider {
+- (id)initWithNavItem:(UINavigationItem *)nav_item segmentedControl:(UISegmentedControl *)segm_control helpButton:(UIButton *)help_button timerLabel:(UILabel *)timer_label navController:(UINavigationController *)main_controller multFirstArg:(UILabel *)mult_first_arg multSecondArg:(UILabel *)mult_sec_arg multSymbol:(UILabel *)mult_symbol helpAlphaView:(UIView *)help_alpha_view helpLabel:(UILabel *)help_label tapToContinue:(UILabel *)tap_to_cont afterCheckAlphaView:(UIView *)after_check_alpha_view afterCheckLabel:(UILabel *)after_check_label nextMultLabel:(UILabel *)tap_to_next_mult viewController:(ViewController *)view_controller resultSlider:(CustomSlider *)result_slider {
     
     self = [super init];
     if (self) {
@@ -23,8 +23,6 @@
         
         firstArgument = mult_first_arg;
         secondArgument = mult_sec_arg;
-        result = _result;
-        resutSymbol = result_symbol;
         multSymbol = mult_symbol;
         
         helpAlphaView = help_alpha_view;
@@ -139,11 +137,10 @@
 }
 
 - (void)initLabelFontTypes {
-    [firstArgument setFont:[UIFont fontWithName:@"Blokletters Potlood" size:firstArgument.font.pointSize]];
-    [secondArgument setFont:[UIFont fontWithName:@"Blokletters Potlood" size:secondArgument.font.pointSize]];
-    [result setFont:[UIFont fontWithName:@"The Girl Next Door" size:result.font.pointSize]];
-    [resutSymbol setFont:[UIFont fontWithName:@"The Girl Next Door" size:resutSymbol.font.pointSize]];
-    [multSymbol setFont:[UIFont fontWithName:@"Blokletters Potlood" size:multSymbol.font.pointSize]];
+    UIFont *blocklettersPotloodFood = [UIFont fontWithName:@"Blokletters Potlood" size:firstArgument.font.pointSize];
+    [firstArgument setFont:blocklettersPotloodFood];
+    [secondArgument setFont:blocklettersPotloodFood];
+    [multSymbol setFont:blocklettersPotloodFood];
 }
 
 - (void)goToRankingScreenWithName:(NSString *)str_username {
