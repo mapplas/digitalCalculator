@@ -520,7 +520,7 @@
 				<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 			</object>
 			<object class="IBUIView" id="290507410">
-				<nil key="NSNextResponder"/>
+				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">292</int>
 				<array class="NSMutableArray" key="NSSubviews">
 					<object class="IBUIImageView" id="440639048">
@@ -528,6 +528,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrameSize">{1024, 724}</string>
 						<reference key="NSSuperview" ref="290507410"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="977967519"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
@@ -539,6 +540,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{311, 184}, {403, 211}}</string>
 						<reference key="NSSuperview" ref="290507410"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="271310152"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
@@ -553,11 +555,11 @@
 						<reference key="IBUINormalTitleShadowColor" ref="466583421"/>
 						<object class="NSCustomResource" key="IBUIHighlightedImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">btn_learn_down.png</string>
+							<string key="NSResourceName">btn_aprender_down.png</string>
 						</object>
 						<object class="NSCustomResource" key="IBUINormalImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">btn_learn_up.png</string>
+							<string key="NSResourceName">btn_aprender_up.png</string>
 						</object>
 						<reference key="IBUIFontDescription" ref="609671962"/>
 						<reference key="IBUIFont" ref="452211331"/>
@@ -567,6 +569,8 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{315, 372}, {394, 123}}</string>
 						<reference key="NSSuperview" ref="290507410"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -580,17 +584,19 @@
 						<reference key="IBUINormalTitleShadowColor" ref="466583421"/>
 						<object class="NSCustomResource" key="IBUIHighlightedImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">btn_play_down.png</string>
+							<string key="NSResourceName">btn_jugar_down.png</string>
 						</object>
 						<object class="NSCustomResource" key="IBUINormalImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">btn_play_up.png</string>
+							<string key="NSResourceName">btn_jugar_up.png</string>
 						</object>
 						<reference key="IBUIFontDescription" ref="609671962"/>
 						<reference key="IBUIFont" ref="452211331"/>
 					</object>
 				</array>
 				<string key="NSFrameSize">{1024, 704}</string>
+				<reference key="NSSuperview"/>
+				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="440639048"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -1006,9 +1012,9 @@
 				<string key="260.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="267.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="270.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<real value="1" key="270.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
+				<real value="0.0" key="270.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
 				<string key="271.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<real value="1" key="271.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
+				<real value="0.0" key="271.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
 				<string key="273.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="277.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="278.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -1173,15 +1179,15 @@
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
 			<string key="bkg_board.png">{480, 288}</string>
+			<string key="btn_aprender_down.png">{251, 70}</string>
+			<string key="btn_aprender_up.png">{251, 70}</string>
 			<string key="btn_comprobar_down.png">{108, 30}</string>
 			<string key="btn_comprobar_up.png">{108, 30}</string>
 			<string key="btn_dot_up.png">{30, 30}</string>
 			<string key="btn_erase_up.png">{30, 30}</string>
-			<string key="btn_learn_down.png">{251, 70}</string>
-			<string key="btn_learn_up.png">{251, 70}</string>
+			<string key="btn_jugar_down.png">{251, 70}</string>
+			<string key="btn_jugar_up.png">{251, 70}</string>
 			<string key="btn_line_up.png">{30, 30}</string>
-			<string key="btn_play_down.png">{251, 70}</string>
-			<string key="btn_play_up.png">{251, 70}</string>
 			<string key="btn_siguiente_down.png">{108, 30}</string>
 			<string key="btn_siguiente_up.png">{108, 30}</string>
 		</dictionary>
