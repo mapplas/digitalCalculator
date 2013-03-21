@@ -169,7 +169,6 @@
             UIColor *brushPattern = [[UIColor alloc]initWithPatternImage:[UIImage imageNamed:@"bkg_chalk.png"]];
             CGColorRef fillColor = [brushPattern CGColor];
             CGColorRef strokeColor = [brushPattern CGColor];
-            
         
             UIGraphicsBeginImageContext(self.board.frame.size);
             [self.board.image drawInRect:CGRectMake(0, 0, self.board.frame.size.width, self.board.frame.size.height)];
@@ -200,11 +199,27 @@
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     if (![self checkVisibleLabels]) {
         if(!mouseSwiped) {
+            
+            UIColor *brushPattern = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"bkg_brush_dot_iphone.png"]];
+            DeviceChooser *chooser = [[DeviceChooser alloc] init];
+            if ([chooser isPad]) {
+                brushPattern = [[UIColor alloc]initWithPatternImage:[UIImage imageNamed:@"bkg_brush_dot_ipad.png"]];
+            }
+            
+            CGColorRef fillColor = [brushPattern CGColor];
+            CGColorRef strokeColor = [brushPattern CGColor];
+            
             UIGraphicsBeginImageContext(self.board.frame.size);
             [self.board.image drawInRect:CGRectMake(0, 0, self.board.frame.size.width, self.board.frame.size.height)];
             CGContextSetLineCap(UIGraphicsGetCurrentContext(), kCGLineCapRound);
             CGContextSetLineWidth(UIGraphicsGetCurrentContext(), self.brushWidth);
-            CGContextSetRGBStrokeColor(UIGraphicsGetCurrentContext(), self.red, self.green, self.blue, COLOR_ALPHA_OPAQUE);
+            
+            if (self.segmentedControl.selectedSegmentIndex == DOT_SEGMENT) {
+                CGContextSetStrokeColorWithColor(UIGraphicsGetCurrentContext(), strokeColor);
+                CGContextSetFillColorWithColor(UIGraphicsGetCurrentContext(), fillColor);
+            } else {
+                CGContextSetRGBStrokeColor(UIGraphicsGetCurrentContext(), self.red, self.green, self.blue, COLOR_ALPHA_OPAQUE);
+            }
         
             if (self.segmentedControl.selectedSegmentIndex == ERASE_SEGMENT) {
                 CGContextSetRGBStrokeColor(UIGraphicsGetCurrentContext(), 0, 0, 0, COLOR_ALPHA_CLEAR);
