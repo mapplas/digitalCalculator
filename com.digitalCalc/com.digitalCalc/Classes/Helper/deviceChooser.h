@@ -11,5 +11,6 @@
 @interface DeviceChooser : NSObject
 
 - (BOOL)isPad;
+- (BOOL)isSpanish;
 
 @end
