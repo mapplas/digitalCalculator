@@ -18,8 +18,8 @@
 
 @implementation MNESliderValuePopupView
 
-@synthesize value=_value;
-@synthesize font=_font;
+@synthesize value =_value;
+@synthesize font =_font;
 @synthesize text = _text;
 
 - (id)initWithFrame:(CGRect)frame {
@@ -74,7 +74,7 @@
 
 - (void)setValue:(float)aValue {
     _value = aValue;
-    self.text = [NSString stringWithFormat:@"%4.2f", _value];
+    self.text = [NSString stringWithFormat:@"%.f", _value];
     [self setNeedsDisplay];
 }
 
@@ -91,20 +91,25 @@
 - (void)_constructSlider {
     valuePopupView = [[MNESliderValuePopupView alloc] initWithFrame:CGRectZero];
     valuePopupView.backgroundColor = [UIColor clearColor];
-    valuePopupView.alpha = 0.0;
+    valuePopupView.alpha = 1.0;
     [self addSubview:valuePopupView];
 }
 
-- (void)_fadePopupViewInAndOut:(BOOL)aFadeIn {
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDuration:0.5];
-    if (aFadeIn) {
-        valuePopupView.alpha = 1.0;
-    } else {
-        valuePopupView.alpha = 0.0;
-    }
-    [UIView commitAnimations];
+- (void)initSliderWithValue:(NSInteger)slider_value {
+    self.value = slider_value;
+    [self _positionAndUpdatePopupView];
 }
+
+//- (void)_fadePopupViewInAndOut:(BOOL)aFadeIn {
+//    [UIView beginAnimations:nil context:NULL];
+//    [UIView setAnimationDuration:0.5];
+//    if (aFadeIn) {
+//        valuePopupView.alpha = 1.0;
+//    } else {
+//        valuePopupView.alpha = 0.0;
+//    }
+//    [UIView commitAnimations];
+//}
 
 - (void)_positionAndUpdatePopupView {
     CGRect _thumbRect = self.thumbRect;
@@ -139,7 +144,7 @@
     // Check if the knob is touched. Only in this case show the popup-view
     if(CGRectContainsPoint(CGRectInset(self.thumbRect, -12.0, -12.0), touchPoint)) {
         [self _positionAndUpdatePopupView];
-        [self _fadePopupViewInAndOut:YES];
+//        [self _fadePopupViewInAndOut:YES];
     }
     return [super beginTrackingWithTouch:touch withEvent:event];
 }
@@ -156,7 +161,7 @@
 
 - (void)endTrackingWithTouch:(UITouch *)touch withEvent:(UIEvent *)event {
     // Fade out the popoup view
-    [self _fadePopupViewInAndOut:NO];
+//    [self _fadePopupViewInAndOut:NO];
     [super endTrackingWithTouch:touch withEvent:event];
 }
 

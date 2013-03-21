@@ -18,6 +18,7 @@
 #import "LevelHelper.h"
 
 #import "LayoutPresenter.h"
+#import "CustomSlider.h"
 
 @interface ViewController : UIViewController {
     CGPoint lastPoint;

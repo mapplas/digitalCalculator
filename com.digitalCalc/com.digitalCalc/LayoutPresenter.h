@@ -11,6 +11,7 @@
 #import "RankingViewController.h"
 #import "RankingRowTable.h"
 #import "RankingRow.h"
+#import "CustomSlider.h"
 
 @class ViewController;
 

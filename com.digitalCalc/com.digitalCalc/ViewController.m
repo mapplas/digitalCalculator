@@ -338,7 +338,8 @@
             break;
     }
     
-    self.resultSlider.value = self.resultSlider.minimumValue + arc4random() % ((int)self.resultSlider.maximumValue - (int)self.resultSlider.minimumValue);
+    CustomSlider *slider = (CustomSlider *)self.resultSlider;
+    [slider initSliderWithValue:self.resultSlider.minimumValue + arc4random() % ((int)self.resultSlider.maximumValue - (int)self.resultSlider.minimumValue)];
     self.result.text = [NSString stringWithFormat:@"%.f", self.resultSlider.value];
 }
 
