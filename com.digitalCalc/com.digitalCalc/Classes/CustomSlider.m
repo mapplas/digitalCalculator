@@ -100,6 +100,10 @@
     [self _positionAndUpdatePopupView];
 }
 
+- (NSInteger)getSliderValue {
+    return self.value;
+}
+
 //- (void)_fadePopupViewInAndOut:(BOOL)aFadeIn {
 //    [UIView beginAnimations:nil context:NULL];
 //    [UIView setAnimationDuration:0.5];

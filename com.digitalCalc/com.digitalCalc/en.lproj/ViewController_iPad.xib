@@ -41,7 +41,6 @@
 				<string key="NSFrameSize">{92, 30}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
-				<reference key="NSNextKeyView"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<bool key="IBUIOpaque">NO</bool>
 				<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -192,71 +191,13 @@
 						<reference key="IBUIFont" ref="270607536"/>
 						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 					</object>
-					<object class="IBUILabel" id="975710451">
-						<reference key="NSNextResponder" ref="766721923"/>
-						<int key="NSvFlags">265</int>
-						<string key="NSFrame">{{830, 612}, {70, 54}}</string>
-						<reference key="NSSuperview" ref="766721923"/>
-						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="518574353"/>
-						<string key="NSReuseIdentifierKey">_NS:9</string>
-						<bool key="IBUIOpaque">NO</bool>
-						<bool key="IBUIClipsSubviews">YES</bool>
-						<int key="IBUIContentMode">7</int>
-						<bool key="IBUIUserInteractionEnabled">NO</bool>
-						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-						<string key="IBUIText">=</string>
-						<reference key="IBUITextColor" ref="559598442"/>
-						<nil key="IBUIHighlightedColor"/>
-						<int key="IBUIBaselineAdjustment">0</int>
-						<int key="IBUITextAlignment">1</int>
-						<object class="IBUIFontDescription" key="IBUIFontDescription">
-							<int key="type">2</int>
-							<double key="pointSize">90</double>
-						</object>
-						<object class="NSFont" key="IBUIFont">
-							<string key="NSName">Helvetica-Bold</string>
-							<double key="NSSize">90</double>
-							<int key="NSfFlags">16</int>
-						</object>
-						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
-					</object>
-					<object class="IBUILabel" id="221142129">
-						<reference key="NSNextResponder" ref="766721923"/>
-						<int key="NSvFlags">265</int>
-						<string key="NSFrame">{{885, 597}, {132, 97}}</string>
-						<reference key="NSSuperview" ref="766721923"/>
-						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
-						<string key="NSReuseIdentifierKey">_NS:9</string>
-						<bool key="IBUIOpaque">NO</bool>
-						<bool key="IBUIClipsSubviews">YES</bool>
-						<int key="IBUIContentMode">7</int>
-						<bool key="IBUIUserInteractionEnabled">NO</bool>
-						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-						<string key="IBUIText">88</string>
-						<reference key="IBUITextColor" ref="559598442"/>
-						<nil key="IBUIHighlightedColor"/>
-						<int key="IBUIBaselineAdjustment">0</int>
-						<int key="IBUITextAlignment">1</int>
-						<object class="IBUIFontDescription" key="IBUIFontDescription">
-							<int key="type">2</int>
-							<double key="pointSize">110</double>
-						</object>
-						<object class="NSFont" key="IBUIFont">
-							<string key="NSName">Helvetica-Bold</string>
-							<double key="NSSize">110</double>
-							<int key="NSfFlags">16</int>
-						</object>
-						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
-					</object>
 					<object class="IBUISlider" id="649042476">
 						<reference key="NSNextResponder" ref="766721923"/>
 						<int key="NSvFlags">265</int>
 						<string key="NSFrame">{{705, 691}, {303, 23}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="221142129"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -306,7 +247,7 @@
 						<string key="NSFrame">{{293, 320}, {440, 131}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="975710451"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -628,7 +569,6 @@
 						<string key="NSFrame">{{315, 372}, {394, 123}}</string>
 						<reference key="NSSuperview" ref="290507410"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -728,14 +668,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">result</string>
-						<reference key="source" ref="841351856"/>
-						<reference key="destination" ref="221142129"/>
-					</object>
-					<int key="connectionID">265</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">helpView</string>
 						<reference key="source" ref="841351856"/>
 						<reference key="destination" ref="12275856"/>
@@ -765,14 +697,6 @@
 						<reference key="destination" ref="25241881"/>
 					</object>
 					<int key="connectionID">283</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">resutSymbol</string>
-						<reference key="source" ref="841351856"/>
-						<reference key="destination" ref="975710451"/>
-					</object>
-					<int key="connectionID">284</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
@@ -850,15 +774,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
-						<string key="label">sliderValueChanged:</string>
-						<reference key="source" ref="649042476"/>
-						<reference key="destination" ref="841351856"/>
-						<int key="IBEventType">13</int>
-					</object>
-					<int key="connectionID">266</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">gameModePressed:</string>
 						<reference key="source" ref="271310152"/>
 						<reference key="destination" ref="841351856"/>
@@ -902,12 +817,10 @@
 							<reference ref="541355683"/>
 							<reference ref="25241881"/>
 							<reference ref="533391120"/>
-							<reference ref="975710451"/>
 							<reference ref="424684541"/>
 							<reference ref="866562062"/>
 							<reference ref="385725899"/>
 							<reference ref="649042476"/>
-							<reference ref="221142129"/>
 							<reference ref="518574353"/>
 							<reference ref="821058414"/>
 							<reference ref="339309117"/>
@@ -945,13 +858,6 @@
 						<string key="objectName">X</string>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">109</int>
-						<reference key="object" ref="975710451"/>
-						<array class="NSMutableArray" key="children"/>
-						<reference key="parent" ref="766721923"/>
-						<string key="objectName">=</string>
-					</object>
-					<object class="IBObjectRecord">
 						<int key="objectID">13</int>
 						<reference key="object" ref="965609176"/>
 						<array class="NSMutableArray" key="children"/>
@@ -987,12 +893,6 @@
 						<reference key="object" ref="821058414"/>
 						<reference key="parent" ref="766721923"/>
 						<string key="objectName">Next clue button</string>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">264</int>
-						<reference key="object" ref="221142129"/>
-						<reference key="parent" ref="766721923"/>
-						<string key="objectName">Result label</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">267</int>
@@ -1094,7 +994,6 @@
 				<string key="-1.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="-2.CustomClassName">UIResponder</string>
 				<string key="-2.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="109.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="13.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<integer value="0" key="13.IUISegmentedControlInspectorSelectedSegmentMetadataKey"/>
 				<string key="172.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -1109,7 +1008,6 @@
 				<string key="260.CustomClassName">CustomSlider</string>
 				<dictionary class="NSMutableDictionary" key="260.IBAttributePlaceholdersKey"/>
 				<string key="260.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="264.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="267.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="270.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<real value="1" key="270.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
@@ -1189,9 +1087,7 @@
 						<string key="helpLabel">UILabel</string>
 						<string key="helpView">UIView</string>
 						<string key="multSymbol">UILabel</string>
-						<string key="result">UILabel</string>
 						<string key="resultSlider">UISlider</string>
-						<string key="resutSymbol">UILabel</string>
 						<string key="secondArgument">UILabel</string>
 						<string key="segmentedControl">UISegmentedControl</string>
 						<string key="splashView">UIView</string>
@@ -1244,17 +1140,9 @@
 							<string key="name">multSymbol</string>
 							<string key="candidateClassName">UILabel</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="result">
-							<string key="name">result</string>
-							<string key="candidateClassName">UILabel</string>
-						</object>
 						<object class="IBToOneOutletInfo" key="resultSlider">
 							<string key="name">resultSlider</string>
 							<string key="candidateClassName">UISlider</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="resutSymbol">
-							<string key="name">resutSymbol</string>
-							<string key="candidateClassName">UILabel</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="secondArgument">
 							<string key="name">secondArgument</string>
