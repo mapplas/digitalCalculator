@@ -35,6 +35,9 @@
             helpButton.hidden = YES;
             helpView.hidden = YES;
             
+            [checkButton setImage:[UIImage imageNamed:@"btn_check_up_white.png"] forState:UIControlStateNormal];
+            [checkButton setImage:[UIImage imageNamed:@"btn_check_down_white.png"] forState:UIControlStateHighlighted];
+            
             break;
             
         case YES:
@@ -43,6 +46,9 @@
             checkButton.hidden = YES;
             helpButton.hidden = NO;
             helpView.hidden = NO;
+            
+            [checkButton setImage:[UIImage imageNamed:@"btn_check_up.png"] forState:UIControlStateNormal];
+            [checkButton setImage:[UIImage imageNamed:@"btn_check_down.png"] forState:UIControlStateHighlighted];
             
             [self setHelpText];
             break;

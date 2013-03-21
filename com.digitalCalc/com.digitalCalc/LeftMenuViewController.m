@@ -249,6 +249,9 @@
         self.helpButton.hidden = NO;
         self.helpView.hidden = NO;
         self.checkButton.hidden = YES;
+        
+        [self.checkButton setImage:[UIImage imageNamed:@"btn_check_up.png"] forState:UIControlStateNormal];
+        [self.checkButton setImage:[UIImage imageNamed:@"btn_check_down.png"] forState:UIControlStateHighlighted];
     }
     else {
         mainViewController.helpEnabled = NO;
@@ -256,6 +259,9 @@
         self.helpButton.hidden = YES;
         self.helpView.hidden = YES;
         self.checkButton.hidden = NO;
+        
+        [self.checkButton setImage:[UIImage imageNamed:@"btn_check_up_white.png"] forState:UIControlStateNormal];
+        [self.checkButton setImage:[UIImage imageNamed:@"btn_check_down_white.png"] forState:UIControlStateHighlighted];
     }
 }
 

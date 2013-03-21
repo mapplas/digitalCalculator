@@ -74,7 +74,9 @@
 - (IBAction)gameModePressed:(id)sender {
     self.mode = CALCULATOR_MODE_GAME;
     self.level = LEVEL_MEDIUM;
+    
     self.timerLabel.text = [NSString stringWithFormat:@"%d", GAME_MODE_COUNTDOWN];
+    
     [self initNavBar];
     
 //    Help is always disabled in learn mode
