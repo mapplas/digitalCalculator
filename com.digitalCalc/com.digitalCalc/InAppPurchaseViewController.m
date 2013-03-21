@@ -32,7 +32,7 @@
 
 - (void)buyButtonPressed:(id)sender {
     NSLog(@"Buying... %@", NSLocalizedString(@"in_app_purchase_genius_level_identifier", @"In app purchase - Genius level product identifier"));
-    SKProduct *product = self.products[0];
+    SKProduct *product = [self.products objectAtIndex:0];
     [[GeniusLevelIAPHelper sharedInstance] buyProduct:product];
 }
 

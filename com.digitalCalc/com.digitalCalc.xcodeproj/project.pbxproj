@@ -79,13 +79,13 @@
 		7FA917B716F77D6F001A1C4A /* bkg_menu_cell_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FA917B316F77D6D001A1C4A /* bkg_menu_cell_up.png */; };
 		7FA917B816F77D6F001A1C4A /* bkg_menu_header.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FA917B416F77D6E001A1C4A /* bkg_menu_header.png */; };
 		7FA917B916F77D6F001A1C4A /* bkg_menu_header@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FA917B516F77D6E001A1C4A /* bkg_menu_header@2x.png */; };
-		7FAEB36B16FA0CEE001CBDC7 /* CustomSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAEB36A16FA0CEE001CBDC7 /* CustomSlider.m */; };
 		7FA9B15216F9E01100BB4991 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FA9B15016F9DFEE00BB4991 /* StoreKit.framework */; };
 		7FA9B15616F9E12700BB4991 /* IAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9B15516F9E12700BB4991 /* IAPHelper.m */; };
 		7FA9B15916F9E3FA00BB4991 /* GeniusLevelIAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9B15816F9E3FA00BB4991 /* GeniusLevelIAPHelper.m */; };
 		7FAEB35E16FA0514001CBDC7 /* InAppPurchaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAEB35C16FA0514001CBDC7 /* InAppPurchaseViewController.m */; };
 		7FAEB36616FA0576001CBDC7 /* InAppPurchaseViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FAEB36216FA0576001CBDC7 /* InAppPurchaseViewController_iPad.xib */; };
 		7FAEB36716FA0576001CBDC7 /* InAppPurchaseViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FAEB36416FA0576001CBDC7 /* InAppPurchaseViewController_iPhone.xib */; };
+		7FAEB36B16FA0CEE001CBDC7 /* CustomSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAEB36A16FA0CEE001CBDC7 /* CustomSlider.m */; };
 		7FD4AD7E16E734C700EB7CC1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FD4AD7D16E734C700EB7CC1 /* UIKit.framework */; };
 		7FD4AD8016E734C700EB7CC1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FD4AD7F16E734C700EB7CC1 /* Foundation.framework */; };
 		7FD4AD8216E734C700EB7CC1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FD4AD8116E734C700EB7CC1 /* CoreGraphics.framework */; };
@@ -240,8 +240,6 @@
 		7FA917B316F77D6D001A1C4A /* bkg_menu_cell_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bkg_menu_cell_up.png; path = Resources/bkg_menu_cell_up.png; sourceTree = "<group>"; };
 		7FA917B416F77D6E001A1C4A /* bkg_menu_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bkg_menu_header.png; path = Resources/bkg_menu_header.png; sourceTree = "<group>"; };
 		7FA917B516F77D6E001A1C4A /* bkg_menu_header@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bkg_menu_header@2x.png"; path = "Resources/bkg_menu_header@2x.png"; sourceTree = "<group>"; };
-		7FAEB36916FA0CEE001CBDC7 /* CustomSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomSlider.h; path = Classes/CustomSlider.h; sourceTree = "<group>"; };
-		7FAEB36A16FA0CEE001CBDC7 /* CustomSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomSlider.m; path = Classes/CustomSlider.m; sourceTree = "<group>"; };
 		7FA9B15016F9DFEE00BB4991 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		7FA9B15416F9E12700BB4991 /* IAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IAPHelper.h; path = "Classes/Inapp purchase/IAPHelper.h"; sourceTree = "<group>"; };
 		7FA9B15516F9E12700BB4991 /* IAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IAPHelper.m; path = "Classes/Inapp purchase/IAPHelper.m"; sourceTree = "<group>"; };
@@ -251,6 +249,8 @@
 		7FAEB35C16FA0514001CBDC7 /* InAppPurchaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InAppPurchaseViewController.m; sourceTree = "<group>"; };
 		7FAEB36316FA0576001CBDC7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/InAppPurchaseViewController_iPad.xib; sourceTree = "<group>"; };
 		7FAEB36516FA0576001CBDC7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/InAppPurchaseViewController_iPhone.xib; sourceTree = "<group>"; };
+		7FAEB36916FA0CEE001CBDC7 /* CustomSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomSlider.h; path = Classes/CustomSlider.h; sourceTree = "<group>"; };
+		7FAEB36A16FA0CEE001CBDC7 /* CustomSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomSlider.m; path = Classes/CustomSlider.m; sourceTree = "<group>"; };
 		7FD4AD7A16E734C700EB7CC1 /* com.digitalCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = com.digitalCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FD4AD7D16E734C700EB7CC1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7FD4AD7F16E734C700EB7CC1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -572,15 +572,6 @@
 			name = Databases;
 			sourceTree = "<group>";
 		};
-		7FAEB36816FA0CD4001CBDC7 /* Visual */ = {
-			isa = PBXGroup;
-			children = (
-				7FAEB36916FA0CEE001CBDC7 /* CustomSlider.h */,
-				7FAEB36A16FA0CEE001CBDC7 /* CustomSlider.m */,
-			);
-			name = Visual;
-			sourceTree = "<group>";
-		};
 		7FA9B15316F9E10A00BB4991 /* In-app purchase */ = {
 			isa = PBXGroup;
 			children = (
@@ -601,6 +592,15 @@
 				7FAEB36416FA0576001CBDC7 /* InAppPurchaseViewController_iPhone.xib */,
 			);
 			name = "Inapp purchase";
+			sourceTree = "<group>";
+		};
+		7FAEB36816FA0CD4001CBDC7 /* Visual */ = {
+			isa = PBXGroup;
+			children = (
+				7FAEB36916FA0CEE001CBDC7 /* CustomSlider.h */,
+				7FAEB36A16FA0CEE001CBDC7 /* CustomSlider.m */,
+			);
+			name = Visual;
 			sourceTree = "<group>";
 		};
 		7FD4AD7116E734C700EB7CC1 = {

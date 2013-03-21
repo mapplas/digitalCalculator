@@ -18,6 +18,7 @@
 - (void)ckeckLevel;
 - (BOOL)alphaViewVisible;
 - (void)reset;
+- (void)initInAppPurchaseConfig;
 @end
 
 @implementation ViewController
@@ -39,9 +40,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // If user has same accout on different devices, in-app purchases are shown on both devices
-//    SHOWS POPUP!!
-//    [[GeniusLevelIAPHelper sharedInstance] restoreCompletedTransactions];
+    [self initInAppPurchaseConfig];
     
     self.helpEnabled = NO;
     level = LEVEL_LOW;
@@ -64,20 +63,24 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-- (void)setSplashLayoutDetails {
-    [self.view addSubview:self.splashView];
-    
-    [layoutPresenter setTitleToNavItem];
+- (void)initInAppPurchaseConfig {
+    // If user has same accout on different devices, in-app purchases are shown on both devices
+    //    SHOWS POPUP!!
+    //    [[GeniusLevelIAPHelper sharedInstance] restoreCompletedTransactions];
     
     // In-app purchase products request
     _products = nil;
     [[GeniusLevelIAPHelper sharedInstance] requestProductsWithCompletionHandler:^(BOOL success, NSArray *products) {
         if (success) {
-//            _products = products;
-    NSArray *array = [NSArray arrayWithObject:NSLocalizedString(@"in_app_purchase_genius_level_identifier", @"In app purchase - Genius level product identifier")];
-    _products = array;
+            _products = products;
         }
     }];
+}
+
+- (void)setSplashLayoutDetails {
+    [self.view addSubview:self.splashView];
+    
+    [layoutPresenter setTitleToNavItem];
 }
 
 // Learn mode pressed
