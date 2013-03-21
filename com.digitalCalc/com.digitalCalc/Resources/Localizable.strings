@@ -76,7 +76,7 @@
 "ranking_screen_title" = "Ranking";
 
 /* Ranking screen no user text */
-"ranking_screen_no_user_text" = "user";
+"ranking_screen_no_user_text" = "Genius";
 
 /* Ranking screen no points text */
 "ranking_screen_no_points_text" = "0";

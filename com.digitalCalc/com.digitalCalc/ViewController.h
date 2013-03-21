@@ -81,7 +81,6 @@
 
 - (IBAction)segmentedControlIndexChanged;
 - (IBAction)checkButtonPressed:(id)sender;
-- (IBAction)sliderValueChanged:(UISlider *)sender;
 
 - (void)checkHelpEnabledAfterMenuHidden;
 - (void)mainMenuCellPressed;

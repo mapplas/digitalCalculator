@@ -182,7 +182,12 @@
 
 #pragma mark - UITextFieldDelegate
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [self goToRankingScreenWithName:textField.text];
+    NSString *username = textField.text;
+    if ([username isEqualToString:@""]) {
+        username = NSLocalizedString(@"ranking_screen_no_user_text", @"Ranking screen no user text");
+    }
+
+    [self goToRankingScreenWithName:username];
     [usernameAlert dismissWithClickedButtonIndex:1 animated:NO];
     return YES;
 }

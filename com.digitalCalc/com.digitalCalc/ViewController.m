@@ -13,7 +13,7 @@
 - (void)initNavBar;
 - (void)clearAll;
 - (void)ckeckLevel;
-- (BOOL)checkVisibleLabels;
+- (BOOL)alphaViewVisible;
 - (void)reset;
 @end
 
@@ -73,7 +73,10 @@
 // Game mode pressed
 - (IBAction)gameModePressed:(id)sender {
     self.mode = CALCULATOR_MODE_GAME;
+    self.level = LEVEL_MEDIUM;
+    
     self.timerLabel.text = [NSString stringWithFormat:@"%d", GAME_MODE_COUNTDOWN];
+    
     [self initNavBar];
     
 //    Help is always disabled in learn mode
@@ -168,7 +171,6 @@
             UIColor *brushPattern = [[UIColor alloc]initWithPatternImage:[UIImage imageNamed:@"bkg_chalk.png"]];
             CGColorRef fillColor = [brushPattern CGColor];
             CGColorRef strokeColor = [brushPattern CGColor];
-            
         
             UIGraphicsBeginImageContext(self.board.frame.size);
             [self.board.image drawInRect:CGRectMake(0, 0, self.board.frame.size.width, self.board.frame.size.height)];
@@ -197,8 +199,9 @@
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-    if (![self checkVisibleLabels]) {
+    if (![self alphaViewVisible]) {
         if(!mouseSwiped) {
+            
             UIGraphicsBeginImageContext(self.board.frame.size);
             [self.board.image drawInRect:CGRectMake(0, 0, self.board.frame.size.width, self.board.frame.size.height)];
             CGContextSetLineCap(UIGraphicsGetCurrentContext(), kCGLineCapRound);
@@ -254,24 +257,26 @@
     }
 }
 
-- (BOOL)checkVisibleLabels {
+- (BOOL)alphaViewVisible {
+    BOOL toReturn = NO;
+    
     // If helpView is visible set as hidden
     if (!self.helpView.hidden) {
         self.helpView.hidden = YES;
-        return YES;
+        toReturn = YES;
     }
     
     // If after checked label is visible set as hidden
     if (!self.afterCheckedView.hidden) {
         self.afterCheckedView.hidden = YES;
+        toReturn = toReturn || YES;
         
         if ([slider getSliderValue] == ([self.firstArgument.text integerValue] * [self.secondArgument.text integerValue])) {
             [self reset];
         }
-        
-        return YES;
     }
-    return NO;
+    
+    return toReturn;
 }
 
 - (void)clearAll {
