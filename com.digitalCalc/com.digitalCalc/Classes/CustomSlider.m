@@ -117,7 +117,8 @@
 
 - (void)_positionAndUpdatePopupView {
     CGRect _thumbRect = self.thumbRect;
-    CGRect popupRect = CGRectOffset(_thumbRect, 0, -floorf(_thumbRect.size.height * 1.5));
+    CGRect popupRect = CGRectOffset(_thumbRect, 0, floorf(-(_thumbRect.size.height * 1.5)));
+//    CGRect popupRect = CGRectOffset(_thumbRect, 0, -floorf(_thumbRect.size.height * 1.5));
     valuePopupView.frame = CGRectInset(popupRect, -20, -10);
     valuePopupView.value = (NSInteger)self.value;
 }
@@ -155,8 +156,9 @@
 
 - (BOOL)continueTrackingWithTouch:(UITouch *)touch withEvent:(UIEvent *)event {
     // Update the popup view as slider knob is being moved
+    BOOL ret = [super continueTrackingWithTouch:touch withEvent:event];
     [self _positionAndUpdatePopupView];
-    return [super continueTrackingWithTouch:touch withEvent:event];
+    return ret;
 }
 
 - (void)cancelTrackingWithEvent:(UIEvent *)event {
