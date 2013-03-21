@@ -17,4 +17,8 @@
     return NO;
 }
 
+- (BOOL)isSpanish {
+    return [[[NSLocale currentLocale] objectForKey: NSLocaleLanguageCode] isEqualToString:@"es"];
+}
+
 @end

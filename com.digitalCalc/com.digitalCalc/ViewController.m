@@ -9,12 +9,16 @@
 #import "ViewController.h"
 #import "PKRevealController.h"
 
+#import <StoreKit/StoreKit.h>
+#import "GeniusLevelIAPHelper.h"
+
 @interface ViewController ()
 - (void)initNavBar;
 - (void)clearAll;
 - (void)ckeckLevel;
 - (BOOL)alphaViewVisible;
 - (void)reset;
+- (void)initInAppPurchaseConfig;
 @end
 
 @implementation ViewController
@@ -36,6 +40,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self initInAppPurchaseConfig];
+    
     self.helpEnabled = NO;
     level = LEVEL_LOW;
     slider = (CustomSlider *)self.resultSlider;
@@ -47,6 +53,28 @@
     [self setSplashLayoutDetails];
     
     [layoutPresenter configureInitialLayout];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productPurchased:) name:IAPHelperProductPurchasedNotification object:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)initInAppPurchaseConfig {
+    // If user has same accout on different devices, in-app purchases are shown on both devices
+    //    SHOWS POPUP!!
+    //    [[GeniusLevelIAPHelper sharedInstance] restoreCompletedTransactions];
+    
+    // In-app purchase products request
+    _products = nil;
+    [[GeniusLevelIAPHelper sharedInstance] requestProductsWithCompletionHandler:^(BOOL success, NSArray *products) {
+        if (success) {
+            _products = products;
+        }
+    }];
 }
 
 - (void)setSplashLayoutDetails {
@@ -72,23 +100,37 @@
 
 // Game mode pressed
 - (IBAction)gameModePressed:(id)sender {
-    self.mode = CALCULATOR_MODE_GAME;
-    self.level = LEVEL_MEDIUM;
-    
-    self.timerLabel.text = [NSString stringWithFormat:@"%d", GAME_MODE_COUNTDOWN];
-    
-    [self initNavBar];
-    
-//    Help is always disabled in learn mode
-    self.helpEnabled = NO;
-    self.points = 0;
-    
-    [UIView animateWithDuration:0.5f
-                     animations:^{self.splashView.alpha = 0.0;}
-                     completion:^(BOOL finished){ [self.view sendSubviewToBack:self.splashView]; }];
-    
-    [self reset];
-    [layoutPresenter initTimer];
+    if ([[GeniusLevelIAPHelper sharedInstance] productPurchased:NSLocalizedString(@"in_app_purchase_genius_level_identifier", @"In app purchase - Genius level product identifier")]) {
+        self.mode = CALCULATOR_MODE_GAME;
+		self.level = LEVEL_MEDIUM;
+
+        self.timerLabel.text = [NSString stringWithFormat:@"%d", GAME_MODE_COUNTDOWN];
+        [self initNavBar];
+        
+        //    Help is always disabled in learn mode
+        self.helpEnabled = NO;
+        self.points = 0;
+        
+        [UIView animateWithDuration:0.5f
+                         animations:^{self.splashView.alpha = 0.0;}
+                         completion:^(BOOL finished){ [self.view sendSubviewToBack:self.splashView]; }];
+        
+        [self reset];
+        [layoutPresenter initTimer];
+    } else {
+        // Present purchase viewcontroller
+        InAppPurchaseViewController *inAppPurchaseViewController = nil;
+        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+            inAppPurchaseViewController = [[InAppPurchaseViewController alloc] initWithNibName:@"InAppPurchaseViewController_iPhone" bundle:nil];
+        } else {
+            inAppPurchaseViewController = [[InAppPurchaseViewController alloc] initWithNibName:@"InAppPurchaseViewController_iPad" bundle:nil];
+        }
+        
+        UINavigationController *controller = [[UINavigationController alloc] initWithRootViewController:inAppPurchaseViewController];
+        inAppPurchaseViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+        inAppPurchaseViewController.products = _products;
+        [self.navigationController presentModalViewController:controller animated:YES];
+    }
 }
 
 #pragma mark - Shake event
@@ -394,6 +436,17 @@
     self.navigationItem.leftBarButtonItem = nil;
     
     [layoutPresenter setTitleToNavItem];
+}
+
+#pragma mark - in app purchase delegate
+- (void)productPurchased:(NSNotification *)notification {
+    NSString * productIdentifier = notification.object;
+    [_products enumerateObjectsUsingBlock:^(SKProduct * product, NSUInteger idx, BOOL *stop) {
+        if ([product.productIdentifier isEqualToString:productIdentifier]) {
+            [self gameModePressed:nil];
+        }
+    }];
+    
 }
 
 

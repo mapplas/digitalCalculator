@@ -19,6 +19,7 @@
 
 #import "LayoutPresenter.h"
 #import "CustomSlider.h"
+#import "InAppPurchaseViewController.h"
 
 @interface ViewController : UIViewController {
     CGPoint lastPoint;
@@ -35,6 +36,8 @@
     CustomSlider *slider;
     
     NSInteger _points;
+    
+    NSArray *_products;
     
     @private
     NSInteger level;

@@ -15,6 +15,11 @@
 @synthesize navigationController = _navigationController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // The idea is that Apple will keep track of any purchase transactions that haven’t yet been fully processed by your app, and will notify the transaction observer about them. But for this to work well, you should register your class as a transaction observer as early as possible in your app initialization.
+    
+    // Now, as soon as your app launches it will create the singleton RageIAPHelper. This means the initWithProducts: method you just modified will be called, which registers itself as the transaction observer. So you will be notified about any transactions that were never quite finished
+    [GeniusLevelIAPHelper sharedInstance];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     ViewController *viewController = nil;
