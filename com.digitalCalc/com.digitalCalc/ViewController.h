@@ -36,6 +36,8 @@
     
     NSInteger _points;
     
+    NSArray *_products;
+    
     @private
     NSInteger level;
     NSInteger _mode;

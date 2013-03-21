@@ -9,6 +9,9 @@
 #import "ViewController.h"
 #import "PKRevealController.h"
 
+#import <StoreKit/StoreKit.h>
+#import "GeniusLevelIAPHelper.h"
+
 @interface ViewController ()
 - (void)initNavBar;
 - (void)clearAll;
@@ -49,10 +52,29 @@
     [layoutPresenter configureInitialLayout];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productPurchased:) name:IAPHelperProductPurchasedNotification object:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (void)setSplashLayoutDetails {
     [self.view addSubview:self.splashView];
     
     [layoutPresenter setTitleToNavItem];
+    
+    // In-app purchase products request
+    _products = nil;
+    [[GeniusLevelIAPHelper sharedInstance] requestProductsWithCompletionHandler:^(BOOL success, NSArray *products) {
+        if (success) {
+            _products = products;
+        }
+    }];
+    
+//    NSArray *array = [NSArray arrayWithObject:NSLocalizedString(@"in_app_purchase_genius_level_identifier", @"In app purchase - Genius level product identifier")];
+//    _products = array;
 }
 
 // Learn mode pressed
@@ -72,23 +94,28 @@
 
 // Game mode pressed
 - (IBAction)gameModePressed:(id)sender {
-    self.mode = CALCULATOR_MODE_GAME;
-    self.level = LEVEL_MEDIUM;
-    
-    self.timerLabel.text = [NSString stringWithFormat:@"%d", GAME_MODE_COUNTDOWN];
-    
-    [self initNavBar];
-    
-//    Help is always disabled in learn mode
-    self.helpEnabled = NO;
-    self.points = 0;
-    
-    [UIView animateWithDuration:0.5f
-                     animations:^{self.splashView.alpha = 0.0;}
-                     completion:^(BOOL finished){ [self.view sendSubviewToBack:self.splashView]; }];
-    
-    [self reset];
-    [layoutPresenter initTimer];
+    if ([[GeniusLevelIAPHelper sharedInstance] productPurchased:NSLocalizedString(@"in_app_purchase_genius_level_identifier", @"In app purchase - Genius level product identifier")]) {
+        self.mode = CALCULATOR_MODE_GAME;
+		self.level = LEVEL_MEDIUM;
+
+        self.timerLabel.text = [NSString stringWithFormat:@"%d", GAME_MODE_COUNTDOWN];
+        [self initNavBar];
+        
+        //    Help is always disabled in learn mode
+        self.helpEnabled = NO;
+        self.points = 0;
+        
+        [UIView animateWithDuration:0.5f
+                         animations:^{self.splashView.alpha = 0.0;}
+                         completion:^(BOOL finished){ [self.view sendSubviewToBack:self.splashView]; }];
+        
+        [self reset];
+        [layoutPresenter initTimer];
+    } else {
+        NSLog(@"Buying... %@", NSLocalizedString(@"in_app_purchase_genius_level_identifier", @"In app purchase - Genius level product identifier"));
+        SKProduct *product = _products[0];
+        [[GeniusLevelIAPHelper sharedInstance] buyProduct:product];
+    }
 }
 
 #pragma mark - Shake event
@@ -394,6 +421,17 @@
     self.navigationItem.leftBarButtonItem = nil;
     
     [layoutPresenter setTitleToNavItem];
+}
+
+#pragma mark - in app purchase delegate
+- (void)productPurchased:(NSNotification *)notification {
+    NSString * productIdentifier = notification.object;
+    [_products enumerateObjectsUsingBlock:^(SKProduct * product, NSUInteger idx, BOOL *stop) {
+        if ([product.productIdentifier isEqualToString:productIdentifier]) {
+            [self gameModePressed:nil];
+        }
+    }];
+    
 }
 
 
