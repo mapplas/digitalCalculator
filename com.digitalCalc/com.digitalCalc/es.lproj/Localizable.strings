@@ -103,7 +103,7 @@
 "username_alert_view_message" = "Introduce tu nombre Genio!";
 
 /* Username alert view ok message */
-"username_alert_view_ok_message" = "Ok";
+"username_alert_view_ok_message" = "OK";
 
 /* Username alert view negative message */
 "username_alert_view_negative_message" = "Paso";
@@ -116,3 +116,18 @@
 
 /* In app purchase - Buy text */
 "in_app_purchase_buy_text_label_title" = "Todos los niveles disponibles y el modo juego para aprender divirtiéndose!";
+
+/* In app purchase - Purchase OK alert title */
+"in_app_purchase_ok_alert_title" = "Compra terminada";
+
+/* In app purchase - Purchase OK alert message */
+"in_app_purchase_ok_alert_message" = "Disfruta aprendiendo y jugando!";
+
+/* In app purchase - Purchase NOK alert title */
+"in_app_purchase_nok_alert_title" = "Compra fallida";
+
+/* In app purchase - Purchase NOK alert message */
+"in_app_purchase_nok_alert_message" = "Algo salió mal, inténtalo otra vez!";
+
+/* In app purchase OK and NOK alert button title */
+"in_app_purchase_ok_nok_button" = "OK";

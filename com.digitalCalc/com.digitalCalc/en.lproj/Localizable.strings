@@ -116,3 +116,18 @@
 
 /* In app purchase - Buy text */
 "in_app_purchase_buy_text_label_title" = "Unlock all levels and Game mode to learn to multiply in a matter of minutes in a smart, quick and easy way!";
+
+/* In app purchase - Purchase OK alert title */
+"in_app_purchase_ok_alert_title" = "Purchase completed";
+
+/* In app purchase - Purchase OK alert message */
+"in_app_purchase_ok_alert_message" = "Enjoy learning and playing!";
+
+/* In app purchase - Purchase NOK alert title */
+"in_app_purchase_nok_alert_title" = "Unsuccessful purchase";
+
+/* In app purchase - Purchase NOK alert message */
+"in_app_purchase_nok_alert_message" = "Something went wrong... Try it again!";
+
+/* In app purchase OK and NOK alert button title */
+"in_app_purchase_ok_nok_button" = "OK";
