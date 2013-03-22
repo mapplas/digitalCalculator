@@ -55,7 +55,12 @@
     // Segmented control
     // Image between two unselected segments.
     UIImage *transparentSeparator = [UIImage imageNamed:@"bkg_segment_separator.png"];
+    
     UIBarMetrics barMetrics = UIBarMetricsLandscapePhone;
+    DeviceChooser *deficeChooser = [[DeviceChooser alloc] init];
+    if ([deficeChooser isPad]) {
+        barMetrics = UIBarMetricsDefault;
+    }
     
     [segmControl setDividerImage:transparentSeparator forLeftSegmentState:UIControlStateNormal
                          rightSegmentState:UIControlStateNormal barMetrics:barMetrics];
