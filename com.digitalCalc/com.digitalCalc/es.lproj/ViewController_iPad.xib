@@ -41,7 +41,6 @@
 				<string key="NSFrameSize">{92, 30}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
-				<reference key="NSNextKeyView"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<bool key="IBUIOpaque">NO</bool>
 				<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -198,7 +197,6 @@
 						<string key="NSFrame">{{705, 691}, {303, 23}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -392,7 +390,7 @@
 							<object class="IBUILabel" id="280697751">
 								<reference key="NSNextResponder" ref="12275856"/>
 								<int key="NSvFlags">289</int>
-								<string key="NSFrame">{{811, 60}, {164, 28}}</string>
+								<string key="NSFrame">{{719, 60}, {256, 28}}</string>
 								<reference key="NSSuperview" ref="12275856"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="853507167"/>
@@ -570,7 +568,6 @@
 						<string key="NSFrame">{{315, 372}, {394, 123}}</string>
 						<reference key="NSSuperview" ref="290507410"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>

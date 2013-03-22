@@ -10,10 +10,10 @@
 "nav_bar_title" = "Genius Multiplication";
 
 /* Ranking controller left button title */
-"nav_bar_ranking_left_button_title" = "Done";
+"nav_bar_ranking_left_button_title" = "Back";
 
 /* Nav. bar right button title */
-"nav_bar_right_button_title" = "Erase";
+"nav_bar_right_button_title" = "Clear all";
 
 /* Segmented control line text */
 "segm_control_line" = "Lines";
@@ -30,17 +30,29 @@
 /* Help label plural line suffix */
 "help_text_plural_suffix" = "lines";
 
+/* Help label second arg sing-sing suffix */
+"help_text_sing_sing_suffix" = "crossing the previous";
+
+/* Help label second arg plural-sing suffix */
+"help_text_plural_sing_suffix" = "crossing the previous";
+
+/* Help label second arg sing-plur suffix */
+"help_text_sing_plural_suffix" = "crossing the previous";
+
+/* Help label second arg plural-plural suffix */
+"help_text_plural_plural_suffix" = "crossing the previous";
+
 /* Help label draw dots text  */
-"help_text_dots_text" = "Draw dots in line intersections";
+"help_text_dots_text" = "Draw dots where the lines cross";
 
 /* Help label count dots text  */
-"help_text_dots_count_text" = "Count dots and set result!";
+"help_text_dots_count_text" = "Count the dots and set result!";
 
 /* Help label press check text  */
-"help_text_press_check_button_text" = "Press check button!";
+"help_text_press_check_button_text" = "Tap CHECK, to see if you are right!";
 
 /* Help tap to continue label text */
-"help_text_tap_to_continue" = "Tap to continue";
+"help_text_tap_to_continue" = "Tap to continue...";
 
 /* Menu section levels title */
 "menu_section_levels_title" = "Levels";
@@ -55,19 +67,19 @@
 "menu_section_levels_medium" = "Genius";
 
 /* Menu section levels high level */
-"menu_section_levels_high" = "Prodigy - Coming soon";
+"menu_section_levels_high" = "Prodigy (Coming Soon)";
 
 /* Menu section settings help enabled */
 "menu_section_settings_help_enabled" = "Help enabled";
 
 /* Result ckecked OK text in learn mode */
-"result_checked_ok_learn_mode" = "GREAT!! Tap to continue!";
+"result_checked_ok_learn_mode" = "GREAT Genius!! One more? Tap to continue!";
 
 /* Result ckecked NOK text in learn mode */
-"result_checked_nok_learn_mode" = "Oops! Try again...";
+"result_checked_nok_learn_mode" = "Oops! You Know it, try again...";
 
 /* Result ckecked OK text in game mode */
-"result_checked_ok_game_mode" = "+5 points! Tap to do next mult!";
+"result_checked_ok_game_mode" = "10 points! Quickly, tap to do the next!";
 
 /* Result ckecked NOK text in game mode */
 "result_checked_nok_lgame_mode" = "Hurry! Try again!";
@@ -85,19 +97,22 @@
 "ranking_screen_points_suffix" = "points";
 
 /* Username alert view title */
-"username_alert_view_title" = "Alert View title";
+"username_alert_view_title" = "Genius Name";
 
 /* Username alert view message */
-"username_alert_view_message" = "Insert your name to show it in ranking!";
+"username_alert_view_message" = "Type your name Genius!";
 
 /* Username alert view ok message */
 "username_alert_view_ok_message" = "OK";
 
 /* Username alert view negative message */
-"username_alert_view_negative_message" = "NOK";
+"username_alert_view_negative_message" = "Cancel";
 
 /* In app purchase - Genius level product identifier */
 "in_app_purchase_genius_level_identifier" = "com.digitalCalc.inAppGeniusLevel";
 
 /* In app purchase - Nav controller left button title */
 "in_app_purchase_nav_left_button_title" = "Cancel";
+
+/* In app purchase - Buy text */
+"in_app_purchase_buy_text_label_title" = "Unlock all levels and Game mode to learn to multiply in a matter of minutes in a smart, quick and easy way!";

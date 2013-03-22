@@ -10,70 +10,82 @@
 "nav_bar_title" = "Multiplicación Genius";
 
 /* Ranking controller left button title */
-"nav_bar_ranking_left_button_title" = "Done";
+"nav_bar_ranking_left_button_title" = "Volver";
 
 /* Nav. bar right button title */
-"nav_bar_right_button_title" = "Erase";
+"nav_bar_right_button_title" = "Borrar todo";
 
 /* Segmented control line text */
-"segm_control_line" = "Lines";
+"segm_control_line" = "Líneas";
 
 /* Segmented control dots text */
-"segm_control_dot" = "Dots";
+"segm_control_dot" = "Puntos";
 
 /* Help label text prefix */
-"help_text_prefix" = "Draw";
+"help_text_prefix" = "Dibuja";
 
 /* Help label singular line suffix */
-"help_text_singular_suffix" = "line";
+"help_text_singular_suffix" = "línea diagonal";
 
 /* Help label plural line suffix */
-"help_text_plural_suffix" = "lines";
+"help_text_plural_suffix" = "líneas diagonales";
+
+/* Help label second arg sing-sing suffix */
+"help_text_sing_sing_suffix" = "que se cruce con la anterior";
+
+/* Help label second arg plural-sing suffix */
+"help_text_plural_sing_suffix" = "que se cruce con las anteriores";
+
+/* Help label second arg sing-plur suffix */
+"help_text_sing_plural_suffix" = "que se crucen con la anterior";
+
+/* Help label second arg plural-plural suffix */
+"help_text_plural_plural_suffix" = "que se crucen con las anteriores";
 
 /* Help label draw dots text  */
-"help_text_dots_text" = "Draw dots in line intersections";
+"help_text_dots_text" = "Marca con puntos dónde las lineas se cruzan";
 
 /* Help label count dots text  */
-"help_text_dots_count_text" = "Count dots and set result!";
+"help_text_dots_count_text" = "Cuenta los puntos y pon el resultado con la barra deslizante!";
 
 /* Help label press check text  */
-"help_text_press_check_button_text" = "Press check button!";
+"help_text_press_check_button_text" = "¡¡¡Pulsa COMPROBAR, para ver si has acertado!!!";
 
 /* Help tap to continue label text */
-"help_text_tap_to_continue" = "Tap to continue";
+"help_text_tap_to_continue" = "Toca para continuar...";
 
 /* Menu section levels title */
-"menu_section_levels_title" = "Levels";
+"menu_section_levels_title" = "Niveles";
 
 /* Menu section configuration title */
-"menu_section_configuration_title" = "Settings";
+"menu_section_configuration_title" = "Configuración";
 
 /* Menu section levels low level */
-"menu_section_levels_low" = "Beginner";
+"menu_section_levels_low" = "Principiante";
 
 /* Menu section levels medium level */
-"menu_section_levels_medium" = "Genius";
+"menu_section_levels_medium" = "Genio";
 
 /* Menu section levels high level */
-"menu_section_levels_high" = "Prodigy - Coming soon";
+"menu_section_levels_high" = "Prodigio (próximamente...)";
 
 /* Menu section settings help enabled */
-"menu_section_settings_help_enabled" = "Help enabled";
+"menu_section_settings_help_enabled" = "Ayuda activada";
 
 /* Result ckecked OK text in learn mode */
-"result_checked_ok_learn_mode" = "GREAT!! Tap to continue!";
+"result_checked_ok_learn_mode" = "BIEN!!! Otra más? Toca la pantalla!";
 
 /* Result ckecked NOK text in learn mode */
-"result_checked_nok_learn_mode" = "Oops! Try again...";
+"result_checked_nok_learn_mode" = "Casi... Seguro que lo sabes, prueba otra vez";
 
 /* Result ckecked OK text in game mode */
-"result_checked_ok_game_mode" = "+5 points! Tap to do next mult!";
+"result_checked_ok_game_mode" = "10 puntos más! Rápido toca para la siguiente!";
 
 /* Result ckecked NOK text in game mode */
-"result_checked_nok_lgame_mode" = "Hurry! Try again!";
+"result_checked_nok_lgame_mode" = "Rápido! Inténtalo otra vez!";
 
 /* Ranking screen title */
-"ranking_screen_title" = "Ranking";
+"ranking_screen_title" = "Clasificación";
 
 /* Ranking screen no user text */
 "ranking_screen_no_user_text" = "Genius";
@@ -82,22 +94,25 @@
 "ranking_screen_no_points_text" = "0";
 
 /* Ranking screen points suffix text */
-"ranking_screen_points_suffix" = "points";
+"ranking_screen_points_suffix" = "puntos";
 
 /* Username alert view title */
-"username_alert_view_title" = "Alert View title";
+"username_alert_view_title" = "Nombre del Genio";
 
 /* Username alert view message */
-"username_alert_view_message" = "Insert your name to show it in ranking!";
+"username_alert_view_message" = "Introduce tu nombre Genio!";
 
 /* Username alert view ok message */
-"username_alert_view_ok_message" = "OK";
+"username_alert_view_ok_message" = "Ok";
 
 /* Username alert view negative message */
-"username_alert_view_negative_message" = "NOK";
+"username_alert_view_negative_message" = "Paso";
 
 /* In app purchase - Genius level product identifier */
 "in_app_purchase_genius_level_identifier" = "com.digitalCalc.inAppGeniusLevel";
 
 /* In app purchase - Nav controller left button title */
-"in_app_purchase_nav_left_button_title" = "Cancel";
+"in_app_purchase_nav_left_button_title" = "Cancelar";
+
+/* In app purchase - Buy text */
+"in_app_purchase_buy_text_label_title" = "Todos los niveles disponibles y el modo juego para aprender divirtiéndose!";
