@@ -294,6 +294,7 @@
         leftVC.helpButton = self.helpButton;
         leftVC.helpView = self.helpView;
         leftVC.checkButton = self.ckeckButton;
+        leftVC.products = _products;
         
         [self.navigationController.revealController showViewController:self.navigationController.revealController.leftViewController];
     }
