@@ -8,17 +8,20 @@
 
 #import <Foundation/Foundation.h>
 #import <StoreKit/StoreKit.h>
+#import "PaymentTransactionProtocol.h"
 
 UIKIT_EXTERN NSString *const IAPHelperProductPurchasedNotification;
 
 typedef void (^RequestProductsCompletionHandler)(BOOL success, NSArray * products);
 
-@interface IAPHelper : NSObject
+@interface IAPHelper : NSObject {
+    id<PaymentTransactionProtocol> paymentTransactionProtocol;
+}
 
 - (id)initWithProductIdentifiers:(NSSet *)productIdentifiers;
 - (void)requestProductsWithCompletionHandler:(RequestProductsCompletionHandler)completionHandler;
 
-- (void)buyProduct:(SKProduct *)product;
+- (void)buyProduct:(SKProduct *)product andSetDelegate:(id<PaymentTransactionProtocol>)_delegate;
 - (BOOL)productPurchased:(NSString *)productIdentifier;
 
 - (void)restoreCompletedTransactions;

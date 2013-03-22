@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "LayoutPresenter.h"
+#import "PaymentTransactionProtocol.h"
 
-@interface InAppPurchaseViewController : UIViewController {
+@interface InAppPurchaseViewController : UIViewController <PaymentTransactionProtocol, UIAlertViewDelegate> {
     NSArray *_products;
+    
+    UIAlertView *transactionOkAlert;
+    UIAlertView *transactionFailedAlert;
 }
 
 @property (nonatomic, strong) IBOutlet UIButton *buyButton;

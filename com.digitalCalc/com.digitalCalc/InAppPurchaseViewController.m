@@ -38,11 +38,29 @@
 - (void)buyButtonPressed:(id)sender {
     NSLog(@"Buying... %@", NSLocalizedString(@"in_app_purchase_genius_level_identifier", @"In app purchase - Genius level product identifier"));
     SKProduct *product = [self.products objectAtIndex:0];
-    [[GeniusLevelIAPHelper sharedInstance] buyProduct:product];
+    [[GeniusLevelIAPHelper sharedInstance] buyProduct:product andSetDelegate:self];
 }
 
 - (void)pop {
     [self.navigationController dismissModalViewControllerAnimated:YES];
+}
+
+#pragma mark - PaymentTransactionProtocol methods
+
+- (void)transactionCorrectlyEnded {
+    transactionOkAlert = [[UIAlertView alloc] initWithTitle:@"Transaction OK" message:@"Enjoy learning and playing!" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+    [transactionOkAlert show];
+    [self pop];
+}
+
+- (void)transactionFailed {
+    transactionFailedAlert = [[UIAlertView alloc] initWithTitle:@"Transaction failed" message:@"Try again later... Something happened!" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+    [transactionFailedAlert show];
+    [self pop];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    [alertView dismissWithClickedButtonIndex:buttonIndex animated:YES];
 }
 
 @end

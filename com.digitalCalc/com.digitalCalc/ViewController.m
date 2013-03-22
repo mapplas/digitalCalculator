@@ -66,7 +66,7 @@
 - (void)initInAppPurchaseConfig {
     // If user has same accout on different devices, in-app purchases are shown on both devices
     //    SHOWS POPUP!!
-    //    [[GeniusLevelIAPHelper sharedInstance] restoreCompletedTransactions];
+//    [[GeniusLevelIAPHelper sharedInstance] restoreCompletedTransactions];
     
     // In-app purchase products request
     _products = nil;
@@ -101,6 +101,7 @@
 // Game mode pressed
 - (IBAction)gameModePressed:(id)sender {
     if ([[GeniusLevelIAPHelper sharedInstance] productPurchased:NSLocalizedString(@"in_app_purchase_genius_level_identifier", @"In app purchase - Genius level product identifier")]) {
+        
         self.mode = CALCULATOR_MODE_GAME;
 		self.level = LEVEL_MEDIUM;
 
@@ -294,6 +295,7 @@
         leftVC.helpButton = self.helpButton;
         leftVC.helpView = self.helpView;
         leftVC.checkButton = self.ckeckButton;
+        leftVC.products = _products;
         
         [self.navigationController.revealController showViewController:self.navigationController.revealController.leftViewController];
     }

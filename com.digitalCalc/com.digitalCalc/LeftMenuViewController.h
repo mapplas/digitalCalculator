@@ -11,6 +11,8 @@
 #import "LevelMenuCell.h"
 #import "deviceChooser.h"
 
+#import "GeniusLevelIAPHelper.h"
+
 #define MENU_TABLE_ROW_HEIGHT 50
 #define MENU_TABLE_HEADER_HEIGHT 26
 
@@ -34,5 +36,6 @@
 @property (nonatomic, strong) UIButton *helpButton;
 @property (nonatomic, strong) UIView *helpView;
 @property (nonatomic, strong) UIButton *checkButton;
+@property (nonatomic, strong) NSArray *products;
 
 @end

@@ -94,9 +94,11 @@ NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurcha
     return [_purchasedProductIdentifiers containsObject:productIdentifier];
 }
 
-- (void)buyProduct:(SKProduct *)product {
+- (void)buyProduct:(SKProduct *)product andSetDelegate:(id<PaymentTransactionProtocol>)_delegate {
     
     NSLog(@"Buying %@...", product.productIdentifier);
+    
+    paymentTransactionProtocol = _delegate;
     
     SKPayment * payment = [SKPayment paymentWithProduct:product];
     [[SKPaymentQueue defaultQueue] addPayment:payment];    
@@ -126,6 +128,10 @@ NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurcha
     
     [self provideContentForProductIdentifier:transaction.payment.productIdentifier];
     [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
+    
+    if (paymentTransactionProtocol != nil) {
+        [paymentTransactionProtocol transactionCorrectlyEnded];
+    }
 }
 
 - (void)restoreTransaction:(SKPaymentTransaction *)transaction {
@@ -143,6 +149,10 @@ NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurcha
     }
     
     [[SKPaymentQueue defaultQueue] finishTransaction: transaction];
+    
+    if (paymentTransactionProtocol != nil) {
+        [paymentTransactionProtocol transactionFailed];
+    }
 }
 
 - (void)provideContentForProductIdentifier:(NSString *)productIdentifier {
