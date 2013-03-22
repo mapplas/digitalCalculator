@@ -109,11 +109,11 @@
     
     switch (currentAction) {
         case HELP_FIRST_ARG_ACTION_FINISHED:
-            [self helpForLabel:firstArgLabel];
+            [self helpForFirstLabel:firstArgLabel secondLabel:secondArgLabel andAction:currentAction];
             break;
             
         case HELP_SECOND_ARG_ACTION_FINISHED:
-            [self helpForLabel:secondArgLabel];
+            [self helpForFirstLabel:firstArgLabel secondLabel:secondArgLabel andAction:currentAction];
             break;
             
         case HELP_DOTS_ACTION:
@@ -130,13 +130,56 @@
     }
 }
 
-- (void)helpForLabel:(UILabel *)_label {
-    NSString *firstArgumentData = _label.text;
-    if ([firstArgumentData isEqualToString:@"1"]) {
-        helpLabel.text = [NSString stringWithFormat:@"%@ %@ %@", NSLocalizedString(@"help_text_prefix", @"Help label text prefix"), firstArgumentData, NSLocalizedString(@"help_text_singular_suffix", @"Help label singular line suffix")];
-    }
-    else {
-        helpLabel.text = [NSString stringWithFormat:@"%@ %@ %@", NSLocalizedString(@"help_text_prefix", @"Help label text prefix"), firstArgumentData, NSLocalizedString(@"help_text_plural_suffix", @"Help label plural line suffix")];
+- (void)helpForFirstLabel:(UILabel *)_label1 secondLabel:(UILabel *)_label2 andAction:(NSInteger)_action {
+    NSString *firstArgumentData = _label1.text;
+    NSString *secondArgumentData = _label2.text;
+
+//    /* Help label second arg sing-sing suffix */
+//    "help_text_sing_sing_suffix" = "que se cruce con la anterior";
+//    
+//    /* Help label second arg plural-sing suffix */
+//    "help_text_plural_sing_suffix" = "que se cruce con las anteriores";
+//    
+//    /* Help label second arg sing-plur suffix */
+//    "help_text_sing_plural_suffix" = "que se crucen con la anterior";
+//    
+//    /* Help label second arg plural-plural suffix */
+//    "help_text_plural_plural_suffix" = "que se crucen con las anteriores";
+    
+    switch (_action) {
+        case HELP_FIRST_ARG_ACTION_FINISHED:
+            if ([firstArgumentData isEqualToString:@"1"]) {
+                helpLabel.text = [NSString stringWithFormat:@"%@ %@ %@", NSLocalizedString(@"help_text_prefix", @"Help label text prefix"), firstArgumentData, NSLocalizedString(@"help_text_singular_suffix", @"Help label singular line suffix")];
+            }
+            else {
+                helpLabel.text = [NSString stringWithFormat:@"%@ %@ %@", NSLocalizedString(@"help_text_prefix", @"Help label text prefix"), firstArgumentData, NSLocalizedString(@"help_text_plural_suffix", @"Help label plural line suffix")];
+            }
+            break;
+            
+        case HELP_SECOND_ARG_ACTION_FINISHED:
+            if ([secondArgumentData isEqualToString:@"1"]) {
+                
+                NSString *endString = NSLocalizedString(@"help_text_plural_sing_suffix", @"Help label second arg plural-sing suffix");
+                if ([firstArgumentData isEqualToString:@"1"]) {
+                    endString = NSLocalizedString(@"help_text_sing_sing_suffix", @"Help label second arg sing-sing suffix");
+                }
+                
+                helpLabel.text = [NSString stringWithFormat:@"%@ %@ %@ %@", NSLocalizedString(@"help_text_prefix", @"Help label text prefix"), secondArgumentData, NSLocalizedString(@"help_text_singular_suffix", @"Help label singular line suffix"), endString];
+            }
+            else {
+                
+                NSString *endString = NSLocalizedString(@"help_text_plural_plural_suffix", @"Help label second arg plural-plural suffix");
+                if ([firstArgumentData isEqualToString:@"1"]) {
+                    endString = NSLocalizedString(@"help_text_sing_plural_suffix", @"Help label second arg sing-plur suffix");
+                }
+                
+                helpLabel.text = [NSString stringWithFormat:@"%@ %@ %@ %@", NSLocalizedString(@"help_text_prefix", @"Help label text prefix"), secondArgumentData, NSLocalizedString(@"help_text_plural_suffix", @"Help label plural line suffix"), endString];
+            }
+
+            break;
+            
+        default:
+            break;
     }
 }
 

@@ -278,8 +278,8 @@
         [self.navigationItem.leftBarButtonItem setBackgroundImage:navBarButtonUp forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
         [self.navigationItem.leftBarButtonItem setBackgroundImage:navBarButtonHover forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
     }
-    
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Clear all" style:UIBarButtonItemStylePlain target:self action:@selector(clearAll)];
+
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"nav_bar_right_button_title", @"Nav. bar right button title") style:UIBarButtonItemStylePlain target:self action:@selector(clearAll)];
     [self.navigationItem.rightBarButtonItem setBackgroundImage:navBarButtonUp forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     [self.navigationItem.rightBarButtonItem setBackgroundImage:navBarButtonHover forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
 }
