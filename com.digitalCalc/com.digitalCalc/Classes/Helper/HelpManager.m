@@ -175,6 +175,8 @@
                 
                 helpLabel.text = [NSString stringWithFormat:@"%@ %@ %@ %@", NSLocalizedString(@"help_text_prefix", @"Help label text prefix"), secondArgumentData, NSLocalizedString(@"help_text_plural_suffix", @"Help label plural line suffix"), endString];
             }
+            
+            [LayoutPresenter resizeFontForLabel:helpLabel maxSize:40 minSize:20];
 
             break;
             

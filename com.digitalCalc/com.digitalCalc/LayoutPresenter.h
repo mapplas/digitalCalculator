@@ -55,4 +55,6 @@
 
 - (void)rankingControllerPopped;
 
++ (void)resizeFontForLabel:(UILabel*)aLabel maxSize:(int)maxSize minSize:(int)minSize;
+
 @end

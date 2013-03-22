@@ -18,6 +18,7 @@
 @implementation InAppPurchaseViewController
 
 @synthesize buyButton;
+@synthesize buyLabel;
 @synthesize products = _products;
 
 - (void)viewDidLoad {
@@ -28,6 +29,10 @@
     
     [self.navigationItem.leftBarButtonItem setBackgroundImage:[UIImage imageNamed:@"btn_menu_up.png"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     [self.navigationItem.leftBarButtonItem setBackgroundImage:[UIImage imageNamed:@"btn_menu_hover.png"] forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
+    
+    [self.buyLabel setFont:[UIFont fontWithName:@"Blokletters Potlood" size:self.buyLabel.font.pointSize]];
+    self.buyLabel.text = NSLocalizedString(@"in_app_purchase_buy_text_label_title", @"In app purchase - Buy text");
+    [LayoutPresenter resizeFontForLabel:self.buyLabel maxSize:40 minSize:25];
 }
 
 - (void)buyButtonPressed:(id)sender {
