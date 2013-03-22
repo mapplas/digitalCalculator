@@ -66,7 +66,7 @@
 - (void)initInAppPurchaseConfig {
     // If user has same accout on different devices, in-app purchases are shown on both devices
     //    SHOWS POPUP!!
-    //    [[GeniusLevelIAPHelper sharedInstance] restoreCompletedTransactions];
+//    [[GeniusLevelIAPHelper sharedInstance] restoreCompletedTransactions];
     
     // In-app purchase products request
     _products = nil;
