@@ -124,24 +124,31 @@
     if (indexPath.section == 0) {
         switch (indexPath.row) {
             case 0:
-                [mainViewController setLevel:LEVEL_LOW];
+                if (!mainViewController.mode == CALCULATOR_MODE_GAME) {
+                    [mainViewController setLevel:LEVEL_LOW];
+                } else {
+                    [self deselectRowandSelectCorrectOne:indexPath];
+                }
+                
                 break;
                 
             case 1:
-                if ([[GeniusLevelIAPHelper sharedInstance] productPurchased:NSLocalizedString(@"in_app_purchase_genius_level_identifier", @"In app purchase - Genius level product identifier")]) {
-                    [mainViewController setLevel:LEVEL_MEDIUM];
-                } else {
-                    InAppPurchaseViewController *inAppPurchaseViewController = nil;
-                    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-                        inAppPurchaseViewController = [[InAppPurchaseViewController alloc] initWithNibName:@"InAppPurchaseViewController_iPhone" bundle:nil];
+                if (!mainViewController.mode == CALCULATOR_MODE_GAME) {
+                    if ([[GeniusLevelIAPHelper sharedInstance] productPurchased:NSLocalizedString(@"in_app_purchase_genius_level_identifier", @"In app purchase - Genius level product identifier")]) {
+                        [mainViewController setLevel:LEVEL_MEDIUM];
                     } else {
-                        inAppPurchaseViewController = [[InAppPurchaseViewController alloc] initWithNibName:@"InAppPurchaseViewController_iPad" bundle:nil];
-                    }
+                        InAppPurchaseViewController *inAppPurchaseViewController = nil;
+                        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+                            inAppPurchaseViewController = [[InAppPurchaseViewController alloc] initWithNibName:@"InAppPurchaseViewController_iPhone" bundle:nil];
+                        } else {
+                            inAppPurchaseViewController = [[InAppPurchaseViewController alloc] initWithNibName:@"InAppPurchaseViewController_iPad" bundle:nil];
+                        }
                     
-                    UINavigationController *controller = [[UINavigationController alloc] initWithRootViewController:inAppPurchaseViewController];
-                    inAppPurchaseViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-                    inAppPurchaseViewController.products = products;
-                    [mainViewController presentModalViewController:controller animated:YES];
+                        UINavigationController *controller = [[UINavigationController alloc] initWithRootViewController:inAppPurchaseViewController];
+                        inAppPurchaseViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+                        inAppPurchaseViewController.products = products;
+                        [mainViewController presentModalViewController:controller animated:YES];
+                    }
                 }
 
                 break;
