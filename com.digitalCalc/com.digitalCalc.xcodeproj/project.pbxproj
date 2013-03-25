@@ -76,6 +76,18 @@
 		7F0BC29D1700806700E2A56E /* HowToGalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0BC29B1700806700E2A56E /* HowToGalleryViewController.m */; };
 		7F0BC2AF1700922E00E2A56E /* HowToGalleryViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F0BC2AB1700922E00E2A56E /* HowToGalleryViewController_iPad.xib */; };
 		7F0BC2B01700922E00E2A56E /* HowToGalleryViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F0BC2AD1700922E00E2A56E /* HowToGalleryViewController_iPhone.xib */; };
+		7F0BC2B5170093CD00E2A56E /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0BC2B4170093CD00E2A56E /* UIImage+Resize.m */; };
+		7F0BC2C317009CBB00E2A56E /* tutorial_img1_es.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F0BC2B817009CBB00E2A56E /* tutorial_img1_es.png */; };
+		7F0BC2C417009CBB00E2A56E /* tutorial_img2_es.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F0BC2B917009CBB00E2A56E /* tutorial_img2_es.png */; };
+		7F0BC2C517009CBB00E2A56E /* tutorial_img3_es.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F0BC2BA17009CBB00E2A56E /* tutorial_img3_es.png */; };
+		7F0BC2C617009CBB00E2A56E /* tutorial_img4_es.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F0BC2BB17009CBB00E2A56E /* tutorial_img4_es.png */; };
+		7F0BC2C717009CBB00E2A56E /* tutorial_img5_es.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F0BC2BC17009CBB00E2A56E /* tutorial_img5_es.png */; };
+		7F0BC2C817009CBB00E2A56E /* tutorial_img6_es.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F0BC2BD17009CBB00E2A56E /* tutorial_img6_es.png */; };
+		7F0BC2C917009CBB00E2A56E /* tutorial_img7_es.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F0BC2BE17009CBB00E2A56E /* tutorial_img7_es.png */; };
+		7F0BC2CA17009CBB00E2A56E /* tutorial_img8_es.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F0BC2BF17009CBB00E2A56E /* tutorial_img8_es.png */; };
+		7F0BC2CB17009CBB00E2A56E /* tutorial_img9_es.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F0BC2C017009CBB00E2A56E /* tutorial_img9_es.png */; };
+		7F0BC2CC17009CBB00E2A56E /* tutorial_img10_es.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F0BC2C117009CBB00E2A56E /* tutorial_img10_es.png */; };
+		7F0BC2CD17009CBB00E2A56E /* tutorial_img11_es.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F0BC2C217009CBB00E2A56E /* tutorial_img11_es.png */; };
 		7F17CD0A16E8F82A008584CA /* SwitchedMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F17CD0916E8F82A008584CA /* SwitchedMenuCell.m */; };
 		7F17CD0D16E8F845008584CA /* SwitchedMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F17CD0B16E8F845008584CA /* SwitchedMenuCell.xib */; };
 		7F17E7B016E8836B009B742F /* ArgumentLabelAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F17E7AF16E8836B009B742F /* ArgumentLabelAnimator.m */; };
@@ -283,6 +295,19 @@
 		7F0BC2AE1700922E00E2A56E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HowToGalleryViewController_iPhone.xib; sourceTree = "<group>"; };
 		7F0BC2B11700923700E2A56E /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/HowToGalleryViewController_iPad.xib; sourceTree = "<group>"; };
 		7F0BC2B21700923700E2A56E /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/HowToGalleryViewController_iPhone.xib; sourceTree = "<group>"; };
+		7F0BC2B3170093CD00E2A56E /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Resize.h"; path = "Classes/Third party/UIImage+Resize.h"; sourceTree = "<group>"; };
+		7F0BC2B4170093CD00E2A56E /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Resize.m"; path = "Classes/Third party/UIImage+Resize.m"; sourceTree = "<group>"; };
+		7F0BC2B817009CBB00E2A56E /* tutorial_img1_es.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tutorial_img1_es.png; path = Resources/tutorial_img1_es.png; sourceTree = "<group>"; };
+		7F0BC2B917009CBB00E2A56E /* tutorial_img2_es.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tutorial_img2_es.png; path = Resources/tutorial_img2_es.png; sourceTree = "<group>"; };
+		7F0BC2BA17009CBB00E2A56E /* tutorial_img3_es.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tutorial_img3_es.png; path = Resources/tutorial_img3_es.png; sourceTree = "<group>"; };
+		7F0BC2BB17009CBB00E2A56E /* tutorial_img4_es.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tutorial_img4_es.png; path = Resources/tutorial_img4_es.png; sourceTree = "<group>"; };
+		7F0BC2BC17009CBB00E2A56E /* tutorial_img5_es.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tutorial_img5_es.png; path = Resources/tutorial_img5_es.png; sourceTree = "<group>"; };
+		7F0BC2BD17009CBB00E2A56E /* tutorial_img6_es.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tutorial_img6_es.png; path = Resources/tutorial_img6_es.png; sourceTree = "<group>"; };
+		7F0BC2BE17009CBB00E2A56E /* tutorial_img7_es.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tutorial_img7_es.png; path = Resources/tutorial_img7_es.png; sourceTree = "<group>"; };
+		7F0BC2BF17009CBB00E2A56E /* tutorial_img8_es.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tutorial_img8_es.png; path = Resources/tutorial_img8_es.png; sourceTree = "<group>"; };
+		7F0BC2C017009CBB00E2A56E /* tutorial_img9_es.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tutorial_img9_es.png; path = Resources/tutorial_img9_es.png; sourceTree = "<group>"; };
+		7F0BC2C117009CBB00E2A56E /* tutorial_img10_es.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tutorial_img10_es.png; path = Resources/tutorial_img10_es.png; sourceTree = "<group>"; };
+		7F0BC2C217009CBB00E2A56E /* tutorial_img11_es.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tutorial_img11_es.png; path = Resources/tutorial_img11_es.png; sourceTree = "<group>"; };
 		7F17CD0816E8F82A008584CA /* SwitchedMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchedMenuCell.h; sourceTree = "<group>"; };
 		7F17CD0916E8F82A008584CA /* SwitchedMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchedMenuCell.m; sourceTree = "<group>"; };
 		7F17CD0C16E8F845008584CA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SwitchedMenuCell.xib; sourceTree = "<group>"; };
@@ -515,17 +540,8 @@
 		7F0BC28217007DF800E2A56E /* Gallery */ = {
 			isa = PBXGroup;
 			children = (
-				7F0BC28317007F0B00E2A56E /* tutorial_img1_en.png */,
-				7F0BC28417007F0B00E2A56E /* tutorial_img2_en.png */,
-				7F0BC28517007F0B00E2A56E /* tutorial_img3_en.png */,
-				7F0BC28617007F0B00E2A56E /* tutorial_img4_en.png */,
-				7F0BC28717007F0B00E2A56E /* tutorial_img5_en.png */,
-				7F0BC28817007F0B00E2A56E /* tutorial_img6_en.png */,
-				7F0BC28917007F0B00E2A56E /* tutorial_img7_en.png */,
-				7F0BC28A17007F0B00E2A56E /* tutorial_img8_en.png */,
-				7F0BC28B17007F0B00E2A56E /* tutorial_img9_en.png */,
-				7F0BC28C17007F0B00E2A56E /* tutorial_img10_en.png */,
-				7F0BC28D17007F0B00E2A56E /* tutorial_img11_en.png */,
+				7F0BC2B617009C9B00E2A56E /* en */,
+				7F0BC2B717009C9F00E2A56E /* es */,
 			);
 			name = Gallery;
 			sourceTree = "<group>";
@@ -539,6 +555,42 @@
 				7F0BC2AD1700922E00E2A56E /* HowToGalleryViewController_iPhone.xib */,
 			);
 			name = Gallery;
+			sourceTree = "<group>";
+		};
+		7F0BC2B617009C9B00E2A56E /* en */ = {
+			isa = PBXGroup;
+			children = (
+				7F0BC28317007F0B00E2A56E /* tutorial_img1_en.png */,
+				7F0BC28417007F0B00E2A56E /* tutorial_img2_en.png */,
+				7F0BC28517007F0B00E2A56E /* tutorial_img3_en.png */,
+				7F0BC28617007F0B00E2A56E /* tutorial_img4_en.png */,
+				7F0BC28717007F0B00E2A56E /* tutorial_img5_en.png */,
+				7F0BC28817007F0B00E2A56E /* tutorial_img6_en.png */,
+				7F0BC28917007F0B00E2A56E /* tutorial_img7_en.png */,
+				7F0BC28A17007F0B00E2A56E /* tutorial_img8_en.png */,
+				7F0BC28B17007F0B00E2A56E /* tutorial_img9_en.png */,
+				7F0BC28C17007F0B00E2A56E /* tutorial_img10_en.png */,
+				7F0BC28D17007F0B00E2A56E /* tutorial_img11_en.png */,
+			);
+			name = en;
+			sourceTree = "<group>";
+		};
+		7F0BC2B717009C9F00E2A56E /* es */ = {
+			isa = PBXGroup;
+			children = (
+				7F0BC2B817009CBB00E2A56E /* tutorial_img1_es.png */,
+				7F0BC2B917009CBB00E2A56E /* tutorial_img2_es.png */,
+				7F0BC2BA17009CBB00E2A56E /* tutorial_img3_es.png */,
+				7F0BC2BB17009CBB00E2A56E /* tutorial_img4_es.png */,
+				7F0BC2BC17009CBB00E2A56E /* tutorial_img5_es.png */,
+				7F0BC2BD17009CBB00E2A56E /* tutorial_img6_es.png */,
+				7F0BC2BE17009CBB00E2A56E /* tutorial_img7_es.png */,
+				7F0BC2BF17009CBB00E2A56E /* tutorial_img8_es.png */,
+				7F0BC2C017009CBB00E2A56E /* tutorial_img9_es.png */,
+				7F0BC2C117009CBB00E2A56E /* tutorial_img10_es.png */,
+				7F0BC2C217009CBB00E2A56E /* tutorial_img11_es.png */,
+			);
+			name = es;
 			sourceTree = "<group>";
 		};
 		7F17CD0416E8F7DA008584CA /* Cells */ = {
@@ -574,6 +626,8 @@
 		7F17E7B716E8B8ED009B742F /* Third party */ = {
 			isa = PBXGroup;
 			children = (
+				7F0BC2B3170093CD00E2A56E /* UIImage+Resize.h */,
+				7F0BC2B4170093CD00E2A56E /* UIImage+Resize.m */,
 				7F4F593F16F0C52700241DC3 /* PKRevealController */,
 				7F097CF916F71D2600BCD31B /* RegexKit */,
 			);
@@ -1135,6 +1189,17 @@
 				7F0BC29817007F0B00E2A56E /* tutorial_img11_en.png in Resources */,
 				7F0BC2AF1700922E00E2A56E /* HowToGalleryViewController_iPad.xib in Resources */,
 				7F0BC2B01700922E00E2A56E /* HowToGalleryViewController_iPhone.xib in Resources */,
+				7F0BC2C317009CBB00E2A56E /* tutorial_img1_es.png in Resources */,
+				7F0BC2C417009CBB00E2A56E /* tutorial_img2_es.png in Resources */,
+				7F0BC2C517009CBB00E2A56E /* tutorial_img3_es.png in Resources */,
+				7F0BC2C617009CBB00E2A56E /* tutorial_img4_es.png in Resources */,
+				7F0BC2C717009CBB00E2A56E /* tutorial_img5_es.png in Resources */,
+				7F0BC2C817009CBB00E2A56E /* tutorial_img6_es.png in Resources */,
+				7F0BC2C917009CBB00E2A56E /* tutorial_img7_es.png in Resources */,
+				7F0BC2CA17009CBB00E2A56E /* tutorial_img8_es.png in Resources */,
+				7F0BC2CB17009CBB00E2A56E /* tutorial_img9_es.png in Resources */,
+				7F0BC2CC17009CBB00E2A56E /* tutorial_img10_es.png in Resources */,
+				7F0BC2CD17009CBB00E2A56E /* tutorial_img11_es.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1186,6 +1251,7 @@
 				7FA9B15916F9E3FA00BB4991 /* GeniusLevelIAPHelper.m in Sources */,
 				7FAEB35E16FA0514001CBDC7 /* InAppPurchaseViewController.m in Sources */,
 				7F0BC29D1700806700E2A56E /* HowToGalleryViewController.m in Sources */,
+				7F0BC2B5170093CD00E2A56E /* UIImage+Resize.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

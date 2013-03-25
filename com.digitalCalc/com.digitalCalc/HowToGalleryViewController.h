@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "Constants.h"
+#import "UIImage+Resize.h"
+#import "deviceChooser.h"
 
 @interface HowToGalleryViewController : UIViewController <UIScrollViewDelegate> {
     NSMutableArray *imagesArray;
+    DeviceChooser *deviceChooser;
 }
 
 @property (nonatomic, strong) IBOutlet UIView *background;

@@ -31,7 +31,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"in_app_purchase_nav_left_button_title", @"In app purchase - Nav controller left button title") style:UIBarButtonItemStyleBordered target:self action:@selector(pop)];
+    deviceChooser = [[DeviceChooser alloc] init];
+
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"gallery_nav_left_button_title", @"Gallery - Nav controller left button title") style:UIBarButtonItemStyleBordered target:self action:@selector(pop)];
     
     [self.navigationItem.leftBarButtonItem setBackgroundImage:[UIImage imageNamed:@"btn_menu_up.png"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     [self.navigationItem.leftBarButtonItem setBackgroundImage:[UIImage imageNamed:@"btn_menu_hover.png"] forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
@@ -41,18 +43,35 @@
 }
 
 - (void)initArray {
-    imagesArray = [[NSMutableArray alloc] initWithObjects:[UIImage imageNamed:@"tutorial_img1_en.png"],
-                   [UIImage imageNamed:@"tutorial_img2_en.png"],
-                   [UIImage imageNamed:@"tutorial_img3_en.png"],
-                   [UIImage imageNamed:@"tutorial_img4_en.png"],
-                   [UIImage imageNamed:@"tutorial_img5_en.png"],
-                   [UIImage imageNamed:@"tutorial_img6_en.png"],
-                   [UIImage imageNamed:@"tutorial_img7_en.png"],
-                   [UIImage imageNamed:@"tutorial_img8_en.png"],
-                   [UIImage imageNamed:@"tutorial_img9_en.png"],
-                   [UIImage imageNamed:@"tutorial_img10_en.png"],
-                   [UIImage imageNamed:@"tutorial_img11_en.png"],
-                   nil];
+    if ([deviceChooser isSpanish]) {
+        imagesArray = [[NSMutableArray alloc] initWithObjects:
+                       [UIImage imageNamed:@"tutorial_img1_es.png"],
+                       [UIImage imageNamed:@"tutorial_img2_es.png"],
+                       [UIImage imageNamed:@"tutorial_img3_es.png"],
+                       [UIImage imageNamed:@"tutorial_img4_es.png"],
+                       [UIImage imageNamed:@"tutorial_img5_es.png"],
+                       [UIImage imageNamed:@"tutorial_img6_es.png"],
+                       [UIImage imageNamed:@"tutorial_img7_es.png"],
+                       [UIImage imageNamed:@"tutorial_img8_es.png"],
+                       [UIImage imageNamed:@"tutorial_img9_es.png"],
+                       [UIImage imageNamed:@"tutorial_img10_es.png"],
+                       [UIImage imageNamed:@"tutorial_img11_es.png"],
+                       nil];
+    } else {
+        imagesArray = [[NSMutableArray alloc] initWithObjects:
+                       [UIImage imageNamed:@"tutorial_img1_en.png"],
+                       [UIImage imageNamed:@"tutorial_img2_en.png"],
+                       [UIImage imageNamed:@"tutorial_img3_en.png"],
+                       [UIImage imageNamed:@"tutorial_img4_en.png"],
+                       [UIImage imageNamed:@"tutorial_img5_en.png"],
+                       [UIImage imageNamed:@"tutorial_img6_en.png"],
+                       [UIImage imageNamed:@"tutorial_img7_en.png"],
+                       [UIImage imageNamed:@"tutorial_img8_en.png"],
+                       [UIImage imageNamed:@"tutorial_img9_en.png"],
+                       [UIImage imageNamed:@"tutorial_img10_en.png"],
+                       [UIImage imageNamed:@"tutorial_img11_en.png"],
+                       nil];
+    }
 }
 
 - (void)configure {
@@ -69,10 +88,15 @@
     for (UIImage *currentImage in imagesArray) {
         
         if (currentImage != nil) {
-            UIImageView *imageView = [[UIImageView alloc] initWithImage:currentImage];
-            
-            //            imageView.image = [resizer resizeImageForFullscreenView:currentImage];
-            
+            UIImage *resizedImage = nil;
+            if ([deviceChooser isPad]) {
+                resizedImage = [currentImage resizedImage:CGSizeMake(currentImage.size.width / 1.6, currentImage.size.height / 1.6) interpolationQuality:kCGInterpolationHigh];
+            } else {
+                resizedImage = nil;
+            }
+
+            UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(contentOffset, 0, scroll.frame.size.width, scroll.frame.size.height)];
+            imageView.image = resizedImage;
             imageView.contentMode = UIViewContentModeCenter;
             
             [self.scroll addSubview:imageView];

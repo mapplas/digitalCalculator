@@ -131,3 +131,6 @@
 
 /* In app purchase OK and NOK alert button title */
 "in_app_purchase_ok_nok_button" = "OK";
+
+/* Gallery - Nav controller left button title */
+"gallery_nav_left_button_title" = "Skip";
