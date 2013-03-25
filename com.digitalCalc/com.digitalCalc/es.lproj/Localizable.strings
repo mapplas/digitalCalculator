@@ -72,6 +72,15 @@
 /* Menu section settings help enabled */
 "menu_section_settings_help_enabled" = "Ayuda activada";
 
+/* Menu section settings game mode change */
+"menu_section_settings_game_mode_change" = "Cambiar modo juego";
+
+/* Menu section settings ranking */
+"menu_section_settings_ranking" = "Ranking";
+
+/* Menu section settings tutorial */
+"menu_section_settings_how_to" = "Cómo jugar";
+
 /* Result ckecked OK text in learn mode */
 "result_checked_ok_learn_mode" = "BIEN!!! Otra más? Toca la pantalla!";
 
