@@ -43,25 +43,12 @@
 								<string key="NSFrame">{{493, 668}, {38, 36}}</string>
 								<reference key="NSSuperview" ref="21845232"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<int key="IBUIContentHorizontalAlignment">0</int>
 								<int key="IBUIContentVerticalAlignment">0</int>
 								<int key="IBUINumberOfPages">3</int>
-							</object>
-							<object class="IBUIScrollView" id="956040448">
-								<reference key="NSNextResponder" ref="21845232"/>
-								<int key="NSvFlags">293</int>
-								<string key="NSFrame">{{87, 149}, {850, 426}}</string>
-								<reference key="NSSuperview" ref="21845232"/>
-								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="1032487632"/>
-								<string key="NSReuseIdentifierKey">_NS:9</string>
-								<bool key="IBUIClipsSubviews">YES</bool>
-								<bool key="IBUIMultipleTouchEnabled">YES</bool>
-								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
 						</array>
 						<string key="NSFrameSize">{1024, 724}</string>
@@ -90,6 +77,18 @@
 							<string key="IBUIDisplayName">Retina 4 Full Screen</string>
 							<int key="IBUIType">2</int>
 						</object>
+						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+					</object>
+					<object class="IBUIScrollView" id="956040448">
+						<reference key="NSNextResponder" ref="821437928"/>
+						<int key="NSvFlags">293</int>
+						<string key="NSFrame">{{87, 149}, {850, 426}}</string>
+						<reference key="NSSuperview" ref="821437928"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="1032487632"/>
+						<string key="NSReuseIdentifierKey">_NS:9</string>
+						<bool key="IBUIClipsSubviews">YES</bool>
+						<bool key="IBUIMultipleTouchEnabled">YES</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
 				</array>
@@ -180,6 +179,7 @@
 						<reference key="object" ref="821437928"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="21845232"/>
+							<reference ref="956040448"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -188,7 +188,6 @@
 						<reference key="object" ref="21845232"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="1032487632"/>
-							<reference ref="956040448"/>
 						</array>
 						<reference key="parent" ref="821437928"/>
 						<string key="objectName">Background</string>
@@ -201,7 +200,7 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">31</int>
 						<reference key="object" ref="956040448"/>
-						<reference key="parent" ref="21845232"/>
+						<reference key="parent" ref="821437928"/>
 					</object>
 				</array>
 			</object>
