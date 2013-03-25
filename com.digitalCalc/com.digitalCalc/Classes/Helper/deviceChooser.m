@@ -18,7 +18,8 @@
 }
 
 - (BOOL)isSpanish {
-    return [[[NSLocale currentLocale] objectForKey: NSLocaleLanguageCode] isEqualToString:@"es"];
+    NSArray *preferredLanguages = [NSLocale preferredLanguages];
+    return [[preferredLanguages objectAtIndex:0] isEqualToString:@"es"];
 }
 
 @end

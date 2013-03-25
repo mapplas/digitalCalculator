@@ -279,8 +279,8 @@
         [self.checkButton setImage:[UIImage imageNamed:@"btn_check_down.png"] forState:UIControlStateHighlighted];
         
         if ([chooser isSpanish]) {
-            [checkButton setImage:[UIImage imageNamed:@"btn_comprobar_up.png"] forState:UIControlStateNormal];
-            [checkButton setImage:[UIImage imageNamed:@"btn_comprobar_down.png"] forState:UIControlStateHighlighted];
+            [self.checkButton setImage:[UIImage imageNamed:@"btn_comprobar_up.png"] forState:UIControlStateNormal];
+            [self.checkButton setImage:[UIImage imageNamed:@"btn_comprobar_down.png"] forState:UIControlStateHighlighted];
         }
     }
     else {
@@ -294,8 +294,8 @@
         [self.checkButton setImage:[UIImage imageNamed:@"btn_check_down_white.png"] forState:UIControlStateHighlighted];
         
         if ([chooser isSpanish]) {
-            [checkButton setImage:[UIImage imageNamed:@"btn_comprobar_up_white.png"] forState:UIControlStateNormal];
-            [checkButton setImage:[UIImage imageNamed:@"btn_comprobar_down_white.png"] forState:UIControlStateHighlighted];
+            [self.checkButton setImage:[UIImage imageNamed:@"btn_comprobar_up_white.png"] forState:UIControlStateNormal];
+            [self.checkButton setImage:[UIImage imageNamed:@"btn_comprobar_down_white.png"] forState:UIControlStateHighlighted];
         }
     }
 }
