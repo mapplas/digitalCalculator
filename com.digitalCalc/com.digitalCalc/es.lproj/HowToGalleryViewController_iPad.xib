@@ -12,6 +12,7 @@
 		</object>
 		<array key="IBDocument.IntegratedClassDependencies">
 			<string>IBProxyObject</string>
+			<string>IBUIImageView</string>
 			<string>IBUIPageControl</string>
 			<string>IBUIScrollView</string>
 			<string>IBUIView</string>
@@ -36,6 +37,21 @@
 				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">274</int>
 				<array class="NSMutableArray" key="NSSubviews">
+					<object class="IBUIImageView" id="561265989">
+						<reference key="NSNextResponder" ref="124247335"/>
+						<int key="NSvFlags">292</int>
+						<string key="NSFrameSize">{1024, 724}</string>
+						<reference key="NSSuperview" ref="124247335"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="290352738"/>
+						<string key="NSReuseIdentifierKey">_NS:9</string>
+						<bool key="IBUIUserInteractionEnabled">NO</bool>
+						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+						<object class="NSCustomResource" key="IBUIImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">bkg_tutorial.png</string>
+						</object>
+					</object>
 					<object class="IBUIView" id="290352738">
 						<reference key="NSNextResponder" ref="124247335"/>
 						<int key="NSvFlags">293</int>
@@ -47,6 +63,7 @@
 								<string key="NSFrame">{{493, 668}, {38, 36}}</string>
 								<reference key="NSSuperview" ref="290352738"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="826566137"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -58,7 +75,7 @@
 						<string key="NSFrameSize">{1024, 724}</string>
 						<reference key="NSSuperview" ref="124247335"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="826566137"/>
+						<reference key="NSNextKeyView" ref="356620257"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">3</int>
@@ -89,7 +106,7 @@
 						<string key="NSFrame">{{87, 149}, {850, 426}}</string>
 						<reference key="NSSuperview" ref="124247335"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="356620257"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<bool key="IBUIMultipleTouchEnabled">YES</bool>
@@ -99,7 +116,7 @@
 				<string key="NSFrameSize">{1024, 724}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
-				<reference key="NSNextKeyView" ref="290352738"/>
+				<reference key="NSNextKeyView" ref="561265989"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">3</int>
@@ -180,6 +197,7 @@
 						<array class="NSMutableArray" key="children">
 							<reference ref="290352738"/>
 							<reference ref="826566137"/>
+							<reference ref="561265989"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -202,6 +220,11 @@
 						<reference key="object" ref="826566137"/>
 						<reference key="parent" ref="124247335"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">41</int>
+						<reference key="object" ref="561265989"/>
+						<reference key="parent" ref="124247335"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -213,12 +236,13 @@
 				<string key="33.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="35.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="36.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="41.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			</dictionary>
 			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">40</int>
+			<int key="maxID">41</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -255,6 +279,10 @@
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaTouchFramework</string>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
+		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
+			<string key="NS.key.0">bkg_tutorial.png</string>
+			<string key="NS.object.0">{654, 654}</string>
+		</object>
 		<string key="IBCocoaTouchPluginVersion">2083</string>
 	</data>
 </archive>

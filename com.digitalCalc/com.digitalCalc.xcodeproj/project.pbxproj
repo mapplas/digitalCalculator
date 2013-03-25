@@ -144,6 +144,8 @@
 		7FAEB36616FA0576001CBDC7 /* InAppPurchaseViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FAEB36216FA0576001CBDC7 /* InAppPurchaseViewController_iPad.xib */; };
 		7FAEB36716FA0576001CBDC7 /* InAppPurchaseViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FAEB36416FA0576001CBDC7 /* InAppPurchaseViewController_iPhone.xib */; };
 		7FAEB36B16FA0CEE001CBDC7 /* CustomSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAEB36A16FA0CEE001CBDC7 /* CustomSlider.m */; };
+		7FB5608F1700A525004CD095 /* bkg_tutorial.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FB5608D1700A525004CD095 /* bkg_tutorial.png */; };
+		7FB560901700A525004CD095 /* bkg_tutorial@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FB5608E1700A525004CD095 /* bkg_tutorial@2X.png */; };
 		7FD4AD7E16E734C700EB7CC1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FD4AD7D16E734C700EB7CC1 /* UIKit.framework */; };
 		7FD4AD8016E734C700EB7CC1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FD4AD7F16E734C700EB7CC1 /* Foundation.framework */; };
 		7FD4AD8216E734C700EB7CC1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FD4AD8116E734C700EB7CC1 /* CoreGraphics.framework */; };
@@ -380,6 +382,8 @@
 		7FAEB36516FA0576001CBDC7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/InAppPurchaseViewController_iPhone.xib; sourceTree = "<group>"; };
 		7FAEB36916FA0CEE001CBDC7 /* CustomSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomSlider.h; path = Classes/CustomSlider.h; sourceTree = "<group>"; };
 		7FAEB36A16FA0CEE001CBDC7 /* CustomSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomSlider.m; path = Classes/CustomSlider.m; sourceTree = "<group>"; };
+		7FB5608D1700A525004CD095 /* bkg_tutorial.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bkg_tutorial.png; path = Resources/bkg_tutorial.png; sourceTree = "<group>"; };
+		7FB5608E1700A525004CD095 /* bkg_tutorial@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bkg_tutorial@2X.png"; path = "Resources/bkg_tutorial@2X.png"; sourceTree = "<group>"; };
 		7FD4AD7A16E734C700EB7CC1 /* Genius Multiplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Genius Multiplication.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FD4AD7D16E734C700EB7CC1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7FD4AD7F16E734C700EB7CC1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -752,6 +756,8 @@
 				7F4F594716F0C73C00241DC3 /* bkg_nav_bar@2x.png */,
 				7F0BC2711700620B00E2A56E /* bkg_nav_bar_iPad.png */,
 				7F0BC2721700620B00E2A56E /* bkg_nav_bar_iPad@2x.png */,
+				7FB5608D1700A525004CD095 /* bkg_tutorial.png */,
+				7FB5608E1700A525004CD095 /* bkg_tutorial@2X.png */,
 				7FFB8C3116F1DDD1008298DD /* bkg_segment_separator.png */,
 				7FF26AAC16F8606400AE541F /* bkg_slider_handle.png */,
 				7FF26AAA16F85EEE00AE541F /* bkg_slider_handle@2x.png */,
@@ -1200,6 +1206,8 @@
 				7F0BC2CB17009CBB00E2A56E /* tutorial_img9_es.png in Resources */,
 				7F0BC2CC17009CBB00E2A56E /* tutorial_img10_es.png in Resources */,
 				7F0BC2CD17009CBB00E2A56E /* tutorial_img11_es.png in Resources */,
+				7FB5608F1700A525004CD095 /* bkg_tutorial.png in Resources */,
+				7FB560901700A525004CD095 /* bkg_tutorial@2X.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
