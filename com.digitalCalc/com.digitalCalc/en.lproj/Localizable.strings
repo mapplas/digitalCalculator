@@ -25,10 +25,10 @@
 "help_text_prefix" = "Draw";
 
 /* Help label singular line suffix */
-"help_text_singular_suffix" = "line";
+"help_text_singular_suffix" = "diagonal line";
 
 /* Help label plural line suffix */
-"help_text_plural_suffix" = "lines";
+"help_text_plural_suffix" = "diagonal lines";
 
 /* Help label second arg sing-sing suffix */
 "help_text_sing_sing_suffix" = "crossing the previous";
