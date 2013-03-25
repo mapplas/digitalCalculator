@@ -62,6 +62,20 @@
 		7F0BC27C1700697800E2A56E /* bkg_logo_iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F0BC2781700697700E2A56E /* bkg_logo_iPad@2x.png */; };
 		7F0BC27D1700697800E2A56E /* bkg_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F0BC2791700697800E2A56E /* bkg_logo.png */; };
 		7F0BC27E1700697800E2A56E /* bkg_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F0BC27A1700697800E2A56E /* bkg_logo@2x.png */; };
+		7F0BC28E17007F0B00E2A56E /* tutorial_img1_en.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F0BC28317007F0B00E2A56E /* tutorial_img1_en.png */; };
+		7F0BC28F17007F0B00E2A56E /* tutorial_img2_en.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F0BC28417007F0B00E2A56E /* tutorial_img2_en.png */; };
+		7F0BC29017007F0B00E2A56E /* tutorial_img3_en.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F0BC28517007F0B00E2A56E /* tutorial_img3_en.png */; };
+		7F0BC29117007F0B00E2A56E /* tutorial_img4_en.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F0BC28617007F0B00E2A56E /* tutorial_img4_en.png */; };
+		7F0BC29217007F0B00E2A56E /* tutorial_img5_en.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F0BC28717007F0B00E2A56E /* tutorial_img5_en.png */; };
+		7F0BC29317007F0B00E2A56E /* tutorial_img6_en.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F0BC28817007F0B00E2A56E /* tutorial_img6_en.png */; };
+		7F0BC29417007F0B00E2A56E /* tutorial_img7_en.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F0BC28917007F0B00E2A56E /* tutorial_img7_en.png */; };
+		7F0BC29517007F0B00E2A56E /* tutorial_img8_en.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F0BC28A17007F0B00E2A56E /* tutorial_img8_en.png */; };
+		7F0BC29617007F0B00E2A56E /* tutorial_img9_en.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F0BC28B17007F0B00E2A56E /* tutorial_img9_en.png */; };
+		7F0BC29717007F0B00E2A56E /* tutorial_img10_en.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F0BC28C17007F0B00E2A56E /* tutorial_img10_en.png */; };
+		7F0BC29817007F0B00E2A56E /* tutorial_img11_en.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F0BC28D17007F0B00E2A56E /* tutorial_img11_en.png */; };
+		7F0BC29D1700806700E2A56E /* HowToGalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0BC29B1700806700E2A56E /* HowToGalleryViewController.m */; };
+		7F0BC2AF1700922E00E2A56E /* HowToGalleryViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F0BC2AB1700922E00E2A56E /* HowToGalleryViewController_iPad.xib */; };
+		7F0BC2B01700922E00E2A56E /* HowToGalleryViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F0BC2AD1700922E00E2A56E /* HowToGalleryViewController_iPhone.xib */; };
 		7F17CD0A16E8F82A008584CA /* SwitchedMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F17CD0916E8F82A008584CA /* SwitchedMenuCell.m */; };
 		7F17CD0D16E8F845008584CA /* SwitchedMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F17CD0B16E8F845008584CA /* SwitchedMenuCell.xib */; };
 		7F17E7B016E8836B009B742F /* ArgumentLabelAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F17E7AF16E8836B009B742F /* ArgumentLabelAnimator.m */; };
@@ -252,6 +266,23 @@
 		7F0BC2781700697700E2A56E /* bkg_logo_iPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bkg_logo_iPad@2x.png"; path = "Resources/bkg_logo_iPad@2x.png"; sourceTree = "<group>"; };
 		7F0BC2791700697800E2A56E /* bkg_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bkg_logo.png; path = Resources/bkg_logo.png; sourceTree = "<group>"; };
 		7F0BC27A1700697800E2A56E /* bkg_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bkg_logo@2x.png"; path = "Resources/bkg_logo@2x.png"; sourceTree = "<group>"; };
+		7F0BC28317007F0B00E2A56E /* tutorial_img1_en.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tutorial_img1_en.png; path = Resources/tutorial_img1_en.png; sourceTree = "<group>"; };
+		7F0BC28417007F0B00E2A56E /* tutorial_img2_en.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tutorial_img2_en.png; path = Resources/tutorial_img2_en.png; sourceTree = "<group>"; };
+		7F0BC28517007F0B00E2A56E /* tutorial_img3_en.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tutorial_img3_en.png; path = Resources/tutorial_img3_en.png; sourceTree = "<group>"; };
+		7F0BC28617007F0B00E2A56E /* tutorial_img4_en.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tutorial_img4_en.png; path = Resources/tutorial_img4_en.png; sourceTree = "<group>"; };
+		7F0BC28717007F0B00E2A56E /* tutorial_img5_en.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tutorial_img5_en.png; path = Resources/tutorial_img5_en.png; sourceTree = "<group>"; };
+		7F0BC28817007F0B00E2A56E /* tutorial_img6_en.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tutorial_img6_en.png; path = Resources/tutorial_img6_en.png; sourceTree = "<group>"; };
+		7F0BC28917007F0B00E2A56E /* tutorial_img7_en.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tutorial_img7_en.png; path = Resources/tutorial_img7_en.png; sourceTree = "<group>"; };
+		7F0BC28A17007F0B00E2A56E /* tutorial_img8_en.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tutorial_img8_en.png; path = Resources/tutorial_img8_en.png; sourceTree = "<group>"; };
+		7F0BC28B17007F0B00E2A56E /* tutorial_img9_en.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tutorial_img9_en.png; path = Resources/tutorial_img9_en.png; sourceTree = "<group>"; };
+		7F0BC28C17007F0B00E2A56E /* tutorial_img10_en.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tutorial_img10_en.png; path = Resources/tutorial_img10_en.png; sourceTree = "<group>"; };
+		7F0BC28D17007F0B00E2A56E /* tutorial_img11_en.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tutorial_img11_en.png; path = Resources/tutorial_img11_en.png; sourceTree = "<group>"; };
+		7F0BC29A1700806700E2A56E /* HowToGalleryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HowToGalleryViewController.h; sourceTree = "<group>"; };
+		7F0BC29B1700806700E2A56E /* HowToGalleryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HowToGalleryViewController.m; sourceTree = "<group>"; };
+		7F0BC2AC1700922E00E2A56E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HowToGalleryViewController_iPad.xib; sourceTree = "<group>"; };
+		7F0BC2AE1700922E00E2A56E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HowToGalleryViewController_iPhone.xib; sourceTree = "<group>"; };
+		7F0BC2B11700923700E2A56E /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/HowToGalleryViewController_iPad.xib; sourceTree = "<group>"; };
+		7F0BC2B21700923700E2A56E /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/HowToGalleryViewController_iPhone.xib; sourceTree = "<group>"; };
 		7F17CD0816E8F82A008584CA /* SwitchedMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchedMenuCell.h; sourceTree = "<group>"; };
 		7F17CD0916E8F82A008584CA /* SwitchedMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchedMenuCell.m; sourceTree = "<group>"; };
 		7F17CD0C16E8F845008584CA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SwitchedMenuCell.xib; sourceTree = "<group>"; };
@@ -481,6 +512,35 @@
 			name = Cathegories;
 			sourceTree = "<group>";
 		};
+		7F0BC28217007DF800E2A56E /* Gallery */ = {
+			isa = PBXGroup;
+			children = (
+				7F0BC28317007F0B00E2A56E /* tutorial_img1_en.png */,
+				7F0BC28417007F0B00E2A56E /* tutorial_img2_en.png */,
+				7F0BC28517007F0B00E2A56E /* tutorial_img3_en.png */,
+				7F0BC28617007F0B00E2A56E /* tutorial_img4_en.png */,
+				7F0BC28717007F0B00E2A56E /* tutorial_img5_en.png */,
+				7F0BC28817007F0B00E2A56E /* tutorial_img6_en.png */,
+				7F0BC28917007F0B00E2A56E /* tutorial_img7_en.png */,
+				7F0BC28A17007F0B00E2A56E /* tutorial_img8_en.png */,
+				7F0BC28B17007F0B00E2A56E /* tutorial_img9_en.png */,
+				7F0BC28C17007F0B00E2A56E /* tutorial_img10_en.png */,
+				7F0BC28D17007F0B00E2A56E /* tutorial_img11_en.png */,
+			);
+			name = Gallery;
+			sourceTree = "<group>";
+		};
+		7F0BC2991700804000E2A56E /* Gallery */ = {
+			isa = PBXGroup;
+			children = (
+				7F0BC29A1700806700E2A56E /* HowToGalleryViewController.h */,
+				7F0BC29B1700806700E2A56E /* HowToGalleryViewController.m */,
+				7F0BC2AB1700922E00E2A56E /* HowToGalleryViewController_iPad.xib */,
+				7F0BC2AD1700922E00E2A56E /* HowToGalleryViewController_iPhone.xib */,
+			);
+			name = Gallery;
+			sourceTree = "<group>";
+		};
 		7F17CD0416E8F7DA008584CA /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -523,8 +583,9 @@
 		7F17E7C116E8BB65009B742F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				7FAEB35816FA04C9001CBDC7 /* Inapp purchase */,
 				7FD4ADA316E7392600EB7CC1 /* DrawingBoard */,
+				7F0BC2991700804000E2A56E /* Gallery */,
+				7FAEB35816FA04C9001CBDC7 /* Inapp purchase */,
 				7F17E7C216E8BB74009B742F /* Menu */,
 				7FFB8C4116F21E59008298DD /* Ranking */,
 			);
@@ -569,6 +630,7 @@
 				7FFB8C1816F1B549008298DD /* Buttons */,
 				7FA9178516F72A0D001A1C4A /* Databases */,
 				7FFB8C6116F22E1F008298DD /* Fonts */,
+				7F0BC28217007DF800E2A56E /* Gallery */,
 				7F4401C016E7491000886CBE /* Icons */,
 			);
 			name = Resources;
@@ -1060,6 +1122,19 @@
 				7F0BC27C1700697800E2A56E /* bkg_logo_iPad@2x.png in Resources */,
 				7F0BC27D1700697800E2A56E /* bkg_logo.png in Resources */,
 				7F0BC27E1700697800E2A56E /* bkg_logo@2x.png in Resources */,
+				7F0BC28E17007F0B00E2A56E /* tutorial_img1_en.png in Resources */,
+				7F0BC28F17007F0B00E2A56E /* tutorial_img2_en.png in Resources */,
+				7F0BC29017007F0B00E2A56E /* tutorial_img3_en.png in Resources */,
+				7F0BC29117007F0B00E2A56E /* tutorial_img4_en.png in Resources */,
+				7F0BC29217007F0B00E2A56E /* tutorial_img5_en.png in Resources */,
+				7F0BC29317007F0B00E2A56E /* tutorial_img6_en.png in Resources */,
+				7F0BC29417007F0B00E2A56E /* tutorial_img7_en.png in Resources */,
+				7F0BC29517007F0B00E2A56E /* tutorial_img8_en.png in Resources */,
+				7F0BC29617007F0B00E2A56E /* tutorial_img9_en.png in Resources */,
+				7F0BC29717007F0B00E2A56E /* tutorial_img10_en.png in Resources */,
+				7F0BC29817007F0B00E2A56E /* tutorial_img11_en.png in Resources */,
+				7F0BC2AF1700922E00E2A56E /* HowToGalleryViewController_iPad.xib in Resources */,
+				7F0BC2B01700922E00E2A56E /* HowToGalleryViewController_iPhone.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1110,6 +1185,7 @@
 				7FA9B15616F9E12700BB4991 /* IAPHelper.m in Sources */,
 				7FA9B15916F9E3FA00BB4991 /* GeniusLevelIAPHelper.m in Sources */,
 				7FAEB35E16FA0514001CBDC7 /* InAppPurchaseViewController.m in Sources */,
+				7F0BC29D1700806700E2A56E /* HowToGalleryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1123,6 +1199,24 @@
 				7F0500E016FB6B7C00E0812A /* en */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		7F0BC2AB1700922E00E2A56E /* HowToGalleryViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7F0BC2AC1700922E00E2A56E /* en */,
+				7F0BC2B11700923700E2A56E /* es */,
+			);
+			name = HowToGalleryViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+		7F0BC2AD1700922E00E2A56E /* HowToGalleryViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7F0BC2AE1700922E00E2A56E /* en */,
+				7F0BC2B21700923700E2A56E /* es */,
+			);
+			name = HowToGalleryViewController_iPhone.xib;
 			sourceTree = "<group>";
 		};
 		7F17CD0B16E8F845008584CA /* SwitchedMenuCell.xib */ = {
