@@ -77,7 +77,12 @@
 }
 
 - (void)configureAppearance {
-    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"bkg_nav_bar.png"] forBarMetrics:UIBarMetricsDefault];
+    DeviceChooser *deviceChooser = [[DeviceChooser alloc] init];
+    if ([deviceChooser isPad]) {
+        [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"bkg_nav_bar_iPad.png"] forBarMetrics:UIBarMetricsDefault];
+    } else {
+        [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"bkg_nav_bar.png"] forBarMetrics:UIBarMetricsDefault];
+    }
 }
 
 @end

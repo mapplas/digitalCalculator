@@ -41,14 +41,12 @@
 }
 
 - (void)setTitleToNavItem {
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 400, 27)];
-    label.backgroundColor = [UIColor clearColor];
-    label.font = [UIFont fontWithName:@"The Girl Next Door" size:25];
-    label.shadowColor = [UIColor colorWithWhite:0.0 alpha:0.5];
-    label.textAlignment = UITextAlignmentCenter;
-    label.textColor = [UIColor whiteColor];
-    label.text = NSLocalizedString(@"nav_bar_title", @"Nav bar title");
-    navItem.titleView = label;
+    DeviceChooser *deficeChooser = [[DeviceChooser alloc] init];
+    if ([deficeChooser isPad]) {
+        navItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bkg_logo_iPad.png"]];
+    } else {
+        navItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bkg_logo.png"]];
+    }
 }
 
 - (void)configureInitialLayout {
@@ -85,7 +83,6 @@
     }
     [resultSlider setMinimumTrackImage:sliderRightTrackImage forState:UIControlStateNormal];
     [resultSlider setThumbImage:[UIImage imageNamed:@"bkg_slider_handle.png"] forState:UIControlStateNormal];
-    [resultSlider setContinuous:YES];
     
     // Help view
     helpAlphaView.layer.cornerRadius = 20;

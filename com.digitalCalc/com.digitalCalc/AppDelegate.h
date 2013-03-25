@@ -11,6 +11,7 @@
 #import "LeftMenuViewController.h"
 
 #import "GeniusLevelIAPHelper.h"
+#import "deviceChooser.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate> {
     UINavigationController *_navigationController;

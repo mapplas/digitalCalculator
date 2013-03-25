@@ -41,6 +41,7 @@
 				<string key="NSFrameSize">{92, 30}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
+				<reference key="NSNextKeyView"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<bool key="IBUIOpaque">NO</bool>
 				<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -95,9 +96,9 @@
 						<reference key="NSNextKeyView" ref="541355683"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-						<object class="NSCustomResource" key="IBUIImage" id="243451272">
+						<object class="NSCustomResource" key="IBUIImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">bkg_board.png</string>
+							<string key="NSResourceName">bkg_board_iPad.png</string>
 						</object>
 					</object>
 					<object class="IBUIImageView" id="541355683">
@@ -197,6 +198,7 @@
 						<string key="NSFrame">{{705, 691}, {303, 23}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -531,7 +533,10 @@
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-						<reference key="IBUIImage" ref="243451272"/>
+						<object class="NSCustomResource" key="IBUIImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">bkg_board.png</string>
+						</object>
 					</object>
 					<object class="IBUIButton" id="977967519">
 						<reference key="NSNextResponder" ref="290507410"/>
@@ -568,6 +573,7 @@
 						<string key="NSFrame">{{315, 372}, {394, 123}}</string>
 						<reference key="NSSuperview" ref="290507410"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -1176,6 +1182,7 @@
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
 			<string key="bkg_board.png">{480, 288}</string>
+			<string key="bkg_board_iPad.png">{1024, 724}</string>
 			<string key="btn_aprender_down.png">{251, 70}</string>
 			<string key="btn_aprender_up.png">{251, 70}</string>
 			<string key="btn_comprobar_down.png">{108, 30}</string>
