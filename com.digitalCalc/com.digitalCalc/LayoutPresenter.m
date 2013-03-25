@@ -76,9 +76,16 @@
     [self initLabelFontTypes];
     
     // Result slider
-    UIImage *sliderRightTrackImage = [[UIImage imageNamed: @"bkg_slider_highlight.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 8, 0, 0) resizingMode:UIImageResizingModeTile];
+    UIImage *image = [UIImage imageNamed: @"bkg_slider_highlight.png"];
+    UIImage *sliderRightTrackImage = nil;
+    if ([UIImage instancesRespondToSelector:@selector(resizableImageWithCapInsets:resizingMode:)]) {
+        sliderRightTrackImage = [image resizableImageWithCapInsets:UIEdgeInsetsMake(0, 8, 0, 0) resizingMode:UIImageResizingModeTile];
+    } else {
+        sliderRightTrackImage = [image stretchableImageWithLeftCapWidth:8 topCapHeight:0];
+    }
     [resultSlider setMinimumTrackImage:sliderRightTrackImage forState:UIControlStateNormal];
     [resultSlider setThumbImage:[UIImage imageNamed:@"bkg_slider_handle.png"] forState:UIControlStateNormal];
+    [resultSlider setContinuous:YES];
     
     // Help view
     helpAlphaView.layer.cornerRadius = 20;
@@ -149,11 +156,16 @@
 }
 
 - (void)goToRankingScreenWithName:(NSString *)str_username {
+    NSString *username = str_username;
+    if ([username isEqualToString:@""]) {
+        username = NSLocalizedString(@"ranking_screen_no_user_text", @"Ranking screen no user text");
+    }
+    
     RankingRowTable *rankingTable = [[RankingRowTable alloc] init];
     
     RankingRow *ranking = [[RankingRow alloc] init];
     ranking.points = [NSNumber numberWithInt:viewController.points];
-    ranking.username = str_username;
+    ranking.username = username;
     [rankingTable saveBatch:ranking];
     [rankingTable flush];
     
@@ -187,12 +199,7 @@
 
 #pragma mark - UITextFieldDelegate
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    NSString *username = textField.text;
-    if ([username isEqualToString:@""]) {
-        username = NSLocalizedString(@"ranking_screen_no_user_text", @"Ranking screen no user text");
-    }
-
-    [self goToRankingScreenWithName:username];
+    [self goToRankingScreenWithName:textField.text];
     [usernameAlert dismissWithClickedButtonIndex:1 animated:NO];
     return YES;
 }

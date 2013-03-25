@@ -308,7 +308,7 @@
 		7FAEB36516FA0576001CBDC7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/InAppPurchaseViewController_iPhone.xib; sourceTree = "<group>"; };
 		7FAEB36916FA0CEE001CBDC7 /* CustomSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomSlider.h; path = Classes/CustomSlider.h; sourceTree = "<group>"; };
 		7FAEB36A16FA0CEE001CBDC7 /* CustomSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomSlider.m; path = Classes/CustomSlider.m; sourceTree = "<group>"; };
-		7FD4AD7A16E734C700EB7CC1 /* com.digitalCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = com.digitalCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FD4AD7A16E734C700EB7CC1 /* Genius Multiplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Genius Multiplication.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FD4AD7D16E734C700EB7CC1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7FD4AD7F16E734C700EB7CC1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7FD4AD8116E734C700EB7CC1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -672,7 +672,7 @@
 		7FD4AD7B16E734C700EB7CC1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7FD4AD7A16E734C700EB7CC1 /* com.digitalCalc.app */,
+				7FD4AD7A16E734C700EB7CC1 /* Genius Multiplication.app */,
 			);
 			name = Products;
 			path = ..;
@@ -893,7 +893,7 @@
 			);
 			name = com.digitalCalc;
 			productName = com.digitalCalc;
-			productReference = 7FD4AD7A16E734C700EB7CC1 /* com.digitalCalc.app */;
+			productReference = 7FD4AD7A16E734C700EB7CC1 /* Genius Multiplication.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1241,7 +1241,7 @@
 				GCC_PREFIX_HEADER = "com.digitalCalc/com.digitalCalc-Prefix.pch";
 				INFOPLIST_FILE = "com.digitalCalc/com.digitalCalc-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Genius Multiplication";
 				VALID_ARCHS = "armv7 armv7s armv6";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1255,7 +1255,7 @@
 				GCC_PREFIX_HEADER = "com.digitalCalc/com.digitalCalc-Prefix.pch";
 				INFOPLIST_FILE = "com.digitalCalc/com.digitalCalc-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Genius Multiplication";
 				VALID_ARCHS = "armv7 armv7s armv6";
 				WRAPPER_EXTENSION = app;
 			};

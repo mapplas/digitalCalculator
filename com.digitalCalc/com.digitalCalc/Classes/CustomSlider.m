@@ -74,7 +74,7 @@
 
 - (void)setValue:(float)aValue {
     _value = aValue;
-    self.text = [NSString stringWithFormat:@"%.f", _value];
+    self.text = [NSString stringWithFormat:@"%d", (int)_value];
     [self setNeedsDisplay];
 }
 
@@ -100,8 +100,11 @@
     [self _positionAndUpdatePopupView];
 }
 
-- (NSInteger)getSliderValue {
-    return self.value;
+- (int)getSliderValue {
+    float integer = valuePopupView.value;
+//    CGFloat myfloat = integer;
+//    NSLog(@"%f %d", integer, (int)integer);
+    return (int)integer;
 }
 
 //- (void)_fadePopupViewInAndOut:(BOOL)aFadeIn {
@@ -118,9 +121,15 @@
 - (void)_positionAndUpdatePopupView {
     CGRect _thumbRect = self.thumbRect;
     CGRect popupRect = CGRectOffset(_thumbRect, 0, floorf(-(_thumbRect.size.height * 1.5)));
-//    CGRect popupRect = CGRectOffset(_thumbRect, 0, -floorf(_thumbRect.size.height * 1.5));
     valuePopupView.frame = CGRectInset(popupRect, -20, -10);
-    valuePopupView.value = (NSInteger)self.value;
+    
+//    NSLog(@"%d %f", (int)self.value, self.value);
+    
+    NSString *stringValue = [NSString stringWithFormat:@"%.f", self.value];
+    self.value = [stringValue floatValue];
+    valuePopupView.value = [stringValue floatValue];
+    
+//    NSLog(@"%d %f", [stringValue intValue], [stringValue floatValue]);
 }
 
 #pragma mark - Memory management
@@ -144,6 +153,7 @@
 #pragma mark - UIControl touch event tracking
 
 - (BOOL)beginTrackingWithTouch:(UITouch *)touch withEvent:(UIEvent *)event {
+    BOOL toReturn = [super beginTrackingWithTouch:touch withEvent:event];
     // Fade in and update the popup view
     CGPoint touchPoint = [touch locationInView:self];
     // Check if the knob is touched. Only in this case show the popup-view
@@ -151,7 +161,7 @@
         [self _positionAndUpdatePopupView];
 //        [self _fadePopupViewInAndOut:YES];
     }
-    return [super beginTrackingWithTouch:touch withEvent:event];
+    return toReturn;
 }
 
 - (BOOL)continueTrackingWithTouch:(UITouch *)touch withEvent:(UIEvent *)event {

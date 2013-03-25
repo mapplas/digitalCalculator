@@ -17,6 +17,6 @@
 @property (nonatomic, readonly) CGRect thumbRect;
 
 - (void)initSliderWithValue:(NSInteger)slider_value;
-- (NSInteger)getSliderValue;
+- (int)getSliderValue;
 
 @end

@@ -399,15 +399,17 @@
     [helpManager emptyLabelText];
 
     self.afterCheckedView.hidden = NO;
+    int sliderValue = [slider getSliderValue];
+//    NSLog(@"slider %d, result AxB %d", sliderValue, resultIntValue);
     if (self.mode == CALCULATOR_MODE_LEARN) {
-        if ([slider getSliderValue] == resultIntValue) {
+        if (sliderValue == resultIntValue) {
             self.checkedLabel.text = NSLocalizedString(@"result_checked_ok_learn_mode", @"Result ckecked OK text in learn mode");
         }
         else {
             self.checkedLabel.text = NSLocalizedString(@"result_checked_nok_learn_mode", @"Result ckecked NOK text in learn mode");
         }
     } else { // GAME MODE
-        if ([slider getSliderValue] == resultIntValue) {
+        if (sliderValue == resultIntValue) {
             self.checkedLabel.text = NSLocalizedString(@"result_checked_ok_game_mode", @"Result ckecked OK text in game mode");
             
             self.points += GAME_MODE_CORRECT_ANSWER_POINTS;
