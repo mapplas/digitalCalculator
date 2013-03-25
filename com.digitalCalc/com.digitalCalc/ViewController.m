@@ -41,6 +41,7 @@
     [super viewDidLoad];
     
     [self initInAppPurchaseConfig];
+    [self launchTutorialOnlyFirstTime];
     
     self.helpEnabled = NO;
     level = LEVEL_LOW;
@@ -77,9 +78,27 @@
     }];
 }
 
+- (void)launchTutorialOnlyFirstTime {
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:USER_DEFAULTS_GALLERY_FIRST_TIME_KEY]) {
+        DeviceChooser *chooser = [[DeviceChooser alloc] init];
+        HowToGalleryViewController *gallery = nil;
+        if ([chooser isPad]) {
+            gallery = [[HowToGalleryViewController alloc] initWithNibName:@"HowToGalleryViewController_iPad" bundle:nil];
+        } else {
+            gallery = [[HowToGalleryViewController alloc] initWithNibName:@"HowToGalleryViewController_iPhone" bundle:nil];
+        }
+        UINavigationController *controller = [[UINavigationController alloc] initWithRootViewController:gallery];
+        gallery.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+        [self.navigationController presentModalViewController:controller animated:YES];
+        
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:USER_DEFAULTS_GALLERY_FIRST_TIME_KEY];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+}
+
 - (void)setSplashLayoutDetails {
     [self.view addSubview:self.splashView];
-    
+        
     [layoutPresenter setTitleToNavItem];
 }
 
@@ -452,6 +471,5 @@
     }];
     
 }
-
 
 @end

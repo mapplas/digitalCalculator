@@ -87,6 +87,12 @@
                 NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"LevelMenuCell" owner:self options:nil];
                 plainTextMenuCell = [nib objectAtIndex:0];
             }
+        } else if(indexPath.row == 2) {
+            plainTextMenuCell = [tableView dequeueReusableCellWithIdentifier:levelCellId];
+            if (plainTextMenuCell == nil) {
+                NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"LevelMenuCell" owner:self options:nil];
+                plainTextMenuCell = [nib objectAtIndex:0];
+            }
         } else {
             plainTextMenuCell = [tableView dequeueReusableCellWithIdentifier:levelCellId];
             if (plainTextMenuCell == nil) {
@@ -101,13 +107,17 @@
                 
                 helpCell.textLabel.text = NSLocalizedString(@"menu_section_settings_help_enabled", @"Menu section settings help enabled");
                 break;
-                
+
             case 1:
-                plainTextMenuCell.textLabel.text = @"Change game mode";
+                plainTextMenuCell.textLabel.text = NSLocalizedString(@"menu_section_settings_game_mode_change", @"Menu section settings game mode change");
                 break;
             
             case 2:
-                plainTextMenuCell.textLabel.text = @"Ranking";
+                plainTextMenuCell.textLabel.text = NSLocalizedString(@"menu_section_settings_ranking", @"Menu section settings ranking");
+                break;
+                
+            case 3:
+                plainTextMenuCell.textLabel.text = NSLocalizedString(@"menu_section_settings_how_to", @"Menu section settings tutorial");
                 break;
         }
         
@@ -185,6 +195,10 @@
 
                 break;
                 
+            case 3:
+                [self pushHowToController];
+                [self deselectRowandSelectCorrectOne:indexPath];
+                
             default:
                 break;
         }
@@ -260,6 +274,19 @@
     UINavigationController *controller = [[UINavigationController alloc] initWithRootViewController:rankingViewController];
     rankingViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     rankingViewController.layoutPresenter = nil;
+    [mainViewController presentModalViewController:controller animated:YES];
+}
+
+- (void)pushHowToController {
+    DeviceChooser *chooser = [[DeviceChooser alloc] init];
+    HowToGalleryViewController *gallery = nil;
+    if ([chooser isPad]) {
+        gallery = [[HowToGalleryViewController alloc] initWithNibName:@"HowToGalleryViewController_iPad" bundle:nil];
+    } else {
+        gallery = [[HowToGalleryViewController alloc] initWithNibName:@"HowToGalleryViewController_iPhone" bundle:nil];
+    }
+    UINavigationController *controller = [[UINavigationController alloc] initWithRootViewController:gallery];
+    gallery.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
     [mainViewController presentModalViewController:controller animated:YES];
 }
 

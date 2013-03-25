@@ -20,6 +20,12 @@
     // Now, as soon as your app launches it will create the singleton RageIAPHelper. This means the initWithProducts: method you just modified will be called, which registers itself as the transaction observer. So you will be notified about any transactions that were never quite finished
     [GeniusLevelIAPHelper sharedInstance];
     
+    //first-time ever defaults check and set
+    if([[NSUserDefaults standardUserDefaults] boolForKey:USER_DEFAULTS_GALLERY_FIRST_TIME_KEY] != YES) {
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:USER_DEFAULTS_GALLERY_FIRST_TIME_KEY];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     ViewController *viewController = nil;

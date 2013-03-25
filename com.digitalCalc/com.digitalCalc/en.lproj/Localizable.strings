@@ -72,6 +72,15 @@
 /* Menu section settings help enabled */
 "menu_section_settings_help_enabled" = "Help enabled";
 
+/* Menu section settings game mode change */
+"menu_section_settings_game_mode_change" = "Change game mode";
+
+/* Menu section settings ranking */
+"menu_section_settings_ranking" = "Ranking";
+
+/* Menu section settings tutorial */
+"menu_section_settings_how_to" = "How-to play";
+
 /* Result ckecked OK text in learn mode */
 "result_checked_ok_learn_mode" = "GREAT Genius!! One more? Tap to continue!";
 
@@ -131,3 +140,6 @@
 
 /* In app purchase OK and NOK alert button title */
 "in_app_purchase_ok_nok_button" = "OK";
+
+/* Gallery - Nav controller left button title */
+"gallery_nav_left_button_title" = "Skip";

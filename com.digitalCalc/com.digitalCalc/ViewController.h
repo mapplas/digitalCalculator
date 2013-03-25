@@ -20,6 +20,7 @@
 #import "LayoutPresenter.h"
 #import "CustomSlider.h"
 #import "InAppPurchaseViewController.h"
+#import "HowToGalleryViewController.h"
 
 @interface ViewController : UIViewController {
     CGPoint lastPoint;
