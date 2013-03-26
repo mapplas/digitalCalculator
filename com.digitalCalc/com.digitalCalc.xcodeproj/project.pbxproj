@@ -116,8 +116,6 @@
 		7F4F595016F0DB2D00241DC3 /* LayoutPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4F594F16F0DB2D00241DC3 /* LayoutPresenter.m */; };
 		7F5429AA16F9AF080043052E /* MediumMultLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F5429A916F9AF080043052E /* MediumMultLevel.m */; };
 		7F5429B216F9B4B70043052E /* LevelHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F5429B116F9B4B70043052E /* LevelHelper.m */; };
-		7F65152A16F0A18200FA770C /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F65152916F0A18200FA770C /* Icon@2x.png */; };
-		7F65152C16F0A18900FA770C /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F65152B16F0A18900FA770C /* Icon.png */; };
 		7FA9178C16F75E09001A1C4A /* btn_line_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FA9178616F75E09001A1C4A /* btn_line_down.png */; };
 		7FA9178D16F75E09001A1C4A /* btn_line_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FA9178716F75E09001A1C4A /* btn_line_down@2x.png */; };
 		7FA9179016F75E09001A1C4A /* btn_line_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FA9178A16F75E09001A1C4A /* btn_line_up.png */; };
@@ -163,6 +161,10 @@
 		7FF26AA916F858D500AE541F /* bkg_slider_highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FF26AA816F858D500AE541F /* bkg_slider_highlight.png */; };
 		7FF26AAB16F85EEE00AE541F /* bkg_slider_handle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FF26AAA16F85EEE00AE541F /* bkg_slider_handle@2x.png */; };
 		7FF26AAD16F8606400AE541F /* bkg_slider_handle.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FF26AAC16F8606400AE541F /* bkg_slider_handle.png */; };
+		7FF638781701B4DA00619E17 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F65152B16F0A18900FA770C /* Icon.png */; };
+		7FF638791701B4DC00619E17 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F65152916F0A18200FA770C /* Icon@2x.png */; };
+		7FF6387C1701B53400619E17 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FF6387A1701B53400619E17 /* Icon-72.png */; };
+		7FF6387D1701B53400619E17 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FF6387B1701B53400619E17 /* Icon-72@2x.png */; };
 		7FFB8C1D16F1B594008298DD /* btn_learn_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FFB8C1916F1B594008298DD /* btn_learn_up.png */; };
 		7FFB8C1E16F1B594008298DD /* btn_learn_up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FFB8C1A16F1B594008298DD /* btn_learn_up@2x.png */; };
 		7FFB8C1F16F1B594008298DD /* btn_play_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FFB8C1B16F1B594008298DD /* btn_play_up.png */; };
@@ -407,6 +409,8 @@
 		7FF26AA816F858D500AE541F /* bkg_slider_highlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bkg_slider_highlight.png; path = Resources/bkg_slider_highlight.png; sourceTree = "<group>"; };
 		7FF26AAA16F85EEE00AE541F /* bkg_slider_handle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bkg_slider_handle@2x.png"; path = "Resources/bkg_slider_handle@2x.png"; sourceTree = "<group>"; };
 		7FF26AAC16F8606400AE541F /* bkg_slider_handle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bkg_slider_handle.png; path = Resources/bkg_slider_handle.png; sourceTree = "<group>"; };
+		7FF6387A1701B53400619E17 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = SOURCE_ROOT; };
+		7FF6387B1701B53400619E17 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = SOURCE_ROOT; };
 		7FFB8C1916F1B594008298DD /* btn_learn_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_learn_up.png; path = Resources/btn_learn_up.png; sourceTree = "<group>"; };
 		7FFB8C1A16F1B594008298DD /* btn_learn_up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_learn_up@2x.png"; path = "Resources/btn_learn_up@2x.png"; sourceTree = "<group>"; };
 		7FFB8C1B16F1B594008298DD /* btn_play_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_play_up.png; path = Resources/btn_play_up.png; sourceTree = "<group>"; };
@@ -680,6 +684,8 @@
 				7F0500DD16FB6B6D00E0812A /* Localizable.strings */,
 				7F65152B16F0A18900FA770C /* Icon.png */,
 				7F65152916F0A18200FA770C /* Icon@2x.png */,
+				7FF6387A1701B53400619E17 /* Icon-72.png */,
+				7FF6387B1701B53400619E17 /* Icon-72@2x.png */,
 				7F9E39A416E9E3420038893A /* Background */,
 				7FFB8C1816F1B549008298DD /* Buttons */,
 				7FA9178516F72A0D001A1C4A /* Databases */,
@@ -1078,8 +1084,6 @@
 				7F4401C416E7491B00886CBE /* ic_menu_menu@2x.png in Resources */,
 				7F17CD0D16E8F845008584CA /* SwitchedMenuCell.xib in Resources */,
 				7FD9D32116EF23920009BB0E /* LevelMenuCell.xib in Resources */,
-				7F65152A16F0A18200FA770C /* Icon@2x.png in Resources */,
-				7F65152C16F0A18900FA770C /* Icon.png in Resources */,
 				7F4F594816F0C73C00241DC3 /* bkg_board.png in Resources */,
 				7F4F594916F0C73C00241DC3 /* bkg_board@2x.png in Resources */,
 				7F4F594A16F0C73C00241DC3 /* bkg_nav_bar.png in Resources */,
@@ -1200,6 +1204,10 @@
 				7F0BC2CB17009CBB00E2A56E /* tutorial_img9_es.png in Resources */,
 				7F0BC2CC17009CBB00E2A56E /* tutorial_img10_es.png in Resources */,
 				7F0BC2CD17009CBB00E2A56E /* tutorial_img11_es.png in Resources */,
+				7FF638781701B4DA00619E17 /* Icon.png in Resources */,
+				7FF638791701B4DC00619E17 /* Icon@2x.png in Resources */,
+				7FF6387C1701B53400619E17 /* Icon-72.png in Resources */,
+				7FF6387D1701B53400619E17 /* Icon-72@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1434,6 +1442,7 @@
 				INFOPLIST_FILE = "com.digitalCalc/com.digitalCalc-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "Genius Multiplication";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 armv7s armv6";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1448,6 +1457,7 @@
 				INFOPLIST_FILE = "com.digitalCalc/com.digitalCalc-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "Genius Multiplication";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 armv7s armv6";
 				WRAPPER_EXTENSION = app;
 			};
