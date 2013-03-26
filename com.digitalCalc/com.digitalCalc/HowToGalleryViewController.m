@@ -103,7 +103,7 @@
             if ([deviceChooser isPad]) {
                 resizedImage = [currentImage resizedImage:CGSizeMake(currentImage.size.width / 1.6, currentImage.size.height / 1.6) interpolationQuality:kCGInterpolationHigh];
             } else {
-                resizedImage = [currentImage resizedImage:CGSizeMake(currentImage.size.width / 3, currentImage.size.height / 3) interpolationQuality:kCGInterpolationHigh];;
+                resizedImage = [currentImage resizedImage:CGSizeMake(currentImage.size.width / 2.75, currentImage.size.height / 2.75) interpolationQuality:kCGInterpolationHigh];;
             }
 
             UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(contentOffset, 0, scroll.frame.size.width, scroll.frame.size.height)];

@@ -58,7 +58,7 @@
 "menu_section_levels_title" = "Levels";
 
 /* Menu section configuration title */
-"menu_section_configuration_title" = "Settings";
+"menu_section_configuration_title" = "Settings & Help";
 
 /* Menu section levels low level */
 "menu_section_levels_low" = "Beginner";
@@ -70,7 +70,7 @@
 "menu_section_levels_high" = "Prodigy (Coming Soon)";
 
 /* Menu section settings help enabled */
-"menu_section_settings_help_enabled" = "Help enabled";
+"menu_section_settings_help_enabled" = "Help";
 
 /* Menu section settings game mode change */
 "menu_section_settings_game_mode_change" = "Change game mode";
@@ -79,7 +79,7 @@
 "menu_section_settings_ranking" = "Ranking";
 
 /* Menu section settings tutorial */
-"menu_section_settings_how_to" = "How-to play";
+"menu_section_settings_how_to" = "How to play";
 
 /* Result ckecked OK text in learn mode */
 "result_checked_ok_learn_mode" = "GREAT Genius!! One more? Tap to continue!";

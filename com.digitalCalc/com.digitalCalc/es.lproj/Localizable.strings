@@ -58,7 +58,7 @@
 "menu_section_levels_title" = "Niveles";
 
 /* Menu section configuration title */
-"menu_section_configuration_title" = "Configuración";
+"menu_section_configuration_title" = "Configuración y Ayuda";
 
 /* Menu section levels low level */
 "menu_section_levels_low" = "Principiante";
@@ -70,13 +70,13 @@
 "menu_section_levels_high" = "Prodigio (próximamente...)";
 
 /* Menu section settings help enabled */
-"menu_section_settings_help_enabled" = "Ayuda activada";
+"menu_section_settings_help_enabled" = "Ayuda";
 
 /* Menu section settings game mode change */
-"menu_section_settings_game_mode_change" = "Cambiar modo juego";
+"menu_section_settings_game_mode_change" = "Modo de juego";
 
 /* Menu section settings ranking */
-"menu_section_settings_ranking" = "Ranking";
+"menu_section_settings_ranking" = "Clasificación";
 
 /* Menu section settings tutorial */
 "menu_section_settings_how_to" = "Cómo jugar";
