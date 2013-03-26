@@ -1,0 +1,145 @@
+/* 
+  Localized.strings
+  com.digitalCalc
+
+  Created by Belén  on 06/03/13.
+  Copyright (c) 2013 Mapplas. All rights reserved.
+*/
+
+/* Nav bar title */
+"nav_bar_title" = "Genius Multiplication";
+
+/* Ranking controller left button title */
+"nav_bar_ranking_left_button_title" = "Back";
+
+/* Nav. bar right button title */
+"nav_bar_right_button_title" = "Clear all";
+
+/* Segmented control line text */
+"segm_control_line" = "Lines";
+
+/* Segmented control dots text */
+"segm_control_dot" = "Dots";
+
+/* Help label text prefix */
+"help_text_prefix" = "Draw";
+
+/* Help label singular line suffix */
+"help_text_singular_suffix" = "diagonal line";
+
+/* Help label plural line suffix */
+"help_text_plural_suffix" = "diagonal lines";
+
+/* Help label second arg sing-sing suffix */
+"help_text_sing_sing_suffix" = "crossing the previous";
+
+/* Help label second arg plural-sing suffix */
+"help_text_plural_sing_suffix" = "crossing the previous";
+
+/* Help label second arg sing-plur suffix */
+"help_text_sing_plural_suffix" = "crossing the previous";
+
+/* Help label second arg plural-plural suffix */
+"help_text_plural_plural_suffix" = "crossing the previous";
+
+/* Help label draw dots text  */
+"help_text_dots_text" = "Draw dots where the lines cross";
+
+/* Help label count dots text  */
+"help_text_dots_count_text" = "Count the dots and set result!";
+
+/* Help label press check text  */
+"help_text_press_check_button_text" = "Tap CHECK, to see if you are right!";
+
+/* Help tap to continue label text */
+"help_text_tap_to_continue" = "Tap to continue...";
+
+/* Menu section levels title */
+"menu_section_levels_title" = "Levels";
+
+/* Menu section configuration title */
+"menu_section_configuration_title" = "Settings & Help";
+
+/* Menu section levels low level */
+"menu_section_levels_low" = "Beginner";
+
+/* Menu section levels medium level */
+"menu_section_levels_medium" = "Genius";
+
+/* Menu section levels high level */
+"menu_section_levels_high" = "Prodigy (Coming Soon)";
+
+/* Menu section settings help enabled */
+"menu_section_settings_help_enabled" = "Help";
+
+/* Menu section settings game mode change */
+"menu_section_settings_game_mode_change" = "Change game mode";
+
+/* Menu section settings ranking */
+"menu_section_settings_ranking" = "Ranking";
+
+/* Menu section settings tutorial */
+"menu_section_settings_how_to" = "How to play";
+
+/* Result ckecked OK text in learn mode */
+"result_checked_ok_learn_mode" = "GREAT Genius!! One more? Tap to continue!";
+
+/* Result ckecked NOK text in learn mode */
+"result_checked_nok_learn_mode" = "Oops! You Know it, try again...";
+
+/* Result ckecked OK text in game mode */
+"result_checked_ok_game_mode" = "10 points! Quickly, tap to do the next!";
+
+/* Result ckecked NOK text in game mode */
+"result_checked_nok_lgame_mode" = "Hurry! Try again!";
+
+/* Ranking screen title */
+"ranking_screen_title" = "Ranking";
+
+/* Ranking screen no user text */
+"ranking_screen_no_user_text" = "Genius";
+
+/* Ranking screen no points text */
+"ranking_screen_no_points_text" = "0";
+
+/* Ranking screen points suffix text */
+"ranking_screen_points_suffix" = "points";
+
+/* Username alert view title */
+"username_alert_view_title" = "Genius Name";
+
+/* Username alert view message */
+"username_alert_view_message" = "Type your name Genius!";
+
+/* Username alert view ok message */
+"username_alert_view_ok_message" = "OK";
+
+/* Username alert view negative message */
+"username_alert_view_negative_message" = "Cancel";
+
+/* In app purchase - Genius level product identifier */
+"in_app_purchase_genius_level_identifier" = "com.digitalCalc.inAppGeniusLevel";
+
+/* In app purchase - Nav controller left button title */
+"in_app_purchase_nav_left_button_title" = "Cancel";
+
+/* In app purchase - Buy text */
+"in_app_purchase_buy_text_label_title" = "Unlock all levels and Game mode to learn to multiply in a matter of minutes in a smart, quick and easy way!";
+
+/* In app purchase - Purchase OK alert title */
+"in_app_purchase_ok_alert_title" = "Purchase completed";
+
+/* In app purchase - Purchase OK alert message */
+"in_app_purchase_ok_alert_message" = "Enjoy learning and playing!";
+
+/* In app purchase - Purchase NOK alert title */
+"in_app_purchase_nok_alert_title" = "Unsuccessful purchase";
+
+/* In app purchase - Purchase NOK alert message */
+"in_app_purchase_nok_alert_message" = "Something went wrong... Try it again!";
+
+/* In app purchase OK and NOK alert button title */
+"in_app_purchase_ok_nok_button" = "OK";
+
+/* Gallery - Nav controller left button title */
+"gallery_nav_left_button_title" = "Skip";
