@@ -35,6 +35,10 @@
     [LayoutPresenter resizeFontForLabel:self.buyLabel maxSize:40 minSize:25];
 }
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    return UIInterfaceOrientationIsLandscape(interfaceOrientation);
+}
+
 - (void)buyButtonPressed:(id)sender {
     NSLog(@"Buying... %@", NSLocalizedString(@"in_app_purchase_genius_level_identifier", @"In app purchase - Genius level product identifier"));
     SKProduct *product = [self.products objectAtIndex:0];

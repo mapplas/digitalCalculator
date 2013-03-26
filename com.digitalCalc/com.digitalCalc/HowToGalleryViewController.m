@@ -28,6 +28,10 @@
     [self.navigationController dismissModalViewControllerAnimated:YES];
 }
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    return UIInterfaceOrientationIsLandscape(interfaceOrientation);
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -40,6 +44,12 @@
     
     [self initArray];
     [self configure];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [UIApplication sharedApplication].statusBarOrientation = self.interfaceOrientation;
 }
 
 - (void)initArray {

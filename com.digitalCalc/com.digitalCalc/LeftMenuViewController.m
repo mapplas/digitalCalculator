@@ -264,8 +264,9 @@
 }
 
 - (void)pushRankingController {
+    DeviceChooser *chooser = [[DeviceChooser alloc] init];
     RankingViewController *rankingViewController = nil;
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+    if (![chooser isPad]) {
         rankingViewController = [[RankingViewController alloc] initWithNibName:@"RankingViewController_iPhone" bundle:nil];
     } else {
         rankingViewController = [[RankingViewController alloc] initWithNibName:@"RankingViewController_iPad" bundle:nil];
