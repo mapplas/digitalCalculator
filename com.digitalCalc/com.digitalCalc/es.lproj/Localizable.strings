@@ -73,7 +73,7 @@
 "menu_section_settings_help_enabled" = "Ayuda";
 
 /* Menu section settings game mode change */
-"menu_section_settings_game_mode_change" = "Modo de juego";
+"menu_section_settings_game_mode_change" = "Elegir modo de juego";
 
 /* Menu section settings ranking */
 "menu_section_settings_ranking" = "Clasificación";
@@ -143,3 +143,6 @@
 
 /* Gallery - Nav controller left button title */
 "gallery_nav_left_button_title" = "Saltar";
+
+/* Tutorial nav-bar title */
+"gallery_nav_bar_title" = "Tutorial";
