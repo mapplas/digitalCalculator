@@ -36,11 +36,28 @@
     [super viewDidLoad];
     
     deviceChooser = [[DeviceChooser alloc] init];
+    
 
+    
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"gallery_nav_left_button_title", @"Gallery - Nav controller left button title") style:UIBarButtonItemStyleBordered target:self action:@selector(pop)];
     
     [self.navigationItem.leftBarButtonItem setBackgroundImage:[UIImage imageNamed:@"btn_menu_up.png"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     [self.navigationItem.leftBarButtonItem setBackgroundImage:[UIImage imageNamed:@"btn_menu_hover.png"] forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
+    
+    UIFont *font = [UIFont fontWithName:@"The Girl Next Door" size:20];
+    NSString *text = NSLocalizedString(@"gallery_nav_bar_title", @"Tutorial nav-bar title");
+    CGSize requestedTitleSize = [text sizeWithFont:font];
+    CGFloat titleWidth = MIN(400, requestedTitleSize.width);
+    
+    UILabel *navLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, titleWidth, 20)];
+    navLabel.backgroundColor = [UIColor clearColor];
+    navLabel.textColor = [UIColor whiteColor];
+    navLabel.shadowColor = [UIColor colorWithWhite:0.0 alpha:0.5];
+    navLabel.font = font;
+    navLabel.textAlignment = UITextAlignmentCenter;
+    navLabel.text = text;
+    
+    self.navigationItem.titleView = navLabel;
     
     [self initArray];
     [self configure];

@@ -143,3 +143,6 @@
 
 /* Gallery - Nav controller left button title */
 "gallery_nav_left_button_title" = "Skip";
+
+/* Tutorial nav-bar title */
+"gallery_nav_bar_title" = "Tutorial";
