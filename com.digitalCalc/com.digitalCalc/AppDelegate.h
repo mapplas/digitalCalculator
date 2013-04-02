@@ -12,6 +12,7 @@
 
 #import "GeniusLevelIAPHelper.h"
 #import "deviceChooser.h"
+#import "GAI.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate> {
     UINavigationController *_navigationController;

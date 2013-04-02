@@ -358,7 +358,7 @@
 		7F9ADCB2170ABEC70048D9B4 /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAITracker.h; path = "Classes/Third party/Analytics/GAITracker.h"; sourceTree = "<group>"; };
 		7F9ADCB3170ABEC70048D9B4 /* GAITransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAITransaction.h; path = "Classes/Third party/Analytics/GAITransaction.h"; sourceTree = "<group>"; };
 		7F9ADCB4170ABEC70048D9B4 /* GAITransactionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAITransactionItem.h; path = "Classes/Third party/Analytics/GAITransactionItem.h"; sourceTree = "<group>"; };
-		7F9ADCB5170ABEC70048D9B4 /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAnalytics.a; path = "Classes/Third party/Analytics/libGoogleAnalytics.a"; sourceTree = "<group>"; };
+		7F9ADCB5170ABEC70048D9B4 /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAnalytics.a; path = "com.digitalCalc/Classes/Third party/Analytics/libGoogleAnalytics.a"; sourceTree = "<group>"; };
 		7F9ADCB7170ABEFE0048D9B4 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		7FA9178616F75E09001A1C4A /* btn_line_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_line_down.png; path = Resources/btn_line_down.png; sourceTree = "<group>"; };
 		7FA9178716F75E09001A1C4A /* btn_line_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_line_down@2x.png"; path = "Resources/btn_line_down@2x.png"; sourceTree = "<group>"; };
@@ -752,7 +752,6 @@
 				7F9ADCB2170ABEC70048D9B4 /* GAITracker.h */,
 				7F9ADCB3170ABEC70048D9B4 /* GAITransaction.h */,
 				7F9ADCB4170ABEC70048D9B4 /* GAITransactionItem.h */,
-				7F9ADCB5170ABEC70048D9B4 /* libGoogleAnalytics.a */,
 			);
 			name = Analytics;
 			sourceTree = "<group>";
@@ -831,7 +830,6 @@
 		7FD4AD7116E734C700EB7CC1 = {
 			isa = PBXGroup;
 			children = (
-				7F9ADCB7170ABEFE0048D9B4 /* CoreData.framework */,
 				7FD4AD8316E734C700EB7CC1 /* com.digitalCalc */,
 				7FD4AD7C16E734C700EB7CC1 /* Frameworks */,
 			);
@@ -849,6 +847,8 @@
 		7FD4AD7C16E734C700EB7CC1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7F9ADCB5170ABEC70048D9B4 /* libGoogleAnalytics.a */,
+				7F9ADCB7170ABEFE0048D9B4 /* CoreData.framework */,
 				7F097D1916F7219600BCD31B /* libicucore.dylib */,
 				7FA9B15016F9DFEE00BB4991 /* StoreKit.framework */,
 				7F097D1716F7216000BCD31B /* MessageUI.framework */,
