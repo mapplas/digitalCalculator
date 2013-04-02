@@ -21,9 +21,8 @@
 #import "CustomSlider.h"
 #import "InAppPurchaseViewController.h"
 #import "HowToGalleryViewController.h"
-#import "GAITrackedViewController.h"
 
-@interface ViewController : GAITrackedViewController {
+@interface ViewController : UIViewController {
     CGPoint lastPoint;
     BOOL mouseSwiped;
     

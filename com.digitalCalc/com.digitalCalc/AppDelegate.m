@@ -34,7 +34,7 @@
     // set debug to YES for extra debugging information.
     [GAI sharedInstance].debug = YES;
     // Create tracker instance.
-    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-39680645-2"];
+    [[GAI sharedInstance] trackerWithTrackingId:@"UA-39680645-2"];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
