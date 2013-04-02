@@ -118,6 +118,9 @@
 		7F5429B216F9B4B70043052E /* LevelHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F5429B116F9B4B70043052E /* LevelHelper.m */; };
 		7F65152A16F0A18200FA770C /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F65152916F0A18200FA770C /* Icon@2x.png */; };
 		7F65152C16F0A18900FA770C /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F65152B16F0A18900FA770C /* Icon.png */; };
+		7F9ADCB6170ABEC70048D9B4 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9ADCB5170ABEC70048D9B4 /* libGoogleAnalytics.a */; };
+		7F9ADCB8170ABEFE0048D9B4 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9ADCB7170ABEFE0048D9B4 /* CoreData.framework */; };
+		7F9ADCB9170ABF040048D9B4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F097D1116F7211600BCD31B /* SystemConfiguration.framework */; };
 		7FA9178C16F75E09001A1C4A /* btn_line_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FA9178616F75E09001A1C4A /* btn_line_down.png */; };
 		7FA9178D16F75E09001A1C4A /* btn_line_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FA9178716F75E09001A1C4A /* btn_line_down@2x.png */; };
 		7FA9179016F75E09001A1C4A /* btn_line_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FA9178A16F75E09001A1C4A /* btn_line_up.png */; };
@@ -350,6 +353,13 @@
 		7F5429B116F9B4B70043052E /* LevelHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LevelHelper.m; path = Classes/Helper/LevelHelper.m; sourceTree = "<group>"; };
 		7F65152916F0A18200FA770C /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../Icon@2x.png"; sourceTree = "<group>"; };
 		7F65152B16F0A18900FA770C /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
+		7F9ADCB0170ABEC70048D9B4 /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAI.h; path = "Classes/Third party/Analytics/GAI.h"; sourceTree = "<group>"; };
+		7F9ADCB1170ABEC70048D9B4 /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAITrackedViewController.h; path = "Classes/Third party/Analytics/GAITrackedViewController.h"; sourceTree = "<group>"; };
+		7F9ADCB2170ABEC70048D9B4 /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAITracker.h; path = "Classes/Third party/Analytics/GAITracker.h"; sourceTree = "<group>"; };
+		7F9ADCB3170ABEC70048D9B4 /* GAITransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAITransaction.h; path = "Classes/Third party/Analytics/GAITransaction.h"; sourceTree = "<group>"; };
+		7F9ADCB4170ABEC70048D9B4 /* GAITransactionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAITransactionItem.h; path = "Classes/Third party/Analytics/GAITransactionItem.h"; sourceTree = "<group>"; };
+		7F9ADCB5170ABEC70048D9B4 /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAnalytics.a; path = "Classes/Third party/Analytics/libGoogleAnalytics.a"; sourceTree = "<group>"; };
+		7F9ADCB7170ABEFE0048D9B4 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		7FA9178616F75E09001A1C4A /* btn_line_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_line_down.png; path = Resources/btn_line_down.png; sourceTree = "<group>"; };
 		7FA9178716F75E09001A1C4A /* btn_line_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_line_down@2x.png"; path = "Resources/btn_line_down@2x.png"; sourceTree = "<group>"; };
 		7FA9178A16F75E09001A1C4A /* btn_line_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_line_up.png; path = Resources/btn_line_up.png; sourceTree = "<group>"; };
@@ -441,6 +451,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F9ADCB9170ABF040048D9B4 /* SystemConfiguration.framework in Frameworks */,
+				7F9ADCB8170ABEFE0048D9B4 /* CoreData.framework in Frameworks */,
 				7FA9B15216F9E01100BB4991 /* StoreKit.framework in Frameworks */,
 				7F097D1A16F7219600BCD31B /* libicucore.dylib in Frameworks */,
 				7F097D0E16F720DF00BCD31B /* libsqlite3.0.dylib in Frameworks */,
@@ -448,6 +460,7 @@
 				7FD4AD7E16E734C700EB7CC1 /* UIKit.framework in Frameworks */,
 				7FD4AD8016E734C700EB7CC1 /* Foundation.framework in Frameworks */,
 				7FD4AD8216E734C700EB7CC1 /* CoreGraphics.framework in Frameworks */,
+				7F9ADCB6170ABEC70048D9B4 /* libGoogleAnalytics.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -628,6 +641,7 @@
 			children = (
 				7F0BC2B3170093CD00E2A56E /* UIImage+Resize.h */,
 				7F0BC2B4170093CD00E2A56E /* UIImage+Resize.m */,
+				7F9ADCAF170ABE070048D9B4 /* Analytics */,
 				7F4F593F16F0C52700241DC3 /* PKRevealController */,
 				7F097CF916F71D2600BCD31B /* RegexKit */,
 			);
@@ -730,6 +744,19 @@
 			name = Level;
 			sourceTree = "<group>";
 		};
+		7F9ADCAF170ABE070048D9B4 /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				7F9ADCB0170ABEC70048D9B4 /* GAI.h */,
+				7F9ADCB1170ABEC70048D9B4 /* GAITrackedViewController.h */,
+				7F9ADCB2170ABEC70048D9B4 /* GAITracker.h */,
+				7F9ADCB3170ABEC70048D9B4 /* GAITransaction.h */,
+				7F9ADCB4170ABEC70048D9B4 /* GAITransactionItem.h */,
+				7F9ADCB5170ABEC70048D9B4 /* libGoogleAnalytics.a */,
+			);
+			name = Analytics;
+			sourceTree = "<group>";
+		};
 		7F9E39A416E9E3420038893A /* Background */ = {
 			isa = PBXGroup;
 			children = (
@@ -804,6 +831,7 @@
 		7FD4AD7116E734C700EB7CC1 = {
 			isa = PBXGroup;
 			children = (
+				7F9ADCB7170ABEFE0048D9B4 /* CoreData.framework */,
 				7FD4AD8316E734C700EB7CC1 /* com.digitalCalc */,
 				7FD4AD7C16E734C700EB7CC1 /* Frameworks */,
 			);
@@ -1433,6 +1461,10 @@
 				GCC_PREFIX_HEADER = "com.digitalCalc/com.digitalCalc-Prefix.pch";
 				INFOPLIST_FILE = "com.digitalCalc/com.digitalCalc-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/com.digitalCalc/Classes/Third party/Analytics\"",
+				);
 				PRODUCT_NAME = "Genius Multiplication";
 				VALID_ARCHS = "armv7 armv7s armv6";
 				WRAPPER_EXTENSION = app;
@@ -1447,6 +1479,10 @@
 				GCC_PREFIX_HEADER = "com.digitalCalc/com.digitalCalc-Prefix.pch";
 				INFOPLIST_FILE = "com.digitalCalc/com.digitalCalc-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/com.digitalCalc/Classes/Third party/Analytics\"",
+				);
 				PRODUCT_NAME = "Genius Multiplication";
 				VALID_ARCHS = "armv7 armv7s armv6";
 				WRAPPER_EXTENSION = app;
