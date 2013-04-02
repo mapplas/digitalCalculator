@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "LayoutPresenter.h"
 #import "PaymentTransactionProtocol.h"
+#import "GAITransaction.h"
+#import "GAI.h"
 
 @interface InAppPurchaseViewController : UIViewController <PaymentTransactionProtocol, UIAlertViewDelegate> {
     NSArray *_products;

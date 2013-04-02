@@ -50,7 +50,23 @@
 }
 
 #pragma mark - PaymentTransactionProtocol methods
-- (void)transactionCorrectlyEnded {
+- (void)transactionCorrectlyEnded:(SKPaymentTransaction *)_transaction {
+    // Analytics
+    GAITransaction *transaction =
+    [GAITransaction transactionWithId:_transaction.transactionIdentifier            // (NSString) Transaction ID, should be unique.
+                      withAffiliation:@"IAP - AppStore"];       // (NSString) Affiliation
+     transaction.taxMicros = (int64_t)(0.17 * 1000000);           // (int64_t) Total tax (in micros)
+     transaction.shippingMicros = (int64_t)(0);                   // (int64_t) Total shipping (in micros)
+     transaction.revenueMicros = (int64_t)(2.16 * 1000000);       // (int64_t) Total revenue (in micros)
+    
+    [transaction addItemWithCode:@"1001"
+                            name:@"Genius Level"
+                        category:@"Game expansions"
+                     priceMicros:(int64_t)(1.99 * 1000000)
+                        quantity:1];                         // (NSString) Product SKU
+    [[GAI sharedInstance].defaultTracker sendTransaction:transaction]; // Send the transaction.
+    
+    
     transactionOkAlert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"in_app_purchase_ok_alert_title", @"In app purchase - Purchase OK alert title") message:NSLocalizedString(@"in_app_purchase_ok_alert_message", @"In app purchase - Purchase OK alert message") delegate:self cancelButtonTitle:nil otherButtonTitles:NSLocalizedString(@"in_app_purchase_ok_nok_button", @"In app purchase OK and NOK alert button title"), nil];
     [transactionOkAlert show];
     [self pop];

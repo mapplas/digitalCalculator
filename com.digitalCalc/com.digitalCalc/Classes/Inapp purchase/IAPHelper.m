@@ -130,7 +130,7 @@ NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurcha
     [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
     
     if (paymentTransactionProtocol != nil) {
-        [paymentTransactionProtocol transactionCorrectlyEnded];
+        [paymentTransactionProtocol transactionCorrectlyEnded:transaction];
     }
 }
 
