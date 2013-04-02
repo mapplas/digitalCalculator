@@ -16,6 +16,8 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate> {
     UINavigationController *_navigationController;
+    
+    NSDate *startDate;
 }
 
 @property (strong, nonatomic) UIWindow *window;

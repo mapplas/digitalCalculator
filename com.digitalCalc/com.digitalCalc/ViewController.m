@@ -40,7 +40,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSLog(@"DID LOAD!!!");
     self.trackedViewName = @"Main screen";
     [self initInAppPurchaseConfig];
     [self launchTutorialOnlyFirstTime];

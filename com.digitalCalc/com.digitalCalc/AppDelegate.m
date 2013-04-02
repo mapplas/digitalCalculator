@@ -74,6 +74,13 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    NSDate *endDate = [NSDate date];
+    NSTimeInterval interval = [endDate timeIntervalSinceDate:startDate];
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker sendTimingWithCategory:@"resources"
+                          withValue:interval
+                           withName:@"Load time"
+                          withLabel:nil];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
@@ -82,6 +89,7 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    startDate = [NSDate date];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
