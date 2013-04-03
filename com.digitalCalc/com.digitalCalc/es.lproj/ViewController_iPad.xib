@@ -209,7 +209,7 @@
 					<object class="IBUIButton" id="518574353">
 						<reference key="NSNextResponder" ref="766721923"/>
 						<int key="NSvFlags">268</int>
-						<string key="NSFrame">{{-2, 669}, {142, 59}}</string>
+						<string key="NSFrame">{{9, 656}, {219, 57}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="821058414"/>
@@ -226,11 +226,11 @@
 						</object>
 						<object class="NSCustomResource" key="IBUIHighlightedImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">btn_comprobar_down.png</string>
+							<string key="NSResourceName">btn_comprobar_down_ipad.png</string>
 						</object>
 						<object class="NSCustomResource" key="IBUINormalImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">btn_comprobar_up.png</string>
+							<string key="NSResourceName">btn_comprobar_up_ipad.png</string>
 						</object>
 						<object class="IBUIFontDescription" key="IBUIFontDescription" id="609671962">
 							<int key="type">2</int>
@@ -1008,7 +1008,7 @@
 				<real value="1" key="210.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
 				<string key="240.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="255.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<real value="0.0" key="255.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
+				<real value="1" key="255.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
 				<string key="258.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="260.CustomClassName">CustomSlider</string>
 				<dictionary class="NSMutableDictionary" key="260.IBAttributePlaceholdersKey"/>
@@ -1185,8 +1185,8 @@
 			<string key="bkg_board_iPad.png">{1024, 724}</string>
 			<string key="btn_aprender_down.png">{251, 70}</string>
 			<string key="btn_aprender_up.png">{251, 70}</string>
-			<string key="btn_comprobar_down.png">{108, 30}</string>
-			<string key="btn_comprobar_up.png">{108, 30}</string>
+			<string key="btn_comprobar_down_ipad.png">{214, 60}</string>
+			<string key="btn_comprobar_up_ipad.png">{214, 60}</string>
 			<string key="btn_dot_up.png">{30, 30}</string>
 			<string key="btn_erase_up.png">{30, 30}</string>
 			<string key="btn_jugar_down.png">{251, 70}</string>

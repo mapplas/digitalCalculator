@@ -252,11 +252,11 @@
 						<reference key="IBUINormalTitleShadowColor" ref="523751796"/>
 						<object class="NSCustomResource" key="IBUIHighlightedImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">btn_comprobar_down.png</string>
+							<string key="NSResourceName">btn_comprobar_down_iphone.png</string>
 						</object>
 						<object class="NSCustomResource" key="IBUINormalImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">btn_check_up.png</string>
+							<string key="NSResourceName">btn_comprobar_up_iphone.png</string>
 						</object>
 						<reference key="IBUIFontDescription" ref="326701267"/>
 						<reference key="IBUIFont" ref="550395601"/>
@@ -1141,8 +1141,8 @@
 			<string key="bkg_board.png">{480, 288}</string>
 			<string key="btn_aprender_down.png">{251, 70}</string>
 			<string key="btn_aprender_up.png">{251, 70}</string>
-			<string key="btn_check_up.png">{108, 30}</string>
-			<string key="btn_comprobar_down.png">{108, 30}</string>
+			<string key="btn_comprobar_down_iphone.png">{108, 30}</string>
+			<string key="btn_comprobar_up_iphone.png">{108, 30}</string>
 			<string key="btn_dot_up.png">{30, 30}</string>
 			<string key="btn_erase_up.png">{30, 30}</string>
 			<string key="btn_jugar_down.png">{251, 70}</string>
