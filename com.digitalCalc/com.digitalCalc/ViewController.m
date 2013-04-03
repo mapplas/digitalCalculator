@@ -64,11 +64,7 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-- (void)initInAppPurchaseConfig {
-    // If user has same accout on different devices, in-app purchases are shown on both devices
-    //    SHOWS POPUP!!
-//    [[GeniusLevelIAPHelper sharedInstance] restoreCompletedTransactions];
-    
+- (void)initInAppPurchaseConfig {    
     // In-app purchase products request
     _products = nil;
     [[GeniusLevelIAPHelper sharedInstance] requestProductsWithCompletionHandler:^(BOOL success, NSArray *products) {
@@ -471,7 +467,7 @@
 
 #pragma mark - in app purchase delegate
 - (void)productPurchased:(NSNotification *)notification {
-    NSString * productIdentifier = notification.object;
+    NSString *productIdentifier = notification.object;
     [_products enumerateObjectsUsingBlock:^(SKProduct * product, NSUInteger idx, BOOL *stop) {
         if ([product.productIdentifier isEqualToString:productIdentifier]) {
             [self gameModePressed:nil];
