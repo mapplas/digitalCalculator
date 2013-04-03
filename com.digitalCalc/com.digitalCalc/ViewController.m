@@ -64,11 +64,7 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-- (void)initInAppPurchaseConfig {
-    // If user has same accout on different devices, in-app purchases are shown on both devices
-    //    SHOWS POPUP!!
-//    [[GeniusLevelIAPHelper sharedInstance] restoreCompletedTransactions];
-    
+- (void)initInAppPurchaseConfig {    
     // In-app purchase products request
     _products = nil;
     [[GeniusLevelIAPHelper sharedInstance] requestProductsWithCompletionHandler:^(BOOL success, NSArray *products) {
@@ -104,6 +100,10 @@
 
 // Learn mode pressed
 - (IBAction)learnModePressed:(id)sender {
+    // Analytics
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker sendView:@"Learn Mode Screen"];
+    
     self.mode = CALCULATOR_MODE_LEARN;
     [self initNavBar];
     
@@ -120,6 +120,10 @@
 // Game mode pressed
 - (IBAction)gameModePressed:(id)sender {
     if ([[GeniusLevelIAPHelper sharedInstance] productPurchased:NSLocalizedString(@"in_app_purchase_genius_level_identifier", @"In app purchase - Genius level product identifier")]) {
+        
+        // Analytics
+        id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+        [tracker sendView:@"Game Mode Screen"];
         
         self.mode = CALCULATOR_MODE_GAME;
 		self.level = LEVEL_MEDIUM;
@@ -463,7 +467,7 @@
 
 #pragma mark - in app purchase delegate
 - (void)productPurchased:(NSNotification *)notification {
-    NSString * productIdentifier = notification.object;
+    NSString *productIdentifier = notification.object;
     [_products enumerateObjectsUsingBlock:^(SKProduct * product, NSUInteger idx, BOOL *stop) {
         if ([product.productIdentifier isEqualToString:productIdentifier]) {
             [self gameModePressed:nil];

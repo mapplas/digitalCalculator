@@ -9,8 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "LayoutPresenter.h"
 #import "PaymentTransactionProtocol.h"
+#import "RestoreTransactionProtocol.h"
+#import "GAITransaction.h"
+#import "GAI.h"
 
-@interface InAppPurchaseViewController : UIViewController <PaymentTransactionProtocol, UIAlertViewDelegate> {
+@interface InAppPurchaseViewController : UIViewController <PaymentTransactionProtocol, RestoreTransactionProtocol, UIAlertViewDelegate> {
     NSArray *_products;
     
     UIAlertView *transactionOkAlert;
@@ -23,5 +26,6 @@
 @property (nonatomic, strong) NSArray *products;
 
 - (IBAction)buyButtonPressed:(id)sender;
+- (IBAction)restoreButtonPressed:(id)sender;
 
 @end

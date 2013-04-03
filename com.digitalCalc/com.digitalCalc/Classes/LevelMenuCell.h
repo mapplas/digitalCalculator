@@ -11,5 +11,6 @@
 @interface LevelMenuCell : UITableViewCell
 
 @property (nonatomic, strong) IBOutlet UILabel *textLabel;
+@property (nonatomic, strong) IBOutlet UIImageView *image;
 
 @end

@@ -61,14 +61,17 @@
         switch (indexPath.row) {
             case 0:
                 plainTextMenuCell.textLabel.text = NSLocalizedString(@"menu_section_levels_low", @"Menu section levels low level");
+                plainTextMenuCell.image.image = [UIImage imageNamed:@"ic_menu_beginner.png"];
                 break;
                 
             case 1:
                 plainTextMenuCell.textLabel.text = NSLocalizedString(@"menu_section_levels_medium", @"Menu section levels medium level");
+                plainTextMenuCell.image.image = [UIImage imageNamed:@"ic_menu_genius.png"];
                 break;
                 
             case 2:
                 plainTextMenuCell.textLabel.text = NSLocalizedString(@"menu_section_levels_high", @"Menu section levels high level");
+                plainTextMenuCell.image.image = [UIImage imageNamed:@"ic_menu_prodigy.png"];
                 break;
         }
         return plainTextMenuCell;
@@ -81,18 +84,6 @@
                 NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"SwitchedMenuCell" owner:self options:nil];
                 helpCell = [nib objectAtIndex:0];
             }
-        } else if(indexPath.row == 1) {
-            plainTextMenuCell = [tableView dequeueReusableCellWithIdentifier:levelCellId];
-            if (plainTextMenuCell == nil) {
-                NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"LevelMenuCell" owner:self options:nil];
-                plainTextMenuCell = [nib objectAtIndex:0];
-            }
-        } else if(indexPath.row == 2) {
-            plainTextMenuCell = [tableView dequeueReusableCellWithIdentifier:levelCellId];
-            if (plainTextMenuCell == nil) {
-                NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"LevelMenuCell" owner:self options:nil];
-                plainTextMenuCell = [nib objectAtIndex:0];
-            }
         } else {
             plainTextMenuCell = [tableView dequeueReusableCellWithIdentifier:levelCellId];
             if (plainTextMenuCell == nil) {
@@ -104,20 +95,29 @@
         switch (indexPath.row) {
             case 0:
                 [helpCell.cellSwitch setOn:mainViewController.helpEnabled];
-                
+            
                 helpCell.textLabel.text = NSLocalizedString(@"menu_section_settings_help_enabled", @"Menu section settings help enabled");
+                helpCell.image.image = [UIImage imageNamed:@"ic_menu_help.png"];
                 break;
 
             case 1:
-                plainTextMenuCell.textLabel.text = NSLocalizedString(@"menu_section_settings_game_mode_change", @"Menu section settings game mode change");
+                plainTextMenuCell.textLabel.text = NSLocalizedString(@"menu_section_settings_how_to", @"Menu section settings tutorial");
+                plainTextMenuCell.image.image = [UIImage imageNamed:@"ic_menu_tutorial.png"];
                 break;
             
             case 2:
-                plainTextMenuCell.textLabel.text = NSLocalizedString(@"menu_section_settings_ranking", @"Menu section settings ranking");
+                plainTextMenuCell.textLabel.text = NSLocalizedString(@"menu_section_settings_game_mode_change", @"Menu section settings game mode change");
+                plainTextMenuCell.image.image = [UIImage imageNamed:@"ic_menu_home.png"];
                 break;
                 
             case 3:
-                plainTextMenuCell.textLabel.text = NSLocalizedString(@"menu_section_settings_how_to", @"Menu section settings tutorial");
+                plainTextMenuCell.textLabel.text = NSLocalizedString(@"menu_section_settings_ranking", @"Menu section settings ranking");
+                plainTextMenuCell.image.image = [UIImage imageNamed:@"ic_menu_clasification.png"];
+                break;
+            
+            case 4:
+                plainTextMenuCell.textLabel.text = NSLocalizedString(@"menu_section_settings_share", @"Menu section settings share");
+                plainTextMenuCell.image.image = [UIImage imageNamed:@"ic_menu_share.png"];
                 break;
         }
         
@@ -184,20 +184,28 @@
                 break;
                 
             case 1:
-                [mainViewController mainMenuCellPressed];
+                [self pushHowToController];
                 [self deselectRowandSelectCorrectOne:indexPath];
 
                 break;
                 
             case 2:
-                [self pushRankingController];
+                [mainViewController mainMenuCellPressed];
                 [self deselectRowandSelectCorrectOne:indexPath];
 
                 break;
                 
             case 3:
-                [self pushHowToController];
+                [self pushRankingController];
                 [self deselectRowandSelectCorrectOne:indexPath];
+                
+                break;
+                
+            case 4:
+                [self pushShareController];
+                [self deselectRowandSelectCorrectOne:indexPath];
+                
+                break;
                 
             default:
                 break;
@@ -291,6 +299,28 @@
     [mainViewController presentModalViewController:controller animated:YES];
 }
 
+- (void)pushShareController {
+    SharingHelper *shareHelper = [[SharingHelper alloc] initWithNavigationController:mainViewController.navigationController];
+    
+    // If device has ios6 and up
+	if ([UIActivityViewController class]) {
+		NSMutableArray *itemsToShare = [[NSMutableArray alloc] initWithObjects:[shareHelper getShareMessage], nil];
+        
+		UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:itemsToShare applicationActivities:nil];
+		activityViewController.excludedActivityTypes = @[UIActivityTypePostToWeibo, UIActivityTypeAssignToContact, UIActivityTypeCopyToPasteboard, UIActivityTypePrint, UIActivityTypeSaveToCameraRoll];
+        
+		[self presentViewController:activityViewController animated:YES completion:nil];
+	}
+	else {
+        // iOS 5
+		NSString *cancelButton = NSLocalizedString(@"ios5_sharing_action_sheet_cancel_button", @"iOS5 sharing action sheet cancel button - twitter sharing");
+		NSString *twitterButton = NSLocalizedString(@"ios5_sharing_action_sheet_twitter_button", @"iOS5 sharing action sheet twitter button - twitter sharing");
+        
+		UIActionSheet *alertView = [[UIActionSheet alloc] initWithTitle:nil delegate:shareHelper cancelButtonTitle:cancelButton destructiveButtonTitle:nil otherButtonTitles:twitterButton, @"Share via SMS", @"Share via email", nil];
+		[alertView showInView:[UIApplication sharedApplication].keyWindow.rootViewController.view];
+	}
+}
+
 #pragma mark - Help actions
 - (void)checkHelpSwitch:(UISwitch *)help_switch {
     DeviceChooser *chooser = [[DeviceChooser alloc] init];
@@ -303,12 +333,25 @@
         self.helpView.hidden = NO;
         self.checkButton.hidden = YES;
         
-        [self.checkButton setImage:[UIImage imageNamed:@"btn_check_up.png"] forState:UIControlStateNormal];
-        [self.checkButton setImage:[UIImage imageNamed:@"btn_check_down.png"] forState:UIControlStateHighlighted];
-        
-        if ([chooser isSpanish]) {
-            [self.checkButton setImage:[UIImage imageNamed:@"btn_comprobar_up.png"] forState:UIControlStateNormal];
-            [self.checkButton setImage:[UIImage imageNamed:@"btn_comprobar_down.png"] forState:UIControlStateHighlighted];
+        if ([chooser isPad]) {
+            if ([chooser isSpanish]) {
+                [checkButton setImage:[UIImage imageNamed:@"btn_comprobar_up_ipad.png"] forState:UIControlStateNormal];
+                [checkButton setImage:[UIImage imageNamed:@"btn_comprobar_down_ipad.png"] forState:UIControlStateHighlighted];
+            } else {
+                // English
+                [checkButton setImage:[UIImage imageNamed:@"btn_check_up_ipad.png"] forState:UIControlStateNormal];
+                [checkButton setImage:[UIImage imageNamed:@"btn_check_down_ipad.png"] forState:UIControlStateHighlighted];
+            }
+        } else {
+            // iPhone
+            if ([chooser isSpanish]) {
+                [checkButton setImage:[UIImage imageNamed:@"btn_comprobar_up_iphone.png"] forState:UIControlStateNormal];
+                [checkButton setImage:[UIImage imageNamed:@"btn_comprobar_down_iphone.png"] forState:UIControlStateHighlighted];
+            } else {
+                // English
+                [checkButton setImage:[UIImage imageNamed:@"btn_check_up_iphone.png"] forState:UIControlStateNormal];
+                [checkButton setImage:[UIImage imageNamed:@"btn_check_down_iphone.png"] forState:UIControlStateHighlighted];
+            }
         }
     }
     else {
@@ -318,12 +361,25 @@
         self.helpView.hidden = YES;
         self.checkButton.hidden = NO;
         
-        [self.checkButton setImage:[UIImage imageNamed:@"btn_check_up_white.png"] forState:UIControlStateNormal];
-        [self.checkButton setImage:[UIImage imageNamed:@"btn_check_down_white.png"] forState:UIControlStateHighlighted];
-        
-        if ([chooser isSpanish]) {
-            [self.checkButton setImage:[UIImage imageNamed:@"btn_comprobar_up_white.png"] forState:UIControlStateNormal];
-            [self.checkButton setImage:[UIImage imageNamed:@"btn_comprobar_down_white.png"] forState:UIControlStateHighlighted];
+        if ([chooser isPad]) {
+            if ([chooser isSpanish]) {
+                [checkButton setImage:[UIImage imageNamed:@"btn_comprobar_up_white_ipad.png"] forState:UIControlStateNormal];
+                [checkButton setImage:[UIImage imageNamed:@"btn_comprobar_down_white_ipad.png"] forState:UIControlStateHighlighted];
+            } else {
+                // English
+                [checkButton setImage:[UIImage imageNamed:@"btn_check_up_white_ipad.png"] forState:UIControlStateNormal];
+                [checkButton setImage:[UIImage imageNamed:@"btn_check_down_white_ipad.png"] forState:UIControlStateHighlighted];
+            }
+        } else {
+            // iPhone
+            if ([chooser isSpanish]) {
+                [checkButton setImage:[UIImage imageNamed:@"btn_comprobar_up_white_iphone.png"] forState:UIControlStateNormal];
+                [checkButton setImage:[UIImage imageNamed:@"btn_comprobar_down_white_iphone.png"] forState:UIControlStateHighlighted];
+            } else {
+                // English
+                [checkButton setImage:[UIImage imageNamed:@"btn_check_up_white_iphone.png"] forState:UIControlStateNormal];
+                [checkButton setImage:[UIImage imageNamed:@"btn_check_down_white_iphone.png"] forState:UIControlStateHighlighted];
+            }
         }
     }
 }
