@@ -2,10 +2,10 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1552</int>
-		<string key="IBDocument.SystemVersion">12C60</string>
+		<string key="IBDocument.SystemVersion">12D78</string>
 		<string key="IBDocument.InterfaceBuilderVersion">3084</string>
-		<string key="IBDocument.AppKitVersion">1187.34</string>
-		<string key="IBDocument.HIToolboxVersion">625.00</string>
+		<string key="IBDocument.AppKitVersion">1187.37</string>
+		<string key="IBDocument.HIToolboxVersion">626.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			<string key="NS.object.0">2083</string>
@@ -41,6 +41,7 @@
 				<string key="NSFrameSize">{92, 30}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
+				<reference key="NSNextKeyView"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<bool key="IBUIOpaque">NO</bool>
 				<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -197,6 +198,7 @@
 						<string key="NSFrame">{{705, 691}, {303, 23}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -275,7 +277,7 @@
 					<object class="IBUIButton" id="821058414">
 						<reference key="NSNextResponder" ref="766721923"/>
 						<int key="NSvFlags">268</int>
-						<string key="NSFrame">{{-5, 669}, {142, 59}}</string>
+						<string key="NSFrame">{{9, 656}, {219, 57}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="649042476"/>
@@ -292,11 +294,11 @@
 						<reference key="IBUINormalTitleShadowColor" ref="466583421"/>
 						<object class="NSCustomResource" key="IBUIHighlightedImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">btn_next_clue_down.png</string>
+							<string key="NSResourceName">btn_next_clue_down_ipad.png</string>
 						</object>
 						<object class="NSCustomResource" key="IBUINormalImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">btn_next_clue_up.png</string>
+							<string key="NSResourceName">btn_next_clue_up_ipad.png</string>
 						</object>
 						<reference key="IBUIFontDescription" ref="609671962"/>
 						<reference key="IBUIFont" ref="452211331"/>
@@ -571,6 +573,7 @@
 						<string key="NSFrame">{{315, 372}, {394, 123}}</string>
 						<reference key="NSSuperview" ref="290507410"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -972,10 +975,10 @@
 						<string key="objectName">After check view</string>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">289</int>
-						<reference key="object" ref="871755836"/>
+						<int key="objectID">291</int>
+						<reference key="object" ref="487063874"/>
 						<reference key="parent" ref="853507167"/>
-						<string key="objectName">Tap to continue label</string>
+						<string key="objectName">Alpha help view</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">290</int>
@@ -984,10 +987,10 @@
 						<string key="objectName">After checked label</string>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">291</int>
-						<reference key="object" ref="487063874"/>
+						<int key="objectID">289</int>
+						<reference key="object" ref="871755836"/>
 						<reference key="parent" ref="853507167"/>
-						<string key="objectName">Alpha help view</string>
+						<string key="objectName">Tap to continue label</string>
 					</object>
 				</array>
 			</object>
@@ -1002,7 +1005,7 @@
 				<string key="2.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<dictionary class="NSMutableDictionary" key="210.IBAttributePlaceholdersKey"/>
 				<string key="210.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<real value="0.0" key="210.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
+				<real value="1" key="210.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
 				<string key="240.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="255.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<real value="1" key="255.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
@@ -1079,10 +1082,6 @@
 						<string key="checkedLabel">UILabel</string>
 						<string key="ckeckButton">UIButton</string>
 						<string key="firstArgument">UILabel</string>
-						<string key="galleryBackground">UIView</string>
-						<string key="galleryContainer">UIView</string>
-						<string key="galleryPageControl">UIPageControl</string>
-						<string key="galleryScroll">UIScrollView</string>
 						<string key="helpAlphaView">UIView</string>
 						<string key="helpButton">UIButton</string>
 						<string key="helpLabel">UILabel</string>
@@ -1120,22 +1119,6 @@
 						<object class="IBToOneOutletInfo" key="firstArgument">
 							<string key="name">firstArgument</string>
 							<string key="candidateClassName">UILabel</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="galleryBackground">
-							<string key="name">galleryBackground</string>
-							<string key="candidateClassName">UIView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="galleryContainer">
-							<string key="name">galleryContainer</string>
-							<string key="candidateClassName">UIView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="galleryPageControl">
-							<string key="name">galleryPageControl</string>
-							<string key="candidateClassName">UIPageControl</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="galleryScroll">
-							<string key="name">galleryScroll</string>
-							<string key="candidateClassName">UIScrollView</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="helpAlphaView">
 							<string key="name">helpAlphaView</string>
@@ -1207,8 +1190,8 @@
 			<string key="btn_learn_down.png">{251, 70}</string>
 			<string key="btn_learn_up.png">{251, 70}</string>
 			<string key="btn_line_up.png">{30, 30}</string>
-			<string key="btn_next_clue_down.png">{108, 30}</string>
-			<string key="btn_next_clue_up.png">{107, 30}</string>
+			<string key="btn_next_clue_down_ipad.png">{214, 60}</string>
+			<string key="btn_next_clue_up_ipad.png">{214, 60}</string>
 			<string key="btn_play_down.png">{251, 70}</string>
 			<string key="btn_play_up.png">{251, 70}</string>
 		</dictionary>
