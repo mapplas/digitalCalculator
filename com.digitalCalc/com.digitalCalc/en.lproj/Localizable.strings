@@ -146,3 +146,15 @@
 
 /* Tutorial nav-bar title */
 "gallery_nav_bar_title" = "Tutorial";
+
+/* Restore in app purchase - Restore OK alert title */
+"restore_in_app_purchase_ok_alert_title" = "Restore completed";
+
+/* Restore in app purchase - Restore OK alert message */
+"restore_in_app_purchase_ok_alert_message" = "Enjoy learning and playing!";
+
+/* Restore in app purchase - Restore NOK alert title */
+"restore_in_app_purchase_nok_alert_title" = "Unsuccessful restore";
+
+/* In app purchase - Restore NOK alert message */
+"restore_in_app_purchase_nok_alert_message" = "Something went wrong... Try it again!";
