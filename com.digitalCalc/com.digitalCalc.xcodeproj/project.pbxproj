@@ -186,6 +186,10 @@
 		7FACE497170C356C00ADDC2F /* btn_siguiente_down_ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FACE496170C356B00ADDC2F /* btn_siguiente_down_ipad.png */; };
 		7FACE49A170C3C1200ADDC2F /* ic_menu_help.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FACE498170C3C1200ADDC2F /* ic_menu_help.png */; };
 		7FACE49B170C3C1200ADDC2F /* ic_menu_help@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FACE499170C3C1200ADDC2F /* ic_menu_help@2x.png */; };
+		7FACE49F170C465D00ADDC2F /* SharingHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FACE49E170C465D00ADDC2F /* SharingHelper.m */; };
+		7FACE4A1170C46BC00ADDC2F /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FACE4A0170C46BC00ADDC2F /* Twitter.framework */; };
+		7FACE4A2170C46D500ADDC2F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F097D1716F7216000BCD31B /* MessageUI.framework */; };
+		7FACE4A4170C46DE00ADDC2F /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FACE4A3170C46DE00ADDC2F /* Accounts.framework */; };
 		7FAEB35E16FA0514001CBDC7 /* InAppPurchaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAEB35C16FA0514001CBDC7 /* InAppPurchaseViewController.m */; };
 		7FAEB36616FA0576001CBDC7 /* InAppPurchaseViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FAEB36216FA0576001CBDC7 /* InAppPurchaseViewController_iPad.xib */; };
 		7FAEB36716FA0576001CBDC7 /* InAppPurchaseViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FAEB36416FA0576001CBDC7 /* InAppPurchaseViewController_iPhone.xib */; };
@@ -464,6 +468,10 @@
 		7FACE496170C356B00ADDC2F /* btn_siguiente_down_ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_siguiente_down_ipad.png; path = Resources/btn_siguiente_down_ipad.png; sourceTree = "<group>"; };
 		7FACE498170C3C1200ADDC2F /* ic_menu_help.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_menu_help.png; path = Resources/ic_menu_help.png; sourceTree = "<group>"; };
 		7FACE499170C3C1200ADDC2F /* ic_menu_help@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic_menu_help@2x.png"; path = "Resources/ic_menu_help@2x.png"; sourceTree = "<group>"; };
+		7FACE49D170C465D00ADDC2F /* SharingHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharingHelper.h; sourceTree = "<group>"; };
+		7FACE49E170C465D00ADDC2F /* SharingHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharingHelper.m; sourceTree = "<group>"; };
+		7FACE4A0170C46BC00ADDC2F /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		7FACE4A3170C46DE00ADDC2F /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		7FAEB35B16FA0514001CBDC7 /* InAppPurchaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InAppPurchaseViewController.h; sourceTree = "<group>"; };
 		7FAEB35C16FA0514001CBDC7 /* InAppPurchaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InAppPurchaseViewController.m; sourceTree = "<group>"; };
 		7FAEB36316FA0576001CBDC7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/InAppPurchaseViewController_iPad.xib; sourceTree = "<group>"; };
@@ -523,6 +531,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FACE4A4170C46DE00ADDC2F /* Accounts.framework in Frameworks */,
+				7FACE4A2170C46D500ADDC2F /* MessageUI.framework in Frameworks */,
+				7FACE4A1170C46BC00ADDC2F /* Twitter.framework in Frameworks */,
 				7F9ADCB9170ABF040048D9B4 /* SystemConfiguration.framework in Frameworks */,
 				7F9ADCB8170ABEFE0048D9B4 /* CoreData.framework in Frameworks */,
 				7FA9B15216F9E01100BB4991 /* StoreKit.framework in Frameworks */,
@@ -706,6 +717,7 @@
 				7FE6329A16EDCF0000B2C086 /* iPhone/iPad */,
 				7F4F594C16F0DB0700241DC3 /* Layout */,
 				7F5429B316F9B4BF0043052E /* Level */,
+				7FACE49C170C465D00ADDC2F /* Sharing */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -884,6 +896,16 @@
 			name = "In-app purchase";
 			sourceTree = "<group>";
 		};
+		7FACE49C170C465D00ADDC2F /* Sharing */ = {
+			isa = PBXGroup;
+			children = (
+				7FACE49D170C465D00ADDC2F /* SharingHelper.h */,
+				7FACE49E170C465D00ADDC2F /* SharingHelper.m */,
+			);
+			name = Sharing;
+			path = Classes/Helper/Sharing;
+			sourceTree = "<group>";
+		};
 		7FAEB35816FA04C9001CBDC7 /* Inapp purchase */ = {
 			isa = PBXGroup;
 			children = (
@@ -924,6 +946,8 @@
 		7FD4AD7C16E734C700EB7CC1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7FACE4A3170C46DE00ADDC2F /* Accounts.framework */,
+				7FACE4A0170C46BC00ADDC2F /* Twitter.framework */,
 				7F9ADCB5170ABEC70048D9B4 /* libGoogleAnalytics.a */,
 				7F9ADCB7170ABEFE0048D9B4 /* CoreData.framework */,
 				7F097D1916F7219600BCD31B /* libicucore.dylib */,
@@ -1424,6 +1448,7 @@
 				7F0BC29D1700806700E2A56E /* HowToGalleryViewController.m in Sources */,
 				7F0BC2B5170093CD00E2A56E /* UIImage+Resize.m in Sources */,
 				7FACE495170C302200ADDC2F /* UIScreen+SSToolkitAdditions.m in Sources */,
+				7FACE49F170C465D00ADDC2F /* SharingHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

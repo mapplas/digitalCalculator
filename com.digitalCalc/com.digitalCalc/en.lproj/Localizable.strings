@@ -81,6 +81,9 @@
 /* Menu section settings tutorial */
 "menu_section_settings_how_to" = "Tutorial";
 
+/* Menu section settings share */
+"menu_section_settings_share" = "Share";
+
 /* Result ckecked OK text in learn mode */
 "result_checked_ok_learn_mode" = "GREAT Genius!! One more? Tap to continue!";
 
@@ -158,3 +161,39 @@
 
 /* In app purchase - Restore NOK alert message */
 "restore_in_app_purchase_nok_alert_message" = "Something went wrong... Try it again!";
+
+/* Twitter sharing not avaliable */
+"share_twitter_error" = "Twitter client is not avaliable";
+
+/* Facebook sharing not avaliable */
+"share_facebook_error" = "Facebook client is not avaliable";
+
+/* iOS5 sharing action sheet cancel button - twitter sharing */
+"ios5_sharing_action_sheet_cancel_button" = "Cancelar";
+
+/* iOS5 sharing action sheet twitter button - twitter sharing */
+"ios5_sharing_action_sheet_twitter_button" = "Compartir vía Twitter";
+
+/* SMS sharing error */
+"share_sms_error" = "Error sharing via SMS";
+
+/* SMS sharing ok message */
+"share_sms_ok_message" = "Message correctly sent";
+
+/* Email sharing error */
+"share_email_error" = "Error sharing via email";
+
+/* Email sharing ok message */
+"share_email_ok_message" = "Email correctly sent";
+
+/* Email sharing mail subject */
+"share_email_subject" = "Try it!";
+
+/* Share message part 1 */
+"share_message_part_1" = "I am using";
+
+/* Share message part 2 */
+"share_message_part_2" = "for iOS. Try it out, it's amazing! @SupportGenius #GeniusMultiplication";
+
+/* OK message */
+"ok_message" = "OK";
