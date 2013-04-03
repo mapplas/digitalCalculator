@@ -36,11 +36,25 @@
             helpButton.hidden = YES;
             helpView.hidden = YES;
             
-            [checkButton setImage:[UIImage imageNamed:@"btn_check_up_white.png"] forState:UIControlStateNormal];
-            [checkButton setImage:[UIImage imageNamed:@"btn_check_down_white.png"] forState:UIControlStateHighlighted];
-            if ([chooser isSpanish]) {
-                [checkButton setImage:[UIImage imageNamed:@"btn_comprobar_up_white.png"] forState:UIControlStateNormal];
-                [checkButton setImage:[UIImage imageNamed:@"btn_comprobar_down_white.png"] forState:UIControlStateHighlighted];
+            if ([chooser isPad]) {
+                if ([chooser isSpanish]) {
+                    [checkButton setImage:[UIImage imageNamed:@"btn_comprobar_up_white_ipad.png"] forState:UIControlStateNormal];
+                    [checkButton setImage:[UIImage imageNamed:@"btn_comprobar_down_white_ipad.png"] forState:UIControlStateHighlighted];
+                } else {
+                    // English
+                    [checkButton setImage:[UIImage imageNamed:@"btn_check_up_white_ipad.png"] forState:UIControlStateNormal];
+                    [checkButton setImage:[UIImage imageNamed:@"btn_check_down_white_ipad.png"] forState:UIControlStateHighlighted];
+                }
+            } else {
+                // iPhone
+                if ([chooser isSpanish]) {
+                    [checkButton setImage:[UIImage imageNamed:@"btn_comprobar_up_white_iphone.png"] forState:UIControlStateNormal];
+                    [checkButton setImage:[UIImage imageNamed:@"btn_comprobar_down_white_iphone.png"] forState:UIControlStateHighlighted];
+                } else {
+                    // English
+                    [checkButton setImage:[UIImage imageNamed:@"btn_check_up_white_iphone.png"] forState:UIControlStateNormal];
+                    [checkButton setImage:[UIImage imageNamed:@"btn_check_down_white_iphone.png"] forState:UIControlStateHighlighted];
+                }
             }
             
             break;
@@ -52,12 +66,25 @@
             helpButton.hidden = NO;
             helpView.hidden = NO;
             
-            [checkButton setImage:[UIImage imageNamed:@"btn_check_up.png"] forState:UIControlStateNormal];
-            [checkButton setImage:[UIImage imageNamed:@"btn_check_down.png"] forState:UIControlStateHighlighted];
-            
-            if ([chooser isSpanish]) {
-                [checkButton setImage:[UIImage imageNamed:@"btn_comprobar_up.png"] forState:UIControlStateNormal];
-                [checkButton setImage:[UIImage imageNamed:@"btn_comprobar_down.png"] forState:UIControlStateHighlighted];
+            if ([chooser isPad]) {
+                if ([chooser isSpanish]) {
+                    [checkButton setImage:[UIImage imageNamed:@"btn_comprobar_up_ipad.png"] forState:UIControlStateNormal];
+                    [checkButton setImage:[UIImage imageNamed:@"btn_comprobar_down_ipad.png"] forState:UIControlStateHighlighted];
+                } else {
+                    // English
+                    [checkButton setImage:[UIImage imageNamed:@"btn_check_up_ipad.png"] forState:UIControlStateNormal];
+                    [checkButton setImage:[UIImage imageNamed:@"btn_check_down_ipad.png"] forState:UIControlStateHighlighted];
+                }
+            } else {
+                // iPhone
+                if ([chooser isSpanish]) {
+                    [checkButton setImage:[UIImage imageNamed:@"btn_comprobar_up_iphone.png"] forState:UIControlStateNormal];
+                    [checkButton setImage:[UIImage imageNamed:@"btn_comprobar_down_iphone.png"] forState:UIControlStateHighlighted];
+                } else {
+                    // English
+                    [checkButton setImage:[UIImage imageNamed:@"btn_check_up_iphone.png"] forState:UIControlStateNormal];
+                    [checkButton setImage:[UIImage imageNamed:@"btn_check_down_iphone.png"] forState:UIControlStateHighlighted];
+                }
             }
             
             [self setHelpText];
