@@ -87,6 +87,7 @@
                 NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"LevelMenuCell" owner:self options:nil];
                 plainTextMenuCell = [nib objectAtIndex:0];
             }
+            
         } else if(indexPath.row == 2) {
             plainTextMenuCell = [tableView dequeueReusableCellWithIdentifier:levelCellId];
             if (plainTextMenuCell == nil) {
@@ -109,7 +110,9 @@
                 break;
 
             case 1:
-                plainTextMenuCell.textLabel.text = NSLocalizedString(@"menu_section_settings_game_mode_change", @"Menu section settings game mode change");
+                plainTextMenuCell.textLabel.text = NSLocalizedString(@"menu_section_settings_how_to", @"Menu section settings tutorial");
+                plainTextMenuCell.image.image = [UIImage imageNamed:@"ic_menu_help.png"];
+
                 break;
             
             case 2:
@@ -117,7 +120,8 @@
                 break;
                 
             case 3:
-                plainTextMenuCell.textLabel.text = NSLocalizedString(@"menu_section_settings_how_to", @"Menu section settings tutorial");
+                plainTextMenuCell.textLabel.text = NSLocalizedString(@"menu_section_settings_game_mode_change", @"Menu section settings game mode change");
+
                 break;
         }
         
@@ -184,7 +188,7 @@
                 break;
                 
             case 1:
-                [mainViewController mainMenuCellPressed];
+                [self pushHowToController];
                 [self deselectRowandSelectCorrectOne:indexPath];
 
                 break;
@@ -196,7 +200,7 @@
                 break;
                 
             case 3:
-                [self pushHowToController];
+                [mainViewController mainMenuCellPressed];
                 [self deselectRowandSelectCorrectOne:indexPath];
                 
             default:

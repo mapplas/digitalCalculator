@@ -12,5 +12,6 @@
 
 @property (nonatomic, strong) IBOutlet UILabel *textLabel;
 @property (nonatomic, strong) IBOutlet UISwitch *cellSwitch;
+@property (nonatomic, strong) IBOutlet UIImageView *image;
 
 @end
