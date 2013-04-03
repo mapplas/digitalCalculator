@@ -161,3 +161,39 @@
 
 /* In app purchase - Restore NOK alert message */
 "restore_in_app_purchase_nok_alert_message" = "Algo salió mal, inténtalo otra vez!";
+
+/* Twitter sharing not avaliable */
+"share_twitter_error" = "Twitter no está disponible";
+
+/* Facebook sharing not avaliable */
+"share_facebook_error" = "Facebook no está disponible";
+
+/* SMS sharing error */
+"share_sms_error" = "Error al enviar SMS";
+
+/* SMS sharing ok message */
+"share_sms_ok_message" = "SMS enviado con éxito!";
+
+/* Email sharing error */
+"share_email_error" = "Error enviando email";
+
+/* Email sharing ok message */
+"share_email_ok_message" = "Email enviado correctamente";
+
+/* Email sharing mail subject */
+"share_email_subject" = "¡Pruébala!";
+
+/* iOS5 sharing action sheet cancel button - twitter sharing */
+"ios5_sharing_action_sheet_cancel_button" = "Cancelar";
+
+/* iOS5 sharing action sheet twitter button - twitter sharing */
+"ios5_sharing_action_sheet_twitter_button" = "Compartir vía Twitter";
+
+/* Share message part 1 */
+"share_message_part_1" = "Estoy usando";
+
+/* Share message part 2 */
+"share_message_part_2" = "para iOS. ¡Pruébala, es increíble! @SupportGenius #GeniusMultiplication";
+
+/* OK message */
+"ok_message" = "OK";

@@ -192,6 +192,14 @@
                 [mainViewController mainMenuCellPressed];
                 [self deselectRowandSelectCorrectOne:indexPath];
                 
+                break;
+                
+            case 4:
+                [self pushShareController];
+                [self deselectRowandSelectCorrectOne:indexPath];
+                
+                break;
+                
             default:
                 break;
         }
@@ -282,6 +290,28 @@
     UINavigationController *controller = [[UINavigationController alloc] initWithRootViewController:gallery];
     gallery.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
     [mainViewController presentModalViewController:controller animated:YES];
+}
+
+- (void)pushShareController {
+    SharingHelper *shareHelper = [[SharingHelper alloc] initWithNavigationController:mainViewController.navigationController];
+    
+    // If device has ios6 and up
+	if ([UIActivityViewController class]) {
+		NSMutableArray *itemsToShare = [[NSMutableArray alloc] initWithObjects:[shareHelper getShareMessage], nil];
+        
+		UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:itemsToShare applicationActivities:nil];
+		activityViewController.excludedActivityTypes = @[UIActivityTypePostToWeibo, UIActivityTypeAssignToContact, UIActivityTypeCopyToPasteboard, UIActivityTypePrint, UIActivityTypeSaveToCameraRoll];
+        
+		[self presentViewController:activityViewController animated:YES completion:nil];
+	}
+	else {
+        // iOS 5
+		NSString *cancelButton = NSLocalizedString(@"ios5_sharing_action_sheet_cancel_button", @"iOS5 sharing action sheet cancel button - twitter sharing");
+		NSString *twitterButton = NSLocalizedString(@"ios5_sharing_action_sheet_twitter_button", @"iOS5 sharing action sheet twitter button - twitter sharing");
+        
+		UIActionSheet *alertView = [[UIActionSheet alloc] initWithTitle:nil delegate:shareHelper cancelButtonTitle:cancelButton destructiveButtonTitle:nil otherButtonTitles:twitterButton, @"Share via SMS", @"Share via email", nil];
+		[alertView showInView:self.view];
+	}
 }
 
 #pragma mark - Help actions

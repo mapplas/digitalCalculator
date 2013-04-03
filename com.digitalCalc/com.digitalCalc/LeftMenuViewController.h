@@ -10,6 +10,7 @@
 #import "SwitchedMenuCell.h"
 #import "LevelMenuCell.h"
 #import "deviceChooser.h"
+#import "SharingHelper.h"
 
 #import "GeniusLevelIAPHelper.h"
 
