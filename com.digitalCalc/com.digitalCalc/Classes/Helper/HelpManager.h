@@ -7,6 +7,7 @@
 //
 
 #import "ArgumentLabelAnimator.h"
+#import "UIScreen+SSToolkitAdditions.h"
 
 #define HELP_FIRST_ARG_ACTION_FINISHED 0
 #define HELP_SECOND_ARG_ACTION_FINISHED 1

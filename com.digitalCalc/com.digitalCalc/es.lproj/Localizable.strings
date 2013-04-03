@@ -79,7 +79,7 @@
 "menu_section_settings_ranking" = "Clasificación";
 
 /* Menu section settings tutorial */
-"menu_section_settings_how_to" = "Cómo jugar";
+"menu_section_settings_how_to" = "Tutorial";
 
 /* Result ckecked OK text in learn mode */
 "result_checked_ok_learn_mode" = "BIEN!!! Otra más? Toca la pantalla!";
@@ -146,3 +146,15 @@
 
 /* Tutorial nav-bar title */
 "gallery_nav_bar_title" = "Tutorial";
+
+/* Restore in app purchase - Restore OK alert title */
+"restore_in_app_purchase_ok_alert_title" = "Compra restaurada";
+
+/* Restore in app purchase - Restore OK alert message */
+"restore_in_app_purchase_ok_alert_message" = "Disfruta aprendiendo y jugando!";
+
+/* Restore in app purchase - Restore NOK alert title */
+"restore_in_app_purchase_nok_alert_title" = "Error restaurando compra";
+
+/* In app purchase - Restore NOK alert message */
+"restore_in_app_purchase_nok_alert_message" = "Algo salió mal, inténtalo otra vez!";

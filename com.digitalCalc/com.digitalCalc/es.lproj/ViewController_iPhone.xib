@@ -2,10 +2,10 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1552</int>
-		<string key="IBDocument.SystemVersion">12C60</string>
+		<string key="IBDocument.SystemVersion">12D78</string>
 		<string key="IBDocument.InterfaceBuilderVersion">3084</string>
-		<string key="IBDocument.AppKitVersion">1187.34</string>
-		<string key="IBDocument.HIToolboxVersion">625.00</string>
+		<string key="IBDocument.AppKitVersion">1187.37</string>
+		<string key="IBDocument.HIToolboxVersion">626.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			<string key="NS.object.0">2083</string>
@@ -41,6 +41,7 @@
 				<string key="NSFrameSize">{92, 30}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
+				<reference key="NSNextKeyView"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<object class="NSColor" key="IBUIBackgroundColor" id="828839398">
 					<int key="NSColorSpace">3</int>
@@ -215,11 +216,11 @@
 						</object>
 						<object class="NSCustomResource" key="IBUIHighlightedImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">btn_siguiente_down.png</string>
+							<string key="NSResourceName">btn_siguiente_down_iphone.png</string>
 						</object>
 						<object class="NSCustomResource" key="IBUINormalImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">btn_siguiente_up.png</string>
+							<string key="NSResourceName">btn_siguiente_up_iphone.png</string>
 						</object>
 						<object class="IBUIFontDescription" key="IBUIFontDescription" id="326701267">
 							<int key="type">2</int>
@@ -251,11 +252,11 @@
 						<reference key="IBUINormalTitleShadowColor" ref="523751796"/>
 						<object class="NSCustomResource" key="IBUIHighlightedImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">btn_comprobar_down.png</string>
+							<string key="NSResourceName">btn_comprobar_down_iphone.png</string>
 						</object>
 						<object class="NSCustomResource" key="IBUINormalImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">btn_check_up.png</string>
+							<string key="NSResourceName">btn_comprobar_up_iphone.png</string>
 						</object>
 						<reference key="IBUIFontDescription" ref="326701267"/>
 						<reference key="IBUIFont" ref="550395601"/>
@@ -266,6 +267,7 @@
 						<string key="NSFrame">{{354, 258}, {202, 23}}</string>
 						<reference key="NSSuperview" ref="20962726"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -542,6 +544,7 @@
 						<string key="NSFrame">{{126, 141}, {314, 134}}</string>
 						<reference key="NSSuperview" ref="1014458630"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -959,7 +962,7 @@
 				<string key="131.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="186.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="195.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<real value="0.0" key="195.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
+				<real value="1" key="195.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
 				<string key="212.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="225.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<real value="0.0" key="225.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
@@ -1138,15 +1141,15 @@
 			<string key="bkg_board.png">{480, 288}</string>
 			<string key="btn_aprender_down.png">{251, 70}</string>
 			<string key="btn_aprender_up.png">{251, 70}</string>
-			<string key="btn_check_up.png">{108, 30}</string>
-			<string key="btn_comprobar_down.png">{108, 30}</string>
+			<string key="btn_comprobar_down_iphone.png">{108, 30}</string>
+			<string key="btn_comprobar_up_iphone.png">{108, 30}</string>
 			<string key="btn_dot_up.png">{30, 30}</string>
 			<string key="btn_erase_up.png">{30, 30}</string>
 			<string key="btn_jugar_down.png">{251, 70}</string>
 			<string key="btn_jugar_up.png">{251, 70}</string>
 			<string key="btn_line_up.png">{30, 30}</string>
-			<string key="btn_siguiente_down.png">{108, 30}</string>
-			<string key="btn_siguiente_up.png">{108, 30}</string>
+			<string key="btn_siguiente_down_iphone.png">{108, 30}</string>
+			<string key="btn_siguiente_up_iphone.png">{108, 30}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">2083</string>
 	</data>
