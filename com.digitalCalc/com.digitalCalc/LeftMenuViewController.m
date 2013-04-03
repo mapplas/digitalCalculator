@@ -81,19 +81,6 @@
                 NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"SwitchedMenuCell" owner:self options:nil];
                 helpCell = [nib objectAtIndex:0];
             }
-        } else if(indexPath.row == 1) {
-            plainTextMenuCell = [tableView dequeueReusableCellWithIdentifier:levelCellId];
-            if (plainTextMenuCell == nil) {
-                NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"LevelMenuCell" owner:self options:nil];
-                plainTextMenuCell = [nib objectAtIndex:0];
-            }
-            
-        } else if(indexPath.row == 2) {
-            plainTextMenuCell = [tableView dequeueReusableCellWithIdentifier:levelCellId];
-            if (plainTextMenuCell == nil) {
-                NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"LevelMenuCell" owner:self options:nil];
-                plainTextMenuCell = [nib objectAtIndex:0];
-            }
         } else {
             plainTextMenuCell = [tableView dequeueReusableCellWithIdentifier:levelCellId];
             if (plainTextMenuCell == nil) {
@@ -112,7 +99,6 @@
             case 1:
                 plainTextMenuCell.textLabel.text = NSLocalizedString(@"menu_section_settings_how_to", @"Menu section settings tutorial");
                 plainTextMenuCell.image.image = [UIImage imageNamed:@"ic_menu_help.png"];
-
                 break;
             
             case 2:
@@ -121,7 +107,10 @@
                 
             case 3:
                 plainTextMenuCell.textLabel.text = NSLocalizedString(@"menu_section_settings_game_mode_change", @"Menu section settings game mode change");
-
+                break;
+            
+            case 4:
+                plainTextMenuCell.textLabel.text = NSLocalizedString(@"menu_section_settings_share", @"Menu section settings share");
                 break;
         }
         

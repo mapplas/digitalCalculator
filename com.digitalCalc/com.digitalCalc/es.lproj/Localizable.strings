@@ -81,6 +81,9 @@
 /* Menu section settings tutorial */
 "menu_section_settings_how_to" = "Tutorial";
 
+/* Menu section settings share */
+"menu_section_settings_share" = "Compartir";
+
 /* Result ckecked OK text in learn mode */
 "result_checked_ok_learn_mode" = "BIEN!!! Otra más? Toca la pantalla!";
 
