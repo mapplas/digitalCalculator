@@ -183,6 +183,7 @@
 		7FACE491170C2DA500ADDC2F /* btn_comprobar_up_white_iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FACE489170C2DA500ADDC2F /* btn_comprobar_up_white_iphone.png */; };
 		7FACE492170C2DA500ADDC2F /* btn_comprobar_up_white_iphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FACE48A170C2DA500ADDC2F /* btn_comprobar_up_white_iphone@2x.png */; };
 		7FACE495170C302200ADDC2F /* UIScreen+SSToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FACE494170C302200ADDC2F /* UIScreen+SSToolkitAdditions.m */; };
+		7FACE497170C356C00ADDC2F /* btn_siguiente_down_ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FACE496170C356B00ADDC2F /* btn_siguiente_down_ipad.png */; };
 		7FAEB35E16FA0514001CBDC7 /* InAppPurchaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAEB35C16FA0514001CBDC7 /* InAppPurchaseViewController.m */; };
 		7FAEB36616FA0576001CBDC7 /* InAppPurchaseViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FAEB36216FA0576001CBDC7 /* InAppPurchaseViewController_iPad.xib */; };
 		7FAEB36716FA0576001CBDC7 /* InAppPurchaseViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FAEB36416FA0576001CBDC7 /* InAppPurchaseViewController_iPhone.xib */; };
@@ -458,6 +459,7 @@
 		7FACE48A170C2DA500ADDC2F /* btn_comprobar_up_white_iphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_comprobar_up_white_iphone@2x.png"; path = "Resources/btn_comprobar_up_white_iphone@2x.png"; sourceTree = "<group>"; };
 		7FACE493170C302200ADDC2F /* UIScreen+SSToolkitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIScreen+SSToolkitAdditions.h"; path = "Classes/Cathegories/UIScreen+SSToolkitAdditions.h"; sourceTree = "<group>"; };
 		7FACE494170C302200ADDC2F /* UIScreen+SSToolkitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIScreen+SSToolkitAdditions.m"; path = "Classes/Cathegories/UIScreen+SSToolkitAdditions.m"; sourceTree = "<group>"; };
+		7FACE496170C356B00ADDC2F /* btn_siguiente_down_ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_siguiente_down_ipad.png; path = Resources/btn_siguiente_down_ipad.png; sourceTree = "<group>"; };
 		7FAEB35B16FA0514001CBDC7 /* InAppPurchaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InAppPurchaseViewController.h; sourceTree = "<group>"; };
 		7FAEB35C16FA0514001CBDC7 /* InAppPurchaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InAppPurchaseViewController.m; sourceTree = "<group>"; };
 		7FAEB36316FA0576001CBDC7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/InAppPurchaseViewController_iPad.xib; sourceTree = "<group>"; };
@@ -1113,6 +1115,7 @@
 				7FACE424170C1FFA00ADDC2F /* btn_restore_down@2x.png */,
 				7FACE425170C1FFA00ADDC2F /* btn_restore_up.png */,
 				7FACE426170C1FFA00ADDC2F /* btn_restore_up@2x.png */,
+				7FACE496170C356B00ADDC2F /* btn_siguiente_down_ipad.png */,
 				7FACE433170C27A300ADDC2F /* btn_siguiente_down_ipad@2x.png */,
 				7FACE434170C27A300ADDC2F /* btn_siguiente_down_iphone.png */,
 				7FACE435170C27A300ADDC2F /* btn_siguiente_down_iphone@2x.png */,
@@ -1359,6 +1362,7 @@
 				7FACE490170C2DA500ADDC2F /* btn_comprobar_up_white_ipad@2x.png in Resources */,
 				7FACE491170C2DA500ADDC2F /* btn_comprobar_up_white_iphone.png in Resources */,
 				7FACE492170C2DA500ADDC2F /* btn_comprobar_up_white_iphone@2x.png in Resources */,
+				7FACE497170C356C00ADDC2F /* btn_siguiente_down_ipad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

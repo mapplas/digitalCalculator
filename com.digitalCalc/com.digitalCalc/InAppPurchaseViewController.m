@@ -94,7 +94,7 @@
 }
 
 - (void)restoreFailed {
-    transactionFailedAlert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"restore_in_app_purchase_nok_alert_title", @"Restore in app purchase - Restore NOK alert title") message:NSLocalizedString(@"in_app_purchase_nok_alert_message", @"In app purchase - Purchase NOK alert message") delegate:self cancelButtonTitle:nil otherButtonTitles:NSLocalizedString(@"restore_in_app_purchase_nok_alert_message", @"In app purchase - Restore NOK alert message"), nil];
+    transactionFailedAlert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"restore_in_app_purchase_nok_alert_title", @"Restore in app purchase - Restore NOK alert title") message:NSLocalizedString(@"in_app_purchase_nok_alert_message", @"In app purchase - Purchase NOK alert message") delegate:self cancelButtonTitle:nil otherButtonTitles:NSLocalizedString(@"in_app_purchase_ok_nok_button", @"In app purchase OK and NOK alert button title"), nil];
     [transactionFailedAlert show];
     [self pop];
 }
