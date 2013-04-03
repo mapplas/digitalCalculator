@@ -79,7 +79,7 @@
 "menu_section_settings_ranking" = "Clasificación";
 
 /* Menu section settings tutorial */
-"menu_section_settings_how_to" = "Cómo jugar";
+"menu_section_settings_how_to" = "Tutorial";
 
 /* Result ckecked OK text in learn mode */
 "result_checked_ok_learn_mode" = "BIEN!!! Otra más? Toca la pantalla!";

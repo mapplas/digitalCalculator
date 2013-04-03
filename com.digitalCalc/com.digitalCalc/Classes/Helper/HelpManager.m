@@ -35,6 +35,7 @@
             checkButton.hidden = NO;
             helpButton.hidden = YES;
             helpView.hidden = YES;
+            helpLabel.hidden = YES;
             
             if ([chooser isPad]) {
                 if ([chooser isSpanish]) {
@@ -65,6 +66,7 @@
             checkButton.hidden = YES;
             helpButton.hidden = NO;
             helpView.hidden = NO;
+            helpLabel.hidden = NO;
             
             if ([chooser isPad]) {
                 if ([chooser isSpanish]) {
