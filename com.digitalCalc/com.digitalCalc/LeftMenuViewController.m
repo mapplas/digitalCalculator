@@ -61,14 +61,17 @@
         switch (indexPath.row) {
             case 0:
                 plainTextMenuCell.textLabel.text = NSLocalizedString(@"menu_section_levels_low", @"Menu section levels low level");
+                plainTextMenuCell.image.image = [UIImage imageNamed:@"ic_menu_beginner.png"];
                 break;
                 
             case 1:
                 plainTextMenuCell.textLabel.text = NSLocalizedString(@"menu_section_levels_medium", @"Menu section levels medium level");
+                plainTextMenuCell.image.image = [UIImage imageNamed:@"ic_menu_genius.png"];
                 break;
                 
             case 2:
                 plainTextMenuCell.textLabel.text = NSLocalizedString(@"menu_section_levels_high", @"Menu section levels high level");
+                plainTextMenuCell.image.image = [UIImage imageNamed:@"ic_menu_prodigy.png"];
                 break;
         }
         return plainTextMenuCell;
@@ -92,25 +95,29 @@
         switch (indexPath.row) {
             case 0:
                 [helpCell.cellSwitch setOn:mainViewController.helpEnabled];
-                
+            
                 helpCell.textLabel.text = NSLocalizedString(@"menu_section_settings_help_enabled", @"Menu section settings help enabled");
+                helpCell.image.image = [UIImage imageNamed:@"ic_menu_help.png"];
                 break;
 
             case 1:
                 plainTextMenuCell.textLabel.text = NSLocalizedString(@"menu_section_settings_how_to", @"Menu section settings tutorial");
-                plainTextMenuCell.image.image = [UIImage imageNamed:@"ic_menu_help.png"];
+                plainTextMenuCell.image.image = [UIImage imageNamed:@"ic_menu_tutorial.png"];
                 break;
             
             case 2:
-                plainTextMenuCell.textLabel.text = NSLocalizedString(@"menu_section_settings_ranking", @"Menu section settings ranking");
+                plainTextMenuCell.textLabel.text = NSLocalizedString(@"menu_section_settings_game_mode_change", @"Menu section settings game mode change");
+                plainTextMenuCell.image.image = [UIImage imageNamed:@"ic_menu_home.png"];
                 break;
                 
             case 3:
-                plainTextMenuCell.textLabel.text = NSLocalizedString(@"menu_section_settings_game_mode_change", @"Menu section settings game mode change");
+                plainTextMenuCell.textLabel.text = NSLocalizedString(@"menu_section_settings_ranking", @"Menu section settings ranking");
+                plainTextMenuCell.image.image = [UIImage imageNamed:@"ic_menu_clasification.png"];
                 break;
             
             case 4:
                 plainTextMenuCell.textLabel.text = NSLocalizedString(@"menu_section_settings_share", @"Menu section settings share");
+                plainTextMenuCell.image.image = [UIImage imageNamed:@"ic_menu_share.png"];
                 break;
         }
         
@@ -183,13 +190,13 @@
                 break;
                 
             case 2:
-                [self pushRankingController];
+                [mainViewController mainMenuCellPressed];
                 [self deselectRowandSelectCorrectOne:indexPath];
 
                 break;
                 
             case 3:
-                [mainViewController mainMenuCellPressed];
+                [self pushRankingController];
                 [self deselectRowandSelectCorrectOne:indexPath];
                 
                 break;
