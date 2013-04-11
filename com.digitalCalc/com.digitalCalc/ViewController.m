@@ -100,6 +100,8 @@
 
 // Learn mode pressed
 - (IBAction)learnModePressed:(id)sender {
+    [layoutPresenter stopTimer];
+    
     // Analytics
     id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
     [tracker sendView:@"Learn Mode Screen"];
@@ -124,8 +126,7 @@
         
         _mode = CALCULATOR_MODE_GAME;
 		self.level = LEVEL_MEDIUM;
-
-        self.timerLabel.text = [NSString stringWithFormat:@"%d", GAME_MODE_COUNTDOWN];
+        
         [self initNavBar];
         
         //    Help is always disabled in learn mode
@@ -137,7 +138,9 @@
                          completion:^(BOOL finished){ [self.view sendSubviewToBack:self.splashView]; }];
         
         [self reset];
+        
         [layoutPresenter initTimer];
+        
     } else {
         // Present purchase viewcontroller
         InAppPurchaseViewController *inAppPurchaseViewController = nil;

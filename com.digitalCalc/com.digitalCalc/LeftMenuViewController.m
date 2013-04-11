@@ -81,7 +81,7 @@
                 
             case 3:
                 plainTextMenuCell.textLabel.text = NSLocalizedString(@"menu_section_settings_game_mode_change", @"Menu section settings game mode change");
-                plainTextMenuCell.image.image = [UIImage imageNamed:@"ic_menu_home.png"];
+                plainTextMenuCell.image.image = [UIImage imageNamed:@"ic_menu_game.png"];
                 break;
                 
         }
