@@ -100,8 +100,7 @@
 		7F4F595016F0DB2D00241DC3 /* LayoutPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4F594F16F0DB2D00241DC3 /* LayoutPresenter.m */; };
 		7F5429AA16F9AF080043052E /* MediumMultLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F5429A916F9AF080043052E /* MediumMultLevel.m */; };
 		7F5429B216F9B4B70043052E /* LevelHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F5429B116F9B4B70043052E /* LevelHelper.m */; };
-		7F65152A16F0A18200FA770C /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F65152916F0A18200FA770C /* Icon@2x.png */; };
-		7F65152C16F0A18900FA770C /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F65152B16F0A18900FA770C /* Icon.png */; };
+		7F70E78B171696A000B40F73 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F70E78A171696A000B40F73 /* MBProgressHUD.m */; };
 		7F9ADCB6170ABEC70048D9B4 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9ADCB5170ABEC70048D9B4 /* libGoogleAnalytics.a */; };
 		7F9ADCB8170ABEFE0048D9B4 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9ADCB7170ABEFE0048D9B4 /* CoreData.framework */; };
 		7F9ADCB9170ABF040048D9B4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F097D1116F7211600BCD31B /* SystemConfiguration.framework */; };
@@ -394,6 +393,8 @@
 		7F5429B116F9B4B70043052E /* LevelHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LevelHelper.m; path = Classes/Helper/LevelHelper.m; sourceTree = "<group>"; };
 		7F65152916F0A18200FA770C /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../Icon@2x.png"; sourceTree = "<group>"; };
 		7F65152B16F0A18900FA770C /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
+		7F70E789171696A000B40F73 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = "Classes/Third party/MBProgressHUD.h"; sourceTree = "<group>"; };
+		7F70E78A171696A000B40F73 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = "Classes/Third party/MBProgressHUD.m"; sourceTree = "<group>"; };
 		7F9ADCB0170ABEC70048D9B4 /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAI.h; path = "Classes/Third party/Analytics/GAI.h"; sourceTree = "<group>"; };
 		7F9ADCB1170ABEC70048D9B4 /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAITrackedViewController.h; path = "Classes/Third party/Analytics/GAITrackedViewController.h"; sourceTree = "<group>"; };
 		7F9ADCB2170ABEC70048D9B4 /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAITracker.h; path = "Classes/Third party/Analytics/GAITracker.h"; sourceTree = "<group>"; };
@@ -759,11 +760,13 @@
 		7F17E7B716E8B8ED009B742F /* Third party */ = {
 			isa = PBXGroup;
 			children = (
-				7F0BC2B3170093CD00E2A56E /* UIImage+Resize.h */,
-				7F0BC2B4170093CD00E2A56E /* UIImage+Resize.m */,
 				7F9ADCAF170ABE070048D9B4 /* Analytics */,
 				7F4F593F16F0C52700241DC3 /* PKRevealController */,
 				7F097CF916F71D2600BCD31B /* RegexKit */,
+				7F70E789171696A000B40F73 /* MBProgressHUD.h */,
+				7F70E78A171696A000B40F73 /* MBProgressHUD.m */,
+				7F0BC2B3170093CD00E2A56E /* UIImage+Resize.h */,
+				7F0BC2B4170093CD00E2A56E /* UIImage+Resize.m */,
 			);
 			name = "Third party";
 			sourceTree = "<group>";
@@ -1515,6 +1518,7 @@
 				7F0BC2B5170093CD00E2A56E /* UIImage+Resize.m in Sources */,
 				7FACE495170C302200ADDC2F /* UIScreen+SSToolkitAdditions.m in Sources */,
 				7FACE49F170C465D00ADDC2F /* SharingHelper.m in Sources */,
+				7F70E78B171696A000B40F73 /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
