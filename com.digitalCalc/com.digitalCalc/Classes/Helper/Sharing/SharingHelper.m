@@ -19,7 +19,7 @@
 }
 
 - (NSString *)getShareMessage {
-    return [NSString stringWithFormat:@"%@ Genius Multiplication %@", NSLocalizedString(@"share_message_part_1", @"share_message_part_1"), NSLocalizedString(@"share_message_part_2", @"Share message part 2")];
+    return [NSString stringWithFormat:@"%@ Genius Multiplication. %@", NSLocalizedString(@"share_message_part_1", @"share_message_part_1"), NSLocalizedString(@"share_message_part_2", @"Share message part 2")];
 }
 
 - (void)shareWithTwitter {

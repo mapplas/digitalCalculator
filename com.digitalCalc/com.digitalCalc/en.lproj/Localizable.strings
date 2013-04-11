@@ -199,10 +199,13 @@
 "share_email_subject" = "Try it!";
 
 /* Share message part 1 */
-"share_message_part_1" = "I am using";
+"share_message_part_1" = "I am learning to multiply with";
 
 /* Share message part 2 */
-"share_message_part_2" = "for iOS. Try it out, it's amazing! @SupportGenius #GeniusMultiplication";
+"share_message_part_2" = "// x /// = 6. Find out!";
+
+/* Share message url */
+"share_message_url" = "https://itunes.apple.com/en/app/genius-multiplication/id624548749?mt=8";
 
 /* OK message */
 "ok_message" = "OK";
