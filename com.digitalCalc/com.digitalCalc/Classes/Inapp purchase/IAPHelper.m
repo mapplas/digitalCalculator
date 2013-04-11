@@ -166,17 +166,23 @@ NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurcha
     [[NSNotificationCenter defaultCenter] postNotificationName:IAPHelperProductPurchasedNotification object:productIdentifier userInfo:nil];
 }
 
-- (void)restoreCompletedTransactionsWithDelegate:(id<RestoreTransactionProtocol>)_restoreDelegate {
+- (void)restoreCompletedTransactionsWithDelegate:(id<RestoreTransactionProtocol>)_restoreDelegate progressHud:(MBProgressHUD *)progress_hud {
+    hud = progress_hud;
+    
     restoreTransactionProtocol = _restoreDelegate;
     [[SKPaymentQueue defaultQueue] addTransactionObserver:self];
     [[SKPaymentQueue defaultQueue] restoreCompletedTransactions];
 }
 
 - (void)paymentQueue:(SKPaymentQueue *)queue restoreCompletedTransactionsFailedWithError:(NSError *)error {
+    [hud removeFromSuperview];
+    
     [restoreTransactionProtocol restoreFailed];
 }
 
 - (void)paymentQueueRestoreCompletedTransactionsFinished:(SKPaymentQueue *)queue {
+    [hud removeFromSuperview];
+    
     _purchasedProductIdentifiers = [[NSMutableSet alloc] init];
     NSLog(@"received restored transactions: %i", queue.transactions.count);
     

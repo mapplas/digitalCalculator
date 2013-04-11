@@ -42,17 +42,23 @@
 - (IBAction)buyButtonPressed:(id)sender {
     NSLog(@"Buying... %@", NSLocalizedString(@"in_app_purchase_genius_level_identifier", @"In app purchase - Genius level product identifier"));
     SKProduct *product = [self.products objectAtIndex:0];
-    [[GeniusLevelIAPHelper sharedInstance] buyProduct:product andSetDelegate:self progressHud:progressHud];
+    [[GeniusLevelIAPHelper sharedInstance] buyProduct:product andSetDelegate:self progressHud:buyProgressHud];
     
-    progressHud = [[MBProgressHUD alloc] initWithWindow:self.navigationController.view.window];
-    progressHud.animationType = MBProgressHUDAnimationFade;
+    buyProgressHud = [[MBProgressHUD alloc] initWithWindow:self.navigationController.view.window];
+    buyProgressHud.animationType = MBProgressHUDAnimationFade;
 
-	[self.navigationController.view addSubview:progressHud];    
-    [progressHud show:YES];
+	[self.navigationController.view addSubview:buyProgressHud];    
+    [buyProgressHud show:YES];
 }
 
 - (IBAction)restoreButtonPressed:(id)sender {
-    [[GeniusLevelIAPHelper sharedInstance] restoreCompletedTransactionsWithDelegate:self];
+    restoreProgressHud = [[MBProgressHUD alloc] initWithWindow:self.navigationController.view.window];
+    restoreProgressHud.animationType = MBProgressHUDAnimationFade;
+    
+	[self.navigationController.view addSubview:restoreProgressHud];
+    [restoreProgressHud show:YES];
+    
+    [[GeniusLevelIAPHelper sharedInstance] restoreCompletedTransactionsWithDelegate:self progressHud:restoreProgressHud];
 }
 
 - (void)pop {

@@ -20,7 +20,8 @@
     UIAlertView *transactionOkAlert;
     UIAlertView *transactionFailedAlert;
     
-    MBProgressHUD *progressHud;
+    MBProgressHUD *buyProgressHud;
+    MBProgressHUD *restoreProgressHud;
 }
 
 @property (nonatomic, strong) IBOutlet UIButton *buyButton;

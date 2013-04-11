@@ -30,6 +30,6 @@ typedef void (^RequestProductsCompletionHandler)(BOOL success, NSArray * product
 - (void)buyProduct:(SKProduct *)product andSetDelegate:(id<PaymentTransactionProtocol>)_delegate progressHud:(MBProgressHUD *)progress_hud;
 - (BOOL)productPurchased:(NSString *)productIdentifier;
 
-- (void)restoreCompletedTransactionsWithDelegate:(id<RestoreTransactionProtocol>)_restoreDelegate;
+- (void)restoreCompletedTransactionsWithDelegate:(id<RestoreTransactionProtocol>)_restoreDelegate progressHud:(MBProgressHUD *)progress_hud;
 
 @end
