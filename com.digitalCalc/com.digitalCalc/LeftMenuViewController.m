@@ -324,7 +324,9 @@
     
     // If device has ios6 and up
 	if ([UIActivityViewController class]) {
-		NSMutableArray *itemsToShare = [[NSMutableArray alloc] initWithObjects:[shareHelper getShareMessage], nil];
+        NSString *messageToShare = [shareHelper getShareMessage];
+        NSURL *urlToShare = [NSURL URLWithString:NSLocalizedString(@"share_message_url", @"Share message url")];
+		NSMutableArray *itemsToShare = [[NSMutableArray alloc] initWithObjects:messageToShare, urlToShare, nil];
         
 		UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:itemsToShare applicationActivities:nil];
 		activityViewController.excludedActivityTypes = @[UIActivityTypePostToWeibo, UIActivityTypeAssignToContact, UIActivityTypeCopyToPasteboard, UIActivityTypePrint, UIActivityTypeSaveToCameraRoll];

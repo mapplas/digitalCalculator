@@ -199,10 +199,13 @@
 "ios5_sharing_action_sheet_email_button" = "Compartir vía email";
 
 /* Share message part 1 */
-"share_message_part_1" = "Estoy usando";
+"share_message_part_1" = "Estoy aprendiendo a multiplicar con";
 
 /* Share message part 2 */
-"share_message_part_2" = "para iOS. ¡Pruébala, es increíble! @SupportGenius #GeniusMultiplication";
+"share_message_part_2" = "// x /// = 6 ¡Averígualo!";
+
+/* Share message url */
+"share_message_url" = "https://itunes.apple.com/es/app/genius-multiplication/id624548749?mt=8";
 
 /* OK message */
 "ok_message" = "OK";
