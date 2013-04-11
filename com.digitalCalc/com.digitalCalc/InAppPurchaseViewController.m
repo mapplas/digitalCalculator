@@ -43,6 +43,7 @@
     NSLog(@"Buying... %@", NSLocalizedString(@"in_app_purchase_genius_level_identifier", @"In app purchase - Genius level product identifier"));
     SKProduct *product = [self.products objectAtIndex:0];
     [[GeniusLevelIAPHelper sharedInstance] buyProduct:product andSetDelegate:self];
+    [buyButton setEnabled:NO];
 }
 
 - (IBAction)restoreButtonPressed:(id)sender {
@@ -73,12 +74,18 @@
     
     transactionOkAlert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"in_app_purchase_ok_alert_title", @"In app purchase - Purchase OK alert title") message:NSLocalizedString(@"in_app_purchase_ok_alert_message", @"In app purchase - Purchase OK alert message") delegate:self cancelButtonTitle:nil otherButtonTitles:NSLocalizedString(@"in_app_purchase_ok_nok_button", @"In app purchase OK and NOK alert button title"), nil];
     [transactionOkAlert show];
+    
+    [buyButton setEnabled:YES];
+    
     [self pop];
 }
 
 - (void)transactionFailed {
     transactionFailedAlert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"in_app_purchase_nok_alert_title", @"In app purchase - Purchase NOK alert title") message:NSLocalizedString(@"in_app_purchase_nok_alert_message", @"In app purchase - Purchase NOK alert message") delegate:self cancelButtonTitle:nil otherButtonTitles:NSLocalizedString(@"in_app_purchase_ok_nok_button", @"In app purchase OK and NOK alert button title"), nil];
     [transactionFailedAlert show];
+    
+    [buyButton setEnabled:YES];
+    
     [self pop];
 }
 
