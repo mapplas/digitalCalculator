@@ -38,9 +38,10 @@
     while ([self.executor executeMultiple:firstBestPuntuations database:db]) {
         NSMutableArray *rankingRowData = [[NSMutableArray alloc] init];
         NSString * username = [[NSString alloc] initWithCString:(char *)sqlite3_column_text(firstBestPuntuations, 0) encoding:NSUTF8StringEncoding];
-        NSString *points = [[NSString alloc] initWithBytes:sqlite3_column_text(firstBestPuntuations, 1) length:sizeof(sqlite3_column_int(firstBestPuntuations, 1)) encoding:NSASCIIStringEncoding];
+        NSNumber *points = [NSNumber numberWithInt:sqlite3_column_int(firstBestPuntuations, 1)];
+
         [rankingRowData addObject:username];
-        [rankingRowData addObject:points];
+        [rankingRowData addObject:[points stringValue]];
                 
         [rankingDict setObject:rankingRowData forKey:[NSNumber numberWithInt:i]];
         i++;
