@@ -12,12 +12,15 @@
 #import "RestoreTransactionProtocol.h"
 #import "GAITransaction.h"
 #import "GAI.h"
+#import "MBProgressHUD.h"
 
 @interface InAppPurchaseViewController : UIViewController <PaymentTransactionProtocol, RestoreTransactionProtocol, UIAlertViewDelegate> {
     NSArray *_products;
     
     UIAlertView *transactionOkAlert;
     UIAlertView *transactionFailedAlert;
+    
+    MBProgressHUD *progressHud;
 }
 
 @property (nonatomic, strong) IBOutlet UIButton *buyButton;
