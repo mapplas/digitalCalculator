@@ -300,7 +300,7 @@
 }
 
 - (void)pushShareController {
-    SharingHelper *shareHelper = [[SharingHelper alloc] initWithNavigationController:mainViewController.navigationController];
+    shareHelper = [[SharingHelper alloc] initWithNavigationController:mainViewController.navigationController];
     
     // If device has ios6 and up
 	if ([UIActivityViewController class]) {
@@ -315,9 +315,13 @@
         // iOS 5
 		NSString *cancelButton = NSLocalizedString(@"ios5_sharing_action_sheet_cancel_button", @"iOS5 sharing action sheet cancel button - twitter sharing");
 		NSString *twitterButton = NSLocalizedString(@"ios5_sharing_action_sheet_twitter_button", @"iOS5 sharing action sheet twitter button - twitter sharing");
+        NSString *smsButton = NSLocalizedString(@"ios5_sharing_action_sheet_sms_button", @"iOS5 sharing action sheet sms button - sms sharing");
+		NSString *emailButton = NSLocalizedString(@"ios5_sharing_action_sheet_email_button", @"iOS5 sharing action sheet email button - email sharing");
         
-		UIActionSheet *alertView = [[UIActionSheet alloc] initWithTitle:nil delegate:shareHelper cancelButtonTitle:cancelButton destructiveButtonTitle:nil otherButtonTitles:twitterButton, @"Share via SMS", @"Share via email", nil];
-		[alertView showInView:[UIApplication sharedApplication].keyWindow.rootViewController.view];
+		UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:shareHelper cancelButtonTitle:cancelButton destructiveButtonTitle:nil otherButtonTitles:twitterButton, smsButton, emailButton, nil];
+        
+        [actionSheet dismissWithClickedButtonIndex:3 animated:YES];
+		[actionSheet showInView:[UIApplication sharedApplication].keyWindow.rootViewController.view];
 	}
 }
 

@@ -93,8 +93,8 @@
     [navController presentModalViewController:mailViewController animated:YES];
 }
 
-- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
-	if (buttonIndex == 0) {
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 0) {
         [self shareWithTwitter];
     }
     else if(buttonIndex == 1) {

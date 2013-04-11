@@ -169,10 +169,16 @@
 "share_facebook_error" = "Facebook client is not avaliable";
 
 /* iOS5 sharing action sheet cancel button - twitter sharing */
-"ios5_sharing_action_sheet_cancel_button" = "Cancelar";
+"ios5_sharing_action_sheet_cancel_button" = "Cancel";
 
 /* iOS5 sharing action sheet twitter button - twitter sharing */
-"ios5_sharing_action_sheet_twitter_button" = "Compartir vía Twitter";
+"ios5_sharing_action_sheet_twitter_button" = "Share via Twitter";
+
+/* iOS5 sharing action sheet sms button - sms sharing */
+"ios5_sharing_action_sheet_sms_button" = "Share via SMS";
+
+/* iOS5 sharing action sheet email button - email sharing */
+"ios5_sharing_action_sheet_email_button" = "Share via email";
 
 /* SMS sharing error */
 "share_sms_error" = "Error sharing via SMS";
