@@ -76,8 +76,6 @@
 @property (nonatomic, assign) CGFloat brushWidth;
 
 @property (nonatomic, assign) BOOL helpEnabled;
-//@property (nonatomic, assign) NSInteger level;
-@property (nonatomic, assign) NSInteger mode;
 @property (nonatomic, assign) NSInteger points;
 
 - (IBAction)learnModePressed:(id)sender;
@@ -87,9 +85,10 @@
 - (IBAction)checkButtonPressed:(id)sender;
 
 - (void)checkHelpEnabledAfterMenuHidden;
-- (void)mainMenuCellPressed;
+//- (void)mainMenuCellPressed;
 
 - (void)setLevel:(NSInteger)_level;
 - (NSInteger)level;
+- (NSUInteger)mode;
 
 @end

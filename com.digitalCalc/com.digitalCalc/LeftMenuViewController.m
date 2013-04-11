@@ -38,8 +38,13 @@
     [super viewWillAppear:animated];
     [self.tableView reloadData];
     
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[mainViewController level] inSection:0];
-    [self.tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
+    NSInteger gameMode = [mainViewController mode];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:LEVEL_GAME inSection:0]; // Game mode
+    
+    if (gameMode == CALCULATOR_MODE_LEARN) {
+        indexPath = [NSIndexPath indexPathForRow:[mainViewController level] inSection:0];
+    }
+    [self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
 }
 
 #pragma mark - UITableViewDataSource and Delate methods
@@ -135,31 +140,27 @@
     if (indexPath.section == 0) {
         switch (indexPath.row) {
             case 0:
-                if (!mainViewController.mode == CALCULATOR_MODE_GAME) {
-                    [mainViewController setLevel:LEVEL_LOW];
-                } else {
-                    [self deselectRowandSelectCorrectOne:indexPath];
-                }
+                [mainViewController learnModePressed:nil];
+                [mainViewController setLevel:LEVEL_LOW];
                 
                 break;
                 
             case 1:
-                if (!mainViewController.mode == CALCULATOR_MODE_GAME) {
-                    if ([[GeniusLevelIAPHelper sharedInstance] productPurchased:NSLocalizedString(@"in_app_purchase_genius_level_identifier", @"In app purchase - Genius level product identifier")]) {
-                        [mainViewController setLevel:LEVEL_MEDIUM];
+                if ([[GeniusLevelIAPHelper sharedInstance] productPurchased:NSLocalizedString(@"in_app_purchase_genius_level_identifier", @"In app purchase - Genius level product identifier")]) {
+                    [mainViewController learnModePressed:nil];
+                    [mainViewController setLevel:LEVEL_MEDIUM];
+                } else {
+                    InAppPurchaseViewController *inAppPurchaseViewController = nil;
+                    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+                        inAppPurchaseViewController = [[InAppPurchaseViewController alloc] initWithNibName:@"InAppPurchaseViewController_iPhone" bundle:nil];
                     } else {
-                        InAppPurchaseViewController *inAppPurchaseViewController = nil;
-                        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-                            inAppPurchaseViewController = [[InAppPurchaseViewController alloc] initWithNibName:@"InAppPurchaseViewController_iPhone" bundle:nil];
-                        } else {
-                            inAppPurchaseViewController = [[InAppPurchaseViewController alloc] initWithNibName:@"InAppPurchaseViewController_iPad" bundle:nil];
-                        }
-                    
-                        UINavigationController *controller = [[UINavigationController alloc] initWithRootViewController:inAppPurchaseViewController];
-                        inAppPurchaseViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-                        inAppPurchaseViewController.products = products;
-                        [mainViewController presentModalViewController:controller animated:YES];
+                        inAppPurchaseViewController = [[InAppPurchaseViewController alloc] initWithNibName:@"InAppPurchaseViewController_iPad" bundle:nil];
                     }
+                    
+                    UINavigationController *controller = [[UINavigationController alloc] initWithRootViewController:inAppPurchaseViewController];
+                    inAppPurchaseViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+                    inAppPurchaseViewController.products = products;
+                    [mainViewController presentModalViewController:controller animated:YES];
                 }
 
                 break;
@@ -169,8 +170,7 @@
                 break;
                 
             case 3:
-                [mainViewController mainMenuCellPressed];
-                [self deselectRowandSelectCorrectOne:indexPath];
+                [mainViewController gameModePressed:nil];
                 
                 break;
                 
@@ -217,7 +217,16 @@
 
 - (void)deselectRowandSelectCorrectOne:(NSIndexPath *)index_path {
     [self.tableView deselectRowAtIndexPath:index_path animated:YES];
-    [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:[mainViewController level] inSection:0] animated:YES scrollPosition:UITableViewScrollPositionNone];
+    
+    NSInteger gameMode = [mainViewController mode];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:LEVEL_GAME inSection:0]; // Game mode
+    
+    if (gameMode == CALCULATOR_MODE_LEARN) {
+        indexPath = [NSIndexPath indexPathForRow:[mainViewController level] inSection:0];
+    }
+    [self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
+    
+//    [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:[mainViewController level] inSection:0] animated:YES scrollPosition:UITableViewScrollPositionNone];
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

@@ -34,7 +34,7 @@
 @synthesize splashView;
 
 @synthesize helpEnabled;
-@synthesize mode = _mode, points = _points;
+@synthesize points = _points;
 @synthesize red = _red, green = _green, blue = _blue, brushWidth = _brushWidth;
 
 - (void)viewDidLoad {
@@ -43,7 +43,7 @@
     [self initInAppPurchaseConfig];
     [self launchTutorialOnlyFirstTime];
     
-    self.helpEnabled = NO;
+    self.helpEnabled = YES;
     level = LEVEL_LOW;
     slider = (CustomSlider *)self.resultSlider;
     
@@ -104,11 +104,8 @@
     id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
     [tracker sendView:@"Learn Mode Screen"];
     
-    self.mode = CALCULATOR_MODE_LEARN;
+    _mode = CALCULATOR_MODE_LEARN;
     [self initNavBar];
-    
-//    Help is always enabled in learn mode
-    self.helpEnabled = YES;
     
     [UIView animateWithDuration:0.5f
                      animations:^{self.splashView.alpha = 0.0;}
@@ -125,7 +122,7 @@
         id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
         [tracker sendView:@"Game Mode Screen"];
         
-        self.mode = CALCULATOR_MODE_GAME;
+        _mode = CALCULATOR_MODE_GAME;
 		self.level = LEVEL_MEDIUM;
 
         self.timerLabel.text = [NSString stringWithFormat:@"%d", GAME_MODE_COUNTDOWN];
@@ -383,6 +380,10 @@
     return level;
 }
 
+- (NSUInteger)mode {
+    return _mode;
+}
+
 - (void)ckeckLevel {
     LevelHelper *levelHelper = [[LevelHelper alloc] initWithSelectedLevel:level];
     id<Level> selectedLevel = [levelHelper getLevelClass];
@@ -448,21 +449,6 @@
     if (self.helpEnabled) {
         [helpManager start];
     }
-}
-
-- (void)mainMenuCellPressed {
-    [layoutPresenter stopTimer];
-
-    [self.navigationController.revealController showViewController:self.navigationController.revealController.frontViewController];
-    
-    [UIView animateWithDuration:.05f
-                     animations:^{self.splashView.alpha = 1.0;}
-                     completion:^(BOOL finished){ [self.view bringSubviewToFront:self.splashView]; }];
-    
-    self.navigationItem.rightBarButtonItem = nil;
-    self.navigationItem.leftBarButtonItem = nil;
-    
-    [layoutPresenter setTitleToNavItem];
 }
 
 #pragma mark - in app purchase delegate
