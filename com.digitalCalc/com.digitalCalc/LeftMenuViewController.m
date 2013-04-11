@@ -125,6 +125,11 @@
                 plainTextMenuCell.textLabel.text = NSLocalizedString(@"menu_section_settings_share", @"Menu section settings share");
                 plainTextMenuCell.image.image = [UIImage imageNamed:@"ic_menu_share.png"];
                 break;
+                
+            case 4:
+                plainTextMenuCell.textLabel.text = NSLocalizedString(@"menu_section_settings_rate", @"Menu section settings rate");
+                plainTextMenuCell.image.image = [UIImage imageNamed:@"ic_menu_rating.png"];
+                break;
         }
         
         if (indexPath.row == 0) {
@@ -208,6 +213,10 @@
                 [self deselectRowandSelectCorrectOne:indexPath];
                 
                 break;
+                
+            case 4:
+                [self pushAppRate];
+                [self deselectRowandSelectCorrectOne:indexPath];
                 
             default:
                 break;
@@ -334,6 +343,23 @@
         [actionSheet dismissWithClickedButtonIndex:3 animated:YES];
 		[actionSheet showInView:[UIApplication sharedApplication].keyWindow.rootViewController.view];
 	}
+}
+
+- (void)pushAppRate {
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle:NSLocalizedString(@"review_alert_title", @"Review alert title")
+                                message:NSLocalizedString(@"review_alert_message", @"Review alert message")
+                                delegate:self
+                          cancelButtonTitle:NSLocalizedString(@"review_alert_ok_button", @"Review alert ok button title")
+                          otherButtonTitles:NSLocalizedString(@"review_alert_cancel_button", @"Review alert cancel button title"), nil];
+    [alert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 0) {
+        NSString *url = @"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=624548749";
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+    }
 }
 
 #pragma mark - Help actions

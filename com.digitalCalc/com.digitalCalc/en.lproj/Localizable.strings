@@ -84,6 +84,9 @@
 /* Menu section settings share */
 "menu_section_settings_share" = "Share";
 
+/* Menu section settings rate */
+"menu_section_settings_rate" = "Review app";
+
 /* Result ckecked OK text in learn mode */
 "result_checked_ok_learn_mode" = "GREAT Genius!! One more? Tap to continue!";
 
@@ -203,3 +206,15 @@
 
 /* OK message */
 "ok_message" = "OK";
+
+/* Review alert title */
+"review_alert_title" = "Review app";
+
+/* Review alert message */
+"review_alert_message" = "Would you like to rate Genius Multiplication and leave us a review?\nIt will only take a couple of seconds and will help make this app better for everyone. Thank you!";
+
+/* Review alert ok button title */
+"review_alert_ok_button" = "Rate it!";
+
+/* Review alert cancell button title */
+"review_alert_cancel_button" = "No, thanks";
