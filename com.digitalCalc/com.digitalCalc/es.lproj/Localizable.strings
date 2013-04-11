@@ -73,7 +73,7 @@
 "menu_section_settings_help_enabled" = "Ayuda";
 
 /* Menu section settings game mode change */
-"menu_section_settings_game_mode_change" = "Elegir modo de juego";
+"menu_section_settings_game_mode_change" = "Juego";
 
 /* Menu section settings ranking */
 "menu_section_settings_ranking" = "Clasificación";

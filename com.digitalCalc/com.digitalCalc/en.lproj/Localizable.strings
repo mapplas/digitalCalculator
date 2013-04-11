@@ -73,7 +73,7 @@
 "menu_section_settings_help_enabled" = "Help";
 
 /* Menu section settings game mode change */
-"menu_section_settings_game_mode_change" = "Choose game mode";
+"menu_section_settings_game_mode_change" = "Game mode";
 
 /* Menu section settings ranking */
 "menu_section_settings_ranking" = "Ranking";

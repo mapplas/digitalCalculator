@@ -73,6 +73,12 @@
                 plainTextMenuCell.textLabel.text = NSLocalizedString(@"menu_section_levels_high", @"Menu section levels high level");
                 plainTextMenuCell.image.image = [UIImage imageNamed:@"ic_menu_prodigy.png"];
                 break;
+                
+            case 3:
+                plainTextMenuCell.textLabel.text = NSLocalizedString(@"menu_section_settings_game_mode_change", @"Menu section settings game mode change");
+                plainTextMenuCell.image.image = [UIImage imageNamed:@"ic_menu_home.png"];
+                break;
+                
         }
         return plainTextMenuCell;
         
@@ -104,18 +110,13 @@
                 plainTextMenuCell.textLabel.text = NSLocalizedString(@"menu_section_settings_how_to", @"Menu section settings tutorial");
                 plainTextMenuCell.image.image = [UIImage imageNamed:@"ic_menu_tutorial.png"];
                 break;
-            
-            case 2:
-                plainTextMenuCell.textLabel.text = NSLocalizedString(@"menu_section_settings_game_mode_change", @"Menu section settings game mode change");
-                plainTextMenuCell.image.image = [UIImage imageNamed:@"ic_menu_home.png"];
-                break;
                 
-            case 3:
+            case 2:
                 plainTextMenuCell.textLabel.text = NSLocalizedString(@"menu_section_settings_ranking", @"Menu section settings ranking");
                 plainTextMenuCell.image.image = [UIImage imageNamed:@"ic_menu_clasification.png"];
                 break;
             
-            case 4:
+            case 3:
                 plainTextMenuCell.textLabel.text = NSLocalizedString(@"menu_section_settings_share", @"Menu section settings share");
                 plainTextMenuCell.image.image = [UIImage imageNamed:@"ic_menu_share.png"];
                 break;
@@ -165,6 +166,13 @@
                 
             case 2:
                 [self deselectRowandSelectCorrectOne:indexPath];
+                break;
+                
+            case 3:
+                [mainViewController mainMenuCellPressed];
+                [self deselectRowandSelectCorrectOne:indexPath];
+                
+                break;
                 
             default:
                 break;
@@ -190,18 +198,12 @@
                 break;
                 
             case 2:
-                [mainViewController mainMenuCellPressed];
-                [self deselectRowandSelectCorrectOne:indexPath];
-
-                break;
-                
-            case 3:
                 [self pushRankingController];
                 [self deselectRowandSelectCorrectOne:indexPath];
                 
                 break;
                 
-            case 4:
+            case 3:
                 [self pushShareController];
                 [self deselectRowandSelectCorrectOne:indexPath];
                 
