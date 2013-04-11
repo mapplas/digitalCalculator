@@ -155,6 +155,8 @@
                     [mainViewController learnModePressed:nil];
                     [mainViewController setLevel:LEVEL_MEDIUM];
                 } else {
+                    [mainViewController hideMenuView];
+                    
                     InAppPurchaseViewController *inAppPurchaseViewController = nil;
                     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
                         inAppPurchaseViewController = [[InAppPurchaseViewController alloc] initWithNibName:@"InAppPurchaseViewController_iPhone" bundle:nil];
@@ -234,8 +236,6 @@
         indexPath = [NSIndexPath indexPathForRow:[mainViewController level] inSection:0];
     }
     [self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
-    
-//    [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:[mainViewController level] inSection:0] animated:YES scrollPosition:UITableViewScrollPositionNone];
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

@@ -85,7 +85,8 @@
 - (IBAction)checkButtonPressed:(id)sender;
 
 - (void)checkHelpEnabledAfterMenuHidden;
-//- (void)mainMenuCellPressed;
+
+- (void)hideMenuView;
 
 - (void)setLevel:(NSInteger)_level;
 - (NSInteger)level;

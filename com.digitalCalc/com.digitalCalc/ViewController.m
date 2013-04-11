@@ -100,6 +100,9 @@
 
 // Learn mode pressed
 - (IBAction)learnModePressed:(id)sender {
+    // Hide menu view controller
+    [self hideMenuView];
+    
     [layoutPresenter stopTimer];
     
     // Analytics
@@ -118,6 +121,9 @@
 
 // Game mode pressed
 - (IBAction)gameModePressed:(id)sender {
+    // Hide menu view controller
+    [self hideMenuView];
+    
     if ([[GeniusLevelIAPHelper sharedInstance] productPurchased:NSLocalizedString(@"in_app_purchase_genius_level_identifier", @"In app purchase - Genius level product identifier")]) {
         
         // Analytics
@@ -155,6 +161,10 @@
         inAppPurchaseViewController.products = _products;
         [self.navigationController presentModalViewController:controller animated:YES];
     }
+}
+
+- (void)hideMenuView {
+    [self.navigationController.revealController showViewController:self.navigationController.revealController.frontViewController];
 }
 
 #pragma mark - Shake event
