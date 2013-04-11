@@ -73,7 +73,7 @@
 "menu_section_settings_help_enabled" = "Ayuda";
 
 /* Menu section settings game mode change */
-"menu_section_settings_game_mode_change" = "Elegir modo de juego";
+"menu_section_settings_game_mode_change" = "Modo juego";
 
 /* Menu section settings ranking */
 "menu_section_settings_ranking" = "Clasificación";
@@ -83,6 +83,9 @@
 
 /* Menu section settings share */
 "menu_section_settings_share" = "Compartir";
+
+/* Menu section settings rate */
+"menu_section_settings_rate" = "Valora";
 
 /* Result ckecked OK text in learn mode */
 "result_checked_ok_learn_mode" = "BIEN!!! Otra más? Toca la pantalla!";
@@ -203,3 +206,15 @@
 
 /* OK message */
 "ok_message" = "OK";
+
+/* Review alert title */
+"review_alert_title" = "Valora nuestra app";
+
+/* Review alert message */
+"review_alert_message" = "¿Te gustaría valorar Genius Multiplication y dejarnos un comentario?\nSolo te llevará un momento y ayudarás a que la app sea mejor para todos. ¡Gracias!";
+
+/* Review alert ok button title */
+"review_alert_ok_button" = "Valorar";
+
+/* Review alert cancell button title */
+"review_alert_cancel_button" = "No, gracias";

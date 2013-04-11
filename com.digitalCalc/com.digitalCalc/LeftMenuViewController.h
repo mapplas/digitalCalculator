@@ -18,12 +18,12 @@
 #define MENU_TABLE_HEADER_HEIGHT 26
 
 #define MENU_TABLE_SECTIONS_COUNT 2
-#define MENU_TABLE_LEVELS_SECTION_COUNT 3
+#define MENU_TABLE_LEVELS_SECTION_COUNT 4
 #define MENU_TABLE_CONFIG_SECTION_COUNT 5
 
 @class ViewController;
 
-@interface LeftMenuViewController : UITableViewController {
+@interface LeftMenuViewController : UITableViewController <UIAlertViewDelegate> {
     ViewController *mainViewController;
     BOOL changedHelpSwitchValue;
     

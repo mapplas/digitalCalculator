@@ -31,6 +31,7 @@
 #define LEVEL_LOW 0
 #define LEVEL_MEDIUM 1
 #define LEVEL_HIGH 2
+#define LEVEL_GAME 3
 
 #define CALCULATOR_MODE_LEARN 0
 #define CALCULATOR_MODE_GAME 1
