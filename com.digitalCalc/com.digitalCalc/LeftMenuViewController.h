@@ -29,6 +29,8 @@
     
     SwitchedMenuCell *helpCell;
     LevelMenuCell *plainTextMenuCell;
+    
+    SharingHelper *shareHelper;
 }
 
 - (id)initWithMainViewController:(UINavigationController *)main_view_controller;
