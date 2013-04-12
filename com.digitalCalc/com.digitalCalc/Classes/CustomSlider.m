@@ -25,7 +25,12 @@
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        self.font = [UIFont fontWithName:@"The Girl Next Door" size:52];
+        DeviceChooser *chooser = [[DeviceChooser alloc] init];
+        if ([chooser isPad]) {
+            self.font = [UIFont fontWithName:@"The Girl Next Door" size:80];
+        } else {
+            self.font = [UIFont fontWithName:@"The Girl Next Door" size:52];
+        }
     }
     return self;
 }
@@ -36,7 +41,7 @@
 }
 
 - (void)drawRect:(CGRect)rect {
-    
+        
     // Set the fill color
 	[[UIColor colorWithWhite:0 alpha:0.8] setFill];
     
@@ -120,16 +125,23 @@
 
 - (void)_positionAndUpdatePopupView {
     CGRect _thumbRect = self.thumbRect;
-    CGRect popupRect = CGRectOffset(_thumbRect, 0, floorf(-(_thumbRect.size.height * 1.5)));
+    CGRect rect = CGRectZero;
+    CGRect popupRect = CGRectZero;
+    
+    DeviceChooser *deviceChooser = [[DeviceChooser alloc] init];
+    if ([deviceChooser isPad]) {
+        rect = CGRectMake(_thumbRect.origin.x - 20, _thumbRect.origin.y - 20, _thumbRect.size.width * 2, _thumbRect.size.height * 2.2);
+        popupRect = CGRectOffset(rect, 0, floorf(-(_thumbRect.size.height * 1.8)));
+    } else {
+        rect = CGRectMake(_thumbRect.origin.x, _thumbRect.origin.y - 2, _thumbRect.size.width + 4, _thumbRect.size.height);
+        popupRect = CGRectOffset(rect, 0, floorf(-(_thumbRect.size.height * 1.4)));
+    }
+    
     valuePopupView.frame = CGRectInset(popupRect, -20, -10);
-    
-//    NSLog(@"%d %f", (int)self.value, self.value);
-    
+        
     NSString *stringValue = [NSString stringWithFormat:@"%.f", self.value];
     self.value = [stringValue floatValue];
     valuePopupView.value = [stringValue floatValue];
-    
-//    NSLog(@"%d %f", [stringValue intValue], [stringValue floatValue]);
 }
 
 #pragma mark - Memory management
