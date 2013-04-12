@@ -38,8 +38,13 @@
     [super viewWillAppear:animated];
     [self.tableView reloadData];
     
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[mainViewController level] inSection:0];
-    [self.tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
+    NSInteger gameMode = [mainViewController mode];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:LEVEL_GAME inSection:0]; // Game mode
+    
+    if (gameMode == CALCULATOR_MODE_LEARN) {
+        indexPath = [NSIndexPath indexPathForRow:[mainViewController level] inSection:0];
+    }
+    [self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
 }
 
 #pragma mark - UITableViewDataSource and Delate methods
@@ -73,6 +78,12 @@
                 plainTextMenuCell.textLabel.text = NSLocalizedString(@"menu_section_levels_high", @"Menu section levels high level");
                 plainTextMenuCell.image.image = [UIImage imageNamed:@"ic_menu_prodigy.png"];
                 break;
+                
+            case 3:
+                plainTextMenuCell.textLabel.text = NSLocalizedString(@"menu_section_settings_game_mode_change", @"Menu section settings game mode change");
+                plainTextMenuCell.image.image = [UIImage imageNamed:@"ic_menu_game.png"];
+                break;
+                
         }
         return plainTextMenuCell;
         
@@ -104,20 +115,20 @@
                 plainTextMenuCell.textLabel.text = NSLocalizedString(@"menu_section_settings_how_to", @"Menu section settings tutorial");
                 plainTextMenuCell.image.image = [UIImage imageNamed:@"ic_menu_tutorial.png"];
                 break;
-            
-            case 2:
-                plainTextMenuCell.textLabel.text = NSLocalizedString(@"menu_section_settings_game_mode_change", @"Menu section settings game mode change");
-                plainTextMenuCell.image.image = [UIImage imageNamed:@"ic_menu_home.png"];
-                break;
                 
-            case 3:
+            case 2:
                 plainTextMenuCell.textLabel.text = NSLocalizedString(@"menu_section_settings_ranking", @"Menu section settings ranking");
                 plainTextMenuCell.image.image = [UIImage imageNamed:@"ic_menu_clasification.png"];
                 break;
             
-            case 4:
+            case 3:
                 plainTextMenuCell.textLabel.text = NSLocalizedString(@"menu_section_settings_share", @"Menu section settings share");
                 plainTextMenuCell.image.image = [UIImage imageNamed:@"ic_menu_share.png"];
+                break;
+                
+            case 4:
+                plainTextMenuCell.textLabel.text = NSLocalizedString(@"menu_section_settings_rate", @"Menu section settings rate");
+                plainTextMenuCell.image.image = [UIImage imageNamed:@"ic_menu_rating.png"];
                 break;
         }
         
@@ -134,37 +145,41 @@
     if (indexPath.section == 0) {
         switch (indexPath.row) {
             case 0:
-                if (!mainViewController.mode == CALCULATOR_MODE_GAME) {
-                    [mainViewController setLevel:LEVEL_LOW];
-                } else {
-                    [self deselectRowandSelectCorrectOne:indexPath];
-                }
+                [mainViewController learnModePressed:nil];
+                [mainViewController setLevel:LEVEL_LOW];
                 
                 break;
                 
             case 1:
-                if (!mainViewController.mode == CALCULATOR_MODE_GAME) {
-                    if ([[GeniusLevelIAPHelper sharedInstance] productPurchased:NSLocalizedString(@"in_app_purchase_genius_level_identifier", @"In app purchase - Genius level product identifier")]) {
-                        [mainViewController setLevel:LEVEL_MEDIUM];
-                    } else {
-                        InAppPurchaseViewController *inAppPurchaseViewController = nil;
-                        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-                            inAppPurchaseViewController = [[InAppPurchaseViewController alloc] initWithNibName:@"InAppPurchaseViewController_iPhone" bundle:nil];
-                        } else {
-                            inAppPurchaseViewController = [[InAppPurchaseViewController alloc] initWithNibName:@"InAppPurchaseViewController_iPad" bundle:nil];
-                        }
+                if ([[GeniusLevelIAPHelper sharedInstance] productPurchased:NSLocalizedString(@"in_app_purchase_genius_level_identifier", @"In app purchase - Genius level product identifier")]) {
+                    [mainViewController learnModePressed:nil];
+                    [mainViewController setLevel:LEVEL_MEDIUM];
+                } else {
+                    [mainViewController hideMenuView];
                     
-                        UINavigationController *controller = [[UINavigationController alloc] initWithRootViewController:inAppPurchaseViewController];
-                        inAppPurchaseViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-                        inAppPurchaseViewController.products = products;
-                        [mainViewController presentModalViewController:controller animated:YES];
+                    InAppPurchaseViewController *inAppPurchaseViewController = nil;
+                    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+                        inAppPurchaseViewController = [[InAppPurchaseViewController alloc] initWithNibName:@"InAppPurchaseViewController_iPhone" bundle:nil];
+                    } else {
+                        inAppPurchaseViewController = [[InAppPurchaseViewController alloc] initWithNibName:@"InAppPurchaseViewController_iPad" bundle:nil];
                     }
+                    
+                    UINavigationController *controller = [[UINavigationController alloc] initWithRootViewController:inAppPurchaseViewController];
+                    inAppPurchaseViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+                    inAppPurchaseViewController.products = products;
+                    [mainViewController presentModalViewController:controller animated:YES];
                 }
 
                 break;
                 
             case 2:
                 [self deselectRowandSelectCorrectOne:indexPath];
+                break;
+                
+            case 3:
+                [mainViewController gameModePressed:nil];
+                
+                break;
                 
             default:
                 break;
@@ -190,22 +205,20 @@
                 break;
                 
             case 2:
-                [mainViewController mainMenuCellPressed];
-                [self deselectRowandSelectCorrectOne:indexPath];
-
-                break;
-                
-            case 3:
                 [self pushRankingController];
                 [self deselectRowandSelectCorrectOne:indexPath];
                 
                 break;
                 
-            case 4:
+            case 3:
                 [self pushShareController];
                 [self deselectRowandSelectCorrectOne:indexPath];
                 
                 break;
+                
+            case 4:
+                [self pushAppRate];
+                [self deselectRowandSelectCorrectOne:indexPath];
                 
             default:
                 break;
@@ -215,7 +228,14 @@
 
 - (void)deselectRowandSelectCorrectOne:(NSIndexPath *)index_path {
     [self.tableView deselectRowAtIndexPath:index_path animated:YES];
-    [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:[mainViewController level] inSection:0] animated:YES scrollPosition:UITableViewScrollPositionNone];
+    
+    NSInteger gameMode = [mainViewController mode];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:LEVEL_GAME inSection:0]; // Game mode
+    
+    if (gameMode == CALCULATOR_MODE_LEARN) {
+        indexPath = [NSIndexPath indexPathForRow:[mainViewController level] inSection:0];
+    }
+    [self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -300,11 +320,13 @@
 }
 
 - (void)pushShareController {
-    SharingHelper *shareHelper = [[SharingHelper alloc] initWithNavigationController:mainViewController.navigationController];
+    shareHelper = [[SharingHelper alloc] initWithNavigationController:mainViewController.navigationController];
     
     // If device has ios6 and up
 	if ([UIActivityViewController class]) {
-		NSMutableArray *itemsToShare = [[NSMutableArray alloc] initWithObjects:[shareHelper getShareMessage], nil];
+        NSString *messageToShare = [shareHelper getShareMessage];
+        NSURL *urlToShare = [NSURL URLWithString:NSLocalizedString(@"share_message_url", @"Share message url")];
+		NSMutableArray *itemsToShare = [[NSMutableArray alloc] initWithObjects:messageToShare, urlToShare, nil];
         
 		UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:itemsToShare applicationActivities:nil];
 		activityViewController.excludedActivityTypes = @[UIActivityTypePostToWeibo, UIActivityTypeAssignToContact, UIActivityTypeCopyToPasteboard, UIActivityTypePrint, UIActivityTypeSaveToCameraRoll];
@@ -315,10 +337,31 @@
         // iOS 5
 		NSString *cancelButton = NSLocalizedString(@"ios5_sharing_action_sheet_cancel_button", @"iOS5 sharing action sheet cancel button - twitter sharing");
 		NSString *twitterButton = NSLocalizedString(@"ios5_sharing_action_sheet_twitter_button", @"iOS5 sharing action sheet twitter button - twitter sharing");
+        NSString *smsButton = NSLocalizedString(@"ios5_sharing_action_sheet_sms_button", @"iOS5 sharing action sheet sms button - sms sharing");
+		NSString *emailButton = NSLocalizedString(@"ios5_sharing_action_sheet_email_button", @"iOS5 sharing action sheet email button - email sharing");
         
-		UIActionSheet *alertView = [[UIActionSheet alloc] initWithTitle:nil delegate:shareHelper cancelButtonTitle:cancelButton destructiveButtonTitle:nil otherButtonTitles:twitterButton, @"Share via SMS", @"Share via email", nil];
-		[alertView showInView:[UIApplication sharedApplication].keyWindow.rootViewController.view];
+		UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:shareHelper cancelButtonTitle:cancelButton destructiveButtonTitle:nil otherButtonTitles:twitterButton, smsButton, emailButton, nil];
+        
+        [actionSheet dismissWithClickedButtonIndex:3 animated:YES];
+		[actionSheet showInView:[UIApplication sharedApplication].keyWindow.rootViewController.view];
 	}
+}
+
+- (void)pushAppRate {
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle:NSLocalizedString(@"review_alert_title", @"Review alert title")
+                                message:NSLocalizedString(@"review_alert_message", @"Review alert message")
+                                delegate:self
+                          cancelButtonTitle:NSLocalizedString(@"review_alert_ok_button", @"Review alert ok button title")
+                          otherButtonTitles:NSLocalizedString(@"review_alert_cancel_button", @"Review alert cancel button title"), nil];
+    [alert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 0) {
+        NSString *url = @"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=624548749";
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+    }
 }
 
 #pragma mark - Help actions

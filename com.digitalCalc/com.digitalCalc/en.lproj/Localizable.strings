@@ -73,7 +73,7 @@
 "menu_section_settings_help_enabled" = "Help";
 
 /* Menu section settings game mode change */
-"menu_section_settings_game_mode_change" = "Choose game mode";
+"menu_section_settings_game_mode_change" = "Game mode";
 
 /* Menu section settings ranking */
 "menu_section_settings_ranking" = "Ranking";
@@ -83,6 +83,9 @@
 
 /* Menu section settings share */
 "menu_section_settings_share" = "Share";
+
+/* Menu section settings rate */
+"menu_section_settings_rate" = "Review app";
 
 /* Result ckecked OK text in learn mode */
 "result_checked_ok_learn_mode" = "GREAT Genius!! One more? Tap to continue!";
@@ -169,10 +172,16 @@
 "share_facebook_error" = "Facebook client is not avaliable";
 
 /* iOS5 sharing action sheet cancel button - twitter sharing */
-"ios5_sharing_action_sheet_cancel_button" = "Cancelar";
+"ios5_sharing_action_sheet_cancel_button" = "Cancel";
 
 /* iOS5 sharing action sheet twitter button - twitter sharing */
-"ios5_sharing_action_sheet_twitter_button" = "Compartir vía Twitter";
+"ios5_sharing_action_sheet_twitter_button" = "Share via Twitter";
+
+/* iOS5 sharing action sheet sms button - sms sharing */
+"ios5_sharing_action_sheet_sms_button" = "Share via SMS";
+
+/* iOS5 sharing action sheet email button - email sharing */
+"ios5_sharing_action_sheet_email_button" = "Share via email";
 
 /* SMS sharing error */
 "share_sms_error" = "Error sharing via SMS";
@@ -190,10 +199,25 @@
 "share_email_subject" = "Try it!";
 
 /* Share message part 1 */
-"share_message_part_1" = "I am using";
+"share_message_part_1" = "I am learning to multiply with";
 
 /* Share message part 2 */
-"share_message_part_2" = "for iOS. Try it out, it's amazing! @SupportGenius #GeniusMultiplication";
+"share_message_part_2" = "// x /// = 6. Find out!";
+
+/* Share message url */
+"share_message_url" = "https://itunes.apple.com/en/app/genius-multiplication/id624548749?mt=8";
 
 /* OK message */
 "ok_message" = "OK";
+
+/* Review alert title */
+"review_alert_title" = "Review app";
+
+/* Review alert message */
+"review_alert_message" = "Would you like to rate Genius Multiplication and leave us a review?\nIt will only take a couple of seconds and will help make this app better for everyone. Thank you!";
+
+/* Review alert ok button title */
+"review_alert_ok_button" = "Rate it!";
+
+/* Review alert cancell button title */
+"review_alert_cancel_button" = "No, thanks";

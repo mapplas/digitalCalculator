@@ -115,6 +115,10 @@
 }
 
 - (void)initTimer {
+    [self stopTimer];
+    timerLabel.text = [NSString stringWithFormat:@"%d", GAME_MODE_COUNTDOWN];
+
+    
     countDownTimer = [NSTimer scheduledTimerWithTimeInterval:1.0
                                      target:self
                                    selector:@selector(secondDown)

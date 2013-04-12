@@ -10,6 +10,7 @@
 #import <StoreKit/StoreKit.h>
 #import "PaymentTransactionProtocol.h"
 #import "RestoreTransactionProtocol.h"
+#import "MBProgressHUD.h"
 
 UIKIT_EXTERN NSString *const IAPHelperProductPurchasedNotification;
 
@@ -20,14 +21,15 @@ typedef void (^RequestProductsCompletionHandler)(BOOL success, NSArray * product
     id<RestoreTransactionProtocol> restoreTransactionProtocol;
     
     NSArray *products;
+    MBProgressHUD *hud;
 }
 
 - (id)initWithProductIdentifiers:(NSSet *)productIdentifiers;
 - (void)requestProductsWithCompletionHandler:(RequestProductsCompletionHandler)completionHandler;
 
-- (void)buyProduct:(SKProduct *)product andSetDelegate:(id<PaymentTransactionProtocol>)_delegate;
+- (void)buyProduct:(SKProduct *)product andSetDelegate:(id<PaymentTransactionProtocol>)_delegate progressHud:(MBProgressHUD *)progress_hud;
 - (BOOL)productPurchased:(NSString *)productIdentifier;
 
-- (void)restoreCompletedTransactionsWithDelegate:(id<RestoreTransactionProtocol>)_restoreDelegate;
+- (void)restoreCompletedTransactionsWithDelegate:(id<RestoreTransactionProtocol>)_restoreDelegate progressHud:(MBProgressHUD *)progress_hud;
 
 @end

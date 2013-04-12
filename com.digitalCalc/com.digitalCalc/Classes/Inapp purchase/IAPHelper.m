@@ -94,11 +94,12 @@ NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurcha
     return [_purchasedProductIdentifiers containsObject:productIdentifier];
 }
 
-- (void)buyProduct:(SKProduct *)product andSetDelegate:(id<PaymentTransactionProtocol>)_delegate {
+- (void)buyProduct:(SKProduct *)product andSetDelegate:(id<PaymentTransactionProtocol>)_delegate progressHud:(MBProgressHUD *)progress_hud {
     
     NSLog(@"Buying %@...", product.productIdentifier);
     
     paymentTransactionProtocol = _delegate;
+    hud = progress_hud;
     
     SKPayment * payment = [SKPayment paymentWithProduct:product];
     [[SKPaymentQueue defaultQueue] addPayment:payment];    
@@ -125,6 +126,7 @@ NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurcha
 
 - (void)completeTransaction:(SKPaymentTransaction *)transaction {
     NSLog(@"completeTransaction...");
+    [hud hide:YES];
     
     [self provideContentForProductIdentifier:transaction.payment.productIdentifier];
     [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
@@ -136,6 +138,7 @@ NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurcha
 
 - (void)restoreTransaction:(SKPaymentTransaction *)transaction {
     NSLog(@"restoreTransaction...");
+    [hud hide:YES];
     
     [self provideContentForProductIdentifier:transaction.originalTransaction.payment.productIdentifier];
     [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
@@ -143,6 +146,7 @@ NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurcha
 
 - (void)failedTransaction:(SKPaymentTransaction *)transaction {
     NSLog(@"failedTransaction...");
+    [hud hide:YES];
     
     if (transaction.error.code != SKErrorPaymentCancelled) {
         NSLog(@"Transaction error: %@", transaction.error.localizedDescription);
@@ -162,17 +166,23 @@ NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurcha
     [[NSNotificationCenter defaultCenter] postNotificationName:IAPHelperProductPurchasedNotification object:productIdentifier userInfo:nil];
 }
 
-- (void)restoreCompletedTransactionsWithDelegate:(id<RestoreTransactionProtocol>)_restoreDelegate {
+- (void)restoreCompletedTransactionsWithDelegate:(id<RestoreTransactionProtocol>)_restoreDelegate progressHud:(MBProgressHUD *)progress_hud {
+    hud = progress_hud;
+    
     restoreTransactionProtocol = _restoreDelegate;
     [[SKPaymentQueue defaultQueue] addTransactionObserver:self];
     [[SKPaymentQueue defaultQueue] restoreCompletedTransactions];
 }
 
 - (void)paymentQueue:(SKPaymentQueue *)queue restoreCompletedTransactionsFailedWithError:(NSError *)error {
+    [hud removeFromSuperview];
+    
     [restoreTransactionProtocol restoreFailed];
 }
 
 - (void)paymentQueueRestoreCompletedTransactionsFinished:(SKPaymentQueue *)queue {
+    [hud removeFromSuperview];
+    
     _purchasedProductIdentifiers = [[NSMutableSet alloc] init];
     NSLog(@"received restored transactions: %i", queue.transactions.count);
     
